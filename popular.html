@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Products - Millennia Computers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">💻</span>
+                Millennia Computers
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="popular.html" class="active">Popular Products</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="cart-icon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Popular Products Hero -->
+        <section class="products-hero">
+            <div class="products-hero-content">
+                <h1>Most Popular Products</h1>
+                <p>Discover our best-selling items loved by thousands of customers</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="popular-content" style="margin: 80px 0;">
+                <!-- Bestsellers Section -->
+                <div class="bestsellers-section" style="margin-bottom: 80px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 40px; color: var(--text-white); text-align: center;">Bestsellers</h2>
+                    <div class="products-grid" id="bestsellers-container">
+                        <!-- Bestseller products will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Top Rated Section -->
+                <div class="top-rated-section">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 40px; color: var(--text-white); text-align: center;">Top Rated</h2>
+                    <div class="products-grid" id="top-rated-container">
+                        <!-- Top rated products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Millennia</h3>
+                <p style="color: var(--text-light); line-height: 1.6;">We bring you the latest technology with exceptional quality, performance, and service. Your trusted partner in computing solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="support.html">Support Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email for updates">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2024 Millennia Computers. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script>
+        // Load popular products
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bestsellers (most reviewed)
+            const bestsellersContainer = document.getElementById('bestsellers-container');
+            const bestsellers = [...allProducts]
+                .sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
+                .slice(0, 6);
+
+            // Top rated (highest stars)
+            const topRatedContainer = document.getElementById('top-rated-container');
+            const topRated = [...allProducts]
+                .sort((a, b) => (b.rating.match(/★/g) || []).length - (a.rating.match(/★/g) || []).length)
+                .slice(0, 6);
+
+            // Load bestsellers
+            bestsellers.forEach((product, index) => {
+                const productCard = createProductCard(product);
+                bestsellersContainer.appendChild(productCard);
+                
+                setTimeout(() => {
+                    productCard.classList.add('visible');
+                }, index * 200);
+            });
+
+            // Load top rated
+            topRated.forEach((product, index) => {
+                const productCard = createProductCard(product);
+                topRatedContainer.appendChild(productCard);
+                
+                setTimeout(() => {
+                    productCard.classList.add('visible');
+                }, index * 200);
+            });
+
+            function createProductCard(product) {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card fade-in';
+                productCard.innerHTML = `
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" 
+                             onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"%231A1A1A\"/><text x=\"100\" y=\"100\" font-family=\"Arial\" font-size=\"14\" text-anchor=\"middle\" fill=\"%230066CC\">${product.name}</text></svg>'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.subcategory}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-price">${product.price}</div>
+                        <div class="product-rating">
+                            <span class="stars">${product.rating}</span>
+                            <span class="reviews">${product.reviews}</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="view-details" onclick="location.href='products.html'">View Details</button>
+                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+                return productCard;
+            }
+
+            // Add to cart functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                    
+                    const originalText = e.target.textContent;
+                    e.target.textContent = 'Added!';
+                    e.target.style.background = '#00CC66';
+                    
+                    setTimeout(() => {
+                        e.target.textContent = originalText;
+                        e.target.style.background = '';
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

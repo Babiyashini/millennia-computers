@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennia Computers - Premium Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">💻</span>
+                Millennia Computers
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="popular.html">Popular Products</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products..." id="search-input">
+                </div>
+                <div class="cart-icon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Next Generation Computing</h1>
+                    <p class="hero-subtitle">Experience unparalleled performance with our premium selection of laptops, smartphones, and cutting-edge technology designed for gamers, creators, and professionals.</p>
+                    <div class="hero-actions">
+                        <a href="products.html" class="btn-primary">Explore Products</a>
+                        <a href="about.html" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section id="featured" class="container" style="margin: 100px 0;">
+            <h2 style="text-align: center; margin-bottom: 60px; font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF 0%, #0066CC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Featured Categories</h2>
+            
+            <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="category-card" style="background: var(--card-bg); border-radius: var(--border-radius); padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='products.html#laptops'">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">💻</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Gaming Laptops</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">High-performance laptops for gaming and content creation</p>
+                    <span style="color: var(--primary-blue); font-weight: 600;">View Products →</span>
+                </div>
+                
+                <div class="category-card" style="background: var(--card-bg); border-radius: var(--border-radius); padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='products.html#smartphones'">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📱</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Smartphones</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Latest flagship smartphones with cutting-edge technology</p>
+                    <span style="color: var(--primary-blue); font-weight: 600;">View Products →</span>
+                </div>
+                
+                <div class="category-card" style="background: var(--card-bg); border-radius: var(--border-radius); padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='products.html#desktops'">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🖥️</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Desktops & AIOs</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Powerful desktop computers and all-in-one solutions</p>
+                    <span style="color: var(--primary-blue); font-weight: 600;">View Products →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section style="margin: 100px 0; background: var(--card-bg); padding: 80px 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 60px; font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF 0%, #0066CC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Featured Products</h2>
+                <div class="products-grid" id="featured-products">
+                    <!-- Featured products will be dynamically loaded -->
+                </div>
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="products.html" class="btn-primary" style="padding: 18px 45px; font-size: 1.1rem;">View All Products</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Millennia</h3>
+                <p style="color: var(--text-light); line-height: 1.6;">We bring you the latest technology with exceptional quality, performance, and service. Your trusted partner in computing solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="support.html">Support Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email for updates">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2024 Millennia Computers. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script>
+        // Load featured products on home page
+        document.addEventListener('DOMContentLoaded', function() {
+            const featuredContainer = document.getElementById('featured-products');
+            const featuredProducts = allProducts.slice(0, 6); // Show first 6 products as featured
+            
+            featuredProducts.forEach((product, index) => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card fade-in';
+                productCard.innerHTML = `
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" 
+                             onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"%231A1A1A\"/><text x=\"100\" y=\"100\" font-family=\"Arial\" font-size=\"14\" text-anchor=\"middle\" fill=\"%230066CC\">${product.name}</text></svg>'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.subcategory}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-price">${product.price}</div>
+                        <div class="product-rating">
+                            <span class="stars">${product.rating}</span>
+                            <span class="reviews">${product.reviews}</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="view-details" onclick="location.href='products.html'">View Details</button>
+                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+                featuredContainer.appendChild(productCard);
+                
+                // Animate with delay
+                setTimeout(() => {
+                    productCard.classList.add('visible');
+                }, index * 200);
+            });
+
+            // Add hover effects to category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.borderColor = 'var(--primary-blue)';
+                    this.style.boxShadow = 'var(--shadow-glow)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.borderColor = 'rgba(255,255,255,0.1)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Add to cart functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                    
+                    // Animation effect
+                    const originalText = e.target.textContent;
+                    e.target.textContent = 'Added!';
+                    e.target.style.background = '#00CC66';
+                    
+                    setTimeout(() => {
+                        e.target.textContent = originalText;
+                        e.target.style.background = '';
+                    }, 2000);
+                }
+            });
+
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,196 +1,89 @@
-// SHOW ALL PRODUCTS SCRIPT
-console.log("Script loaded!");
+// TEST SCRIPT - Check what arrays exist
+console.log("=== TESTING PRODUCT ARRAYS ===");
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM loaded!");
-    
-    // Combine ALL product arrays
-    const allProducts = [
-        ...laptops, 
-        ...smartphones,
-        ...pcComponents,
-        ...gpus,
-        ...ram,
-        ...psuCasesCooling,
-        ...storageDevices,
-        ...motherboards,
-        ...peripherals
-    ];
-    
-    console.log(`Total products: ${allProducts.length}`);
-    
+    console.log("Arrays found:");
+    console.log("laptops:", typeof laptops !== 'undefined' ? laptops.length : "NOT FOUND");
+    console.log("smartphones:", typeof smartphones !== 'undefined' ? smartphones.length : "NOT FOUND");
+    console.log("pcComponents:", typeof pcComponents !== 'undefined' ? pcComponents.length : "NOT FOUND");
+    console.log("gpus:", typeof gpus !== 'undefined' ? gpus.length : "NOT FOUND");
+    console.log("ram:", typeof ram !== 'undefined' ? ram.length : "NOT FOUND");
+    console.log("psuCasesCooling:", typeof psuCasesCooling !== 'undefined' ? psuCasesCooling.length : "NOT FOUND");
+    console.log("storageDevices:", typeof storageDevices !== 'undefined' ? storageDevices.length : "NOT FOUND");
+    console.log("motherboards:", typeof motherboards !== 'undefined' ? motherboards.length : "NOT FOUND");
+    console.log("peripherals:", typeof peripherals !== 'undefined' ? peripherals.length : "NOT FOUND");
+
+    // Show what we have
     const container = document.getElementById('products-container');
     const countElement = document.getElementById('products-count');
     
-    // Clear loading message
-    container.innerHTML = '';
+    let allProducts = [];
     
-    // Show ALL products
+    if (typeof laptops !== 'undefined') {
+        allProducts = [...allProducts, ...laptops];
+        console.log("Added laptops:", laptops.length);
+    }
+    
+    if (typeof smartphones !== 'undefined') {
+        allProducts = [...allProducts, ...smartphones];
+        console.log("Added smartphones:", smartphones.length);
+    }
+    
+    if (typeof pcComponents !== 'undefined') {
+        allProducts = [...allProducts, ...pcComponents];
+        console.log("Added pcComponents:", pcComponents.length);
+    }
+    
+    if (typeof gpus !== 'undefined') {
+        allProducts = [...allProducts, ...gpus];
+        console.log("Added gpus:", gpus.length);
+    }
+    
+    if (typeof ram !== 'undefined') {
+        allProducts = [...allProducts, ...ram];
+        console.log("Added ram:", ram.length);
+    }
+    
+    if (typeof psuCasesCooling !== 'undefined') {
+        allProducts = [...allProducts, ...psuCasesCooling];
+        console.log("Added psuCasesCooling:", psuCasesCooling.length);
+    }
+    
+    if (typeof storageDevices !== 'undefined') {
+        allProducts = [...allProducts, ...storageDevices];
+        console.log("Added storageDevices:", storageDevices.length);
+    }
+    
+    if (typeof motherboards !== 'undefined') {
+        allProducts = [...allProducts, ...motherboards];
+        console.log("Added motherboards:", motherboards.length);
+    }
+    
+    if (typeof peripherals !== 'undefined') {
+        allProducts = [...allProducts, ...peripherals];
+        console.log("Added peripherals:", peripherals.length);
+    }
+    
+    console.log("TOTAL PRODUCTS:", allProducts.length);
+    
+    // Show products
+    container.innerHTML = '';
     allProducts.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
             <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"150\" viewBox=\"0 0 200 150\"><rect width=\"200\" height=\"150\" fill=\"%230066cc\"/><text x=\"100\" y=\"75\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"white\">${product.category}</text></svg>'">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
             </div>
             <div class="product-info">
                 <div class="product-category">${product.category}</div>
                 <h3 class="product-title">${product.name}</h3>
                 <div class="product-price">${product.price}</div>
                 <div class="product-rating">${product.rating} ${product.reviews}</div>
-                <div class="product-actions">
-                    <button class="view-details">View Details</button>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
             </div>
         `;
         container.appendChild(card);
     });
     
-    countElement.innerHTML = `Showing <strong>${allProducts.length}</strong> products`;
-    
-    // Update category tabs to include all categories
-    updateCategoryTabs(allProducts);
-    
-    // Simple cart functionality
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('add-to-cart')) {
-            const cartCount = document.querySelector('.cart-count');
-            let count = parseInt(cartCount.textContent) || 0;
-            count++;
-            cartCount.textContent = count;
-            
-            // Show confirmation
-            const originalText = e.target.textContent;
-            e.target.textContent = 'Added!';
-            e.target.style.background = '#00CC66';
-            
-            setTimeout(() => {
-                e.target.textContent = originalText;
-                e.target.style.background = '';
-            }, 2000);
-        }
-    });
-
-    // Search functionality
-    document.getElementById('search-input').addEventListener('input', function(e) {
-        searchProducts(e.target.value, allProducts);
-    });
+    countElement.innerHTML = `Showing <strong>${allProducts.length}</strong> products from all categories`;
 });
-
-function updateCategoryTabs(allProducts) {
-    const tabsContainer = document.querySelector('.category-tabs');
-    
-    // Get unique categories
-    const categories = ['all', ...new Set(allProducts.map(product => product.category))];
-    
-    // Update tabs
-    tabsContainer.innerHTML = '';
-    categories.forEach(category => {
-        const tab = document.createElement('div');
-        tab.className = `category-tab ${category === 'all' ? 'active' : ''}`;
-        tab.setAttribute('data-category', category);
-        
-        let displayName = category;
-        let emoji = '';
-        
-        // Add emojis and better names
-        switch(category) {
-            case 'all': emoji = '📦'; displayName = 'All Products'; break;
-            case 'laptops': emoji = '💻'; break;
-            case 'smartphones': emoji = '📱'; break;
-            case 'parts': emoji = '⚙️'; displayName = 'PC Parts'; break;
-            default: emoji = '📦';
-        }
-        
-        tab.innerHTML = `${emoji} ${displayName}`;
-        tab.addEventListener('click', function() {
-            document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            filterProducts(category, allProducts);
-        });
-        
-        tabsContainer.appendChild(tab);
-    });
-}
-
-function filterProducts(category, allProducts) {
-    const container = document.getElementById('products-container');
-    
-    let filteredProducts;
-    if (category === 'all') {
-        filteredProducts = allProducts;
-    } else if (category === 'parts') {
-        // Show all PC components
-        filteredProducts = allProducts.filter(product => 
-            product.category === 'parts'
-        );
-    } else {
-        filteredProducts = allProducts.filter(product => product.category === category);
-    }
-    
-    container.innerHTML = '';
-    filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"150\" viewBox=\"0 0 200 150\"><rect width=\"200\" height=\"150\" fill=\"%230066cc\"/><text x=\"100\" y=\"75\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"white\">${product.category}</text></svg>'">
-            </div>
-            <div class="product-info">
-                <div class="product-category">${product.category}</div>
-                <h3 class="product-title">${product.name}</h3>
-                <div class="product-price">${product.price}</div>
-                <div class="product-rating">${product.rating} ${product.reviews}</div>
-                <div class="product-actions">
-                    <button class="view-details">View Details</button>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-    
-    document.getElementById('products-count').innerHTML = `Showing <strong>${filteredProducts.length}</strong> products`;
-}
-
-function searchProducts(query, allProducts) {
-    const container = document.getElementById('products-container');
-    
-    let filteredProducts;
-    if (query.trim() === '') {
-        filteredProducts = allProducts;
-    } else {
-        filteredProducts = allProducts.filter(product =>
-            product.name.toLowerCase().includes(query.toLowerCase()) ||
-            (product.category && product.category.toLowerCase().includes(query.toLowerCase()))
-        );
-    }
-    
-    container.innerHTML = '';
-    filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"150\" viewBox=\"0 0 200 150\"><rect width=\"200\" height=\"150\" fill=\"%230066cc\"/><text x=\"100\" y=\"75\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\" fill=\"white\">${product.category}</text></svg>'">
-            </div>
-            <div class="product-info">
-                <div class="product-category">${product.category}</div>
-                <h3 class="product-title">${product.name}</h3>
-                <div class="product-price">${product.price}</div>
-                <div class="product-rating">${product.rating} ${product.reviews}</div>
-                <div class="product-actions">
-                    <button class="view-details">View Details</button>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-    
-    document.getElementById('products-count').innerHTML = `Showing <strong>${filteredProducts.length}</strong> products`;
-}

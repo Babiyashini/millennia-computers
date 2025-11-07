@@ -6,136 +6,432 @@
     <title>Contact Us - Millennia Computers</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Modern Header -->
+    <header class="header-modern">
         <div class="header-container">
-            <div class="logo">
+            <a href="home.html" class="logo-modern">
                 <span class="logo-icon">💻</span>
                 Millennia Computers
-            </div>
+            </a>
+            
             <nav>
-                <ul>
-                    <li><a href="Home.html">Home</a></li>
+                <ul class="nav-modern">
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="popular.html">Popular Products</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="popular.html">Popular</a></li>
                     <li><a href="support.html">Support</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
+            
+            <div class="header-actions-modern">
+                <div class="search-modern">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
                 </div>
-                <div class="cart-icon">
-                    🛒
+                <button class="cart-modern">
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
-                </div>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Contact Hero Section -->
-        <section class="products-hero">
-            <div class="products-hero-content">
-                <h1>Contact Us</h1>
-                <p>Get in touch with our team for any inquiries or support</p>
-            </div>
-        </section>
+    <!-- Contact Hero -->
+    <section style="background: var(--gradient-blue); color: white; padding: 140px 0 80px; margin-top: 80px;">
+        <div class="container-modern">
+            <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Contact Us</h1>
+            <p style="font-size: 1.3rem; text-align: center; opacity: 0.9; max-width: 600px; margin: 0 auto;">Get in touch with our team for any inquiries</p>
+        </div>
+    </section>
 
-        <div class="container">
-            <div class="contact-content" style="max-width: 1000px; margin: 80px auto;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-                    <!-- Contact Information -->
-                    <div class="contact-info">
-                        <h2 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-white);">Get In Touch</h2>
-                        
-                        <div style="margin-bottom: 30px;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-white);">📍 Address</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                123 Tech Boulevard<br>
-                                Colombo 00100<br>
-                                Sri Lanka
-                            </p>
+    <!-- Contact Section -->
+    <section class="container-modern" style="padding: 100px 0;">
+        <div class="contact-layout">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>We're here to help you with any questions about our products, services, or technical support.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        
-                        <div style="margin-bottom: 30px;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-white);">📞 Phone</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Sales: +94 11 234 5678<br>
-                                Support: +94 11 234 5679<br>
-                                Fax: +94 11 234 5680
-                            </p>
-                        </div>
-                        
-                        <div style="margin-bottom: 30px;">
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-white);">📧 Email</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                sales@millennia.com<br>
-                                support@millennia.com<br>
-                                info@millennia.com
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--text-white);">🕒 Business Hours</h3>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Monday - Friday: 9:00 AM - 6:00 PM<br>
-                                Saturday: 10:00 AM - 4:00 PM<br>
-                                Sunday: Closed
-                            </p>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>123 Tech Street<br>Colombo 00500<br>Sri Lanka</p>
                         </div>
                     </div>
-
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <h2 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-white);">Send Message</h2>
-                        <form style="display: grid; gap: 20px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <input type="text" placeholder="First Name" style="padding: 15px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.05); color: var(--text-white);">
-                                <input type="text" placeholder="Last Name" style="padding: 15px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.05); color: var(--text-white);">
-                            </div>
-                            <input type="email" placeholder="Email Address" style="padding: 15px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.05); color: var(--text-white);">
-                            <input type="text" placeholder="Subject" style="padding: 15px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.05); color: var(--text-white);">
-                            <textarea placeholder="Your Message" rows="6" style="padding: 15px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; background: rgba(255,255,255,0.05); color: var(--text-white); resize: vertical;"></textarea>
-                            <button type="submit" class="btn-primary" style="padding: 15px; font-size: 1.1rem;">Send Message</button>
-                        </form>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>+94 11 234 5678<br>+94 77 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@millennia.com<br>support@millennia.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <h3>Send us a Message</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="sales">Sales Question</option>
+                            <option value="support">Technical Support</option>
+                            <option value="warranty">Warranty Claim</option>
+                            <option value="returns">Returns & Refunds</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary-large">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Map Section -->
+    <section style="background: var(--primary-light); padding: 80px 0;">
+        <div class="container-modern">
+            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; color: var(--text-dark);">Find Our Store</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map" style="font-size: 4rem; color: var(--primary-blue);"></i>
+                    <h3>Interactive Map</h3>
+                    <p>123 Tech Street, Colombo 00500, Sri Lanka</p>
+                    <button class="btn-secondary" onclick="showDirections()">
+                        <i class="fas fa-directions"></i>
+                        Get Directions
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
+    <footer class="footer-modern">
+        <div class="footer-content-modern">
+            <div class="footer-section-modern">
                 <h3>About Millennia</h3>
-                <p style="color: var(--text-light); line-height: 1.6;">We bring you the latest technology with exceptional quality, performance, and service. Your trusted partner in computing solutions.</p>
+                <p>Your trusted partner in computing solutions.</p>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-section-modern">
                 <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="Home.html">Home</a></li>
-                    <li><a href="products.html">All Products</a></li>
-                    <li><a href="support.html">Support Center</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                <ul class="footer-links-modern">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">All Products</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-section-modern">
                 <h3>Newsletter</h3>
-                <div class="newsletter">
-                    <input type="email" placeholder="Enter your email for updates">
+                <p>Subscribe for updates and offers.</p>
+                <div class="newsletter-modern">
+                    <input type="email" placeholder="Your email">
                     <button>Subscribe</button>
                 </div>
             </div>
         </div>
-        <div class="copyright">
+        
+        <div class="copyright-modern">
             Copyright © 2024 Millennia Computers. All rights reserved.
         </div>
     </footer>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            showNotification('Thank you! Your message has been sent successfully.');
+            this.reset();
+        });
+
+        // Cart functionality
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            showNotification('Product added to cart!');
+        }
+
+        function showDirections() {
+            showNotification('Opening directions in maps application...');
+            // In a real implementation, this would open Google Maps or similar
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: var(--shadow-hover);
+                z-index: 1000;
+                animation: slideInRight 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-info > p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-details p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .contact-form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .contact-form h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        
+        .btn-primary-large {
+            width: 100%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 1.2rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary-large:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .map-placeholder {
+            padding: 4rem;
+            text-align: center;
+            background: var(--primary-light);
+        }
+        
+        .map-placeholder h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1rem 0 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .map-placeholder p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>

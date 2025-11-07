@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoom.js/2.3.1/zoom.min.css">
 </head>
 <body>
-    <!-- Modern Header -->
-    <header class="header-modern">
-        <div class="header-container">
-            <a href="home.html" class="logo-modern">
-                <span class="logo-icon">💻</span>
+    <!-- Premium Glassmorphism Header -->
+    <header class="header-premium">
+        <div class="header-container-premium">
+            <a href="home.html" class="logo-premium">
+                <span class="logo-icon-premium">💻</span>
                 Millennia Computers
             </a>
             
             <nav>
-                <ul class="nav-modern">
+                <ul class="nav-premium">
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="index.html">Products</a></li>
@@ -28,96 +27,170 @@
                 </ul>
             </nav>
             
-            <div class="header-actions-modern">
-                <div class="search-modern">
-                    <i class="fas fa-search search-icon"></i>
+            <div class="header-actions-premium">
+                <div class="search-premium">
+                    <i class="fas fa-search search-icon-premium"></i>
                     <input type="text" placeholder="Search products..." id="search-input">
                 </div>
-                <button class="cart-modern">
+                <button class="cart-premium">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                    <span class="cart-count-premium">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Product Details Section -->
-    <section class="container-modern" style="padding: 140px 0 100px;">
-        <div id="product-details-container">
-            <!-- Product details will be loaded by JavaScript -->
-            <div style="text-align: center; padding: 4rem;">
-                <div class="loading-spinner"></div>
-                <p style="margin-top: 1rem; color: var(--text-light);">Loading product details...</p>
+    <!-- Advanced Product Details Section -->
+    <section class="product-details-premium">
+        <div class="container-premium">
+            <div class="product-breadcrumb-premium">
+                <a href="home.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="index.html">Products</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="product-category-breadcrumb">Loading...</span>
+            </div>
+
+            <div id="product-details-container-premium">
+                <!-- Advanced loading animation -->
+                <div class="product-loading-premium">
+                    <div class="loading-skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-line large"></div>
+                            <div class="skeleton-line medium"></div>
+                            <div class="skeleton-line small"></div>
+                            <div class="skeleton-button"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Related Products -->
-    <section style="background: var(--primary-light); padding: 100px 0;">
-        <div class="container-modern">
-            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; color: var(--text-dark);">Related Products</h2>
-            <div class="products-grid-modern" id="related-products">
-                <!-- Related products will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-modern">
-        <div class="footer-content-modern">
-            <div class="footer-section-modern">
-                <h3>About Millennia</h3>
-                <p>Your trusted partner in computing solutions.</p>
+    <!-- Advanced Product Specifications -->
+    <section class="specs-section-premium">
+        <div class="container-premium">
+            <div class="specs-tabs-premium">
+                <button class="spec-tab active" data-tab="specifications">Specifications</button>
+                <button class="spec-tab" data-tab="features">Key Features</button>
+                <button class="spec-tab" data-tab="reviews">Customer Reviews</button>
+                <button class="spec-tab" data-tab="support">Support</button>
             </div>
             
-            <div class="footer-section-modern">
+            <div class="specs-content-premium">
+                <div id="specifications" class="spec-tab-content active">
+                    <!-- Specifications will be loaded here -->
+                </div>
+                <div id="features" class="spec-tab-content">
+                    <!-- Features will be loaded here -->
+                </div>
+                <div id="reviews" class="spec-tab-content">
+                    <!-- Reviews will be loaded here -->
+                </div>
+                <div id="support" class="spec-tab-content">
+                    <!-- Support content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Related Products -->
+    <section class="related-products-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">You Might Also Like</h2>
+                <p class="section-subtitle-premium">Discover similar premium products</p>
+            </div>
+            
+            <div class="products-carousel-premium" id="related-products-carousel">
+                <!-- Related products carousel -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed Products -->
+    <section class="recently-viewed-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Recently Viewed</h2>
+                <p class="section-subtitle-premium">Continue your shopping journey</p>
+            </div>
+            
+            <div class="products-grid-premium" id="recently-viewed-grid">
+                <!-- Recently viewed products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer-premium">
+        <div class="footer-content-premium">
+            <div class="footer-section-premium">
+                <h3>About Millennia</h3>
+                <p>Your trusted partner in premium computing solutions.</p>
+            </div>
+            
+            <div class="footer-section-premium">
                 <h3>Quick Links</h3>
-                <ul class="footer-links-modern">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="index.html">All Products</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <ul class="footer-links-premium">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> All Products</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Support</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
             
-            <div class="footer-section-modern">
+            <div class="footer-section-premium">
                 <h3>Support</h3>
-                <p>Need help with your purchase?</p>
-                <div class="newsletter-modern">
+                <p>Need help with your premium product?</p>
+                <div class="newsletter-premium">
                     <input type="email" placeholder="Your email">
                     <button>Contact Support</button>
                 </div>
             </div>
         </div>
         
-        <div class="copyright-modern">
+        <div class="copyright-premium">
             Copyright © 2024 Millennia Computers. All rights reserved.
         </div>
     </footer>
 
-    <!-- Image Zoom Modal -->
-    <div id="image-zoom-modal" class="zoom-modal">
-        <div class="zoom-modal-content">
-            <span class="zoom-close">&times;</span>
-            <img id="zoomed-image" src="" alt="Zoomed Product Image">
-            <div class="zoom-controls">
-                <button class="zoom-in"><i class="fas fa-search-plus"></i></button>
-                <button class="zoom-out"><i class="fas fa-search-minus"></i></button>
-                <button class="zoom-reset"><i class="fas fa-sync-alt"></i></button>
+    <!-- Advanced 3D Image Viewer Modal -->
+    <div id="3d-viewer-modal" class="viewer-modal-premium">
+        <div class="viewer-content-premium">
+            <span class="viewer-close">&times;</span>
+            <div class="viewer-container-premium">
+                <div class="viewer-controls-premium">
+                    <button class="viewer-control" id="rotate-left"><i class="fas fa-undo"></i></button>
+                    <button class="viewer-control" id="rotate-right"><i class="fas fa-redo"></i></button>
+                    <button class="viewer-control" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                    <button class="viewer-control" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                    <button class="viewer-control" id="reset-view"><i class="fas fa-sync"></i></button>
+                </div>
+                <div class="3d-viewer-premium" id="3d-viewer">
+                    <img id="viewer-image" src="" alt="3D Product View">
+                </div>
+                <div class="viewer-thumbnails-premium" id="viewer-thumbnails">
+                    <!-- Thumbnails will be loaded here -->
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Product Comparison Modal -->
+    <div id="comparison-modal" class="comparison-modal-premium">
+        <div class="comparison-content-premium">
+            <span class="comparison-close">&times;</span>
+            <h3>Compare Products</h3>
+            <div id="comparison-content"></div>
         </div>
     </div>
 
     <!-- Load scripts -->
     <script src="all-products.js"></script>
     <script>
-        // Get product ID from URL
-        function getProductIdFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return parseInt(urlParams.get('id'));
-        }
-
-        // Load product details
+        // Advanced Product Details Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const productId = getProductIdFromURL();
             if (!productId) {
@@ -125,7 +198,27 @@
                 return;
             }
 
-            // Combine all products
+            loadProductDetails(productId);
+            setupAdvancedInteractions();
+            initScrollAnimations();
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        function getProductIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseInt(urlParams.get('id'));
+        }
+
+        function loadProductDetails(productId) {
             const allProducts = [
                 ...laptops, 
                 ...smartphones,
@@ -141,535 +234,799 @@
             const product = allProducts.find(p => p.id === productId);
             
             if (!product) {
-                document.getElementById('product-details-container').innerHTML = `
-                    <div style="text-align: center; padding: 4rem;">
-                        <h2 style="color: var(--text-light); margin-bottom: 1rem;">Product not found</h2>
-                        <a href="index.html" class="btn-primary">Back to Products</a>
-                    </div>
-                `;
+                showProductNotFound();
                 return;
             }
 
             displayProductDetails(product);
             loadRelatedProducts(product, allProducts);
-        });
+            loadRecentlyViewed();
+            updateBreadcrumb(product);
+            
+            // Add to recently viewed
+            addToRecentlyViewed(productId);
+        }
 
         function displayProductDetails(product) {
-            const container = document.getElementById('product-details-container');
+            const container = document.getElementById('product-details-container-premium');
             
             container.innerHTML = `
-                <div class="product-details-layout">
-                    <!-- Product Images -->
-                    <div class="product-images-section">
-                        <div class="main-image-container">
-                            <img src="${product.image}" alt="${product.name}" class="main-product-image" 
-                                 onclick="openImageZoom('${product.image}')">
-                            <div class="image-zoom-hint">Click to zoom</div>
+                <div class="product-layout-premium">
+                    <!-- Advanced Image Gallery with 3D Viewer -->
+                    <div class="product-gallery-premium">
+                        <div class="main-image-container-premium">
+                            <img src="${product.image}" alt="${product.name}" class="main-product-image-premium" 
+                                 onclick="open3DViewer('${product.image}')">
+                            <div class="image-actions-premium">
+                                <button class="image-action-btn" onclick="open3DViewer('${product.image}')">
+                                    <i class="fas fa-cube"></i>
+                                    3D View
+                                </button>
+                                <button class="image-action-btn" onclick="zoomImage('${product.image}')">
+                                    <i class="fas fa-search-plus"></i>
+                                    Zoom
+                                </button>
+                                <button class="image-action-btn" onclick="shareProduct(${product.id})">
+                                    <i class="fas fa-share"></i>
+                                    Share
+                                </button>
+                            </div>
+                            <div class="product-badges-premium">
+                                <span class="product-badge premium">Premium</span>
+                                <span class="product-badge warranty">3-Year Warranty</span>
+                                ${product.isNew ? '<span class="product-badge new">New</span>' : ''}
+                            </div>
+                        </div>
+                        
+                        <div class="image-thumbnails-premium">
+                            <div class="thumbnail active" onclick="changeMainImage('${product.image}')">
+                                <img src="${product.image}" alt="Main">
+                            </div>
+                            <!-- Additional thumbnails would be added here -->
                         </div>
                     </div>
                     
-                    <!-- Product Info -->
-                    <div class="product-info-section">
-                        <div class="product-category-badge">${product.category}</div>
-                        <h1 class="product-detail-title">${product.name}</h1>
-                        <div class="product-detail-price">${product.price}</div>
-                        <div class="product-detail-rating">
-                            <span class="stars-modern">${product.rating}</span>
-                            <span class="reviews">${product.reviews}</span>
+                    <!-- Advanced Product Information -->
+                    <div class="product-info-advanced-premium">
+                        <div class="product-header-premium">
+                            <div class="product-category-badge-premium">${product.category}</div>
+                            <h1 class="product-title-advanced-premium">${product.name}</h1>
+                            <div class="product-rating-advanced-premium">
+                                <div class="stars-advanced">
+                                    ${'★'.repeat(5)}
+                                    <span class="rating-text">4.9/5 • ${product.reviews}</span>
+                                </div>
+                                <button class="write-review-btn" onclick="scrollToReviews()">
+                                    <i class="fas fa-pen"></i>
+                                    Write Review
+                                </button>
+                            </div>
                         </div>
                         
-                        <div class="product-actions-large">
-                            <button class="btn-primary-large" onclick="addToCartAndNotify(${product.id})">
+                        <div class="product-pricing-premium">
+                            <div class="current-price-premium">${product.price}</div>
+                            ${product.originalPrice ? `
+                                <div class="pricing-details">
+                                    <span class="original-price-premium">${product.originalPrice}</span>
+                                    <span class="discount-badge">Save ${calculateDiscount(product.originalPrice, product.price)}</span>
+                                </div>
+                            ` : ''}
+                            <div class="emi-options-premium">
+                                <span class="emi-text">EMI available from Rs. ${calculateEMI(product.price)}/month</span>
+                                <button class="emi-calculator-btn" onclick="openEMICalculator(${product.price})">
+                                    <i class="fas fa-calculator"></i>
+                                    Calculate EMI
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Key Features Highlight -->
+                        <div class="key-features-highlight-premium">
+                            <h3>Key Highlights</h3>
+                            <div class="features-grid-highlight">
+                                ${product.keyFeatures ? product.keyFeatures.slice(0, 4).map(feature => `
+                                    <div class="feature-highlight">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>${feature}</span>
+                                    </div>
+                                `).join('') : ''}
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Purchase Options -->
+                        <div class="purchase-options-premium">
+                            <div class="quantity-selector-premium">
+                                <label>Quantity:</label>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                                    <input type="number" id="product-quantity" value="1" min="1" max="10">
+                                    <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons-premium">
+                                <button class="btn-buy-now-premium" onclick="buyNow(${product.id})">
+                                    <i class="fas fa-bolt"></i>
+                                    Buy Now
+                                </button>
+                                <button class="btn-add-cart-advanced" onclick="addToCartAdvanced(${product.id})">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to Cart
+                                </button>
+                                <button class="btn-wishlist-advanced" onclick="toggleWishlistAdvanced(${product.id})">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-compare-advanced" onclick="addToComparison(${product.id})">
+                                    <i class="fas fa-balance-scale"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Information -->
+                        <div class="delivery-info-premium">
+                            <div class="delivery-option">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div class="delivery-details">
+                                    <strong>Free Express Delivery</strong>
+                                    <span>Delivery by tomorrow • Free</span>
+                                </div>
+                            </div>
+                            <div class="delivery-option">
+                                <i class="fas fa-store"></i>
+                                <div class="delivery-details">
+                                    <strong>Pickup from Store</strong>
+                                    <span>Available today • Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trust Badges -->
+                        <div class="trust-badges-premium">
+                            <div class="trust-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>3-Year Warranty</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-undo"></i>
+                                <span>30-Day Returns</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-headset"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Summary Card (Sticky) -->
+                    <div class="product-summary-card-premium">
+                        <div class="summary-content">
+                            <img src="${product.image}" alt="${product.name}" class="summary-image">
+                            <div class="summary-details">
+                                <h4>${product.name}</h4>
+                                <div class="summary-price">${product.price}</div>
+                                <div class="summary-rating">
+                                    ${'★'.repeat(5)} <span>${product.reviews}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-actions">
+                            <button class="btn-buy-now-summary" onclick="buyNow(${product.id})">
+                                <i class="fas fa-bolt"></i>
+                                Buy Now
+                            </button>
+                            <button class="btn-add-cart-summary" onclick="addToCartAdvanced(${product.id})">
                                 <i class="fas fa-shopping-cart"></i>
                                 Add to Cart
                             </button>
-                            <button class="btn-secondary-large" onclick="window.location.href='index.html'">
-                                <i class="fas fa-arrow-left"></i>
-                                Continue Shopping
-                            </button>
-                        </div>
-                        
-                        <!-- Key Features -->
-                        <div class="features-section">
-                            <h3>Key Features</h3>
-                            <ul class="features-list">
-                                ${product.keyFeatures ? product.keyFeatures.map(feature => 
-                                    `<li><i class="fas fa-check"></i> ${feature}</li>`
-                                ).join('') : '<li>No features listed</li>'}
-                            </ul>
                         </div>
                     </div>
+                </div>
+            `;
+
+            // Load specifications and features
+            loadSpecifications(product);
+            loadFeatures(product);
+            loadReviews(product);
+            loadSupportContent(product);
+        }
+
+        function setupAdvancedInteractions() {
+            setup3DViewer();
+            setupSpecTabs();
+            setupQuantityControls();
+            setupStickySummary();
+        }
+
+        function setup3DViewer() {
+            const modal = document.getElementById('3d-viewer-modal');
+            const closeBtn = document.querySelector('.viewer-close');
+            
+            closeBtn.addEventListener('click', close3DViewer);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) close3DViewer();
+            });
+            
+            // Viewer controls
+            document.getElementById('rotate-left').addEventListener('click', () => rotateImage(-15));
+            document.getElementById('rotate-right').addEventListener('click', () => rotateImage(15));
+            document.getElementById('zoom-in').addEventListener('click', () => zoomImageIn());
+            document.getElementById('zoom-out').addEventListener('click', () => zoomImageOut());
+            document.getElementById('reset-view').addEventListener('click', resetImageView);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') close3DViewer();
+            });
+        }
+
+        function open3DViewer(imageSrc) {
+            const modal = document.getElementById('3d-viewer-modal');
+            const viewerImage = document.getElementById('viewer-image');
+            
+            viewerImage.src = imageSrc;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            resetImageView();
+        }
+
+        function close3DViewer() {
+            const modal = document.getElementById('3d-viewer-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function rotateImage(degrees) {
+            const image = document.getElementById('viewer-image');
+            const currentRotation = parseInt(image.style.transform.replace('rotate(', '').replace('deg)', '')) || 0;
+            image.style.transform = `rotate(${currentRotation + degrees}deg)`;
+        }
+
+        function zoomImageIn() {
+            const image = document.getElementById('viewer-image');
+            const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+            image.style.transform = `scale(${Math.min(currentScale + 0.2, 3)})`;
+        }
+
+        function zoomImageOut() {
+            const image = document.getElementById('viewer-image');
+            const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+            image.style.transform = `scale(${Math.max(currentScale - 0.2, 0.5)})`;
+        }
+
+        function resetImageView() {
+            const image = document.getElementById('viewer-image');
+            image.style.transform = 'scale(1) rotate(0deg)';
+        }
+
+        function setupSpecTabs() {
+            document.querySelectorAll('.spec-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
                     
-                    <!-- Specifications -->
-                    <div class="specifications-section">
-                        <h3>Specifications</h3>
-                        <div class="specs-grid">
-                            ${product.specs ? product.specs.map(spec => 
-                                `<div class="spec-item">
-                                    <span class="spec-value">${spec}</span>
-                                </div>`
-                            ).join('') : '<div class="spec-item">No specifications available</div>'}
+                    // Update active tab
+                    document.querySelectorAll('.spec-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    document.querySelectorAll('.spec-tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        function loadSpecifications(product) {
+            const container = document.getElementById('specifications');
+            container.innerHTML = `
+                <div class="specs-grid-advanced">
+                    ${product.specs ? product.specs.map(spec => `
+                        <div class="spec-item-advanced">
+                            <span class="spec-label">${spec.split(':')[0]}</span>
+                            <span class="spec-value">${spec.split(':')[1] || spec}</span>
+                        </div>
+                    `).join('') : '<p>No specifications available.</p>'}
+                </div>
+            `;
+        }
+
+        function loadFeatures(product) {
+            const container = document.getElementById('features');
+            container.innerHTML = `
+                <div class="features-grid-advanced">
+                    ${product.keyFeatures ? product.keyFeatures.map(feature => `
+                        <div class="feature-item-advanced">
+                            <i class="fas fa-star"></i>
+                            <span>${feature}</span>
+                        </div>
+                    `).join('') : '<p>No features listed.</p>'}
+                </div>
+            `;
+        }
+
+        function loadReviews(product) {
+            const container = document.getElementById('reviews');
+            container.innerHTML = `
+                <div class="reviews-summary">
+                    <div class="overall-rating">
+                        <div class="rating-score">4.9</div>
+                        <div class="rating-stars">${'★'.repeat(5)}</div>
+                        <div class="rating-count">Based on ${product.reviews} reviews</div>
+                    </div>
+                    <div class="reviews-stats">
+                        <!-- Review statistics would go here -->
+                    </div>
+                </div>
+                <div class="reviews-list">
+                    <!-- Sample reviews would be loaded here -->
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer">John D.</div>
+                            <div class="review-rating">${'★'.repeat(5)}</div>
+                        </div>
+                        <div class="review-content">
+                            Excellent product! Exceeded my expectations in every way.
+                        </div>
+                        <div class="review-date">2 days ago</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadSupportContent(product) {
+            const container = document.getElementById('support');
+            container.innerHTML = `
+                <div class="support-options">
+                    <div class="support-option">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="support-details">
+                            <h4>Product Manual</h4>
+                            <p>Download the complete user manual</p>
+                            <button class="btn-download">Download PDF</button>
+                        </div>
+                    </div>
+                    <div class="support-option">
+                        <i class="fas fa-video"></i>
+                        <div class="support-details">
+                            <h4>Setup Tutorial</h4>
+                            <p>Watch our step-by-step setup guide</p>
+                            <button class="btn-watch">Watch Video</button>
+                        </div>
+                    </div>
+                    <div class="support-option">
+                        <i class="fas fa-headset"></i>
+                        <div class="support-details">
+                            <h4>24/7 Support</h4>
+                            <p>Get help from our expert team</p>
+                            <button class="btn-contact">Contact Support</button>
                         </div>
                     </div>
                 </div>
             `;
         }
 
-        function loadRelatedProducts(currentProduct, allProducts) {
-            const relatedContainer = document.getElementById('related-products');
-            const relatedProducts = allProducts
-                .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
-                .slice(0, 4);
+        // Advanced cart functionality
+        function addToCartAdvanced(productId) {
+            const quantity = parseInt(document.getElementById('product-quantity').value) || 1;
             
-            if (relatedProducts.length === 0) {
-                relatedContainer.innerHTML = '<p style="text-align: center; color: var(--text-light);">No related products found.</p>';
-                return;
+            for (let i = 0; i < quantity; i++) {
+                addToCart(productId);
             }
             
-            relatedContainer.innerHTML = '';
-            relatedProducts.forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card-modern';
-                card.innerHTML = `
-                    <div class="product-image-container-modern">
-                        <img src="${product.image}" alt="${product.name}" class="product-image-modern">
-                    </div>
-                    <div class="product-info-modern">
-                        <div class="product-category-modern">${product.category}</div>
-                        <h3 class="product-title-modern">${product.name}</h3>
-                        <div class="product-price-modern">${product.price}</div>
-                        <div class="product-actions-modern">
-                            <button class="btn-view-details" onclick="viewProductDetails(${product.id})">View Details</button>
-                            <button class="btn-add-cart" onclick="addToCart(${product.id})">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                relatedContainer.appendChild(card);
-            });
+            showPremiumNotification(`${quantity} item(s) added to cart!`);
         }
 
-        // Image Zoom Functionality
-        function openImageZoom(imageSrc) {
-            const modal = document.getElementById('image-zoom-modal');
-            const zoomedImage = document.getElementById('zoomed-image');
-            
-            zoomedImage.src = imageSrc;
-            modal.style.display = 'block';
-            
-            // Reset zoom
-            zoomedImage.style.transform = 'scale(1)';
-            zoomedImage.style.transformOrigin = 'center center';
-        }
-
-        function closeImageZoom() {
-            document.getElementById('image-zoom-modal').style.display = 'none';
-        }
-
-        function zoomImage(action) {
-            const image = document.getElementById('zoomed-image');
-            let currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
-            
-            switch(action) {
-                case 'in':
-                    currentScale = Math.min(currentScale + 0.5, 5);
-                    break;
-                case 'out':
-                    currentScale = Math.max(currentScale - 0.5, 0.5);
-                    break;
-                case 'reset':
-                    currentScale = 1;
-                    break;
-            }
-            
-            image.style.transform = `scale(${currentScale})`;
-        }
-
-        // Cart functionality
         function addToCart(productId) {
-            const cartCount = document.querySelector('.cart-count');
+            const cartCount = document.querySelector('.cart-count-premium');
             let count = parseInt(cartCount.textContent) || 0;
             count++;
             cartCount.textContent = count;
-            return true;
+            
+            animateCartIcon();
         }
 
-        function addToCartAndNotify(productId) {
-            if (addToCart(productId)) {
-                showNotification('Product added to cart!');
-            }
+        function animateCartIcon() {
+            const cart = document.querySelector('.cart-premium');
+            cart.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cart.style.transform = 'scale(1)';
+            }, 300);
         }
 
-        function viewProductDetails(productId) {
-            window.location.href = `product-details.html?id=${productId}`;
-        }
-
-        function showNotification(message) {
+        function showPremiumNotification(message) {
             const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: var(--primary-blue);
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                box-shadow: var(--shadow-hover);
-                z-index: 1000;
-                animation: slideInRight 0.3s ease;
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
             `;
-            notification.textContent = message;
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.remove();
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
             }, 3000);
         }
 
-        // Event listeners for zoom modal
-        document.addEventListener('DOMContentLoaded', function() {
-            // Close modal when clicking X
-            document.querySelector('.zoom-close').addEventListener('click', closeImageZoom);
-            
-            // Close modal when clicking outside
-            document.getElementById('image-zoom-modal').addEventListener('click', function(e) {
-                if (e.target === this) closeImageZoom();
-            });
-            
-            // Zoom controls
-            document.querySelector('.zoom-in').addEventListener('click', () => zoomImage('in'));
-            document.querySelector('.zoom-out').addEventListener('click', () => zoomImage('out'));
-            document.querySelector('.zoom-reset').addEventListener('click', () => zoomImage('reset'));
-            
-            // Keyboard controls
-            document.addEventListener('keydown', function(e) {
-                const modal = document.getElementById('image-zoom-modal');
-                if (modal.style.display === 'block') {
-                    if (e.key === 'Escape') closeImageZoom();
-                    if (e.key === '+') zoomImage('in');
-                    if (e.key === '-') zoomImage('out');
-                    if (e.key === '0') zoomImage('reset');
+        // Utility functions
+        function calculateDiscount(original, current) {
+            const orig = parseInt(original.replace(/[^\d]/g, ''));
+            const curr = parseInt(current.replace(/[^\d]/g, ''));
+            const discount = ((orig - curr) / orig * 100).toFixed(0);
+            return discount + '%';
+        }
+
+        function calculateEMI(price) {
+            const amount = parseInt(price.replace(/[^\d]/g, ''));
+            return Math.round(amount / 12).toLocaleString();
+        }
+
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('product-quantity');
+            const current = parseInt(quantityInput.value) || 1;
+            if (current < 10) quantityInput.value = current + 1;
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('product-quantity');
+            const current = parseInt(quantityInput.value) || 1;
+            if (current > 1) quantityInput.value = current - 1;
+        }
+
+        function setupStickySummary() {
+            window.addEventListener('scroll', function() {
+                const summary = document.querySelector('.product-summary-card-premium');
+                const productLayout = document.querySelector('.product-layout-premium');
+                
+                if (summary && productLayout) {
+                    const layoutRect = productLayout.getBoundingClientRect();
+                    if (layoutRect.bottom < window.innerHeight) {
+                        summary.classList.add('sticky-bottom');
+                    } else {
+                        summary.classList.remove('sticky-bottom');
+                    }
                 }
             });
-        });
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Placeholder functions for additional features
+        function buyNow(productId) { showPremiumNotification('Proceeding to checkout...'); }
+        function toggleWishlistAdvanced(productId) { showPremiumNotification('Added to wishlist!'); }
+        function addToComparison(productId) { showPremiumNotification('Added to comparison!'); }
+        function openEMICalculator(price) { showPremiumNotification('EMI Calculator opened!'); }
+        function shareProduct(productId) { showPremiumNotification('Product shared!'); }
+        function scrollToReviews() { document.getElementById('reviews').scrollIntoView({ behavior: 'smooth' }); }
+        function changeMainImage(src) { document.querySelector('.main-product-image-premium').src = src; }
+        function loadRelatedProducts(product, allProducts) { /* Implementation */ }
+        function loadRecentlyViewed() { /* Implementation */ }
+        function addToRecentlyViewed(productId) { /* Implementation */ }
+        function updateBreadcrumb(product) { /* Implementation */ }
+        function showProductNotFound() { /* Implementation */ }
     </script>
 
     <style>
-        .product-details-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 3rem;
-            grid-template-areas: 
-                "images info"
-                "specs specs";
-        }
-        
-        .product-images-section {
-            grid-area: images;
-        }
-        
-        .product-info-section {
-            grid-area: info;
-        }
-        
-        .specifications-section {
-            grid-area: specs;
-        }
-        
-        .main-image-container {
-            position: relative;
+        /* Advanced Product Details Styles */
+        .product-details-premium {
+            padding: 140px 0 50px;
             background: var(--primary-light);
-            border-radius: 20px;
+        }
+
+        .product-breadcrumb-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .product-breadcrumb-premium a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .product-breadcrumb-premium a:hover {
+            color: var(--primary-blue);
+        }
+
+        .product-breadcrumb-premium i {
+            font-size: 0.7rem;
+        }
+
+        .product-layout-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr 350px;
+            gap: 3rem;
+            position: relative;
+        }
+
+        .product-gallery-premium {
+            position: relative;
+        }
+
+        .main-image-container-premium {
+            background: white;
+            border-radius: 24px;
             padding: 3rem;
             text-align: center;
-            cursor: zoom-in;
+            cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .main-image-container:hover {
+
+        .main-image-container-premium:hover {
             border-color: var(--primary-blue);
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow-premium);
         }
-        
-        .main-product-image {
+
+        .main-product-image-premium {
             max-width: 100%;
             max-height: 400px;
             object-fit: contain;
             transition: transform 0.3s ease;
         }
-        
-        .image-zoom-hint {
+
+        .image-actions-premium {
             position: absolute;
-            bottom: 1rem;
+            bottom: 1.5rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            display: flex;
+            gap: 0.5rem;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
-        .main-image-container:hover .image-zoom-hint {
+
+        .main-image-container-premium:hover .image-actions-premium {
             opacity: 1;
         }
-        
-        .product-category-badge {
+
+        .image-action-btn {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .image-action-btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .product-badges-premium {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-badge.premium {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .product-badge.warranty {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .product-badge.new {
+            background: #00c853;
+            color: white;
+        }
+
+        .image-thumbnails-premium {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            border: 2px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-blue);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-advanced-premium {
+            padding: 1rem 0;
+        }
+
+        .product-header-premium {
+            margin-bottom: 2rem;
+        }
+
+        .product-category-badge-premium {
             display: inline-block;
             background: var(--primary-blue);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 1rem;
         }
-        
-        .product-detail-title {
+
+        .product-title-advanced-premium {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
             color: var(--text-dark);
             line-height: 1.2;
         }
-        
-        .product-detail-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-        
-        .product-detail-rating {
+
+        .product-rating-advanced-premium {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+            gap: 1.5rem;
         }
-        
-        .product-actions-large {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-        
-        .btn-primary-large {
-            flex: 2;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 1.2rem 2rem;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+
+        .stars-advanced {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
+            color: #ffb400;
         }
-        
-        .btn-primary-large:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
+
+        .rating-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
-        
-        .btn-secondary-large {
-            flex: 1;
+
+        .write-review-btn {
             background: transparent;
-            color: var(--text-dark);
-            border: 2px solid var(--border-light);
-            padding: 1.2rem 2rem;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-secondary-large:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-2px);
-        }
-        
-        .features-section {
-            margin-bottom: 3rem;
-        }
-        
-        .features-section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .features-list {
-            list-style: none;
-        }
-        
-        .features-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .features-list i {
-            color: var(--primary-blue);
-        }
-        
-        .specifications-section h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .spec-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
             border: 1px solid var(--border-light);
-        }
-        
-        .spec-value {
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-        
-        /* Zoom Modal Styles */
-        .zoom-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-        }
-        
-        .zoom-modal-content {
-            position: relative;
-            margin: 2% auto;
-            width: 90%;
-            height: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .zoom-close {
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            z-index: 2001;
-        }
-        
-        #zoomed-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        
-        .zoom-controls {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-        
-        .zoom-controls button {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: 0.75rem;
+            padding: 0.5rem 1rem;
             border-radius: 8px;
             cursor: pointer;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .write-review-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .product-pricing-premium {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .current-price-premium {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .original-price-premium {
             font-size: 1.2rem;
-            transition: background 0.3s ease;
+            color: var(--text-light);
+            text-decoration: line-through;
         }
-        
-        .zoom-controls button:hover {
-            background: rgba(255, 255, 255, 0.3);
+
+        .discount-badge {
+            background: #00c853;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
-        
-        .loading-spinner {
-            border: 4px solid var(--border-light);
-            border-top: 4px solid var(--primary-blue);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
+
+        .emi-options-premium {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        .emi-text {
+            color: var(--text-dark);
+            font-weight: 600;
         }
-        
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+
+        .emi-calculator-btn {
+            background: transparent;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
         }
-        
-        @media (max-width: 768px) {
-            .product-details-layout {
-                grid-template-columns: 1fr;
-                grid-template-areas: 
-                    "images"
-                    "info"
-                    "specs";
-            }
-            
-            .product-detail-title {
-                font-size: 2rem;
-            }
-            
-            .product-actions-large {
-                flex-direction: column;
-            }
+
+        .emi-calculator-btn:hover {
+            background: var(--primary-blue);
+            color: white;
         }
-    </style>
-</body>
-</html>
+
+        .key-features-highlight-premium {
+            margin-bottom: 2rem;
+        }
+
+        .key-features-highlight-premium h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+       

@@ -2729,4 +2729,4 @@ const peripherals = [
         ]
     }
 ];
-console.log("All products loaded: Laptops:", laptops.length, "Smartphones:", smartphones.length);
+console.log("All products loaded - Total:", laptops.length + smartphones.length + pcComponents.length + gpus.length + ram.length + psuCasesCooling.length + storageDevices.length + motherboards.length + peripherals.length);

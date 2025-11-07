@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Modern Header -->
-    <header class="header-modern">
-        <div class="header-container">
-            <a href="home.html" class="logo-modern">
-                <span class="logo-icon">💻</span>
+    <!-- Premium Glassmorphism Header -->
+    <header class="header-premium">
+        <div class="header-container-premium">
+            <a href="home.html" class="logo-premium">
+                <span class="logo-icon-premium">💻</span>
                 Millennia Computers
             </a>
             
             <nav>
-                <ul class="nav-modern">
+                <ul class="nav-premium">
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="index.html">Products</a></li>
@@ -27,409 +27,2314 @@
                 </ul>
             </nav>
             
-            <div class="header-actions-modern">
-                <div class="search-modern">
-                    <i class="fas fa-search search-icon"></i>
+            <div class="header-actions-premium">
+                <div class="search-premium">
+                    <i class="fas fa-search search-icon-premium"></i>
                     <input type="text" placeholder="Search products..." id="search-input">
                 </div>
-                <button class="cart-modern">
+                <button class="cart-premium">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                    <span class="cart-count-premium">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Contact Hero -->
-    <section style="background: var(--gradient-blue); color: white; padding: 140px 0 80px; margin-top: 80px;">
-        <div class="container-modern">
-            <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Contact Us</h1>
-            <p style="font-size: 1.3rem; text-align: center; opacity: 0.9; max-width: 600px; margin: 0 auto;">Get in touch with our team for any inquiries</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="container-modern" style="padding: 100px 0;">
-        <div class="contact-layout">
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                <p>We're here to help you with any questions about our products, services, or technical support.</p>
+    <!-- Premium Contact Hero -->
+    <section class="contact-hero-premium">
+        <div class="container-premium">
+            <div class="hero-content-premium">
+                <h1 class="hero-title-premium">Get In Touch</h1>
+                <p class="hero-subtitle-premium">We're here to help you with any questions about our premium products and services</p>
                 
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Visit Us</h3>
-                            <p>123 Tech Street<br>Colombo 00500<br>Sri Lanka</p>
-                        </div>
+                <!-- Contact Quick Actions -->
+                <div class="contact-quick-actions">
+                    <div class="contact-action-card" onclick="scrollToForm()">
+                        <div class="action-icon">📧</div>
+                        <h3>Send Message</h3>
+                        <p>Get a response within 2 hours</p>
+                        <span class="action-badge">Fast Response</span>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Call Us</h3>
-                            <p>+94 11 234 5678<br>+94 77 123 4567</p>
-                        </div>
+                    <div class="contact-action-card" onclick="startLiveChat()">
+                        <div class="action-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Instant help from our team</p>
+                        <span class="action-badge">Online Now</span>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email Us</h3>
-                            <p>info@millennia.com<br>support@millennia.com</p>
-                        </div>
+                    <div class="contact-action-card" onclick="callSupport()">
+                        <div class="action-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>Speak directly with experts</p>
+                        <span class="action-badge">24/7 Available</span>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Business Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
-                        </div>
+                    <div class="contact-action-card" onclick="visitStore()">
+                        <div class="action-icon">🏪</div>
+                        <h3>Visit Store</h3>
+                        <p>Experience products firsthand</p>
+                        <span class="action-badge">5 Locations</span>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-                <form class="contact-form" id="contactForm">
-                    <h3>Send us a Message</h3>
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="sales">Sales Question</option>
-                            <option value="support">Technical Support</option>
-                            <option value="warranty">Warranty Claim</option>
-                            <option value="returns">Returns & Refunds</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary-large">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section style="background: var(--primary-light); padding: 80px 0;">
-        <div class="container-modern">
-            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; color: var(--text-dark);">Find Our Store</h2>
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map" style="font-size: 4rem; color: var(--primary-blue);"></i>
-                    <h3>Interactive Map</h3>
-                    <p>123 Tech Street, Colombo 00500, Sri Lanka</p>
-                    <button class="btn-secondary" onclick="showDirections()">
-                        <i class="fas fa-directions"></i>
-                        Get Directions
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-modern">
-        <div class="footer-content-modern">
-            <div class="footer-section-modern">
-                <h3>About Millennia</h3>
-                <p>Your trusted partner in computing solutions.</p>
-            </div>
-            
-            <div class="footer-section-modern">
-                <h3>Quick Links</h3>
-                <ul class="footer-links-modern">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="index.html">All Products</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section-modern">
-                <h3>Newsletter</h3>
-                <p>Subscribe for updates and offers.</p>
-                <div class="newsletter-modern">
-                    <input type="email" placeholder="Your email">
-                    <button>Subscribe</button>
                 </div>
             </div>
         </div>
         
-        <div class="copyright-modern">
+        <!-- Animated Background -->
+        <div class="contact-hero-background">
+            <div class="floating-contact-icon">📍</div>
+            <div class="floating-contact-icon">📱</div>
+            <div class="floating-contact-icon">✉️</div>
+        </div>
+    </section>
+
+    <!-- Advanced Contact Form Section -->
+    <section class="contact-form-section-premium">
+        <div class="container-premium">
+            <div class="contact-grid-premium">
+                <!-- Contact Information -->
+                <div class="contact-info-premium fade-in-left">
+                    <h2>Contact Information</h2>
+                    <p class="contact-description">Choose your preferred method to reach our premium support team. We're always here to help.</p>
+                    
+                    <div class="contact-methods-premium">
+                        <div class="contact-method-detailed">
+                            <div class="method-icon">📞</div>
+                            <div class="method-details">
+                                <h4>Phone Support</h4>
+                                <p>Speak directly with our technology experts</p>
+                                <div class="phone-numbers">
+                                    <div class="phone-item">
+                                        <span class="phone-label">Main Office</span>
+                                        <span class="phone-number">+94 11 234 5678</span>
+                                    </div>
+                                    <div class="phone-item">
+                                        <span class="phone-label">Sales</span>
+                                        <span class="phone-number">+94 11 234 5679</span>
+                                    </div>
+                                    <div class="phone-item">
+                                        <span class="phone-label">Support</span>
+                                        <span class="phone-number">+94 11 234 5680</span>
+                                    </div>
+                                </div>
+                                <button class="btn-call-now" onclick="callSupport()">
+                                    <i class="fas fa-phone"></i>
+                                    Call Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-detailed">
+                            <div class="method-icon">📧</div>
+                            <div class="method-details">
+                                <h4>Email Support</h4>
+                                <p>Send detailed inquiries to our specialized teams</p>
+                                <div class="email-addresses">
+                                    <div class="email-item">
+                                        <span class="email-label">General</span>
+                                        <span class="email-address">info@millennia.com</span>
+                                    </div>
+                                    <div class="email-item">
+                                        <span class="email-label">Sales</span>
+                                        <span class="email-address">sales@millennia.com</span>
+                                    </div>
+                                    <div class="email-item">
+                                        <span class="email-label">Support</span>
+                                        <span class="email-address">support@millennia.com</span>
+                                    </div>
+                                </div>
+                                <button class="btn-email-now" onclick="emailSupport()">
+                                    <i class="fas fa-envelope"></i>
+                                    Send Email
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-detailed">
+                            <div class="method-icon">🏪</div>
+                            <div class="method-details">
+                                <h4>Visit Our Stores</h4>
+                                <p>Experience our products firsthand at our premium locations</p>
+                                <div class="store-hours">
+                                    <div class="hour-item">
+                                        <span class="day">Monday - Friday</span>
+                                        <span class="time">9:00 AM - 8:00 PM</span>
+                                    </div>
+                                    <div class="hour-item">
+                                        <span class="day">Saturday</span>
+                                        <span class="time">10:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="hour-item">
+                                        <span class="day">Sunday</span>
+                                        <span class="time">11:00 AM - 4:00 PM</span>
+                                    </div>
+                                </div>
+                                <button class="btn-directions" onclick="showDirections()">
+                                    <i class="fas fa-directions"></i>
+                                    Get Directions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="social-section-premium">
+                        <h4>Follow Us</h4>
+                        <p>Stay updated with latest products and offers</p>
+                        <div class="social-links-extended">
+                            <a href="#" class="social-link-extended">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link-extended">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link-extended">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link-extended">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link-extended">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advanced Contact Form -->
+                <div class="contact-form-premium fade-in-right">
+                    <div class="form-header-premium">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 2 hours</p>
+                        <div class="form-progress">
+                            <div class="progress-step active">1</div>
+                            <div class="progress-step">2</div>
+                            <div class="progress-step">3</div>
+                        </div>
+                    </div>
+                    
+                    <form class="advanced-contact-form" id="contactForm">
+                        <!-- Step 1: Personal Information -->
+                        <div class="form-step active" id="step1">
+                            <h3>Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group-premium">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <div class="form-helper">Your first name as per identification</div>
+                                </div>
+                                <div class="form-group-premium">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <div class="form-helper">Your last name or surname</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group-premium">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="form-helper">We'll send confirmation to this address</div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group-premium">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                    <div class="form-helper">Include country code if international</div>
+                                </div>
+                                <div class="form-group-premium">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" name="company">
+                                    <div class="form-helper">Optional for business inquiries</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Next Step
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Inquiry Details -->
+                        <div class="form-step" id="step2">
+                            <h3>Inquiry Details</h3>
+                            <div class="form-group-premium">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a category</option>
+                                    <option value="sales">Sales Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="warranty">Warranty Claim</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="feedback">Product Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group-premium">
+                                <label for="product">Related Product</label>
+                                <select id="product" name="product">
+                                    <option value="">Select a product (optional)</option>
+                                    <option value="laptops">Gaming Laptops</option>
+                                    <option value="smartphones">Smartphones</option>
+                                    <option value="components">PC Components</option>
+                                    <option value="all">All Products</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group-premium">
+                                <label for="priority">Priority Level</label>
+                                <div class="priority-options">
+                                    <label class="priority-option">
+                                        <input type="radio" name="priority" value="low" checked>
+                                        <span class="priority-badge low">Low</span>
+                                        <span class="priority-desc">General inquiry</span>
+                                    </label>
+                                    <label class="priority-option">
+                                        <input type="radio" name="priority" value="medium">
+                                        <span class="priority-badge medium">Medium</span>
+                                        <span class="priority-desc">Need help soon</span>
+                                    </label>
+                                    <label class="priority-option">
+                                        <input type="radio" name="priority" value="high">
+                                        <span class="priority-badge high">High</span>
+                                        <span class="priority-desc">Urgent assistance</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Previous
+                                </button>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Next Step
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Message & Submit -->
+                        <div class="form-step" id="step3">
+                            <h3>Your Message</h3>
+                            <div class="form-group-premium">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Please provide detailed information about your inquiry..." required></textarea>
+                                <div class="form-helper">Be specific to help us assist you better</div>
+                            </div>
+                            
+                            <div class="form-group-premium">
+                                <label for="attachment">Attach Files</label>
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag & drop files here or click to browse</p>
+                                    <span class="file-types">Supported: JPG, PNG, PDF, DOC (Max: 10MB)</span>
+                                    <input type="file" id="attachment" name="attachment" multiple hidden>
+                                </div>
+                                <div class="file-preview" id="filePreview"></div>
+                            </div>
+                            
+                            <div class="form-group-premium">
+                                <label class="checkbox-premium">
+                                    <input type="checkbox" name="newsletter" checked>
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and offers
+                                </label>
+                                <label class="checkbox-premium">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#">terms and conditions</a> and <a href="#">privacy policy</a>
+                                </label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Previous
+                                </button>
+                                <button type="submit" class="btn-submit-premium">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Form Success Message -->
+                    <div class="form-success-premium" id="formSuccess">
+                        <div class="success-icon">🎉</div>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for contacting us. We'll get back to you within 2 hours.</p>
+                        <div class="success-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Response Time: <strong>Within 2 hours</strong></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Confirmation sent to your email</span>
+                            </div>
+                        </div>
+                        <button class="btn-new-message" onclick="resetForm()">
+                            <i class="fas fa-plus"></i>
+                            Send Another Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Find Our Stores</h2>
+                <p class="section-subtitle-premium">Visit our premium retail locations across Sri Lanka</p>
+            </div>
+            
+            <div class="map-container-premium">
+                <div class="map-controls-premium">
+                    <div class="map-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search locations..." id="mapSearch">
+                    </div>
+                    <div class="map-filters">
+                        <button class="filter-btn active" data-filter="all">All Stores</button>
+                        <button class="filter-btn" data-filter="flagship">Flagship</button>
+                        <button class="filter-btn" data-filter="standard">Standard</button>
+                        <button class="filter-btn" data-filter="service">Service Centers</button>
+                    </div>
+                </div>
+                
+                <div class="map-content-premium">
+                    <!-- Interactive Map Placeholder -->
+                    <div class="interactive-map" id="interactiveMap">
+                        <div class="map-visual">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>Interactive Store Locator</h3>
+                                <p>Browse our locations across Sri Lanka</p>
+                                <div class="map-stats">
+                                    <div class="map-stat">
+                                        <span class="stat-number">5</span>
+                                        <span class="stat-label">Stores</span>
+                                    </div>
+                                    <div class="map-stat">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label>Cities</span>
+                                    </div>
+                                    <div class="map-stat">
+                                        <span class="stat-number">50+</span>
+                                        <span class="stat-label">Experts</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="store-listings">
+                            <div class="store-listing active" data-store="flagship">
+                                <div class="store-header">
+                                    <h4>Colombo Flagship Store</h4>
+                                    <span class="store-badge flagship">Flagship</span>
+                                </div>
+                                <div class="store-details">
+                                    <div class="store-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>123 Tech Street, Colombo 00500</span>
+                                    </div>
+                                    <div class="store-hours">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Open until 8:00 PM</span>
+                                    </div>
+                                    <div class="store-phone">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+94 11 234 5678</span>
+                                    </div>
+                                </div>
+                                <div class="store-actions">
+                                    <button class="btn-store-action" onclick="viewStoreDetails('colombo')">
+                                        <i class="fas fa-info-circle"></i>
+                                        Details
+                                    </button>
+                                    <button class="btn-store-action" onclick="getDirections('colombo')">
+                                        <i class="fas fa-directions"></i>
+                                        Directions
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="store-listing" data-store="standard">
+                                <div class="store-header">
+                                    <h4>Kandy City Store</h4>
+                                    <span class="store-badge standard">Standard</span>
+                                </div>
+                                <div class="store-details">
+                                    <div class="store-address">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>456 Central Road, Kandy 20000</span>
+                                    </div>
+                                    <div class="store-hours">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Open until 6:00 PM</span>
+                                    </div>
+                                    <div class="store-phone">
+                                        <i class="fas fa-phone"></i>
+                                        <span>+94 81 234 5678</span>
+                                    </div>
+                                </div>
+                                <div class="store-actions">
+                                    <button class="btn-store-action" onclick="viewStoreDetails('kandy')">
+                                        <i class="fas fa-info-circle"></i>
+                                        Details
+                                    </button>
+                                    <button class="btn-store-action" onclick="getDirections('kandy')">
+                                        <i class="fas fa-directions"></i>
+                                        Directions
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq-premium">
+        <div class="container-premium">
+            <div class="faq-header-premium">
+                <h2>Common Questions</h2>
+                <p>Quick answers to frequent contact inquiries</p>
+            </div>
+            
+            <div class="contact-faq-grid">
+                <div class="faq-category">
+                    <h3>🛒 Sales & Orders</h3>
+                    <div class="faq-items">
+                        <div class="faq-item-contact">
+                            <div class="faq-question">How can I track my order?</div>
+                            <div class="faq-answer">You can track your order using the tracking number sent to your email, or through your account dashboard on our website.</div>
+                        </div>
+                        <div class="faq-item-contact">
+                            <div class="faq-question">What payment methods do you accept?</div>
+                            <div class="faq-answer">We accept credit/debit cards, bank transfers, and cash on delivery. EMI options are also available for qualifying orders.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3>🔧 Technical Support</h3>
+                    <div class="faq-items">
+                        <div class="faq-item-contact">
+                            <div class="faq-question">Do you offer product setup assistance?</div>
+                            <div class="faq-answer">Yes, we provide free remote setup assistance for all premium products. Contact our support team to schedule a session.</div>
+                        </div>
+                        <div class="faq-item-contact">
+                            <div class="faq-question">How do I claim warranty service?</div>
+                            <div class="faq-answer">You can initiate warranty claims through our support portal or by visiting any of our service centers with your purchase receipt.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3>🏪 Store Information</h3>
+                    <div class="faq-items">
+                        <div class="faq-item-contact">
+                            <div class="faq-question">Do you have parking facilities?</div>
+                            <div class="faq-answer">Yes, all our flagship stores offer complimentary parking. Standard stores have nearby parking facilities.</div>
+                        </div>
+                        <div class="faq-item-contact">
+                            <div class="faq-question">Can I return products purchased online at your stores?</div>
+                            <div class="faq-answer">Absolutely! You can return online purchases at any of our physical stores within the 30-day return period.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer-premium">
+        <div class="footer-content-premium">
+            <div class="footer-section-premium">
+                <h3>Contact Millennia</h3>
+                <p>Your trusted partner in premium computing solutions with exceptional customer service.</p>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Quick Contact</h3>
+                <ul class="footer-links-premium">
+                    <li><a href="tel:+94112345678"><i class="fas fa-phone"></i> +94 11 234 5678</a></li>
+                    <li><a href="mailto:info@millennia.com"><i class="fas fa-envelope"></i> info@millennia.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Store Locations</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Live Chat</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Business Hours</h3>
+                <div class="business-hours">
+                    <div class="hour-item">
+                        <span>Monday - Friday</span>
+                        <span>9:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="hour-item">
+                        <span>Saturday</span>
+                        <span>10:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hour-item">
+                        <span>Sunday</span>
+                        <span>11:00 AM - 4:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright-premium">
             Copyright © 2024 Millennia Computers. All rights reserved.
         </div>
     </footer>
 
+    <!-- Store Details Modal -->
+    <div id="store-modal" class="store-modal-premium">
+        <div class="store-modal-content">
+            <span class="store-modal-close">&times;</span>
+            <div id="store-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="all-products.js"></script>
     <script>
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Advanced Contact Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeContactPage();
+            setupFormInteractions();
+            setupMapInteractions();
+            initScrollAnimations();
             
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            showNotification('Thank you! Your message has been sent successfully.');
-            this.reset();
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
         });
 
-        // Cart functionality
-        function addToCart(productId) {
-            const cartCount = document.querySelector('.cart-count');
-            let count = parseInt(cartCount.textContent) || 0;
-            count++;
-            cartCount.textContent = count;
-            showNotification('Product added to cart!');
+        function initializeContactPage() {
+            // Setup file upload
+            setupFileUpload();
+            
+            // Setup store filters
+            setupStoreFilters();
+            
+            // Initialize form steps
+            setupFormSteps();
+        }
+
+        function setupFormSteps() {
+            let currentStep = 1;
+            const totalSteps = 3;
+
+            window.nextStep = function() {
+                if (currentStep < totalSteps) {
+                    document.getElementById(`step${currentStep}`).classList.remove('active');
+                    currentStep++;
+                    document.getElementById(`step${currentStep}`).classList.add('active');
+                    updateProgressBar();
+                }
+            };
+
+            window.prevStep = function() {
+                if (currentStep > 1) {
+                    document.getElementById(`step${currentStep}`).classList.remove('active');
+                    currentStep--;
+                    document.getElementById(`step${currentStep}`).classList.add('active');
+                    updateProgressBar();
+                }
+            };
+
+            function updateProgressBar() {
+                const steps = document.querySelectorAll('.progress-step');
+                steps.forEach((step, index) => {
+                    if (index < currentStep) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        function setupFormInteractions() {
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                simulateFormSubmission();
+            });
+
+            // Real-time validation
+            setupRealTimeValidation();
+        }
+
+        function simulateFormSubmission() {
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('formSuccess');
+            
+            // Show loading state
+            const submitBtn = form.querySelector('.btn-submit-premium');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                form.style.display = 'none';
+                success.style.display = 'block';
+            }, 2000);
+        }
+
+        function resetForm() {
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('formSuccess');
+            
+            form.reset();
+            form.style.display = 'block';
+            success.style.display = 'none';
+            
+            // Reset to first step
+            document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+            document.getElementById('step1').classList.add('active');
+            
+            // Reset progress bar
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index === 0) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        function setupRealTimeValidation() {
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            
+            emailInput.addEventListener('blur', function() {
+                validateEmail(this);
+            });
+            
+            phoneInput.addEventListener('blur', function() {
+                validatePhone(this);
+            });
+        }
+
+        function validateEmail(input) {
+            const email = input.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                showFieldError(input, 'Please enter a valid email address');
+            } else {
+                clearFieldError(input);
+            }
+        }
+
+        function validatePhone(input) {
+            const phone = input.value;
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            
+            if (phone && !phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
+                showFieldError(input, 'Please enter a valid phone number');
+            } else {
+                clearFieldError(input);
+            }
+        }
+
+        function showFieldError(input, message) {
+            clearFieldError(input);
+            input.classList.add('error');
+            
+            const errorElement = document.createElement('div');
+            errorElement.className = 'field-error';
+            errorElement.textContent = message;
+            input.parentNode.appendChild(errorElement);
+        }
+
+        function clearFieldError(input) {
+            input.classList.remove('error');
+            const existingError = input.parentNode.querySelector('.field-error');
+            if (existingError) {
+                existingError.remove();
+            }
+        }
+
+        function setupFileUpload() {
+            const uploadArea = document.getElementById('fileUploadArea');
+            const fileInput = document.getElementById('attachment');
+            const filePreview = document.getElementById('filePreview');
+            
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                fileInput.files = e.dataTransfer.files;
+                updateFilePreview();
+            });
+            
+            fileInput.addEventListener('change', updateFilePreview);
+            
+            function updateFilePreview() {
+                filePreview.innerHTML = '';
+                const files = fileInput.files;
+                
+                if (files.length > 0) {
+                    Array.from(files).forEach(file => {
+                        const fileElement = document.createElement('div');
+                        fileElement.className = 'file-item';
+                        fileElement.innerHTML = `
+                            <i class="fas fa-file"></i>
+                            <span class="file-name">${file.name}</span>
+                            <span class="file-size">(${formatFileSize(file.size)})</span>
+                            <button class="file-remove" onclick="removeFile(this)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        filePreview.appendChild(fileElement);
+                    });
+                }
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function removeFile(button) {
+            const fileItem = button.parentNode;
+            fileItem.remove();
+            
+            // Note: In a real implementation, you would need to update the FileList
+        }
+
+        function setupMapInteractions() {
+            // Store filter functionality
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    filterStores(filter);
+                });
+            });
+
+            // Store search functionality
+            document.getElementById('mapSearch').addEventListener('input', function(e) {
+                searchStores(e.target.value);
+            });
+        }
+
+        function filterStores(filter) {
+            const stores = document.querySelectorAll('.store-listing');
+            
+            stores.forEach(store => {
+                if (filter === 'all' || store.getAttribute('data-store') === filter) {
+                    store.style.display = 'block';
+                } else {
+                    store.style.display = 'none';
+                }
+            });
+        }
+
+        function searchStores(query) {
+            const stores = document.querySelectorAll('.store-listing');
+            const lowerQuery = query.toLowerCase();
+            
+            stores.forEach(store => {
+                const storeName = store.querySelector('h4').textContent.toLowerCase();
+                const storeAddress = store.querySelector('.store-address span').textContent.toLowerCase();
+                
+                if (storeName.includes(lowerQuery) || storeAddress.includes(lowerQuery)) {
+                    store.style.display = 'block';
+                } else {
+                    store.style.display = 'none';
+                }
+            });
+        }
+
+        // Action functions
+        function scrollToForm() {
+            document.querySelector('.contact-form-premium').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function startLiveChat() {
+            showPremiumNotification('Connecting you to live chat support...');
+        }
+
+        function callSupport() {
+            showPremiumNotification('Calling our support team...');
+        }
+
+        function visitStore() {
+            showPremiumNotification('Showing store locations...');
+            document.querySelector('.map-section-premium').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function emailSupport() {
+            showPremiumNotification('Opening email composer...');
         }
 
         function showDirections() {
-            showNotification('Opening directions in maps application...');
-            // In a real implementation, this would open Google Maps or similar
+            showPremiumNotification('Opening directions in maps...');
         }
 
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: var(--primary-blue);
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                box-shadow: var(--shadow-hover);
-                z-index: 1000;
-                animation: slideInRight 0.3s ease;
+        function viewStoreDetails(storeId) {
+            const modal = document.getElementById('store-modal');
+            const body = document.getElementById('store-modal-body');
+            
+            // This would load actual store details based on storeId
+            body.innerHTML = `
+                <div class="store-detail-content">
+                    <h2>Colombo Flagship Store</h2>
+                    <div class="store-detail-badge flagship">Flagship Store</div>
+                    
+                    <div class="store-detail-info">
+                        <div class="detail-section">
+                            <h4>📍 Address</h4>
+                            <p>123 Tech Street, Colombo 00500, Sri Lanka</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>🕒 Opening Hours</h4>
+                            <div class="hours-detail">
+                                <div class="hour-row">
+                                    <span>Monday - Friday</span>
+                                    <span>9:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="hour-row">
+                                    <span>Saturday</span>
+                                    <span>10:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="hour-row">
+                                    <span>Sunday</span>
+                                    <span>11:00 AM - 4:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>📞 Contact</h4>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+94 11 234 5678</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>colombo@millennia.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>⭐ Features</h4>
+                            <div class="store-features">
+                                <span class="store-feature">Free Parking</span>
+                                <span class="store-feature">Demo Units</span>
+                                <span class="store-feature">Repair Center</span>
+                                <span class="store-feature">Expert Staff</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="store-actions-detailed">
+                        <button class="btn-get-directions" onclick="getDirections('colombo')">
+                            <i class="fas fa-directions"></i>
+                            Get Directions
+                        </button>
+                        <button class="btn-call-store" onclick="callStore('colombo')">
+                            <i class="fas fa-phone"></i>
+                            Call Store
+                        </button>
+                    </div>
+                </div>
             `;
-            notification.textContent = message;
+            
+            modal.style.display = 'block';
+        }
+
+        function getDirections(storeId) {
+            showPremiumNotification('Opening directions to store...');
+        }
+
+        function callStore(storeId) {
+            showPremiumNotification('Calling store...');
+        }
+
+        function closeStoreModal() {
+            document.getElementById('store-modal').style.display = 'none';
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function showPremiumNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.remove();
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
             }, 3000);
         }
+
+        // Cart functionality
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count-premium');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            showPremiumNotification('Product added to cart!');
+        }
+
+        // Event listeners for modals
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close store modal
+            document.querySelector('.store-modal-close').addEventListener('click', closeStoreModal);
+            document.getElementById('store-modal').addEventListener('click', function(e) {
+                if (e.target === this) closeStoreModal();
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeStoreModal();
+            });
+        });
     </script>
 
     <style>
-        .contact-layout {
+        /* Advanced Contact Page Styles */
+        .contact-hero-premium {
+            background: var(--gradient-premium);
+            color: white;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .contact-hero-premium .hero-title-premium {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-hero-premium .hero-subtitle-premium {
+            font-size: 1.4rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            opacity: 0.9;
+        }
+
+        .contact-quick-actions {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-action-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .contact-action-card:hover::before {
+            left: 100%;
+        }
+
+        .contact-action-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .action-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .contact-action-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-action-card p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .action-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .contact-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-contact-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: floatContact 8s ease-in-out infinite;
+        }
+
+        .floating-contact-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-contact-icon:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-contact-icon:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section-premium {
+            padding: 150px 0;
+            background: var(--primary-light);
+        }
+
+        .contact-grid-premium {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
         }
-        
-        .contact-info h2 {
+
+        .contact-info-premium h2 {
             font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .contact-info > p {
+
+        .contact-description {
             font-size: 1.2rem;
+            line-height: 1.7;
             color: var(--text-light);
             margin-bottom: 3rem;
-            line-height: 1.6;
         }
-        
-        .contact-methods {
+
+        .contact-methods-premium {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            margin-bottom: 3rem;
         }
-        
-        .contact-method {
+
+        .contact-method-detailed {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .contact-method-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .contact-method-detailed {
             display: flex;
             gap: 1.5rem;
             align-items: flex-start;
         }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-blue);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+
+        .method-icon {
+            font-size: 2.5rem;
             flex-shrink: 0;
         }
-        
-        .contact-details h3 {
+
+        .method-details h4 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
-        
-        .contact-details p {
+
+        .method-details p {
             color: var(--text-light);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        
-        .contact-form-container {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .contact-form h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
-        
-        .form-group {
+
+        .phone-numbers,
+        .email-addresses,
+        .store-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
             margin-bottom: 1.5rem;
         }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+
+        .phone-item,
+        .email-item,
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .phone-label,
+        .email-label,
+        .day {
             color: var(--text-dark);
+            font-weight: 600;
         }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+
+        .phone-number,
+        .email-address,
+        .time {
+            color: var(--primary-blue);
+            font-weight: 600;
         }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
-        }
-        
-        .btn-primary-large {
-            width: 100%;
+
+        .btn-call-now,
+        .btn-email-now,
+        .btn-directions {
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 1.2rem 2rem;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
         }
-        
-        .btn-primary-large:hover {
+
+        .btn-call-now:hover,
+        .btn-email-now:hover,
+        .btn-directions:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
         }
-        
-        .map-container {
+
+        .social-section-premium {
             background: white;
-            border-radius: 16px;
-            overflow: hidden;
+            border-radius: 20px;
+            padding: 2rem;
             box-shadow: var(--shadow-soft);
         }
-        
-        .map-placeholder {
-            padding: 4rem;
-            text-align: center;
-            background: var(--primary-light);
-        }
-        
-        .map-placeholder h3 {
-            font-size: 1.5rem;
+
+        .social-section-premium h4 {
+            font-size: 1.3rem;
             font-weight: 700;
-            margin: 1rem 0 0.5rem;
+            margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
-        
-        .map-placeholder p {
+
+        .social-section-premium p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links-extended {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .social-link-extended {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--primary-light);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .social-link-extended:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link-extended i {
+            font-size: 1.5rem;
+        }
+
+        .social-link-extended span {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Advanced Contact Form */
+        .contact-form-premium {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow-premium);
+            position: relative;
+        }
+
+        .form-header-premium {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header-premium h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-header-premium p {
             color: var(--text-light);
             margin-bottom: 2rem;
         }
-        
-        .btn-secondary {
-            background: transparent;
+
+        .form-progress {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .progress-step.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 1rem;
+            height: 2px;
+            background: var(--border-light);
+        }
+
+        .progress-step:last-child::after {
+            display: none;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .form-step h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group-premium {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group-premium label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group-premium input,
+        .form-group-premium select,
+        .form-group-premium textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group-premium input:focus,
+        .form-group-premium select:focus,
+        .form-group-premium textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-group-premium input.error,
+        .form-group-premium select.error,
+        .form-group-premium textarea.error {
+            border-color: #e74c3c;
+        }
+
+        .field-error {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-helper {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .priority-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .priority-option {
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .priority-option input {
+            display: none;
+        }
+
+        .priority-badge {
+            display: block;
+            padding: 0.75rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .priority-badge.low {
+            color: #27ae60;
+        }
+
+        .priority-badge.medium {
+            color: #f39c12;
+        }
+
+        .priority-badge.high {
+            color: #e74c3c;
+        }
+
+        .priority-option input:checked + .priority-badge {
+            border-color: var(--primary-blue);
+            background: var(--primary-light);
+        }
+
+        .priority-desc {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .file-upload-area {
+            border: 2px dashed var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-area:hover,
+        .file-upload-area.dragover {
+            border-color: var(--primary-blue);
+            background: var(--primary-light);
+        }
+
+        .file-upload-area i {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .file-types {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .file-preview {
+            margin-top: 1rem;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: var(--primary-light);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-item i {
             color: var(--primary-blue);
-            border: 2px solid var(--primary-blue);
+        }
+
+        .file-name {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .file-size {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .file-remove {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .file-remove:hover {
+            color: #e74c3c;
+        }
+
+        .checkbox-premium {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .checkbox-premium input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 4px;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-premium input:checked + .checkmark {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .checkbox-premium input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn-prev,
+        .btn-next,
+        .btn-submit-premium {
             padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-prev {
+            background: var(--primary-light);
+            color: var(--text-dark);
+        }
+
+        .btn-next,
+        .btn-submit-premium {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-prev:hover {
+            background: var(--border-light);
+        }
+
+        .btn-next:hover,
+        .btn-submit-premium:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .form-success-premium {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-success-premium h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .form-success-premium p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .success-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        .detail-item i {
+            color: var(--primary-blue);
+        }
+
+        .btn-new-message {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto;
+        }
+
+        .btn-new-message:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Map Section */
+        .map-section-premium {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .map-container-premium {
+            background: var(--primary-light);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .map-controls-premium {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .map-search {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .map-search i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .map-search input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .map-search input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .map-filters {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .filter-btn:hover:not(.active) {
+            border-color: var(--primary-blue);
+        }
+
+        .map-content-premium {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            height: 500px;
+        }
+
+        .interactive-map {
+            display: contents;
+        }
+
+        .map-visual {
+            background: var(--gradient-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: white;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-placeholder p {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .map-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .map-stat {
+            text-align: center;
+        }
+
+        .map-stat .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .map-stat .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .store-listings {
+            background: white;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .store-listing {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .store-listing:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .store-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .store-header h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .store-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .store-badge.flagship {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .store-badge.standard {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+        }
+
+        .store-badge.service {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .store-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .store-address,
+        .store-hours,
+        .store-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .store-address i,
+        .store-hours i,
+        .store-phone i {
+            color: var(--primary-blue);
+            width: 16px;
+        }
+
+        .store-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-store-action {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .btn-store-action:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* Contact FAQ */
+        .contact-faq-premium {
+            padding: 100px 0;
+            background: var(--primary-light);
+        }
+
+        .faq-header-premium {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header-premium h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-header-premium p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .contact-faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .faq-category h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .faq-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item-contact {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item-contact:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Store Modal */
+        .store-modal-premium {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .store-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .store-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .store-detail-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .store-detail-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .store-detail-badge.flagship {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .store-detail-info {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hours-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-blue);
+            width: 20px;
+        }
+
+        .store-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .store-feature {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .store-actions-detailed {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-get-directions,
+        .btn-call-store {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 0.5rem;
+            justify-content: center;
         }
-        
-        .btn-secondary:hover {
+
+        .btn-get-directions {
             background: var(--primary-blue);
             color: white;
         }
-        
-        @keyframes slideInRight {
+
+        .btn-call-store {
+            background: var(--primary-light);
+            color: var(--text-dark);
+        }
+
+        .btn-get-directions:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-call-store:hover {
+            background: var(--border-light);
+        }
+
+        /* Business Hours in Footer */
+        .business-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+        }
+
+        /* Premium Notification */
+        .premium-notification {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-premium);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .premium-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .notification-content i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes floatContact {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes fadeInUp {
             from {
-                transform: translateX(100%);
                 opacity: 0;
+                transform: translateY(20px);
             }
             to {
-                transform: translateX(0);
                 opacity: 1;
+                transform: translateY(0);
             }
         }
-        
-        @media (max-width: 768px) {
-            .contact-layout {
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-grid-premium {
                 grid-template-columns: 1fr;
+            }
+            
+            .map-content-premium {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero-premium .hero-title-premium {
+                font-size: 3rem;
+            }
+            
+            .contact-quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-controls-premium {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .map-filters {
+                flex-wrap: wrap;
+            }
+            
+            .store-actions-detailed {
+                flex-direction: column;
             }
         }
     </style>

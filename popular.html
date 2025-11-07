@@ -6,175 +6,378 @@
     <title>Popular Products - Millennia Computers</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Modern Header -->
+    <header class="header-modern">
         <div class="header-container">
-            <div class="logo">
+            <a href="home.html" class="logo-modern">
                 <span class="logo-icon">💻</span>
                 Millennia Computers
-            </div>
+            </a>
+            
             <nav>
-                <ul>
-                    <li><a href="Home.html">Home</a></li>
+                <ul class="nav-modern">
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="popular.html" class="active">Popular Products</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="popular.html" class="active">Popular</a></li>
                     <li><a href="support.html">Support</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
+            
+            <div class="header-actions-modern">
+                <div class="search-modern">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
                 </div>
-                <div class="cart-icon">
-                    🛒
+                <button class="cart-modern">
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
-                </div>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Popular Products Hero -->
-        <section class="products-hero">
-            <div class="products-hero-content">
-                <h1>Most Popular Products</h1>
-                <p>Discover our best-selling items loved by thousands of customers</p>
+    <!-- Popular Products Hero -->
+    <section style="background: var(--gradient-blue); color: white; padding: 140px 0 80px; margin-top: 80px;">
+        <div class="container-modern">
+            <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Popular Products</h1>
+            <p style="font-size: 1.3rem; text-align: center; opacity: 0.9; max-width: 600px; margin: 0 auto;">Discover our best-selling and most loved technology products</p>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section class="container-modern" style="padding: 80px 0 100px;">
+        <!-- Trending Now -->
+        <div class="section-header">
+            <h2>🔥 Trending Now</h2>
+            <p>Most popular products this week</p>
+        </div>
+        
+        <div class="products-grid-modern" id="trending-products">
+            <!-- Trending products will be loaded by JavaScript -->
+        </div>
+
+        <!-- Best Sellers -->
+        <div class="section-header" style="margin-top: 100px;">
+            <h2>🏆 Best Sellers</h2>
+            <p>Our all-time favorite products</p>
+        </div>
+        
+        <div class="products-grid-modern" id="bestseller-products">
+            <!-- Best seller products will be loaded by JavaScript -->
+        </div>
+
+        <!-- New Arrivals -->
+        <div class="section-header" style="margin-top: 100px;">
+            <h2>🆕 New Arrivals</h2>
+            <p>Latest additions to our collection</p>
+        </div>
+        
+        <div class="products-grid-modern" id="newarrival-products">
+            <!-- New arrival products will be loaded by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section style="background: var(--primary-light); padding: 100px 0;">
+        <div class="container-modern">
+            <div class="section-header">
+                <h2>💫 Special Offers</h2>
+                <p>Limited time deals and discounts</p>
             </div>
-        </section>
-
-        <div class="container">
-            <div class="popular-content" style="margin: 80px 0;">
-                <!-- Bestsellers Section -->
-                <div class="bestsellers-section" style="margin-bottom: 80px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 40px; color: var(--text-white); text-align: center;">Bestsellers</h2>
-                    <div class="products-grid" id="bestsellers-container">
-                        <!-- Bestseller products will be loaded here -->
-                    </div>
+            
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">Hot Deal</div>
+                    <h3>Gaming Bundle</h3>
+                    <p>Save 15% on selected gaming laptops and accessories</p>
+                    <button class="btn-primary">Shop Now</button>
                 </div>
-
-                <!-- Top Rated Section -->
-                <div class="top-rated-section">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 40px; color: var(--text-white); text-align: center;">Top Rated</h2>
-                    <div class="products-grid" id="top-rated-container">
-                        <!-- Top rated products will be loaded here -->
-                    </div>
+                
+                <div class="offer-card">
+                    <div class="offer-badge">New</div>
+                    <h3>Student Discount</h3>
+                    <p>Get 10% off all products with valid student ID</p>
+                    <button class="btn-primary">Learn More</button>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-badge">Limited</div>
+                    <h3>Free Shipping</h3>
+                    <p>Free delivery on all orders over Rs. 75,000</p>
+                    <button class="btn-primary">Shop Now</button>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
+    <footer class="footer-modern">
+        <div class="footer-content-modern">
+            <div class="footer-section-modern">
                 <h3>About Millennia</h3>
-                <p style="color: var(--text-light); line-height: 1.6;">We bring you the latest technology with exceptional quality, performance, and service. Your trusted partner in computing solutions.</p>
+                <p>Your trusted partner in computing solutions.</p>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-section-modern">
                 <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="Home.html">Home</a></li>
-                    <li><a href="products.html">All Products</a></li>
-                    <li><a href="support.html">Support Center</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                <ul class="footer-links-modern">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">All Products</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-section-modern">
                 <h3>Newsletter</h3>
-                <div class="newsletter">
-                    <input type="email" placeholder="Enter your email for updates">
+                <p>Get updates on popular products and deals.</p>
+                <div class="newsletter-modern">
+                    <input type="email" placeholder="Your email">
                     <button>Subscribe</button>
                 </div>
             </div>
         </div>
-        <div class="copyright">
+        
+        <div class="copyright-modern">
             Copyright © 2024 Millennia Computers. All rights reserved.
         </div>
     </footer>
 
-    <script src="products-data.js"></script>
+    <!-- Load scripts -->
+    <script src="all-products.js"></script>
     <script>
         // Load popular products
         document.addEventListener('DOMContentLoaded', function() {
-            // Bestsellers (most reviewed)
-            const bestsellersContainer = document.getElementById('bestsellers-container');
-            const bestsellers = [...allProducts]
-                .sort((a, b) => parseInt(b.reviews) - parseInt(a.reviews))
-                .slice(0, 6);
+            // Combine all products
+            const allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents,
+                ...gpus,
+                ...ram,
+                ...psuCasesCooling,
+                ...storageDevices,
+                ...motherboards,
+                ...peripherals
+            ];
 
-            // Top rated (highest stars)
-            const topRatedContainer = document.getElementById('top-rated-container');
-            const topRated = [...allProducts]
-                .sort((a, b) => (b.rating.match(/★/g) || []).length - (a.rating.match(/★/g) || []).length)
-                .slice(0, 6);
+            // For demo purposes, we'll simulate popular products
+            // In a real scenario, this would come from actual sales data
+            loadTrendingProducts(allProducts);
+            loadBestSellers(allProducts);
+            loadNewArrivals(allProducts);
+        });
 
-            // Load bestsellers
-            bestsellers.forEach((product, index) => {
-                const productCard = createProductCard(product);
-                bestsellersContainer.appendChild(productCard);
-                
-                setTimeout(() => {
-                    productCard.classList.add('visible');
-                }, index * 200);
-            });
+        function loadTrendingProducts(allProducts) {
+            const container = document.getElementById('trending-products');
+            // Simulate trending products (first 8 products)
+            const trendingProducts = allProducts.slice(0, 8);
+            displayProducts(trendingProducts, container);
+        }
 
-            // Load top rated
-            topRated.forEach((product, index) => {
-                const productCard = createProductCard(product);
-                topRatedContainer.appendChild(productCard);
-                
-                setTimeout(() => {
-                    productCard.classList.add('visible');
-                }, index * 200);
-            });
+        function loadBestSellers(allProducts) {
+            const container = document.getElementById('bestseller-products');
+            // Simulate best sellers (next 8 products)
+            const bestSellers = allProducts.slice(8, 16);
+            displayProducts(bestSellers, container);
+        }
 
-            function createProductCard(product) {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card fade-in';
-                productCard.innerHTML = `
-                    <div class="product-image-container">
-                        <img src="${product.image}" alt="${product.name}" class="product-image" 
-                             onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"%231A1A1A\"/><text x=\"100\" y=\"100\" font-family=\"Arial\" font-size=\"14\" text-anchor=\"middle\" fill=\"%230066CC\">${product.name}</text></svg>'">
+        function loadNewArrivals(allProducts) {
+            const container = document.getElementById('newarrival-products');
+            // Simulate new arrivals (last 8 products)
+            const newArrivals = allProducts.slice(-8);
+            displayProducts(newArrivals, container);
+        }
+
+        function displayProducts(products, container) {
+            container.innerHTML = '';
+            
+            products.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card-modern fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="product-image-container-modern">
+                        <img src="${product.image}" alt="${product.name}" class="product-image-modern">
                     </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.subcategory}</div>
-                        <h3 class="product-title">${product.name}</h3>
-                        <div class="product-price">${product.price}</div>
-                        <div class="product-rating">
-                            <span class="stars">${product.rating}</span>
+                    <div class="product-info-modern">
+                        <div class="product-category-modern">${product.category}</div>
+                        <h3 class="product-title-modern">${product.name}</h3>
+                        <div class="product-price-modern">${product.price}</div>
+                        <div class="product-rating-modern">
+                            <span class="stars-modern">${product.rating}</span>
                             <span class="reviews">${product.reviews}</span>
                         </div>
-                        <div class="product-actions">
-                            <button class="view-details" onclick="location.href='products.html'">View Details</button>
-                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        <div class="product-actions-modern">
+                            <button class="btn-view-details" onclick="viewProductDetails(${product.id})">View Details</button>
+                            <button class="btn-add-cart" onclick="addToCart(${product.id})">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                 `;
-                return productCard;
-            }
-
-            // Add to cart functionality
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('add-to-cart')) {
-                    const productId = parseInt(e.target.getAttribute('data-id'));
-                    const cartCount = document.querySelector('.cart-count');
-                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
-                    
-                    const originalText = e.target.textContent;
-                    e.target.textContent = 'Added!';
-                    e.target.style.background = '#00CC66';
-                    
-                    setTimeout(() => {
-                        e.target.textContent = originalText;
-                        e.target.style.background = '';
-                    }, 2000);
-                }
+                container.appendChild(card);
             });
-        });
+
+            // Add animation on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function viewProductDetails(productId) {
+            window.location.href = `product-details.html?id=${productId}`;
+        }
+
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            
+            // Show notification
+            const allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents,
+                ...gpus,
+                ...ram,
+                ...psuCasesCooling,
+                ...storageDevices,
+                ...motherboards,
+                ...peripherals
+            ];
+            const product = allProducts.find(p => p.id === productId);
+            if (product) {
+                showNotification(`${product.name} added to cart!`);
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: var(--shadow-hover);
+                z-index: 1000;
+                animation: slideInRight 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
     </script>
+
+    <style>
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .offer-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .offer-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .offer-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </body>
 </html>

@@ -67,194 +67,207 @@
     <section class="advanced-products-section">
         <div class="container-premium">
             <div class="customization-layout">
-                <!-- Left Side - Customization Panel -->
-                <div class="customization-panel">
-                    <div class="panel-header">
-                        <h3><i class="fas fa-sliders-h"></i> Customize Your Selection</h3>
-                        <button class="clear-all-btn" onclick="clearAllFilters()">
-                            <i class="fas fa-redo"></i> Clear All
+                <!-- Left Side - Modern Navigation -->
+                <div class="modern-sidebar">
+                    <div class="sidebar-header">
+                        <h3>Filters</h3>
+                        <button class="clear-all" onclick="clearAllFilters()">
+                            Clear All
                         </button>
                     </div>
 
-                    <!-- Category Filter -->
-                    <div class="filter-section">
-                        <div class="filter-header" onclick="toggleFilterSection('category')">
-                            <h4><i class="fas fa-layer-group"></i> Product Category</h4>
-                            <i class="fas fa-chevron-down"></i>
+                    <!-- Categories Dropdown -->
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                            <i class="fas fa-chevron-down arrow"></i>
                         </div>
-                        <div class="filter-content active" id="category-filter">
-                            <div class="category-options">
-                                <div class="category-option" data-category="laptops">
+                        <div class="sidebar-dropdown">
+                            <div class="dropdown-content">
+                                <div class="category-item" data-category="laptops">
                                     <i class="fas fa-laptop"></i>
                                     <span>Laptops</span>
-                                    <span class="product-count">24</span>
+                                    <span class="count">24</span>
                                 </div>
-                                <div class="category-option" data-category="motherboards">
+                                <div class="category-item" data-category="motherboards">
                                     <i class="fas fa-microchip"></i>
                                     <span>Motherboards</span>
-                                    <span class="product-count">12</span>
+                                    <span class="count">12</span>
                                 </div>
-                                <div class="category-option" data-category="gpus">
+                                <div class="category-item" data-category="gpus">
                                     <i class="fas fa-gamepad"></i>
                                     <span>PC Components - GPUs</span>
-                                    <span class="product-count">18</span>
+                                    <span class="count">18</span>
                                 </div>
-                                <div class="category-option" data-category="components">
+                                <div class="category-item" data-category="components">
                                     <i class="fas fa-cogs"></i>
                                     <span>PC Components</span>
-                                    <span class="product-count">35</span>
+                                    <span class="count">35</span>
                                 </div>
-                                <div class="category-option" data-category="psu-cases">
+                                <div class="category-item" data-category="psu-cases">
                                     <i class="fas fa-server"></i>
                                     <span>PSU, Cases & Cooling</span>
-                                    <span class="product-count">15</span>
+                                    <span class="count">15</span>
                                 </div>
-                                <div class="category-option" data-category="peripherals">
+                                <div class="category-item" data-category="peripherals">
                                     <i class="fas fa-keyboard"></i>
                                     <span>Peripherals</span>
-                                    <span class="product-count">28</span>
+                                    <span class="count">28</span>
                                 </div>
-                                <div class="category-option" data-category="ram">
+                                <div class="category-item" data-category="ram">
                                     <i class="fas fa-memory"></i>
                                     <span>RAM</span>
-                                    <span class="product-count">20</span>
+                                    <span class="count">20</span>
                                 </div>
-                                <div class="category-option" data-category="smartphones">
+                                <div class="category-item" data-category="smartphones">
                                     <i class="fas fa-mobile-alt"></i>
                                     <span>Smartphones</span>
-                                    <span class="product-count">16</span>
+                                    <span class="count">16</span>
                                 </div>
-                                <div class="category-option" data-category="storage">
+                                <div class="category-item" data-category="storage">
                                     <i class="fas fa-hdd"></i>
                                     <span>Storage Devices</span>
-                                    <span class="product-count">22</span>
+                                    <span class="count">22</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Price Range Filter -->
-                    <div class="filter-section">
-                        <div class="filter-header" onclick="toggleFilterSection('price')">
-                            <h4><i class="fas fa-tag"></i> Price Range</h4>
-                            <i class="fas fa-chevron-down"></i>
+                    <!-- Price Range Dropdown -->
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">
+                            <i class="fas fa-tag"></i>
+                            <span>Price Range</span>
+                            <i class="fas fa-chevron-down arrow"></i>
                         </div>
-                        <div class="filter-content" id="price-filter">
-                            <div class="price-options">
-                                <div class="price-option" data-price="0-25000">
+                        <div class="sidebar-dropdown">
+                            <div class="dropdown-content">
+                                <div class="price-item" data-price="0-25000">
                                     <span>Under Rs. 25,000</span>
-                                    <span class="product-count">18</span>
+                                    <span class="count">18</span>
                                 </div>
-                                <div class="price-option" data-price="25000-50000">
+                                <div class="price-item" data-price="25000-50000">
                                     <span>Rs. 25,000 - 50,000</span>
-                                    <span class="product-count">32</span>
+                                    <span class="count">32</span>
                                 </div>
-                                <div class="price-option" data-price="50000-100000">
+                                <div class="price-item" data-price="50000-100000">
                                     <span>Rs. 50,000 - 1,00,000</span>
-                                    <span class="product-count">45</span>
+                                    <span class="count">45</span>
                                 </div>
-                                <div class="price-option" data-price="100000-200000">
+                                <div class="price-item" data-price="100000-200000">
                                     <span>Rs. 1,00,000 - 2,00,000</span>
-                                    <span class="product-count">28</span>
+                                    <span class="count">28</span>
                                 </div>
-                                <div class="price-option" data-price="200000+">
+                                <div class="price-item" data-price="200000+">
                                     <span>Above Rs. 2,00,000</span>
-                                    <span class="product-count">16</span>
+                                    <span class="count">16</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Features Filter -->
-                    <div class="filter-section">
-                        <div class="filter-header" onclick="toggleFilterSection('features')">
-                            <h4><i class="fas fa-star"></i> Key Features</h4>
-                            <i class="fas fa-chevron-down"></i>
+                    <!-- Brand Dropdown -->
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">
+                            <i class="fas fa-copyright"></i>
+                            <span>Brand</span>
+                            <i class="fas fa-chevron-down arrow"></i>
                         </div>
-                        <div class="filter-content" id="features-filter">
-                            <div class="feature-options">
-                                <div class="feature-option" data-feature="gaming">
-                                    <i class="fas fa-gamepad"></i>
-                                    <span>Gaming</span>
-                                </div>
-                                <div class="feature-option" data-feature="performance">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                    <span>High Performance</span>
-                                </div>
-                                <div class="feature-option" data-feature="portable">
-                                    <i class="fas fa-laptop"></i>
-                                    <span>Portable</span>
-                                </div>
-                                <div class="feature-option" data-feature="storage">
-                                    <i class="fas fa-database"></i>
-                                    <span>Large Storage</span>
-                                </div>
-                                <div class="feature-option" data-feature="graphics">
-                                    <i class="fas fa-desktop"></i>
-                                    <span>Premium Graphics</span>
-                                </div>
-                                <div class="feature-option" data-feature="cooling">
-                                    <i class="fas fa-wind"></i>
-                                    <span>Advanced Cooling</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Brand Filter -->
-                    <div class="filter-section">
-                        <div class="filter-header" onclick="toggleFilterSection('brand')">
-                            <h4><i class="fas fa-copyright"></i> Brand</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="filter-content" id="brand-filter">
-                            <div class="brand-options">
-                                <div class="brand-option" data-brand="asus">
+                        <div class="sidebar-dropdown">
+                            <div class="dropdown-content">
+                                <div class="brand-item" data-brand="asus">
                                     <img src="https://logos-world.net/wp-content/uploads/2020/11/Asus-Logo.png" alt="ASUS" class="brand-logo">
                                     <span>ASUS ROG</span>
+                                    <span class="count">24</span>
                                 </div>
-                                <div class="brand-option" data-brand="msi">
+                                <div class="brand-item" data-brand="msi">
                                     <img src="https://logos-world.net/wp-content/uploads/2021/03/MSI-Logo.png" alt="MSI" class="brand-logo">
                                     <span>MSI</span>
+                                    <span class="count">18</span>
                                 </div>
-                                <div class="brand-option" data-brand="apple">
+                                <div class="brand-item" data-brand="apple">
                                     <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" class="brand-logo">
                                     <span>Apple</span>
+                                    <span class="count">16</span>
                                 </div>
-                                <div class="brand-option" data-brand="samsung">
+                                <div class="brand-item" data-brand="samsung">
                                     <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Samsung" class="brand-logo">
                                     <span>Samsung</span>
+                                    <span class="count">14</span>
                                 </div>
-                                <div class="brand-option" data-brand="corsair">
+                                <div class="brand-item" data-brand="corsair">
                                     <img src="https://logos-world.net/wp-content/uploads/2021/03/Corsair-Logo.png" alt="Corsair" class="brand-logo">
                                     <span>Corsair</span>
+                                    <span class="count">22</span>
                                 </div>
-                                <div class="brand-option" data-brand="nvidia">
+                                <div class="brand-item" data-brand="nvidia">
                                     <img src="https://logos-world.net/wp-content/uploads/2020/11/Nvidia-Logo.png" alt="NVIDIA" class="brand-logo">
                                     <span>NVIDIA</span>
+                                    <span class="count">20</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Active Filters Display -->
-                    <div class="active-filters" id="active-filters">
-                        <h4>Active Filters:</h4>
-                        <div class="filter-tags" id="filter-tags">
+                    <!-- Features Dropdown -->
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">
+                            <i class="fas fa-star"></i>
+                            <span>Features</span>
+                            <i class="fas fa-chevron-down arrow"></i>
+                        </div>
+                        <div class="sidebar-dropdown">
+                            <div class="dropdown-content">
+                                <div class="feature-item" data-feature="gaming">
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Gaming</span>
+                                    <span class="count">42</span>
+                                </div>
+                                <div class="feature-item" data-feature="performance">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>High Performance</span>
+                                    <span class="count">38</span>
+                                </div>
+                                <div class="feature-item" data-feature="portable">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Portable</span>
+                                    <span class="count">24</span>
+                                </div>
+                                <div class="feature-item" data-feature="storage">
+                                    <i class="fas fa-database"></i>
+                                    <span>Large Storage</span>
+                                    <span class="count">31</span>
+                                </div>
+                                <div class="feature-item" data-feature="graphics">
+                                    <i class="fas fa-desktop"></i>
+                                    <span>Premium Graphics</span>
+                                    <span class="count">28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Filters -->
+                    <div class="active-filters-sidebar" id="active-filters-sidebar">
+                        <div class="active-filters-header">
+                            <h4>Active Filters</h4>
+                        </div>
+                        <div class="filter-tags-sidebar" id="filter-tags-sidebar">
                             <!-- Active filters will appear here -->
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Side - Products Display -->
-                <div class="products-display-panel">
-                    <div class="products-header">
-                        <div class="results-info">
-                            <h2 id="results-title">All Premium Products</h2>
-                            <p class="products-count">Showing <span id="visible-count">186</span> products</p>
+                <div class="products-main">
+                    <div class="products-header-main">
+                        <div class="results-info-main">
+                            <h2>All Products</h2>
+                            <p class="products-count-main">Showing <span id="visible-count-main">186</span> products</p>
                         </div>
-                        <div class="sort-options">
-                            <select id="sort-select" class="sort-select">
+                        <div class="sort-options-main">
+                            <select id="sort-select-main" class="sort-select-main">
                                 <option value="featured">Featured</option>
                                 <option value="price-low">Price: Low to High</option>
                                 <option value="price-high">Price: High to Low</option>
@@ -265,17 +278,17 @@
                     </div>
 
                     <!-- Products Grid -->
-                    <div class="products-grid-compact" id="products-grid">
+                    <div class="products-grid-modern" id="products-grid-modern">
                         <!-- Products will be loaded here -->
                     </div>
 
                     <!-- No Results Message -->
-                    <div class="no-results" id="no-results" style="display: none;">
-                        <div class="no-results-content">
+                    <div class="no-results-modern" id="no-results-modern" style="display: none;">
+                        <div class="no-results-content-modern">
                             <i class="fas fa-search"></i>
                             <h3>No products found</h3>
                             <p>Try adjusting your filters or search terms</p>
-                            <button class="btn-clear-filters" onclick="clearAllFilters()">
+                            <button class="btn-clear-filters-modern" onclick="clearAllFilters()">
                                 Clear All Filters
                             </button>
                         </div>
@@ -306,68 +319,63 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             loadAllProducts();
-            setupFilterInteractions();
+            setupSidebarInteractions();
             setupSearchFunctionality();
             setupQuickView();
         });
 
         function loadAllProducts() {
-            const container = document.getElementById('products-grid');
+            const container = document.getElementById('products-grid-modern');
             const allProducts = getAllProducts();
             
             container.innerHTML = '';
             
             if (allProducts.length === 0) {
-                document.getElementById('no-results').style.display = 'block';
+                document.getElementById('no-results-modern').style.display = 'block';
                 return;
             }
             
-            document.getElementById('no-results').style.display = 'none';
+            document.getElementById('no-results-modern').style.display = 'none';
             
             allProducts.forEach((product, index) => {
-                const card = createProductCard(product, index);
+                const card = createModernProductCard(product, index);
                 container.appendChild(card);
             });
             
             updateProductCount(allProducts.length);
         }
 
-        function createProductCard(product, index) {
+        function createModernProductCard(product, index) {
             const card = document.createElement('div');
-            card.className = 'product-card-compact';
+            card.className = 'product-card-modern';
             card.innerHTML = `
-                <div class="product-card-inner">
-                    <div class="product-image-wrapper">
-                        <img src="${product.image}" alt="${product.name}" class="product-image-compact">
-                        <div class="product-overlay-compact">
-                            <button class="quick-view-btn-compact" onclick="openQuickView(${product.id})">
+                <div class="product-card-inner-modern">
+                    <div class="product-image-modern-wrapper">
+                        <img src="${product.image}" alt="${product.name}" class="product-image-modern">
+                        <div class="product-overlay-modern">
+                            <button class="quick-view-btn-modern" onclick="openQuickView(${product.id})">
                                 <i class="fas fa-eye"></i>
                                 Quick View
                             </button>
                         </div>
-                        <div class="product-badges">
-                            ${product.isNew ? '<span class="badge-new">New</span>' : ''}
-                            ${product.trendingScore > 90 ? '<span class="badge-trending">Trending</span>' : ''}
+                        <div class="product-badges-modern">
+                            ${product.isNew ? '<span class="badge-new-modern">New</span>' : ''}
+                            ${product.trendingScore > 90 ? '<span class="badge-trending-modern">Trending</span>' : ''}
                         </div>
                     </div>
-                    <div class="product-info-compact">
-                        <div class="product-category-compact">${product.category}</div>
-                        <h3 class="product-title-compact">${product.name}</h3>
-                        <div class="product-price-compact">
+                    <div class="product-info-modern">
+                        <div class="product-category-modern">${product.category}</div>
+                        <h3 class="product-title-modern">${product.name}</h3>
+                        <div class="product-price-modern">
                             ${product.price}
-                            ${product.originalPrice ? `<span class="original-price-compact">${product.originalPrice}</span>` : ''}
+                            ${product.originalPrice ? `<span class="original-price-modern">${product.originalPrice}</span>` : ''}
                         </div>
-                        <div class="product-rating-compact">
-                            <span class="stars-compact">${'★'.repeat(5)}</span>
-                            <span class="reviews-compact">${product.reviews}</span>
+                        <div class="product-rating-modern">
+                            <span class="stars-modern">${'★'.repeat(5)}</span>
+                            <span class="reviews-modern">${product.reviews}</span>
                         </div>
-                        <div class="product-features-compact">
-                            ${product.keyFeatures ? product.keyFeatures.slice(0, 2).map(feature => 
-                                `<span class="feature-tag-compact">${feature}</span>`
-                            ).join('') : ''}
-                        </div>
-                        <div class="product-actions-compact">
-                            <button class="btn-add-cart-compact" onclick="addToCart(${product.id})">
+                        <div class="product-actions-modern">
+                            <button class="btn-add-cart-modern" onclick="addToCart(${product.id})">
                                 <i class="fas fa-plus"></i>
                                 Add to Cart
                             </button>
@@ -378,45 +386,63 @@
             return card;
         }
 
-        function setupFilterInteractions() {
-            // Category filter
-            document.querySelectorAll('.category-option').forEach(option => {
-                option.addEventListener('click', function() {
+        function setupSidebarInteractions() {
+            // Setup hover functionality for sidebar items
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            
+            sidebarItems.forEach(item => {
+                const title = item.querySelector('.sidebar-title');
+                const dropdown = item.querySelector('.sidebar-dropdown');
+                
+                // Hover to show dropdown
+                item.addEventListener('mouseenter', function() {
+                    closeAllDropdowns();
+                    dropdown.style.display = 'block';
+                    title.classList.add('active');
+                });
+                
+                // Keep dropdown open when hovering over dropdown
+                dropdown.addEventListener('mouseenter', function() {
+                    dropdown.style.display = 'block';
+                    title.classList.add('active');
+                });
+                
+                // Close when leaving item
+                item.addEventListener('mouseleave', function(e) {
+                    // Check if mouse is moving to another sidebar item
+                    const related = e.relatedTarget;
+                    if (!related || !related.closest('.sidebar-item')) {
+                        dropdown.style.display = 'none';
+                        title.classList.remove('active');
+                    }
+                });
+            });
+
+            // Category items click
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
                     activeFilters.category = activeFilters.category === category ? null : category;
                     updateActiveFilters();
                     filterProducts();
+                    updateItemSelection(this, 'category');
                 });
             });
 
-            // Price filter
-            document.querySelectorAll('.price-option').forEach(option => {
-                option.addEventListener('click', function() {
+            // Price items click
+            document.querySelectorAll('.price-item').forEach(item => {
+                item.addEventListener('click', function() {
                     const price = this.getAttribute('data-price');
                     activeFilters.price = activeFilters.price === price ? null : price;
                     updateActiveFilters();
                     filterProducts();
+                    updateItemSelection(this, 'price');
                 });
             });
 
-            // Feature filter
-            document.querySelectorAll('.feature-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const feature = this.getAttribute('data-feature');
-                    const index = activeFilters.features.indexOf(feature);
-                    if (index > -1) {
-                        activeFilters.features.splice(index, 1);
-                    } else {
-                        activeFilters.features.push(feature);
-                    }
-                    updateActiveFilters();
-                    filterProducts();
-                });
-            });
-
-            // Brand filter
-            document.querySelectorAll('.brand-option').forEach(option => {
-                option.addEventListener('click', function() {
+            // Brand items click
+            document.querySelectorAll('.brand-item').forEach(item => {
+                item.addEventListener('click', function() {
                     const brand = this.getAttribute('data-brand');
                     const index = activeFilters.brands.indexOf(brand);
                     if (index > -1) {
@@ -426,26 +452,69 @@
                     }
                     updateActiveFilters();
                     filterProducts();
+                    updateItemSelection(this, 'brand');
+                });
+            });
+
+            // Feature items click
+            document.querySelectorAll('.feature-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const feature = this.getAttribute('data-feature');
+                    const index = activeFilters.features.indexOf(feature);
+                    if (index > -1) {
+                        activeFilters.features.splice(index, 1);
+                    } else {
+                        activeFilters.features.push(feature);
+                    }
+                    updateActiveFilters();
+                    filterProducts();
+                    updateItemSelection(this, 'feature');
                 });
             });
 
             // Sort functionality
-            document.getElementById('sort-select').addEventListener('change', function() {
+            document.getElementById('sort-select-main').addEventListener('change', function() {
                 sortProducts(this.value);
             });
         }
 
-        function toggleFilterSection(section) {
-            const content = document.getElementById(`${section}-filter`);
-            const header = content.previousElementSibling;
-            const icon = header.querySelector('.fa-chevron-down');
+        function closeAllDropdowns() {
+            document.querySelectorAll('.sidebar-dropdown').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+            document.querySelectorAll('.sidebar-title').forEach(title => {
+                title.classList.remove('active');
+            });
+        }
+
+        function updateItemSelection(element, type) {
+            // Remove active class from all items of same type
+            const items = element.parentElement.querySelectorAll(`.${type}-item`);
+            items.forEach(item => item.classList.remove('active'));
             
-            content.classList.toggle('active');
-            icon.classList.toggle('fa-rotate-180');
+            // Add active class if selected
+            switch(type) {
+                case 'category':
+                    if (activeFilters.category) element.classList.add('active');
+                    break;
+                case 'price':
+                    if (activeFilters.price) element.classList.add('active');
+                    break;
+                case 'brand':
+                    if (activeFilters.brands.includes(element.getAttribute('data-brand'))) {
+                        element.classList.add('active');
+                    }
+                    break;
+                case 'feature':
+                    if (activeFilters.features.includes(element.getAttribute('data-feature'))) {
+                        element.classList.add('active');
+                    }
+                    break;
+            }
         }
 
         function updateActiveFilters() {
-            const filterTags = document.getElementById('filter-tags');
+            const filterTags = document.getElementById('filter-tags-sidebar');
             filterTags.innerHTML = '';
 
             // Add category filter tag
@@ -473,13 +542,13 @@
             });
 
             // Show/hide active filters section
-            const activeFiltersSection = document.getElementById('active-filters');
+            const activeFiltersSection = document.getElementById('active-filters-sidebar');
             activeFiltersSection.style.display = filterTags.children.length > 0 ? 'block' : 'none';
         }
 
         function createFilterTag(type, value, displayName) {
             const tag = document.createElement('div');
-            tag.className = 'filter-tag';
+            tag.className = 'filter-tag-modern';
             tag.innerHTML = `
                 <span>${displayName}</span>
                 <button onclick="removeFilter('${type}', '${value}')">
@@ -493,15 +562,27 @@
             switch(type) {
                 case 'category':
                     activeFilters.category = null;
+                    document.querySelectorAll('.category-item').forEach(item => item.classList.remove('active'));
                     break;
                 case 'price':
                     activeFilters.price = null;
+                    document.querySelectorAll('.price-item').forEach(item => item.classList.remove('active'));
                     break;
                 case 'feature':
                     activeFilters.features = activeFilters.features.filter(f => f !== value);
+                    document.querySelectorAll('.feature-item').forEach(item => {
+                        if (item.getAttribute('data-feature') === value) {
+                            item.classList.remove('active');
+                        }
+                    });
                     break;
                 case 'brand':
                     activeFilters.brands = activeFilters.brands.filter(b => b !== value);
+                    document.querySelectorAll('.brand-item').forEach(item => {
+                        if (item.getAttribute('data-brand') === value) {
+                            item.classList.remove('active');
+                        }
+                    });
                     break;
             }
             updateActiveFilters();
@@ -556,19 +637,19 @@
         }
 
         function displayFilteredProducts(products) {
-            const container = document.getElementById('products-grid');
+            const container = document.getElementById('products-grid-modern');
             container.innerHTML = '';
 
             if (products.length === 0) {
-                document.getElementById('no-results').style.display = 'block';
+                document.getElementById('no-results-modern').style.display = 'block';
                 updateProductCount(0);
                 return;
             }
 
-            document.getElementById('no-results').style.display = 'none';
+            document.getElementById('no-results-modern').style.display = 'none';
 
             products.forEach((product, index) => {
-                const card = createProductCard(product, index);
+                const card = createModernProductCard(product, index);
                 container.appendChild(card);
             });
 
@@ -576,12 +657,12 @@
         }
 
         function sortProducts(sortBy) {
-            const container = document.getElementById('products-grid');
+            const container = document.getElementById('products-grid-modern');
             const products = Array.from(container.children);
 
             products.sort((a, b) => {
-                const aPrice = parseInt(a.querySelector('.product-price-compact').textContent.replace(/[^\d]/g, ''));
-                const bPrice = parseInt(b.querySelector('.product-price-compact').textContent.replace(/[^\d]/g, ''));
+                const aPrice = parseInt(a.querySelector('.product-price-modern').textContent.replace(/[^\d]/g, ''));
+                const bPrice = parseInt(b.querySelector('.product-price-modern').textContent.replace(/[^\d]/g, ''));
 
                 switch(sortBy) {
                     case 'price-low':
@@ -589,9 +670,9 @@
                     case 'price-high':
                         return bPrice - aPrice;
                     case 'rating':
-                        return Math.random() - 0.5; // Simulate rating sort
+                        return Math.random() - 0.5;
                     case 'newest':
-                        return Math.random() - 0.5; // Simulate date sort
+                        return Math.random() - 0.5;
                     default:
                         return 0;
                 }
@@ -611,13 +692,13 @@
             updateActiveFilters();
             loadAllProducts();
             
-            // Reset all filter options
-            document.querySelectorAll('.category-option, .price-option, .feature-option, .brand-option')
-                .forEach(option => option.classList.remove('active'));
+            // Remove active classes from all items
+            document.querySelectorAll('.category-item, .price-item, .feature-item, .brand-item')
+                .forEach(item => item.classList.remove('active'));
         }
 
         function updateProductCount(count) {
-            document.getElementById('visible-count').textContent = count;
+            document.getElementById('visible-count-main').textContent = count;
         }
 
         // Utility functions
@@ -653,8 +734,7 @@
                 'performance': 'High Performance',
                 'portable': 'Portable',
                 'storage': 'Large Storage',
-                'graphics': 'Premium Graphics',
-                'cooling': 'Advanced Cooling'
+                'graphics': 'Premium Graphics'
             };
             return names[feature] || feature;
         }
@@ -861,20 +941,19 @@
     </script>
 
     <style>
-        /* Customization Layout */
+        /* Modern Sidebar Styles */
         .customization-layout {
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 2rem;
             align-items: start;
         }
 
-        /* Customization Panel */
-        .customization-panel {
+        .modern-sidebar {
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: var(--shadow-soft);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
             border: 1px solid var(--border-light);
             position: sticky;
             top: 140px;
@@ -883,318 +962,325 @@
             overflow-y: auto;
         }
 
-        .panel-header {
+        .sidebar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-light);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .panel-header h3 {
-            color: var(--text-dark);
-            font-size: 1.2rem;
+        .sidebar-header h3 {
+            font-size: 1.1rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .clear-all-btn {
-            background: transparent;
-            border: 1px solid var(--border-light);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .clear-all-btn:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
-        }
-
-        /* Filter Sections */
-        .filter-section {
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .filter-header {
-            background: var(--primary-light);
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease;
-        }
-
-        .filter-header:hover {
-            background: #e8f0fe;
-        }
-
-        .filter-header h4 {
             color: var(--text-dark);
-            font-size: 1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
             margin: 0;
         }
 
-        .filter-content {
-            display: none;
-            padding: 1rem 1.5rem;
-            background: white;
+        .clear-all {
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .filter-content.active {
-            display: block;
+        .clear-all:hover {
+            background: var(--primary-light);
         }
 
-        /* Filter Options */
-        .category-options,
-        .price-options,
-        .feature-options,
-        .brand-options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        .sidebar-item {
+            margin-bottom: 0.5rem;
+            position: relative;
         }
 
-        .category-option,
-        .price-option,
-        .feature-option,
-        .brand-option {
+        .sidebar-title {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             padding: 0.75rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
             cursor: pointer;
+            border-radius: 8px;
             transition: all 0.3s ease;
-            background: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
         }
 
-        .category-option:hover,
-        .price-option:hover,
-        .feature-option:hover,
-        .brand-option:hover {
-            border-color: var(--primary-blue);
-            transform: translateX(5px);
+        .sidebar-title:hover {
+            background: var(--primary-light);
         }
 
-        .category-option.active,
-        .price-option.active,
-        .feature-option.active,
-        .brand-option.active {
+        .sidebar-title.active {
             background: var(--primary-blue);
             color: white;
-            border-color: var(--primary-blue);
         }
 
-        .category-option i,
-        .feature-option i {
-            font-size: 1.1rem;
-            width: 20px;
+        .sidebar-title i:first-child {
+            width: 16px;
             text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-title .arrow {
+            margin-left: auto;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-title.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .sidebar-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            z-index: 100;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content {
+            padding: 0.75rem;
+        }
+
+        .category-item,
+        .price-item,
+        .brand-item,
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        .category-item:hover,
+        .price-item:hover,
+        .brand-item:hover,
+        .feature-item:hover {
+            background: var(--primary-light);
+        }
+
+        .category-item.active,
+        .price-item.active,
+        .brand-item.active,
+        .feature-item.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .category-item i,
+        .feature-item i {
+            width: 16px;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         .brand-logo {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             object-fit: contain;
         }
 
-        .product-count {
+        .count {
             margin-left: auto;
-            background: rgba(0, 0, 0, 0.1);
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.08);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 600;
+            min-width: 24px;
+            text-align: center;
         }
 
-        .category-option.active .product-count,
-        .price-option.active .product-count {
+        .category-item.active .count,
+        .price-item.active .count,
+        .brand-item.active .count,
+        .feature-item.active .count {
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Active Filters */
-        .active-filters {
+        /* Active Filters Sidebar */
+        .active-filters-sidebar {
             display: none;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-light);
         }
 
-        .active-filters h4 {
-            color: var(--text-dark);
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .active-filters-header h4 {
+            font-size: 0.9rem;
             font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
         }
 
-        .filter-tags {
+        .filter-tags-sidebar {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
 
-        .filter-tag {
+        .filter-tag-modern {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             background: var(--primary-blue);
             color: white;
-            padding: 0.5rem 0.75rem;
-            border-radius: 20px;
+            padding: 0.4rem 0.75rem;
+            border-radius: 16px;
             font-size: 0.8rem;
             font-weight: 500;
         }
 
-        .filter-tag button {
+        .filter-tag-modern button {
             background: none;
             border: none;
             color: white;
             cursor: pointer;
             padding: 0;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             transition: background 0.3s ease;
+            font-size: 0.7rem;
         }
 
-        .filter-tag button:hover {
+        .filter-tag-modern button:hover {
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Products Display Panel */
-        .products-display-panel {
+        /* Products Main Area */
+        .products-main {
             flex: 1;
         }
 
-        .products-header {
+        .products-header-main {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-light);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .results-info h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: var(--gradient-premium);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .results-info-main h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
         }
 
-        .products-count {
+        .products-count-main {
+            font-size: 0.9rem;
             color: var(--text-light);
-            font-size: 1rem;
+            margin: 0;
         }
 
-        .sort-select {
-            padding: 0.75rem 1rem;
+        .sort-select-main {
+            padding: 0.6rem 1rem;
             border: 1px solid var(--border-light);
             border-radius: 8px;
             background: white;
             color: var(--text-dark);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
         }
 
-        /* Compact Products Grid */
-        .products-grid-compact {
+        /* Modern Products Grid */
+        .products-grid-modern {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
-        .product-card-compact {
+        .product-card-modern {
             background: white;
-            border-radius: 16px;
-            padding: 1.25rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
             position: relative;
             overflow: hidden;
         }
 
-        .product-card-compact:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        .product-card-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .product-image-wrapper {
+        .product-image-modern-wrapper {
             position: relative;
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            height: 180px;
+            border-radius: 8px;
+            padding: 1.25rem;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
         }
 
-        .product-image-compact {
+        .product-image-modern {
             max-width: 100%;
-            max-height: 120px;
+            max-height: 110px;
             object-fit: contain;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
-        .product-card-compact:hover .product-image-compact {
+        .product-card-modern:hover .product-image-modern {
             transform: scale(1.05);
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
         }
 
-        .product-overlay-compact {
+        .product-overlay-modern {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: all 0.3s ease;
-            border-radius: 12px;
+            border-radius: 8px;
         }
 
-        .product-image-wrapper:hover .product-overlay-compact {
+        .product-image-modern-wrapper:hover .product-overlay-modern {
             opacity: 1;
         }
 
-        .quick-view-btn-compact {
+        .quick-view-btn-modern {
             background: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             display: flex;
@@ -1202,174 +1288,162 @@
             gap: 0.5rem;
             color: var(--text-dark);
             transition: all 0.3s ease;
+            font-size: 0.85rem;
         }
 
-        .quick-view-btn-compact:hover {
+        .quick-view-btn-modern:hover {
             background: var(--primary-blue);
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
-        .product-badges {
+        .product-badges-modern {
             position: absolute;
-            top: 0.75rem;
-            left: 0.75rem;
+            top: 0.5rem;
+            left: 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
-        .badge-new,
-        .badge-trending {
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
+        .badge-new-modern,
+        .badge-trending-modern {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
-        .badge-new {
+        .badge-new-modern {
             background: #00c853;
             color: white;
         }
 
-        .badge-trending {
+        .badge-trending-modern {
             background: #ff6b00;
             color: white;
         }
 
-        .product-info-compact {
+        .product-info-modern {
             color: var(--text-dark);
         }
 
-        .product-category-compact {
+        .product-category-modern {
             color: var(--primary-blue);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.4rem;
         }
 
-        .product-title-compact {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+        .product-title-modern {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
             line-height: 1.3;
-            height: 2.6em;
+            height: 2.4em;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
         }
 
-        .product-price-compact {
-            font-size: 1.3rem;
-            font-weight: 800;
+        .product-price-modern {
+            font-size: 1.1rem;
+            font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
-        .original-price-compact {
+        .original-price-modern {
             text-decoration: line-through;
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            margin-left: 0.4rem;
         }
 
-        .product-rating-compact {
+        .product-rating-modern {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
+            gap: 0.4rem;
+            margin-bottom: 0.8rem;
         }
 
-        .stars-compact {
+        .stars-modern {
             color: #ffb400;
-        }
-
-        .reviews-compact {
-            color: var(--text-light);
             font-size: 0.8rem;
         }
 
-        .product-features-compact {
+        .reviews-modern {
+            color: var(--text-light);
+            font-size: 0.75rem;
+        }
+
+        .product-actions-modern {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.6rem;
         }
 
-        .feature-tag-compact {
-            background: var(--primary-light);
-            color: var(--primary-blue);
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .product-actions-compact {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .btn-add-cart-compact {
+        .btn-add-cart-modern {
             flex: 1;
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
+            padding: 0.6rem 0.8rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            font-size: 0.85rem;
         }
 
-        .btn-add-cart-compact:hover {
+        .btn-add-cart-modern:hover {
             background: var(--accent-hover);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         /* No Results */
-        .no-results {
+        .no-results-modern {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             color: var(--text-light);
         }
 
-        .no-results-content i {
-            font-size: 4rem;
+        .no-results-content-modern i {
+            font-size: 3rem;
             color: var(--border-light);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .no-results-content h3 {
-            font-size: 1.5rem;
+        .no-results-content-modern h3 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--text-dark);
         }
 
-        .btn-clear-filters {
+        .btn-clear-filters-modern {
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 1rem;
+            font-size: 0.85rem;
         }
 
-        .btn-clear-filters:hover {
+        .btn-clear-filters-modern:hover {
             background: var(--accent-hover);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         /* Responsive Design */
@@ -1378,34 +1452,34 @@
                 grid-template-columns: 1fr;
             }
             
-            .customization-panel {
+            .modern-sidebar {
                 position: static;
                 max-height: none;
             }
             
-            .products-grid-compact {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .products-grid-modern {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
-            .products-header {
+            .products-header-main {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
             }
             
-            .products-grid-compact {
+            .products-grid-modern {
                 grid-template-columns: 1fr;
             }
             
-            .product-image-wrapper {
-                height: 160px;
+            .product-image-modern-wrapper {
+                height: 140px;
                 padding: 1rem;
             }
             
-            .product-image-compact {
-                max-height: 100px;
+            .product-image-modern {
+                max-height: 90px;
             }
         }
     </style>

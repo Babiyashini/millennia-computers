@@ -119,55 +119,126 @@
     <!-- Advanced Products Section -->
     <section class="advanced-products-section">
         <div class="container-premium">
-            <!-- ALL CATEGORY SECTIONS -->
-            <div class="category-section" id="laptops">
-                <h2>💻 Gaming Laptops</h2>
-                <div class="products-grid-premium" id="laptops-container"></div>
-            </div>
-            
-            <div class="category-section" id="smartphones">
-                <h2>📱 Smartphones</h2>
-                <div class="products-grid-premium" id="smartphones-container"></div>
-            </div>
-            
-            <div class="category-section" id="computers">
-                <h2>🖥️ Computers</h2>
-                <div class="products-grid-premium" id="computers-container"></div>
-            </div>
-            
-            <div class="category-section" id="motherboards">
-                <h2>🔌 Motherboards</h2>
-                <div class="products-grid-premium" id="motherboards-container"></div>
-            </div>
-            
-            <div class="category-section" id="pc-components">
-                <h2>⚙️ PC Components</h2>
-                <div class="products-grid-premium" id="pc-components-container"></div>
-            </div>
-            
-            <div class="category-section" id="gpus">
-                <h2>🎮 Graphics Cards</h2>
-                <div class="products-grid-premium" id="gpus-container"></div>
-            </div>
-            
-            <div class="category-section" id="peripherals">
-                <h2>⌨️ Peripherals</h2>
-                <div class="products-grid-premium" id="peripherals-container"></div>
-            </div>
-            
-            <div class="category-section" id="psu-cases">
-                <h2>🔋 PSU, Cases & Cooling</h2>
-                <div class="products-grid-premium" id="psu-cases-container"></div>
-            </div>
-            
-            <div class="category-section" id="ram">
-                <h2>💾 RAM</h2>
-                <div class="products-grid-premium" id="ram-container"></div>
-            </div>
-            
-            <div class="category-section" id="storage">
-                <h2>💿 Storage Devices</h2>
-                <div class="products-grid-premium" id="storage-container"></div>
+            <!-- Left Side Categories Filter -->
+            <div class="category-nav-premium">
+                <div class="category-filters-premium">
+                    <div class="filter-group-premium">
+                        <h4>Categories</h4>
+                        <div class="filter-options">
+                            <button class="filter-option active" data-category="all">
+                                <i class="fas fa-th-large"></i>
+                                All Products
+                                <span class="product-count">124</span>
+                            </button>
+                            <button class="filter-option" data-category="laptops">
+                                <i class="fas fa-laptop"></i>
+                                Gaming Laptops
+                                <span class="product-count">24</span>
+                            </button>
+                            <button class="filter-option" data-category="smartphones">
+                                <i class="fas fa-mobile-alt"></i>
+                                Smartphones
+                                <span class="product-count">18</span>
+                            </button>
+                            <button class="filter-option" data-category="components">
+                                <i class="fas fa-microchip"></i>
+                                PC Components
+                                <span class="product-count">82</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Range Dropdown -->
+                    <div class="filter-group-premium">
+                        <h4>Price Range</h4>
+                        <div class="dropdown-filter">
+                            <select class="price-dropdown" id="price-dropdown">
+                                <option value="all">All Prices</option>
+                                <option value="0-25000">Under Rs. 25,000</option>
+                                <option value="25000-50000">Rs. 25,000 - 50,000</option>
+                                <option value="50000-100000">Rs. 50,000 - 1,00,000</option>
+                                <option value="100000-200000">Rs. 1,00,000 - 2,00,000</option>
+                                <option value="200000+">Above Rs. 2,00,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Brand Filter Dropdown -->
+                    <div class="filter-group-premium">
+                        <h4>Brand</h4>
+                        <div class="dropdown-filter">
+                            <select class="brand-dropdown" id="brand-dropdown">
+                                <option value="all">All Brands</option>
+                                <option value="asus">ASUS ROG</option>
+                                <option value="apple">Apple</option>
+                                <option value="msi">MSI</option>
+                                <option value="samsung">Samsung</option>
+                                <option value="dell">Dell</option>
+                                <option value="hp">HP</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Features Filter Dropdown -->
+                    <div class="filter-group-premium">
+                        <h4>Key Features</h4>
+                        <div class="dropdown-filter">
+                            <select class="features-dropdown" id="features-dropdown">
+                                <option value="all">All Features</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="performance">High Performance</option>
+                                <option value="portable">Portable</option>
+                                <option value="storage">Large Storage</option>
+                                <option value="graphics">Premium Graphics</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Sort By Dropdown -->
+                    <div class="filter-group-premium">
+                        <h4>Sort By</h4>
+                        <div class="dropdown-filter">
+                            <select class="sort-dropdown" id="sort-dropdown">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="filter-group-premium">
+                        <h4>Quick Actions</h4>
+                        <div class="quick-actions">
+                            <button class="action-btn" onclick="clearAllFilters()">
+                                <i class="fas fa-times"></i>
+                                Clear Filters
+                            </button>
+                            <button class="action-btn" onclick="applyFilters()">
+                                <i class="fas fa-check"></i>
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side Products Display -->
+                <div class="category-display-premium">
+                    <!-- Products Count & Sort -->
+                    <div class="products-header-premium">
+                        <div class="products-info">
+                            <h2>Premium Products</h2>
+                            <p class="products-count-text">Showing <span id="visible-count">124</span> of 124 premium products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ALL Products Grid -->
+                    <div class="products-grid-premium" id="all-products-container">
+                        <!-- ALL products will be loaded here -->
+                    </div>
+                </div>
             </div>
             
             <!-- Quick View Modal -->
@@ -254,10 +325,9 @@
     <script>
         // Advanced Products Page Functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all products by category
-            loadAllCategoryProducts();
-            setupGlobalSearch();
-            setupCategorySmoothScroll();
+            // Initialize all products
+            loadAllProducts();
+            setupAdvancedFilters();
             setupQuickView();
             initScrollAnimations();
             
@@ -272,130 +342,11 @@
             });
         });
 
-        function loadAllCategoryProducts() {
-            // Load products for each category
-            loadCategoryProducts('laptops', laptops);
-            loadCategoryProducts('smartphones', smartphones);
-            loadCategoryProducts('computers', computers || []); // Add your computers array
-            loadCategoryProducts('motherboards', motherboards);
-            loadCategoryProducts('pc-components', pcComponents);
-            loadCategoryProducts('gpus', gpus);
-            loadCategoryProducts('peripherals', peripherals);
-            loadCategoryProducts('psu-cases', psuCasesCooling);
-            loadCategoryProducts('ram', ram);
-            loadCategoryProducts('storage', storageDevices);
-        }
-
-        function loadCategoryProducts(categoryId, products) {
-            const container = document.getElementById(`${categoryId}-container`);
-            if (!container) return;
+        function loadAllProducts() {
+            const container = document.getElementById('all-products-container');
             
-            container.innerHTML = '';
-            
-            if (products && products.length > 0) {
-                products.forEach((product, index) => {
-                    const card = createProductCard(product, index);
-                    container.appendChild(card);
-                });
-            } else {
-                container.innerHTML = '<p class="no-products">No products available in this category.</p>';
-            }
-        }
-
-        function createProductCard(product, index) {
-            const card = document.createElement('div');
-            card.className = 'product-card-premium fade-in-up';
-            card.style.animationDelay = `${index * 0.05}s`;
-            card.innerHTML = `
-                <div class="product-3d-effect">
-                    <div class="product-image-container-premium">
-                        <img src="${product.image}" alt="${product.name}" class="product-image-premium">
-                        <div class="product-overlay-premium">
-                            <button class="quick-view-btn" onclick="openQuickView(${product.id})">
-                                <i class="fas fa-eye"></i>
-                                Quick View
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-info-premium">
-                        <div class="product-category-premium">${product.category}</div>
-                        <h3 class="product-title-premium">${product.name}</h3>
-                        <div class="product-price-premium">
-                            ${product.price}
-                            ${product.originalPrice ? `<span class="original-price">${product.originalPrice}</span>` : ''}
-                        </div>
-                        <div class="product-rating-premium">
-                            <span class="stars-premium">${'★'.repeat(5)}</span>
-                            <span class="reviews">${product.reviews}</span>
-                        </div>
-                        <div class="product-features-premium">
-                            ${product.keyFeatures ? product.keyFeatures.slice(0, 2).map(feature => 
-                                `<span class="feature-tag">${feature}</span>`
-                            ).join('') : ''}
-                        </div>
-                        <div class="product-actions-premium">
-                            <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
-                                <i class="fas fa-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            return card;
-        }
-
-        function setupGlobalSearch() {
-            const searchInput = document.getElementById('global-search');
-            const searchResults = document.getElementById('global-search-results');
-            
-            searchInput.addEventListener('input', function(e) {
-                const query = e.target.value.toLowerCase().trim();
-                
-                if (query.length < 2) {
-                    searchResults.style.display = 'none';
-                    return;
-                }
-                
-                const allProducts = getAllProducts();
-                const results = allProducts.filter(product => 
-                    product.name.toLowerCase().includes(query) ||
-                    product.category.toLowerCase().includes(query) ||
-                    (product.keyFeatures && product.keyFeatures.some(feature => 
-                        feature.toLowerCase().includes(query)
-                    ))
-                ).slice(0, 8);
-                
-                displayGlobalSearchResults(results);
-            });
-            
-            // Search button functionality
-            document.querySelector('.search-btn-premium').addEventListener('click', function() {
-                const query = searchInput.value.toLowerCase().trim();
-                if (query) {
-                    searchAndFilterProducts(query);
-                }
-            });
-            
-            // Enter key support
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    const query = searchInput.value.toLowerCase().trim();
-                    if (query) {
-                        searchAndFilterProducts(query);
-                    }
-                }
-            });
-            
-            document.addEventListener('click', function(e) {
-                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                    searchResults.style.display = 'none';
-                }
-            });
-        }
-
-        function getAllProducts() {
-            return [
+            // Combine ALL products
+            const allProducts = [
                 ...laptops, 
                 ...smartphones,
                 ...pcComponents,
@@ -406,100 +357,131 @@
                 ...motherboards,
                 ...peripherals
             ];
-        }
 
-        function displayGlobalSearchResults(results) {
-            const searchResults = document.getElementById('global-search-results');
+            container.innerHTML = '';
             
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="search-result-item">No products found</div>';
-                searchResults.style.display = 'block';
-                return;
-            }
-            
-            searchResults.innerHTML = results.map(product => `
-                <div class="search-result-item" onclick="viewProductDetails(${product.id})">
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="search-result-info">
-                        <h4>${product.name}</h4>
-                        <div class="price">${product.price}</div>
-                        <div class="category">${product.category}</div>
+            allProducts.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card-premium fade-in-up';
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.innerHTML = `
+                    <div class="product-3d-effect">
+                        <div class="product-image-container-premium">
+                            <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                            <div class="product-overlay-premium">
+                                <button class="quick-view-btn" onclick="openQuickView(${product.id})">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info-premium">
+                            <div class="product-category-premium">${product.category}</div>
+                            <h3 class="product-title-premium">${product.name}</h3>
+                            <div class="product-price-premium">
+                                ${product.price}
+                                ${product.originalPrice ? `<span class="original-price">${product.originalPrice}</span>` : ''}
+                            </div>
+                            <div class="product-rating-premium">
+                                <span class="stars-premium">${'★'.repeat(5)}</span>
+                                <span class="reviews">${product.reviews}</span>
+                            </div>
+                            <div class="product-features-premium">
+                                ${product.keyFeatures ? product.keyFeatures.slice(0, 2).map(feature => 
+                                    `<span class="feature-tag">${feature}</span>`
+                                ).join('') : ''}
+                            </div>
+                            <div class="product-actions-premium">
+                                <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            `).join('');
-            
-            searchResults.style.display = 'block';
-        }
-
-        function searchAndFilterProducts(query) {
-            const allProducts = getAllProducts();
-            const results = allProducts.filter(product => 
-                product.name.toLowerCase().includes(query) ||
-                product.category.toLowerCase().includes(query)
-            );
-            
-            // Hide all categories
-            document.querySelectorAll('.category-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show only matching products
-            if (results.length > 0) {
-                const searchResultsContainer = document.createElement('div');
-                searchResultsContainer.className = 'category-section';
-                searchResultsContainer.id = 'search-results-section';
-                searchResultsContainer.innerHTML = `
-                    <h2>Search Results for "${query}"</h2>
-                    <div class="products-grid-premium" id="search-results-grid"></div>
                 `;
-                
-                // Remove previous search results if any
-                const existingResults = document.getElementById('search-results-section');
-                if (existingResults) {
-                    existingResults.remove();
-                }
-                
-                document.querySelector('.advanced-products-section .container-premium').prepend(searchResultsContainer);
-                
-                const grid = document.getElementById('search-results-grid');
-                grid.innerHTML = '';
-                
-                results.forEach((product, index) => {
-                    const card = createProductCard(product, index);
-                    grid.appendChild(card);
-                });
-            } else {
-                showPremiumNotification('No products found for your search.');
-            }
+                container.appendChild(card);
+            });
+
+            // Update products count
+            document.getElementById('visible-count').textContent = allProducts.length;
         }
 
-        function setupCategorySmoothScroll() {
-            // Smooth scroll to category when clicking category links
-            document.querySelectorAll('.category-link-premium').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
+        function setupAdvancedFilters() {
+            // Category filtering
+            document.querySelectorAll('.filter-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
                     
-                    if (targetElement) {
-                        // Show all categories first
-                        document.querySelectorAll('.category-section').forEach(section => {
-                            section.style.display = 'block';
-                        });
-                        
-                        // Remove search results if any
-                        const searchResults = document.getElementById('search-results-section');
-                        if (searchResults) {
-                            searchResults.remove();
-                        }
-                        
-                        targetElement.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    const category = this.getAttribute('data-category');
+                    filterProductsByCategory(category);
                 });
             });
+
+            // Dropdown change events
+            document.getElementById('price-dropdown').addEventListener('change', function() {
+                filterProducts();
+            });
+
+            document.getElementById('brand-dropdown').addEventListener('change', function() {
+                filterProducts();
+            });
+
+            document.getElementById('features-dropdown').addEventListener('change', function() {
+                filterProducts();
+            });
+
+            document.getElementById('sort-dropdown').addEventListener('change', function() {
+                sortProducts(this.value);
+            });
+
+            // Search functionality
+            document.getElementById('global-search').addEventListener('input', function(e) {
+                searchProducts(e.target.value);
+            });
+        }
+
+        function filterProducts() {
+            const priceFilter = document.getElementById('price-dropdown').value;
+            const brandFilter = document.getElementById('brand-dropdown').value;
+            const featuresFilter = document.getElementById('features-dropdown').value;
+            
+            console.log('Filtering by:', { priceFilter, brandFilter, featuresFilter });
+            // Implementation would filter products based on selected criteria
+        }
+
+        function filterProductsByCategory(category) {
+            console.log('Filtering by category:', category);
+            // Implementation for category filtering
+        }
+
+        function searchProducts(query) {
+            console.log('Searching for:', query);
+            // Implementation for search
+        }
+
+        function sortProducts(sortBy) {
+            console.log('Sorting by:', sortBy);
+            // Implementation for sorting
+        }
+
+        function clearAllFilters() {
+            document.querySelectorAll('.filter-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector('.filter-option[data-category="all"]').classList.add('active');
+            
+            document.getElementById('price-dropdown').value = 'all';
+            document.getElementById('brand-dropdown').value = 'all';
+            document.getElementById('features-dropdown').value = 'all';
+            document.getElementById('sort-dropdown').value = 'featured';
+            
+            loadAllProducts();
+            showPremiumNotification('All filters cleared!');
+        }
+
+        function applyFilters() {
+            filterProducts();
+            showPremiumNotification('Filters applied successfully!');
         }
 
         function setupQuickView() {
@@ -518,7 +500,17 @@
         }
 
         function openQuickView(productId) {
-            const allProducts = getAllProducts();
+            const allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents,
+                ...gpus,
+                ...ram,
+                ...psuCasesCooling,
+                ...storageDevices,
+                ...motherboards,
+                ...peripherals
+            ];
             
             const product = allProducts.find(p => p.id === productId);
             if (!product) return;
@@ -583,14 +575,22 @@
             count++;
             cartCount.textContent = count;
             
-            // Advanced notification
-            const allProducts = getAllProducts();
+            const allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents,
+                ...gpus,
+                ...ram,
+                ...psuCasesCooling,
+                ...storageDevices,
+                ...motherboards,
+                ...peripherals
+            ];
             const product = allProducts.find(p => p.id === productId);
             if (product) {
                 showPremiumNotification(`${product.name} added to cart!`);
             }
             
-            // Cart animation
             animateCartIcon();
         }
 
@@ -769,37 +769,244 @@
             background: var(--primary-light);
         }
 
-        .category-section {
-            margin-bottom: 4rem;
+        .category-nav-premium {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3rem;
+            align-items: start;
         }
 
-        .category-section h2 {
+        .category-filters-premium {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            height: fit-content;
+            position: sticky;
+            top: 140px;
+            border: 1px solid var(--border-light);
+        }
+
+        .filter-group-premium {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .filter-group-premium:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .filter-group-premium h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-group-premium h4::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+            font-weight: 500;
+            width: 100%;
+            text-align: left;
+        }
+
+        .filter-option.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+            transform: translateX(5px);
+        }
+
+        .filter-option:hover:not(.active) {
+            border-color: var(--primary-blue);
+            transform: translateX(5px);
+        }
+
+        .product-count {
+            margin-left: auto;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .filter-option.active .product-count {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dropdown Filters */
+        .dropdown-filter {
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-filter select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            background: white;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 12px;
+        }
+
+        .dropdown-filter select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .dropdown-filter select:hover {
+            border-color: var(--primary-blue);
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            background: white;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            width: 100%;
+            text-align: left;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .action-btn:first-child:hover {
+            border-color: #e74c3c;
+            color: #e74c3c;
+        }
+
+        .action-btn:last-child:hover {
+            border-color: #27ae60;
+            color: #27ae60;
+        }
+
+        .category-display-premium {
+            flex: 1;
+        }
+
+        .products-header-premium {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        .products-info h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 2rem;
-            text-align: center;
+            margin-bottom: 0.5rem;
             background: var(--gradient-premium);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .no-products {
-            text-align: center;
+        .products-count-text {
             color: var(--text-light);
-            font-style: italic;
-            padding: 2rem;
-            grid-column: 1 / -1;
+            font-size: 1.1rem;
         }
 
-        /* Enhanced product cards with white backgrounds */
-        .product-image-container-premium {
-            background: white !important;
+        /* Enhanced Product Cards with Smaller Images and Shadows */
+        .product-card-premium {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            height: fit-content;
         }
 
-        /* Remove view details button */
-        .btn-view-details-premium {
-            display: none !important;
+        .product-image-container-premium {
+            position: relative;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: white !important;
+            border-radius: 16px;
+            padding: 2rem;
+            height: 200px; /* Reduced height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Added shadow for realistic feel */
+            transition: all 0.3s ease;
+        }
+
+        .product-image-container-premium:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+            transform: translateY(-2px);
+        }
+
+        .product-image-premium {
+            max-width: 100%;
+            max-height: 140px; /* Smaller image */
+            object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+        }
+
+        .product-card-premium:hover .product-image-premium {
+            transform: scale(1.1) translateY(-5px);
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15));
         }
 
         .product-overlay-premium {
@@ -814,7 +1021,7 @@
             justify-content: center;
             opacity: 0;
             transition: all 0.3s ease;
-            border-radius: 20px;
+            border-radius: 16px;
         }
 
         .product-image-container-premium:hover .product-overlay-premium {
@@ -824,8 +1031,8 @@
         .quick-view-btn {
             background: white;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
@@ -959,6 +1166,7 @@
             border-radius: 16px;
             background: white;
             padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .quickview-category {
@@ -1085,6 +1293,7 @@
             background: white;
             border-radius: 8px;
             padding: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .search-result-info h4 {
@@ -1110,6 +1319,14 @@
         }
 
         @media (max-width: 1024px) {
+            .category-nav-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-filters-premium {
+                position: static;
+            }
+            
             .products-header-premium {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1126,8 +1343,13 @@
                 font-size: 2.5rem;
             }
             
-            .category-section h2 {
-                font-size: 2rem;
+            .product-image-container-premium {
+                height: 180px;
+                padding: 1.5rem;
+            }
+            
+            .product-image-premium {
+                max-height: 120px;
             }
         }
     </style>

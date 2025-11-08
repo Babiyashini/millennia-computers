@@ -404,191 +404,9 @@
             padding: 0 2rem;
         }
 
-        .products-layout-pro {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        /* Professional Sidebar */
-        .pro-sidebar {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-light);
-            position: sticky;
-            top: 140px;
-            height: fit-content;
-        }
-
-        .sidebar-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .sidebar-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .sidebar-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        .category-list,
-        .price-list,
-        .brand-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .category-item-pro,
-        .price-item-pro,
-        .brand-item-pro {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-item-pro:hover,
-        .price-item-pro:hover,
-        .brand-item-pro:hover {
-            background: rgba(37, 99, 235, 0.05);
-            border-color: var(--primary-blue);
-            transform: translateX(5px);
-        }
-
-        .category-item-pro.active,
-        .price-item-pro.active,
-        .brand-item-pro.active {
-            background: var(--primary-blue);
-            color: white;
-            border-color: var(--primary-blue);
-        }
-
-        .category-content,
-        .brand-content {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .category-content i {
-            width: 20px;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .brand-logo-pro {
-            width: 22px;
-            height: 22px;
-            object-fit: contain;
-        }
-
-        .item-count {
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(37, 99, 235, 0.1);
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
-            min-width: 28px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .category-item-pro.active .item-count,
-        .price-item-pro.active .item-count,
-        .brand-item-pro.active .item-count {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        /* Active Filters */
-        .active-filters-pro {
-            display: none;
-            background: rgba(37, 99, 235, 0.05);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .filter-tags-pro {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .filter-tag-pro {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--primary-blue);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .filter-tag-pro button {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 0;
-            width: 16px;
-            height: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background 0.2s ease;
-            font-size: 0.8rem;
-        }
-
-        .filter-tag-pro button:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .clear-all-pro {
-            width: 100%;
-            background: #6c757d;
-            color: white;
-            border: none;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            font-size: 0.9rem;
-        }
-
-        .clear-all-pro:hover {
-            background: #5a6268;
-        }
-
-        /* Main Products Area */
+        /* Main Products Area - Full Width */
         .products-main-pro {
-            flex: 1;
+            width: 100%;
         }
 
         .products-header-pro {
@@ -1210,10 +1028,6 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .products-layout-pro {
-                grid-template-columns: 250px 1fr;
-            }
-            
             .products-grid-pro {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
@@ -1236,15 +1050,6 @@
         }
 
         @media (max-width: 768px) {
-            .products-layout-pro {
-                grid-template-columns: 1fr;
-            }
-            
-            .pro-sidebar {
-                position: static;
-                margin-bottom: 2rem;
-            }
-            
             .products-header-pro {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1393,6 +1198,17 @@
                         </div>
                         <span class="nav-item-count">18</span>
                     </a>
+                    
+                    <a href="#" class="nav-item" data-category="components">
+                        <div class="nav-item-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="nav-item-content">
+                            <div class="nav-item-title">PC Components</div>
+                            <div class="nav-item-desc">All essential components for PC building</div>
+                        </div>
+                        <span class="nav-item-count">35</span>
+                    </a>
                 </div>
             </div>
             
@@ -1430,6 +1246,17 @@
                             <div class="nav-item-desc">Premium performance</div>
                         </div>
                         <span class="nav-item-count">45</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" data-price="100000-200000">
+                        <div class="nav-item-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="nav-item-content">
+                            <div class="nav-item-title">Rs. 1,00,000 - 2,00,000</div>
+                            <div class="nav-item-desc">Flagship products</div>
+                        </div>
+                        <span class="nav-item-count">28</span>
                     </a>
                 </div>
             </div>
@@ -1469,6 +1296,17 @@
                         </div>
                         <span class="nav-item-count">16</span>
                     </a>
+                    
+                    <a href="#" class="nav-item" data-brand="samsung">
+                        <div class="nav-item-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="nav-item-content">
+                            <div class="nav-item-title">Samsung</div>
+                            <div class="nav-item-desc">Galaxy series and tablets</div>
+                        </div>
+                        <span class="nav-item-count">14</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1506,192 +1344,49 @@
     <!-- Main Products Section -->
     <section class="main-products-section">
         <div class="container-premium">
-            <div class="products-layout-pro">
-                <!-- Left Sidebar - Professional Filters -->
-                <div class="pro-sidebar">
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">CATEGORIES</h3>
-                        <div class="category-list">
-                            <div class="category-item-pro" data-category="laptops">
-                                <div class="category-content">
-                                    <i class="fas fa-laptop"></i>
-                                    <span>Laptops</span>
-                                </div>
-                                <span class="item-count">24</span>
-                            </div>
-                            <div class="category-item-pro" data-category="motherboards">
-                                <div class="category-content">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>Motherboards</span>
-                                </div>
-                                <span class="item-count">12</span>
-                            </div>
-                            <div class="category-item-pro" data-category="gpus">
-                                <div class="category-content">
-                                    <i class="fas fa-gamepad"></i>
-                                    <span>PC Components - GPUs</span>
-                                </div>
-                                <span class="item-count">18</span>
-                            </div>
-                            <div class="category-item-pro" data-category="components">
-                                <div class="category-content">
-                                    <i class="fas fa-cogs"></i>
-                                    <span>PC Components</span>
-                                </div>
-                                <span class="item-count">35</span>
-                            </div>
-                            <div class="category-item-pro" data-category="psu-cases">
-                                <div class="category-content">
-                                    <i class="fas fa-server"></i>
-                                    <span>PSU, Cases & Cooling</span>
-                                </div>
-                                <span class="item-count">15</span>
-                            </div>
-                            <div class="category-item-pro" data-category="peripherals">
-                                <div class="category-content">
-                                    <i class="fas fa-keyboard"></i>
-                                    <span>Peripherals</span>
-                                </div>
-                                <span class="item-count">28</span>
-                            </div>
-                            <div class="category-item-pro" data-category="ram">
-                                <div class="category-content">
-                                    <i class="fas fa-memory"></i>
-                                    <span>RAM</span>
-                                </div>
-                                <span class="item-count">20</span>
-                            </div>
-                            <div class="category-item-pro" data-category="smartphones">
-                                <div class="category-content">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <span>Smartphones</span>
-                                </div>
-                                <span class="item-count">16</span>
-                            </div>
-                            <div class="category-item-pro" data-category="storage">
-                                <div class="category-content">
-                                    <i class="fas fa-hdd"></i>
-                                    <span>Storage Devices</span>
-                                </div>
-                                <span class="item-count">22</span>
-                            </div>
-                        </div>
+            <!-- Main Products Area - Full Width -->
+            <div class="products-main-pro">
+                <div class="products-header-pro">
+                    <div class="results-info-pro">
+                        <h1 id="results-title-pro">All Products</h1>
+                        <p class="products-count-pro"><span id="visible-count-pro">186</span> products</p>
                     </div>
-
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">PRICE RANGE</h3>
-                        <div class="price-list">
-                            <div class="price-item-pro" data-price="0-25000">
-                                <span>Under Rs. 25,000</span>
-                                <span class="item-count">18</span>
-                            </div>
-                            <div class="price-item-pro" data-price="25000-50000">
-                                <span>Rs. 25,000 - 50,000</span>
-                                <span class="item-count">32</span>
-                            </div>
-                            <div class="price-item-pro" data-price="50000-100000">
-                                <span>Rs. 50,000 - 1,00,000</span>
-                                <span class="item-count">45</span>
-                            </div>
-                            <div class="price-item-pro" data-price="100000-200000">
-                                <span>Rs. 1,00,000 - 2,00,000</span>
-                                <span class="item-count">28</span>
-                            </div>
-                            <div class="price-item-pro" data-price="200000+">
-                                <span>Above Rs. 2,00,000</span>
-                                <span class="item-count">16</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">BRANDS</h3>
-                        <div class="brand-list">
-                            <div class="brand-item-pro" data-brand="asus">
-                                <div class="brand-content">
-                                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Asus-Logo.png" alt="ASUS" class="brand-logo-pro">
-                                    <span>ASUS ROG</span>
-                                </div>
-                                <span class="item-count">24</span>
-                            </div>
-                            <div class="brand-item-pro" data-brand="msi">
-                                <div class="brand-content">
-                                    <img src="https://logos-world.net/wp-content/uploads/2021/03/MSI-Logo.png" alt="MSI" class="brand-logo-pro">
-                                    <span>MSI</span>
-                                </div>
-                                <span class="item-count">18</span>
-                            </div>
-                            <div class="brand-item-pro" data-brand="apple">
-                                <div class="brand-content">
-                                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" class="brand-logo-pro">
-                                    <span>Apple</span>
-                                </div>
-                                <span class="item-count">16</span>
-                            </div>
-                            <div class="brand-item-pro" data-brand="samsung">
-                                <div class="brand-content">
-                                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Samsung-Logo.png" alt="Samsung" class="brand-logo-pro">
-                                    <span>Samsung</span>
-                                </div>
-                                <span class="item-count">14</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Active Filters -->
-                    <div class="active-filters-pro" id="active-filters-pro">
-                        <h3 class="sidebar-title">ACTIVE FILTERS</h3>
-                        <div class="filter-tags-pro" id="filter-tags-pro">
-                            <!-- Active filters will appear here -->
-                        </div>
-                        <button class="clear-all-pro" onclick="clearAllFilters()">Clear All</button>
+                    <div class="sort-options-pro">
+                        <select id="sort-select-pro" class="sort-select-pro">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                            <option value="newest">Newest First</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Main Products Area -->
-                <div class="products-main-pro">
-                    <div class="products-header-pro">
-                        <div class="results-info-pro">
-                            <h1 id="results-title-pro">All Products</h1>
-                            <p class="products-count-pro"><span id="visible-count-pro">186</span> products</p>
-                        </div>
-                        <div class="sort-options-pro">
-                            <select id="sort-select-pro" class="sort-select-pro">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="rating">Top Rated</option>
-                                <option value="newest">Newest First</option>
-                            </select>
-                        </div>
-                    </div>
+                <!-- Products Grid -->
+                <div class="products-grid-pro" id="products-grid-pro">
+                    <!-- Products will be loaded here -->
+                </div>
 
-                    <!-- Products Grid -->
-                    <div class="products-grid-pro" id="products-grid-pro">
-                        <!-- Products will be loaded here -->
+                <!-- Search Results -->
+                <div class="search-results-section" id="search-results-section" style="display: none;">
+                    <div class="search-header">
+                        <h2>Search Results for "<span id="search-query"></span>"</h2>
+                        <button class="back-to-all" onclick="showAllProducts()">← Back to All Products</button>
                     </div>
-
-                    <!-- Search Results -->
-                    <div class="search-results-section" id="search-results-section" style="display: none;">
-                        <div class="search-header">
-                            <h2>Search Results for "<span id="search-query"></span>"</h2>
-                            <button class="back-to-all" onclick="showAllProducts()">← Back to All Products</button>
-                        </div>
-                        <div class="search-products-grid" id="search-products-grid">
-                            <!-- Search results will be loaded here -->
-                        </div>
+                    <div class="search-products-grid" id="search-products-grid">
+                        <!-- Search results will be loaded here -->
                     </div>
+                </div>
 
-                    <!-- No Results Message -->
-                    <div class="no-results-pro" id="no-results-pro" style="display: none;">
-                        <div class="no-results-content-pro">
-                            <i class="fas fa-search"></i>
-                            <h3>No products found</h3>
-                            <p>Try adjusting your filters or search terms</p>
-                            <button class="btn-clear-filters-pro" onclick="clearAllFilters()">
-                                Clear All Filters
-                            </button>
-                        </div>
+                <!-- No Results Message -->
+                <div class="no-results-pro" id="no-results-pro" style="display: none;">
+                    <div class="no-results-content-pro">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                        <button class="btn-clear-filters-pro" onclick="clearAllFilters()">
+                            Clear All Filters
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1717,7 +1412,7 @@
         let currentSearchQuery = '';
         let allProducts = [];
 
-        // Sample product data
+        // Sample product data - This would normally come from all-products.js
         const laptops = [
             {
                 id: 1,
@@ -1814,7 +1509,6 @@
         function initializePage() {
             allProducts = getAllProducts();
             loadAllProducts();
-            setupFilterInteractions();
             setupSearchFunctionality();
             setupQuickView();
             setupSorting();
@@ -1831,7 +1525,7 @@
         }
 
         function setupAdvancedNavigation() {
-            const navItems = document.querySelectorAll('.nav-premium a, .category-item-pro, .price-item-pro, .brand-item-pro');
+            const navItems = document.querySelectorAll('.nav-premium a, .nav-item');
             const advancedNav = document.getElementById('advanced-nav');
             
             navItems.forEach(item => {
@@ -1862,38 +1556,25 @@
                     const price = this.getAttribute('data-price');
                     const brand = this.getAttribute('data-brand');
                     
+                    // Reset all filters first
+                    activeFilters = {
+                        category: null,
+                        price: null,
+                        brands: []
+                    };
+                    
                     if (category) {
                         activeFilters.category = category;
-                        document.querySelectorAll('.category-item-pro').forEach(el => {
-                            el.classList.remove('active');
-                            if (el.getAttribute('data-category') === category) {
-                                el.classList.add('active');
-                            }
-                        });
                     }
                     
                     if (price) {
                         activeFilters.price = price;
-                        document.querySelectorAll('.price-item-pro').forEach(el => {
-                            el.classList.remove('active');
-                            if (el.getAttribute('data-price') === price) {
-                                el.classList.add('active');
-                            }
-                        });
                     }
                     
                     if (brand) {
-                        if (!activeFilters.brands.includes(brand)) {
-                            activeFilters.brands.push(brand);
-                        }
-                        document.querySelectorAll('.brand-item-pro').forEach(el => {
-                            if (el.getAttribute('data-brand') === brand) {
-                                el.classList.add('active');
-                            }
-                        });
+                        activeFilters.brands.push(brand);
                     }
                     
-                    updateActiveFilters();
                     applyFilters();
                     advancedNav.style.display = 'none';
                 });
@@ -1973,129 +1654,6 @@
             return card;
         }
 
-        function setupFilterInteractions() {
-            // Category filter
-            document.querySelectorAll('.category-item-pro').forEach(item => {
-                item.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    activeFilters.category = activeFilters.category === category ? null : category;
-                    updateActiveFilters();
-                    applyFilters();
-                    updateItemSelection(this, 'category');
-                });
-            });
-
-            // Price filter
-            document.querySelectorAll('.price-item-pro').forEach(item => {
-                item.addEventListener('click', function() {
-                    const price = this.getAttribute('data-price');
-                    activeFilters.price = activeFilters.price === price ? null : price;
-                    updateActiveFilters();
-                    applyFilters();
-                    updateItemSelection(this, 'price');
-                });
-            });
-
-            // Brand filter
-            document.querySelectorAll('.brand-item-pro').forEach(item => {
-                item.addEventListener('click', function() {
-                    const brand = this.getAttribute('data-brand');
-                    const index = activeFilters.brands.indexOf(brand);
-                    if (index > -1) {
-                        activeFilters.brands.splice(index, 1);
-                    } else {
-                        activeFilters.brands.push(brand);
-                    }
-                    updateActiveFilters();
-                    applyFilters();
-                    updateItemSelection(this, 'brand');
-                });
-            });
-        }
-
-        function updateItemSelection(element, type) {
-            // Remove active class from all items of same type
-            const items = element.parentElement.querySelectorAll(`.${type}-item-pro`);
-            items.forEach(item => item.classList.remove('active'));
-            
-            // Add active class if selected
-            switch(type) {
-                case 'category':
-                    if (activeFilters.category) element.classList.add('active');
-                    break;
-                case 'price':
-                    if (activeFilters.price) element.classList.add('active');
-                    break;
-                case 'brand':
-                    if (activeFilters.brands.includes(element.getAttribute('data-brand'))) {
-                        element.classList.add('active');
-                    }
-                    break;
-            }
-        }
-
-        function updateActiveFilters() {
-            const filterTags = document.getElementById('filter-tags-pro');
-            filterTags.innerHTML = '';
-
-            // Add category filter tag
-            if (activeFilters.category) {
-                const tag = createFilterTagPro('category', activeFilters.category, getCategoryName(activeFilters.category));
-                filterTags.appendChild(tag);
-            }
-
-            // Add price filter tag
-            if (activeFilters.price) {
-                const tag = createFilterTagPro('price', activeFilters.price, getPriceRangeName(activeFilters.price));
-                filterTags.appendChild(tag);
-            }
-
-            // Add brand filter tags
-            activeFilters.brands.forEach(brand => {
-                const tag = createFilterTagPro('brand', brand, getBrandName(brand));
-                filterTags.appendChild(tag);
-            });
-
-            // Show/hide active filters section
-            const activeFiltersSection = document.getElementById('active-filters-pro');
-            activeFiltersSection.style.display = filterTags.children.length > 0 ? 'block' : 'none';
-        }
-
-        function createFilterTagPro(type, value, displayName) {
-            const tag = document.createElement('div');
-            tag.className = 'filter-tag-pro';
-            tag.innerHTML = `
-                <span>${displayName}</span>
-                <button onclick="removeFilter('${type}', '${value}')">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            return tag;
-        }
-
-        function removeFilter(type, value) {
-            switch(type) {
-                case 'category':
-                    activeFilters.category = null;
-                    document.querySelectorAll('.category-item-pro').forEach(item => item.classList.remove('active'));
-                    break;
-                case 'price':
-                    activeFilters.price = null;
-                    document.querySelectorAll('.price-item-pro').forEach(item => item.classList.remove('active'));
-                    break;
-                case 'brand':
-                    activeFilters.brands = activeFilters.brands.filter(b => b !== value);
-                    document.querySelectorAll('.brand-item-pro').forEach(item => {
-                        if (item.getAttribute('data-brand') === value) {
-                            item.classList.remove('active');
-                        }
-                    });
-                    break;
-            }
-            updateActiveFilters();
-            applyFilters();
-        }
-
         function applyFilters() {
             let filteredProducts = [...allProducts];
 
@@ -2156,6 +1714,12 @@
         function getFilteredTitle() {
             if (activeFilters.category) {
                 return getCategoryName(activeFilters.category);
+            }
+            if (activeFilters.price) {
+                return getPriceRangeName(activeFilters.price);
+            }
+            if (activeFilters.brands.length > 0) {
+                return getBrandName(activeFilters.brands[0]);
             }
             return 'Filtered Products';
         }
@@ -2275,12 +1839,7 @@
                 price: null,
                 brands: []
             };
-            updateActiveFilters();
             loadAllProducts();
-            
-            // Remove active classes from all items
-            document.querySelectorAll('.category-item-pro, .price-item-pro, .brand-item-pro')
-                .forEach(item => item.classList.remove('active'));
         }
 
         function updateProductCount(count) {

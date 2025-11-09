@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Simple Dropdown Styles */
+        /* Tiny Compact Dropdown Styles */
         .nav-premium > li {
             position: relative;
         }
@@ -19,14 +19,14 @@
             top: 100%;
             left: 0;
             background: white;
-            min-width: 200px;
+            min-width: 180px;
             box-shadow: var(--shadow-premium);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 0.5rem 0;
             z-index: 1001;
             opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
+            transform: translateY(5px);
+            transition: all 0.2s ease;
             border: 1px solid var(--border-light);
         }
 
@@ -38,12 +38,12 @@
 
         .dropdown-content a {
             display: block;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             color: var(--text-dark);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: relative;
         }
 
@@ -52,7 +52,7 @@
             color: var(--primary-blue);
         }
 
-        /* Nested Dropdown */
+        /* Nested Tiny Dropdown */
         .dropdown-content .submenu {
             position: relative;
         }
@@ -61,11 +61,11 @@
             display: none;
             position: absolute;
             left: 100%;
-            top: 0;
+            top: -0.5rem;
             background: white;
-            min-width: 200px;
+            min-width: 160px;
             box-shadow: var(--shadow-premium);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 0.5rem 0;
             border: 1px solid var(--border-light);
         }
@@ -77,8 +77,9 @@
         .dropdown-content a.has-submenu::after {
             content: '›';
             position: absolute;
-            right: 1rem;
+            right: 0.8rem;
             font-weight: bold;
+            font-size: 0.9rem;
         }
 
         /* Better Button Colors */
@@ -86,20 +87,21 @@
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex: 1;
         }
 
         .btn-view-details-premium:hover {
             background: var(--accent-hover);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         /* Product Grid Adjustments */
@@ -125,6 +127,7 @@
             text-align: center;
             margin-bottom: 2rem;
             color: var(--text-light);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -142,36 +145,32 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="index.html" class="active">Products <i class="fas fa-chevron-down"></i></a>
+                        <a href="index.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
                         <div class="dropdown-content">
-                            <a href="#" class="submenu">
+                            <a href="#" class="submenu has-submenu">
                                 Categories
                                 <div class="submenu-content">
                                     <a href="#">Gaming Laptops</a>
                                     <a href="#">Business Laptops</a>
                                     <a href="#">Ultrabooks</a>
                                     <a href="#">Workstations</a>
-                                    <a href="#">2-in-1 Laptops</a>
                                 </div>
                             </a>
-                            <a href="#" class="submenu">
+                            <a href="#" class="submenu has-submenu">
                                 Brands
                                 <div class="submenu-content">
                                     <a href="#">ASUS ROG</a>
                                     <a href="#">MSI</a>
                                     <a href="#">Dell</a>
                                     <a href="#">HP</a>
-                                    <a href="#">Lenovo</a>
-                                    <a href="#">Apple</a>
                                 </div>
                             </a>
-                            <a href="#" class="submenu">
-                                Price Range
+                            <a href="#" class="submenu has-submenu">
+                                Price
                                 <div class="submenu-content">
                                     <a href="#">Under $500</a>
                                     <a href="#">$500 - $1000</a>
                                     <a href="#">$1000 - $1500</a>
-                                    <a href="#">Over $1500</a>
                                 </div>
                             </a>
                         </div>
@@ -294,9 +293,9 @@
             if (products.length === 0) {
                 container.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
-                        <p style="color: var(--text-light);">Try adjusting your search terms</p>
+                        <i class="fas fa-search" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.1rem;">No products found</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Try adjusting your search terms</p>
                     </div>
                 `;
             } else {

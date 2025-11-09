@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Dropdown styles to match your premium design */
+        /* Simple Dropdown Styles */
         .nav-premium > li {
             position: relative;
         }
@@ -19,16 +19,15 @@
             top: 100%;
             left: 0;
             background: white;
-            min-width: 220px;
+            min-width: 200px;
             box-shadow: var(--shadow-premium);
-            border-radius: 16px;
-            padding: 1rem 0;
+            border-radius: 12px;
+            padding: 0.5rem 0;
             z-index: 1001;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
-            backdrop-filter: blur(20px);
         }
 
         .dropdown:hover .dropdown-content {
@@ -44,6 +43,8 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
         }
 
         .dropdown-content a:hover {
@@ -51,18 +52,57 @@
             color: var(--primary-blue);
         }
 
-        .dropdown-header {
-            padding: 0.5rem 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            border-bottom: 1px solid var(--border-light);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* Nested Dropdown */
+        .dropdown-content .submenu {
+            position: relative;
         }
 
-        /* Adjust product grid for smaller images */
+        .dropdown-content .submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-premium);
+            border-radius: 12px;
+            padding: 0.5rem 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .dropdown-content .submenu:hover .submenu-content {
+            display: block;
+        }
+
+        .dropdown-content a.has-submenu::after {
+            content: '›';
+            position: absolute;
+            right: 1rem;
+            font-weight: bold;
+        }
+
+        /* Better Button Colors */
+        .btn-view-details-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .btn-view-details-premium:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Product Grid Adjustments */
         .products-grid-premium {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -79,10 +119,17 @@
             max-width: 100%;
             object-fit: contain;
         }
+
+        /* Search Results */
+        .search-results-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
-    <!-- Premium Glassmorphism Header - Exactly like your other pages -->
+    <!-- Premium Glassmorphism Header -->
     <header class="header-premium">
         <div class="header-container-premium">
             <a href="home.html" class="logo-premium">
@@ -97,26 +144,36 @@
                     <li class="dropdown">
                         <a href="index.html" class="active">Products <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <div class="dropdown-header">Categories</div>
-                            <a href="#">Gaming Laptops</a>
-                            <a href="#">Business Laptops</a>
-                            <a href="#">Ultrabooks</a>
-                            <a href="#">Workstations</a>
-                            <a href="#">2-in-1 Laptops</a>
-                            
-                            <div class="dropdown-header">Brands</div>
-                            <a href="#">ASUS ROG</a>
-                            <a href="#">MSI</a>
-                            <a href="#">Dell</a>
-                            <a href="#">HP</a>
-                            <a href="#">Lenovo</a>
-                            <a href="#">Apple</a>
-                            
-                            <div class="dropdown-header">Price Range</div>
-                            <a href="#">Under $500</a>
-                            <a href="#">$500 - $1000</a>
-                            <a href="#">$1000 - $1500</a>
-                            <a href="#">Over $1500</a>
+                            <a href="#" class="submenu">
+                                Categories
+                                <div class="submenu-content">
+                                    <a href="#">Gaming Laptops</a>
+                                    <a href="#">Business Laptops</a>
+                                    <a href="#">Ultrabooks</a>
+                                    <a href="#">Workstations</a>
+                                    <a href="#">2-in-1 Laptops</a>
+                                </div>
+                            </a>
+                            <a href="#" class="submenu">
+                                Brands
+                                <div class="submenu-content">
+                                    <a href="#">ASUS ROG</a>
+                                    <a href="#">MSI</a>
+                                    <a href="#">Dell</a>
+                                    <a href="#">HP</a>
+                                    <a href="#">Lenovo</a>
+                                    <a href="#">Apple</a>
+                                </div>
+                            </a>
+                            <a href="#" class="submenu">
+                                Price Range
+                                <div class="submenu-content">
+                                    <a href="#">Under $500</a>
+                                    <a href="#">$500 - $1000</a>
+                                    <a href="#">$1000 - $1500</a>
+                                    <a href="#">Over $1500</a>
+                                </div>
+                            </a>
                         </div>
                     </li>
                     <li><a href="popular.html">Popular</a></li>
@@ -137,12 +194,17 @@
         </div>
     </header>
 
-    <!-- Products Section - Matching your home.html structure -->
+    <!-- Products Section -->
     <section class="featured-products-premium" style="padding: 140px 0 50px;">
         <div class="container-premium">
             <div class="section-header-premium">
                 <h2 class="section-title-premium">All Products</h2>
                 <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
+            </div>
+
+            <!-- Search Results Info -->
+            <div class="search-results-info" id="search-results-info" style="display: none;">
+                Showing <span id="results-count">0</span> results for "<span id="search-term"></span>"
             </div>
             
             <div class="products-grid-premium" id="products-container">
@@ -151,7 +213,7 @@
         </div>
     </section>
 
-    <!-- Premium Footer - Exactly like your other pages -->
+    <!-- Premium Footer -->
     <footer class="footer-premium">
         <div class="footer-content-premium">
             <div class="footer-section-premium">
@@ -186,12 +248,13 @@
 
     <script src="all-products.js"></script>
     <script>
-        // Using the same JavaScript structure as your other pages
+        let allProducts = [];
+        let currentSearchTerm = '';
+
         document.addEventListener('DOMContentLoaded', function() {
             loadAllProducts();
             setupEventListeners();
             
-            // Header scroll effect - same as your other pages
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('.header-premium');
                 if (window.scrollY > 100) {
@@ -206,7 +269,7 @@
             const container = document.getElementById('products-container');
             
             // Get ALL products from all categories
-            const allProducts = [
+            allProducts = [
                 ...laptops, 
                 ...smartphones,
                 ...pcComponents,
@@ -218,66 +281,95 @@
                 ...peripherals
             ];
 
+            displayProducts(allProducts);
+            initScrollAnimations();
+        }
+
+        function displayProducts(products) {
+            const container = document.getElementById('products-container');
+            const resultsInfo = document.getElementById('search-results-info');
+            
             container.innerHTML = '';
             
-            allProducts.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card-premium fade-in-up';
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.innerHTML = `
-                    <div class="product-3d-effect">
-                        <div class="product-image-container-premium">
-                            <img src="${product.image}" alt="${product.name}" class="product-image-premium">
-                        </div>
-                        <div class="product-info-premium">
-                            <div class="product-category-premium">${product.category}</div>
-                            <h3 class="product-title-premium">${product.name}</h3>
-                            <div class="product-price-premium">${product.price}</div>
-                            <div class="product-rating-premium">
-                                <span class="stars-premium">${'★'.repeat(5)}</span>
-                                <span class="reviews">${product.reviews}</span>
-                            </div>
-                            <div class="product-actions-premium">
-                                <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
-                                    <i class="fas fa-eye"></i>
-                                    View Details
-                                </button>
-                                <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
+                        <p style="color: var(--text-light);">Try adjusting your search terms</p>
                     </div>
                 `;
-                container.appendChild(card);
-            });
+            } else {
+                products.forEach((product, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card-premium fade-in-up';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.innerHTML = `
+                        <div class="product-3d-effect">
+                            <div class="product-image-container-premium">
+                                <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                            </div>
+                            <div class="product-info-premium">
+                                <div class="product-category-premium">${product.category}</div>
+                                <h3 class="product-title-premium">${product.name}</h3>
+                                <div class="product-price-premium">${product.price}</div>
+                                <div class="product-rating-premium">
+                                    <span class="stars-premium">${'★'.repeat(5)}</span>
+                                    <span class="reviews">${product.reviews}</span>
+                                </div>
+                                <div class="product-actions-premium">
+                                    <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
 
-            // Initialize scroll animations - same as your other pages
-            initScrollAnimations();
+            // Show/hide search results info
+            if (currentSearchTerm) {
+                resultsInfo.style.display = 'block';
+                document.getElementById('results-count').textContent = products.length;
+                document.getElementById('search-term').textContent = currentSearchTerm;
+            } else {
+                resultsInfo.style.display = 'none';
+            }
         }
 
         function setupEventListeners() {
             // Search functionality
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                filterProducts(searchTerm);
+                currentSearchTerm = e.target.value.trim();
+                filterProducts(currentSearchTerm);
             });
         }
 
         function filterProducts(searchTerm) {
-            const products = document.querySelectorAll('.product-card-premium');
-            
-            products.forEach(product => {
-                const title = product.querySelector('.product-title-premium').textContent.toLowerCase();
-                const category = product.querySelector('.product-category-premium').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm) || category.includes(searchTerm)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
+            if (!searchTerm) {
+                displayProducts(allProducts);
+                return;
+            }
+
+            const filteredProducts = allProducts.filter(product => {
+                const searchLower = searchTerm.toLowerCase();
+                return (
+                    product.name.toLowerCase().includes(searchLower) ||
+                    product.category.toLowerCase().includes(searchLower) ||
+                    (product.keyFeatures && product.keyFeatures.some(feature => 
+                        feature.toLowerCase().includes(searchLower)
+                    ))
+                );
             });
+
+            displayProducts(filteredProducts);
         }
 
         function viewProductDetails(productId) {

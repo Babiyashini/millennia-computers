@@ -3,81 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Products - Millennia Computers</title>
+    <title>All Products - Millennia Computers</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Dropdown Navigation Styles */
+        /* Dropdown styles to match your premium design */
         .nav-premium > li {
             position: relative;
         }
 
-        .mega-dropdown {
-            position: static;
-        }
-
-        .mega-dropdown-content {
+        .dropdown-content {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            right: 0;
             background: white;
+            min-width: 220px;
             box-shadow: var(--shadow-premium);
-            border-radius: 0 0 20px 20px;
-            padding: 2rem;
+            border-radius: 16px;
+            padding: 1rem 0;
             z-index: 1001;
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
-            border-top: 3px solid var(--primary-blue);
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(20px);
         }
 
-        .mega-dropdown:hover .mega-dropdown-content {
-            display: flex;
+        .dropdown:hover .dropdown-content {
+            display: block;
             opacity: 1;
             transform: translateY(0);
         }
 
-        .dropdown-column {
-            flex: 1;
-            padding: 0 1.5rem;
-        }
-
-        .dropdown-column:not(:last-child) {
-            border-right: 1px solid var(--border-light);
-        }
-
-        .dropdown-header {
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .dropdown-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .dropdown-links a {
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1.5rem;
             color: var(--text-dark);
             text-decoration: none;
-            padding: 0.5rem 0;
             transition: all 0.3s ease;
             font-weight: 500;
         }
 
-        .dropdown-links a:hover {
+        .dropdown-content a:hover {
+            background: var(--primary-light);
             color: var(--primary-blue);
-            transform: translateX(5px);
         }
 
-        /* Product Grid Adjustments */
+        .dropdown-header {
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Adjust product grid for smaller images */
         .products-grid-premium {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -94,23 +79,10 @@
             max-width: 100%;
             object-fit: contain;
         }
-
-        /* Remove sidebar completely */
-        .category-filters-premium {
-            display: none;
-        }
-
-        .category-nav-premium {
-            display: block;
-        }
-
-        .category-display-premium {
-            width: 100%;
-        }
     </style>
 </head>
 <body>
-    <!-- Premium Glassmorphism Header -->
+    <!-- Premium Glassmorphism Header - Exactly like your other pages -->
     <header class="header-premium">
         <div class="header-container-premium">
             <a href="home.html" class="logo-premium">
@@ -122,73 +94,29 @@
                 <ul class="nav-premium">
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li class="mega-dropdown">
+                    <li class="dropdown">
                         <a href="index.html" class="active">Products <i class="fas fa-chevron-down"></i></a>
-                        <div class="mega-dropdown-content">
-                            <!-- Categories Column -->
-                            <div class="dropdown-column">
-                                <div class="dropdown-header">Categories</div>
-                                <div class="dropdown-links">
-                                    <a href="#">Gaming Laptops</a>
-                                    <a href="#">Business Laptops</a>
-                                    <a href="#">Ultrabooks</a>
-                                    <a href="#">Workstations</a>
-                                    <a href="#">2-in-1 Laptops</a>
-                                    <a href="#">Gaming Desktops</a>
-                                    <a href="#">All-in-One PCs</a>
-                                </div>
-                            </div>
+                        <div class="dropdown-content">
+                            <div class="dropdown-header">Categories</div>
+                            <a href="#">Gaming Laptops</a>
+                            <a href="#">Business Laptops</a>
+                            <a href="#">Ultrabooks</a>
+                            <a href="#">Workstations</a>
+                            <a href="#">2-in-1 Laptops</a>
                             
-                            <!-- Brands Column -->
-                            <div class="dropdown-column">
-                                <div class="dropdown-header">Brands</div>
-                                <div class="dropdown-links">
-                                    <a href="#">ASUS ROG</a>
-                                    <a href="#">ASUS TUF</a>
-                                    <a href="#">MSI</a>
-                                    <a href="#">Dell Alienware</a>
-                                    <a href="#">Dell XPS</a>
-                                    <a href="#">HP Omen</a>
-                                    <a href="#">Lenovo Legion</a>
-                                    <a href="#">Apple MacBook</a>
-                                    <a href="#">Razer</a>
-                                    <a href="#">Acer Predator</a>
-                                </div>
-                            </div>
+                            <div class="dropdown-header">Brands</div>
+                            <a href="#">ASUS ROG</a>
+                            <a href="#">MSI</a>
+                            <a href="#">Dell</a>
+                            <a href="#">HP</a>
+                            <a href="#">Lenovo</a>
+                            <a href="#">Apple</a>
                             
-                            <!-- Components Column -->
-                            <div class="dropdown-column">
-                                <div class="dropdown-header">Components</div>
-                                <div class="dropdown-links">
-                                    <a href="#">Graphics Cards</a>
-                                    <a href="#">Processors</a>
-                                    <a href="#">Motherboards</a>
-                                    <a href="#">RAM Memory</a>
-                                    <a href="#">Storage Drives</a>
-                                    <a href="#">Power Supplies</a>
-                                    <a href="#">Cooling Systems</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Price & Accessories Column -->
-                            <div class="dropdown-column">
-                                <div class="dropdown-header">Price Range</div>
-                                <div class="dropdown-links">
-                                    <a href="#">Under $500</a>
-                                    <a href="#">$500 - $1000</a>
-                                    <a href="#">$1000 - $1500</a>
-                                    <a href="#">$1500 - $2000</a>
-                                    <a href="#">Over $2000</a>
-                                </div>
-                                
-                                <div class="dropdown-header" style="margin-top: 1.5rem;">Accessories</div>
-                                <div class="dropdown-links">
-                                    <a href="#">Monitors</a>
-                                    <a href="#">Keyboards</a>
-                                    <a href="#">Mice</a>
-                                    <a href="#">Headsets</a>
-                                </div>
-                            </div>
+                            <div class="dropdown-header">Price Range</div>
+                            <a href="#">Under $500</a>
+                            <a href="#">$500 - $1000</a>
+                            <a href="#">$1000 - $1500</a>
+                            <a href="#">Over $1500</a>
                         </div>
                     </li>
                     <li><a href="popular.html">Popular</a></li>
@@ -199,7 +127,7 @@
             <div class="header-actions-premium">
                 <div class="search-premium">
                     <i class="fas fa-search search-icon-premium"></i>
-                    <input type="text" placeholder="Search premium products..." id="search-input-premium">
+                    <input type="text" placeholder="Search products..." id="search-input">
                 </div>
                 <button class="cart-premium">
                     <i class="fas fa-shopping-cart"></i>
@@ -209,108 +137,26 @@
         </div>
     </header>
 
-    <!-- Premium Products Hero -->
-    <section class="products-hero-premium">
+    <!-- Products Section - Matching your home.html structure -->
+    <section class="featured-products-premium" style="padding: 140px 0 50px;">
         <div class="container-premium">
-            <div class="hero-content-premium">
-                <h1 class="hero-title-premium">Premium Technology Collection</h1>
-                <p class="hero-subtitle-premium">Discover our curated selection of high-performance laptops, smartphones, desktops, and cutting-edge components</p>
-                
-                <!-- Advanced Search -->
-                <div class="advanced-search-premium">
-                    <div class="search-box-premium">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search 124+ premium products..." id="global-search">
-                        <button class="search-btn-premium">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">All Products</h2>
+                <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
             </div>
-        </div>
-        
-        <!-- Animated Background Elements -->
-        <div class="hero-background-elements">
-            <div class="bg-element element-1"></div>
-            <div class="bg-element element-2"></div>
-            <div class="bg-element element-3"></div>
-        </div>
-    </section>
-
-    <!-- Advanced Products Section -->
-    <section class="advanced-products-section">
-        <div class="container-premium">
-            <div class="category-nav-premium">
-                <div class="category-display-premium">
-                    <!-- Products Count & Sort -->
-                    <div class="products-header-premium">
-                        <div class="products-info">
-                            <h2>Premium Products</h2>
-                            <p class="products-count-text">Showing <span id="visible-count">124</span> of 124 premium products</p>
-                        </div>
-                        
-                        <div class="sort-options-premium">
-                            <select id="sort-select" class="sort-select-premium">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="rating">Top Rated</option>
-                                <option value="newest">Newest First</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- ALL Products Grid -->
-                    <div class="products-grid-premium" id="all-products-container">
-                        <!-- Products will be loaded here -->
-                    </div>
-                </div>
+            
+            <div class="products-grid-premium" id="products-container">
+                <!-- Products will be loaded by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Premium Features Banner -->
-    <section class="features-banner-premium">
-        <div class="container-premium">
-            <div class="banner-grid-premium">
-                <div class="banner-item-premium">
-                    <div class="banner-icon">🚀</div>
-                    <div class="banner-content">
-                        <h3>Free Express Shipping</h3>
-                        <p>On orders over Rs. 50,000</p>
-                    </div>
-                </div>
-                <div class="banner-item-premium">
-                    <div class="banner-icon">🛡️</div>
-                    <div class="banner-content">
-                        <h3>3-Year Warranty</h3>
-                        <p>Premium protection</p>
-                    </div>
-                </div>
-                <div class="banner-item-premium">
-                    <div class="banner-icon">💳</div>
-                    <div class="banner-content">
-                        <h3>Easy EMI Options</h3>
-                        <p>0% interest available</p>
-                    </div>
-                </div>
-                <div class="banner-item-premium">
-                    <div class="banner-icon">🔧</div>
-                    <div class="banner-content">
-                        <h3>Free Setup Support</h3>
-                        <p>Expert installation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Footer -->
+    <!-- Premium Footer - Exactly like your other pages -->
     <footer class="footer-premium">
         <div class="footer-content-premium">
             <div class="footer-section-premium">
                 <h3>About Millennia</h3>
-                <p>Your trusted partner in premium computing solutions with cutting-edge technology and exceptional service.</p>
+                <p>Your trusted partner in premium computing solutions.</p>
             </div>
             
             <div class="footer-section-premium">
@@ -325,7 +171,7 @@
             
             <div class="footer-section-premium">
                 <h3>Newsletter</h3>
-                <p>Get exclusive access to new product launches and special offers.</p>
+                <p>Subscribe for exclusive updates on new products and special offers.</p>
                 <div class="newsletter-premium">
                     <input type="email" placeholder="Enter your email">
                     <button>Subscribe</button>
@@ -340,10 +186,12 @@
 
     <script src="all-products.js"></script>
     <script>
+        // Using the same JavaScript structure as your other pages
         document.addEventListener('DOMContentLoaded', function() {
             loadAllProducts();
             setupEventListeners();
             
+            // Header scroll effect - same as your other pages
             window.addEventListener('scroll', function() {
                 const header = document.querySelector('.header-premium');
                 if (window.scrollY > 100) {
@@ -355,7 +203,9 @@
         });
 
         function loadAllProducts() {
-            const container = document.getElementById('all-products-container');
+            const container = document.getElementById('products-container');
+            
+            // Get ALL products from all categories
             const allProducts = [
                 ...laptops, 
                 ...smartphones,
@@ -373,7 +223,7 @@
             allProducts.forEach((product, index) => {
                 const card = document.createElement('div');
                 card.className = 'product-card-premium fade-in-up';
-                card.style.animationDelay = `${index * 0.05}s`;
+                card.style.animationDelay = `${index * 0.1}s`;
                 card.innerHTML = `
                     <div class="product-3d-effect">
                         <div class="product-image-container-premium">
@@ -390,7 +240,7 @@
                             <div class="product-actions-premium">
                                 <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
                                     <i class="fas fa-eye"></i>
-                                    Details
+                                    View Details
                                 </button>
                                 <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
                                     <i class="fas fa-plus"></i>
@@ -402,22 +252,21 @@
                 container.appendChild(card);
             });
 
-            document.getElementById('visible-count').textContent = allProducts.length;
+            // Initialize scroll animations - same as your other pages
+            initScrollAnimations();
         }
 
         function setupEventListeners() {
-            document.getElementById('global-search').addEventListener('input', function(e) {
-                searchProducts(e.target.value);
-            });
-
-            document.getElementById('sort-select').addEventListener('change', function(e) {
-                sortProducts(e.target.value);
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                filterProducts(searchTerm);
             });
         }
 
-        function searchProducts(query) {
+        function filterProducts(searchTerm) {
             const products = document.querySelectorAll('.product-card-premium');
-            const searchTerm = query.toLowerCase();
             
             products.forEach(product => {
                 const title = product.querySelector('.product-title-premium').textContent.toLowerCase();
@@ -429,13 +278,6 @@
                     product.style.display = 'none';
                 }
             });
-
-            const visibleCount = document.querySelectorAll('.product-card-premium[style="display: block"]').length;
-            document.getElementById('visible-count').textContent = visibleCount;
-        }
-
-        function sortProducts(sortBy) {
-            console.log('Sorting by:', sortBy);
         }
 
         function viewProductDetails(productId) {
@@ -450,6 +292,14 @@
             
             showPremiumNotification('Product added to cart!');
             animateCartIcon();
+        }
+
+        function animateCartIcon() {
+            const cart = document.querySelector('.cart-premium');
+            cart.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cart.style.transform = 'scale(1)';
+            }, 300);
         }
 
         function showPremiumNotification(message) {
@@ -475,12 +325,18 @@
             }, 3000);
         }
 
-        function animateCartIcon() {
-            const cart = document.querySelector('.cart-premium');
-            cart.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                cart.style.transform = 'scale(1)';
-            }, 300);
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
         }
     </script>
 </body>

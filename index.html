@@ -19,14 +19,14 @@
             top: 100%;
             left: 0;
             background: white;
-            min-width: 180px;
+            min-width: 280px;
             box-shadow: var(--shadow-premium);
-            border-radius: 8px;
-            padding: 0.5rem 0;
+            border-radius: 16px;
+            padding: 1.5rem;
             z-index: 1001;
             opacity: 0;
-            transform: translateY(5px);
-            transition: all 0.2s ease;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
             border: 1px solid var(--border-light);
         }
 
@@ -38,48 +38,33 @@
 
         .dropdown-content a {
             display: block;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1rem;
             color: var(--text-dark);
             text-decoration: none;
             transition: all 0.2s ease;
             font-weight: 500;
-            font-size: 0.85rem;
-            position: relative;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            margin-bottom: 0.3rem;
         }
 
         .dropdown-content a:hover {
             background: var(--primary-light);
             color: var(--primary-blue);
+            transform: translateX(5px);
         }
 
-        /* Nested Tiny Dropdown */
-        .dropdown-content .submenu {
-            position: relative;
+        .filter-section {
+            margin-bottom: 1.5rem;
         }
 
-        .dropdown-content .submenu-content {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: -0.5rem;
-            background: white;
-            min-width: 160px;
-            box-shadow: var(--shadow-premium);
-            border-radius: 8px;
-            padding: 0.5rem 0;
-            border: 1px solid var(--border-light);
-        }
-
-        .dropdown-content .submenu:hover .submenu-content {
-            display: block;
-        }
-
-        .dropdown-content a.has-submenu::after {
-            content: '›';
-            position: absolute;
-            right: 0.8rem;
-            font-weight: bold;
-            font-size: 0.9rem;
+        .filter-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-light);
         }
 
         /* Better Button Colors */
@@ -87,37 +72,38 @@
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             flex: 1;
         }
 
         .btn-view-details-premium:hover {
             background: var(--accent-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
         }
 
         /* Product Grid Adjustments */
         .products-grid-premium {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .product-image-container-premium {
-            height: 200px;
-            padding: 1.5rem;
+            height: 220px;
+            padding: 2rem;
         }
 
         .product-image-premium {
-            max-height: 140px;
+            max-height: 160px;
             max-width: 100%;
             object-fit: contain;
         }
@@ -127,7 +113,142 @@
             text-align: center;
             margin-bottom: 2rem;
             color: var(--text-light);
+            font-size: 1rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Filter Sidebar Styles */
+        .filter-sidebar-premium {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            position: sticky;
+            top: 120px;
+            margin-bottom: 2rem;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .filter-header h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .clear-filters {
+            background: transparent;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .clear-filters:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-section h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .filter-checkbox:hover {
+            background: var(--primary-light);
+        }
+
+        .filter-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .filter-checkbox input:checked + .checkmark {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .filter-checkbox input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .filter-checkbox span:last-child {
+            color: var(--text-dark);
             font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Layout for products and filters */
+        .products-container-wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .products-container-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-sidebar-premium {
+                position: static;
+            }
         }
     </style>
 </head>
@@ -145,34 +266,46 @@
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="index.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                        <a href="index.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
                         <div class="dropdown-content">
-                            <a href="#" class="submenu has-submenu">
-                                Categories
-                                <div class="submenu-content">
-                                    <a href="#">Gaming Laptops</a>
-                                    <a href="#">Business Laptops</a>
-                                    <a href="#">Ultrabooks</a>
-                                    <a href="#">Workstations</a>
+                            <div class="filter-section">
+                                <h4>Categories</h4>
+                                <div class="filter-options">
+                                    <a href="#" onclick="filterByCategory('Laptops')">Gaming Laptops</a>
+                                    <a href="#" onclick="filterByCategory('Smartphones')">Smartphones</a>
+                                    <a href="#" onclick="filterByCategory('PC Components')">PC Components</a>
+                                    <a href="#" onclick="filterByCategory('Graphics Cards')">Graphics Cards</a>
+                                    <a href="#" onclick="filterByCategory('RAM')">RAM</a>
+                                    <a href="#" onclick="filterByCategory('Storage Devices')">Storage Devices</a>
+                                    <a href="#" onclick="filterByCategory('Motherboards')">Motherboards</a>
+                                    <a href="#" onclick="filterByCategory('Peripherals')">Peripherals</a>
                                 </div>
-                            </a>
-                            <a href="#" class="submenu has-submenu">
-                                Brands
-                                <div class="submenu-content">
-                                    <a href="#">ASUS ROG</a>
-                                    <a href="#">MSI</a>
-                                    <a href="#">Dell</a>
-                                    <a href="#">HP</a>
+                            </div>
+                            
+                            <div class="filter-section">
+                                <h4>Brands</h4>
+                                <div class="filter-options">
+                                    <a href="#" onclick="filterByBrand('ASUS')">ASUS ROG</a>
+                                    <a href="#" onclick="filterByBrand('MSI')">MSI</a>
+                                    <a href="#" onclick="filterByBrand('Dell')">Dell</a>
+                                    <a href="#" onclick="filterByBrand('HP')">HP</a>
+                                    <a href="#" onclick="filterByBrand('Apple')">Apple</a>
+                                    <a href="#" onclick="filterByBrand('Samsung')">Samsung</a>
+                                    <a href="#" onclick="filterByBrand('NVIDIA')">NVIDIA</a>
+                                    <a href="#" onclick="filterByBrand('Corsair')">Corsair</a>
                                 </div>
-                            </a>
-                            <a href="#" class="submenu has-submenu">
-                                Price
-                                <div class="submenu-content">
-                                    <a href="#">Under $500</a>
-                                    <a href="#">$500 - $1000</a>
-                                    <a href="#">$1000 - $1500</a>
+                            </div>
+                            
+                            <div class="filter-section">
+                                <h4>Price Range</h4>
+                                <div class="filter-options">
+                                    <a href="#" onclick="filterByPrice('0-500')">Under $500</a>
+                                    <a href="#" onclick="filterByPrice('500-1000')">$500 - $1000</a>
+                                    <a href="#" onclick="filterByPrice('1000-1500')">$1000 - $1500</a>
+                                    <a href="#" onclick="filterByPrice('1500-2000')">$1500 - $2000</a>
+                                    <a href="#" onclick="filterByPrice('2000+')">Above $2000</a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </li>
                     <li><a href="popular.html">Popular</a></li>
@@ -206,8 +339,145 @@
                 Showing <span id="results-count">0</span> results for "<span id="search-term"></span>"
             </div>
             
-            <div class="products-grid-premium" id="products-container">
-                <!-- Products will be loaded by JavaScript -->
+            <div class="products-container-wrapper">
+                <!-- Filter Sidebar -->
+                <div class="filter-sidebar-premium">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" onclick="clearAllFilters()">Clear All</button>
+                    </div>
+                    
+                    <!-- Categories Filter -->
+                    <div class="filter-section">
+                        <h4>Categories</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Laptops" onchange="toggleFilter('categories', 'Laptops')">
+                                <span class="checkmark"></span>
+                                Laptops
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Smartphones" onchange="toggleFilter('categories', 'Smartphones')">
+                                <span class="checkmark"></span>
+                                Smartphones
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="PC Components" onchange="toggleFilter('categories', 'PC Components')">
+                                <span class="checkmark"></span>
+                                PC Components
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Graphics Cards" onchange="toggleFilter('categories', 'Graphics Cards')">
+                                <span class="checkmark"></span>
+                                Graphics Cards
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="RAM" onchange="toggleFilter('categories', 'RAM')">
+                                <span class="checkmark"></span>
+                                RAM
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Storage Devices" onchange="toggleFilter('categories', 'Storage Devices')">
+                                <span class="checkmark"></span>
+                                Storage Devices
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Motherboards" onchange="toggleFilter('categories', 'Motherboards')">
+                                <span class="checkmark"></span>
+                                Motherboards
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Peripherals" onchange="toggleFilter('categories', 'Peripherals')">
+                                <span class="checkmark"></span>
+                                Peripherals
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Brands Filter -->
+                    <div class="filter-section">
+                        <h4>Brands</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="ASUS" onchange="toggleFilter('brands', 'ASUS')">
+                                <span class="checkmark"></span>
+                                ASUS
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="MSI" onchange="toggleFilter('brands', 'MSI')">
+                                <span class="checkmark"></span>
+                                MSI
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Dell" onchange="toggleFilter('brands', 'Dell')">
+                                <span class="checkmark"></span>
+                                Dell
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="HP" onchange="toggleFilter('brands', 'HP')">
+                                <span class="checkmark"></span>
+                                HP
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Apple" onchange="toggleFilter('brands', 'Apple')">
+                                <span class="checkmark"></span>
+                                Apple
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Samsung" onchange="toggleFilter('brands', 'Samsung')">
+                                <span class="checkmark"></span>
+                                Samsung
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="NVIDIA" onchange="toggleFilter('brands', 'NVIDIA')">
+                                <span class="checkmark"></span>
+                                NVIDIA
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="Corsair" onchange="toggleFilter('brands', 'Corsair')">
+                                <span class="checkmark"></span>
+                                Corsair
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Range Filter -->
+                    <div class="filter-section">
+                        <h4>Price Range</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="0-500" onchange="toggleFilter('priceRanges', '0-500')">
+                                <span class="checkmark"></span>
+                                Under $500
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="500-1000" onchange="toggleFilter('priceRanges', '500-1000')">
+                                <span class="checkmark"></span>
+                                $500 - $1000
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="1000-1500" onchange="toggleFilter('priceRanges', '1000-1500')">
+                                <span class="checkmark"></span>
+                                $1000 - $1500
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="1500-2000" onchange="toggleFilter('priceRanges', '1500-2000')">
+                                <span class="checkmark"></span>
+                                $1500 - $2000
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="2000+" onchange="toggleFilter('priceRanges', '2000+')">
+                                <span class="checkmark"></span>
+                                Above $2000
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="products-grid-premium" id="products-container">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
             </div>
         </div>
     </section>
@@ -249,6 +519,11 @@
     <script>
         let allProducts = [];
         let currentSearchTerm = '';
+        let activeFilters = {
+            categories: [],
+            brands: [],
+            priceRanges: []
+        };
 
         document.addEventListener('DOMContentLoaded', function() {
             loadAllProducts();
@@ -294,8 +569,8 @@
                 container.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
                         <i class="fas fa-search" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.1rem;">No products found</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Try adjusting your search terms</p>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Try adjusting your search terms or filters</p>
                     </div>
                 `;
             } else {
@@ -346,32 +621,126 @@
             // Search functionality
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', function(e) {
-                currentSearchTerm = e.target.value.trim();
-                filterProducts(currentSearchTerm);
+                currentSearchTerm = e.target.value.trim().toLowerCase();
+                applyFilters();
             });
         }
 
-        function filterProducts(searchTerm) {
-            if (!searchTerm) {
-                displayProducts(allProducts);
-                return;
+        function toggleFilter(filterType, value) {
+            const index = activeFilters[filterType].indexOf(value);
+            if (index === -1) {
+                activeFilters[filterType].push(value);
+            } else {
+                activeFilters[filterType].splice(index, 1);
+            }
+            applyFilters();
+        }
+
+        function applyFilters() {
+            let filteredProducts = allProducts;
+
+            // Apply category filters
+            if (activeFilters.categories.length > 0) {
+                filteredProducts = filteredProducts.filter(product => 
+                    activeFilters.categories.includes(product.category)
+                );
             }
 
-            const filteredProducts = allProducts.filter(product => {
-                const searchLower = searchTerm.toLowerCase();
-                return (
-                    product.name.toLowerCase().includes(searchLower) ||
-                    product.category.toLowerCase().includes(searchLower) ||
+            // Apply brand filters
+            if (activeFilters.brands.length > 0) {
+                filteredProducts = filteredProducts.filter(product => 
+                    activeFilters.brands.some(brand => 
+                        product.name.toLowerCase().includes(brand.toLowerCase())
+                    )
+                );
+            }
+
+            // Apply price range filters
+            if (activeFilters.priceRanges.length > 0) {
+                filteredProducts = filteredProducts.filter(product => {
+                    const price = extractPrice(product.price);
+                    return activeFilters.priceRanges.some(range => {
+                        if (range === '2000+') return price > 2000;
+                        const [min, max] = range.split('-').map(Number);
+                        return price >= min && price <= max;
+                    });
+                });
+            }
+
+            // Apply search term
+            if (currentSearchTerm) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(currentSearchTerm) ||
+                    product.category.toLowerCase().includes(currentSearchTerm) ||
                     (product.keyFeatures && product.keyFeatures.some(feature => 
-                        feature.toLowerCase().includes(searchLower)
+                        feature.toLowerCase().includes(currentSearchTerm)
                     ))
                 );
-            });
+            }
 
             displayProducts(filteredProducts);
         }
 
+        function extractPrice(priceString) {
+            const price = priceString.replace(/[^\d]/g, '');
+            return parseInt(price) || 0;
+        }
+
+        function clearAllFilters() {
+            activeFilters = {
+                categories: [],
+                brands: [],
+                priceRanges: []
+            };
+            
+            // Uncheck all checkboxes
+            document.querySelectorAll('.filter-checkbox input').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Clear search
+            document.getElementById('search-input').value = '';
+            currentSearchTerm = '';
+            
+            applyFilters();
+        }
+
+        // Dropdown filter functions
+        function filterByCategory(category) {
+            activeFilters.categories = [category];
+            // Uncheck other category checkboxes
+            document.querySelectorAll('.filter-checkbox input[value]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            // Check the selected category
+            const categoryCheckbox = document.querySelector(`.filter-checkbox input[value="${category}"]`);
+            if (categoryCheckbox) categoryCheckbox.checked = true;
+            
+            applyFilters();
+            closeDropdowns();
+        }
+
+        function filterByBrand(brand) {
+            activeFilters.brands = [brand];
+            applyFilters();
+            closeDropdowns();
+        }
+
+        function filterByPrice(priceRange) {
+            activeFilters.priceRanges = [priceRange];
+            applyFilters();
+            closeDropdowns();
+        }
+
+        function closeDropdowns() {
+            // Close any open dropdowns
+            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+
         function viewProductDetails(productId) {
+            // Make sure this works by navigating to product details page
             window.location.href = `product-details.html?id=${productId}`;
         }
 

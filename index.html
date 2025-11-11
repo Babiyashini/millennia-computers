@@ -40,6 +40,7 @@
             font-weight: 500;
             font-size: 0.9rem;
             border-radius: 6px;
+            cursor: pointer;
         }
 
         .dropdown-content a:hover {
@@ -126,110 +127,43 @@
             transform: translateY(-1px);
         }
 
-        /* Simple Filter Sidebar */
-        .filter-sidebar-premium {
+        /* Search Results */
+        .search-results-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
             background: white;
             padding: 1.5rem;
             border-radius: 16px;
             box-shadow: var(--shadow-soft);
             border: 1px solid var(--border-light);
-            position: sticky;
-            top: 100px;
         }
 
-        .filter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-light);
+        /* Active Category Indicator */
+        .active-category {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
         }
 
-        .filter-header h3 {
-            color: var(--text-dark);
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .clear-filters {
-            background: transparent;
-            border: 1px solid var(--primary-blue);
-            color: var(--primary-blue);
+        .clear-category {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
             cursor: pointer;
+            margin-left: 1rem;
             font-size: 0.8rem;
-            font-weight: 600;
         }
 
-        .clear-filters:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .filter-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .filter-section h4 {
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .filter-options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 0.8rem;
-            background: var(--primary-light);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .filter-option:hover {
-            border-color: var(--primary-blue);
-            background: rgba(0, 102, 204, 0.05);
-        }
-
-        .filter-option.active {
-            background: var(--primary-blue);
-            color: white;
-            border-color: var(--primary-blue);
-        }
-
-        /* Layout */
-        .products-container-wrapper {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        /* Search Results */
-        .search-results-info {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1024px) {
-            .products-container-wrapper {
-                grid-template-columns: 1fr;
-            }
+        .clear-category:hover {
+            background: rgba(255,255,255,0.3);
         }
     </style>
 </head>
@@ -286,80 +220,22 @@
                 <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
             </div>
 
+            <!-- Active Category Indicator -->
+            <div class="active-category" id="active-category" style="display: none;">
+                Showing: <span id="current-category-name">Laptops</span>
+                <button class="clear-category" onclick="showAllProducts()">Show All</button>
+            </div>
+
             <!-- Search Results Info -->
             <div class="search-results-info" id="search-results-info" style="display: none;">
-                Showing <span id="results-count">0</span> results for "<span id="search-term"></span>"
+                <i class="fas fa-search" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Search Results</h3>
+                Showing <span style="color: var(--primary-blue); font-weight: 700;" id="results-count">0</span> results for "<span style="color: var(--primary-blue); font-weight: 600;" id="search-term"></span>"
             </div>
             
-            <div class="products-container-wrapper">
-                <!-- Simple Filter Sidebar -->
-                <div class="filter-sidebar-premium">
-                    <div class="filter-header">
-                        <h3>Filters</h3>
-                        <button class="clear-filters" onclick="clearAllFilters()">Clear</button>
-                    </div>
-                    
-                    <!-- Categories Filter -->
-                    <div class="filter-section">
-                        <h4>Categories</h4>
-                        <div class="filter-options">
-                            <div class="filter-option active" onclick="showAllProducts()">
-                                All Products
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Laptops')">
-                                Laptops
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Smartphones')">
-                                Smartphones
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('PC Components')">
-                                PC Components
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Graphics Cards')">
-                                Graphics Cards
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('RAM')">
-                                RAM
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Storage Devices')">
-                                Storage Devices
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Motherboards')">
-                                Motherboards
-                            </div>
-                            <div class="filter-option" onclick="filterByCategory('Peripherals')">
-                                Peripherals
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Price Range Filter -->
-                    <div class="filter-section">
-                        <h4>Price Range</h4>
-                        <div class="filter-options">
-                            <div class="filter-option" onclick="filterByPrice('0-50000')">
-                                Under ₹50,000
-                            </div>
-                            <div class="filter-option" onclick="filterByPrice('50000-100000')">
-                                ₹50,000 - ₹1,00,000
-                            </div>
-                            <div class="filter-option" onclick="filterByPrice('100000-200000')">
-                                ₹1,00,000 - ₹2,00,000
-                            </div>
-                            <div class="filter-option" onclick="filterByPrice('200000-300000')">
-                                ₹2,00,000 - ₹3,00,000
-                            </div>
-                            <div class="filter-option" onclick="filterByPrice('300000+')">
-                                Above ₹3,00,000
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Products Grid -->
-                <div class="products-grid-premium" id="products-container">
-                    <!-- Products will be loaded by JavaScript -->
-                </div>
+            <!-- Products Grid Only - No Sidebar -->
+            <div class="products-grid-premium" id="products-container">
+                <!-- Products will be loaded by JavaScript -->
             </div>
         </div>
     </section>
@@ -402,7 +278,6 @@
         let allProducts = [];
         let currentSearchTerm = '';
         let activeCategory = 'all';
-        let activePriceRange = '';
 
         document.addEventListener('DOMContentLoaded', function() {
             loadAllProducts();
@@ -432,6 +307,10 @@
                 ...peripherals
             ];
 
+            console.log('Total products loaded:', allProducts.length);
+            console.log('Laptops:', laptops.length);
+            console.log('Smartphones:', smartphones.length);
+            
             displayProducts(allProducts);
             initScrollAnimations();
         }
@@ -439,15 +318,18 @@
         function displayProducts(products) {
             const container = document.getElementById('products-container');
             const resultsInfo = document.getElementById('search-results-info');
+            const activeCategoryDiv = document.getElementById('active-category');
             
             container.innerHTML = '';
             
+            console.log('Displaying products:', products.length);
+            
             if (products.length === 0) {
                 container.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
-                        <i class="fas fa-search" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
-                        <p style="color: var(--text-light);">Try different search terms or filters</p>
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
+                        <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
                     </div>
                 `;
             } else {
@@ -455,10 +337,14 @@
                     const card = document.createElement('div');
                     card.className = 'product-card-premium fade-in-up';
                     card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    // Check if product has image, if not use a placeholder
+                    const productImage = product.image || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
+                    
                     card.innerHTML = `
                         <div class="product-3d-effect">
                             <div class="product-image-container-premium">
-                                <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                                <img src="${productImage}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'">
                             </div>
                             <div class="product-info-premium">
                                 <div class="product-category-premium">${product.category}</div>
@@ -492,17 +378,25 @@
             } else {
                 resultsInfo.style.display = 'none';
             }
+
+            // Show/hide active category indicator
+            if (activeCategory && activeCategory !== 'all') {
+                activeCategoryDiv.style.display = 'block';
+                document.getElementById('current-category-name').textContent = activeCategory;
+            } else {
+                activeCategoryDiv.style.display = 'none';
+            }
         }
 
         function setupEventListeners() {
-            // Search functionality - FIXED
+            // Search functionality
             const searchInput = document.getElementById('search-input');
+            
             searchInput.addEventListener('input', function(e) {
                 currentSearchTerm = e.target.value.trim().toLowerCase();
                 applyFilters();
             });
-
-            // Enter key search
+            
             searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     currentSearchTerm = e.target.value.trim().toLowerCase();
@@ -513,77 +407,46 @@
 
         function showAllProducts() {
             activeCategory = 'all';
-            activePriceRange = '';
-            updateActiveFilter();
+            currentSearchTerm = '';
+            document.getElementById('search-input').value = '';
             applyFilters();
         }
 
         function filterByCategory(category) {
+            console.log('Filtering by category:', category);
             activeCategory = category;
-            updateActiveFilter();
+            currentSearchTerm = '';
+            document.getElementById('search-input').value = '';
             applyFilters();
-        }
-
-        function filterByPrice(priceRange) {
-            activePriceRange = priceRange;
-            updateActiveFilter();
-            applyFilters();
-        }
-
-        function updateActiveFilter() {
-            // Update category buttons
-            document.querySelectorAll('.filter-option').forEach(option => {
-                option.classList.remove('active');
-            });
-            
-            if (activeCategory === 'all') {
-                document.querySelector('.filter-option').classList.add('active');
-            }
         }
 
         function applyFilters() {
             let filteredProducts = allProducts;
 
+            console.log('Applying filters - Active category:', activeCategory);
+
             // Apply category filter
             if (activeCategory && activeCategory !== 'all') {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.category === activeCategory
-                );
-            }
-
-            // Apply price range filter
-            if (activePriceRange) {
                 filteredProducts = filteredProducts.filter(product => {
-                    const price = extractPrice(product.price);
-                    if (activePriceRange === '300000+') return price > 300000;
-                    const [min, max] = activePriceRange.split('-').map(Number);
-                    return price >= min && price <= max;
+                    const matches = product.category === activeCategory;
+                    console.log(`Product: ${product.name}, Category: ${product.category}, Matches: ${matches}`);
+                    return matches;
                 });
             }
 
-            // Apply search term - FIXED
+            // Apply search term
             if (currentSearchTerm) {
                 filteredProducts = filteredProducts.filter(product => 
                     product.name.toLowerCase().includes(currentSearchTerm) ||
-                    product.category.toLowerCase().includes(currentSearchTerm)
+                    product.category.toLowerCase().includes(currentSearchTerm) ||
+                    (product.keyFeatures && product.keyFeatures.some(feature => 
+                        feature.toLowerCase().includes(currentSearchTerm)
+                    ))
                 );
             }
 
+            console.log('Filtered products count:', filteredProducts.length);
             displayProducts(filteredProducts);
-        }
-
-        function extractPrice(priceString) {
-            const price = priceString.replace(/[^\d]/g, '');
-            return parseInt(price) || 0;
-        }
-
-        function clearAllFilters() {
-            activeCategory = 'all';
-            activePriceRange = '';
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-            updateActiveFilter();
-            applyFilters();
         }
 
         function viewProductDetails(productId) {

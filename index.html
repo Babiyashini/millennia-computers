@@ -719,6 +719,7 @@
                 ...peripherals
             ];
 
+            console.log("Total products loaded:", allProducts.length);
             displayProducts(allProducts);
             initScrollAnimations();
             updateFilterCounts();
@@ -742,8 +743,6 @@
             });
         }
 
-        // ... rest of the JavaScript functions remain the same as previous version ...
-        // [Include all the same JavaScript functions from the previous corrected version]
         function displayProducts(products) {
             const container = document.getElementById('products-container');
             const resultsInfo = document.getElementById('search-results-info');
@@ -803,7 +802,7 @@
         }
 
         function setupEventListeners() {
-            // Search functionality
+            // Search functionality - FIXED
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', function(e) {
                 currentSearchTerm = e.target.value.trim().toLowerCase();
@@ -840,19 +839,27 @@
                 );
             }
 
-            // Apply price range filters
+            // Apply price range filters - FIXED for Rs prices
             if (activeFilters.priceRanges.length > 0) {
                 filteredProducts = filteredProducts.filter(product => {
                     const price = extractPrice(product.price);
                     return activeFilters.priceRanges.some(range => {
-                        if (range === '2000+') return price > 2000;
+                        if (range === '2000+') return price > 400000; // Above Rs400000
                         const [min, max] = range.split('-').map(Number);
-                        return price >= min && price <= max;
+                        // Convert to actual Rs ranges
+                        const rsRanges = {
+                            '0-500': [0, 50000],
+                            '500-1000': [50000, 100000],
+                            '1000-1500': [100000, 200000],
+                            '1500-2000': [200000, 300000]
+                        };
+                        const [rsMin, rsMax] = rsRanges[range] || [min, max];
+                        return price >= rsMin && price <= rsMax;
                     });
                 });
             }
 
-            // Apply search term
+            // Apply search term - FIXED
             if (currentSearchTerm) {
                 filteredProducts = filteredProducts.filter(product => 
                     product.name.toLowerCase().includes(currentSearchTerm) ||
@@ -867,8 +874,9 @@
         }
 
         function extractPrice(priceString) {
-            const price = priceString.replace(/[^\d]/g, '');
-            return parseInt(price) || 0;
+            // Handle both $ and Rs prices
+            const numericString = priceString.replace(/[^\d]/g, '');
+            return parseInt(numericString) || 0;
         }
 
         function clearAllFilters() {
@@ -925,7 +933,6 @@
         }
 
         function viewProductDetails(productId) {
-            // Make sure this works by navigating to product details page
             window.location.href = `product-details.html?id=${productId}`;
         }
 

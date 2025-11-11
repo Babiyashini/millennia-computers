@@ -8,164 +8,159 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ASUS/Apple Style Categories */
-        .categories-section {
-            padding: 80px 0 40px;
-            background: var(--primary-light);
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-light);
-            cursor: pointer;
+        /* Simple Dropdown Styles */
+        .nav-premium > li {
             position: relative;
-            overflow: hidden;
         }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-premium);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-
-        .category-card:hover::before {
-            left: 0;
-            opacity: 0.05;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-premium);
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-premium);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-count {
-            background: var(--primary-blue);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Products Section */
-        .products-section {
-            padding: 60px 0;
+        .dropdown-content {
             display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-premium);
+            border-radius: 12px;
+            padding: 1rem;
+            z-index: 1001;
+            border: 1px solid var(--border-light);
         }
 
-        .products-section.active {
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        .back-to-categories {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-blue);
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: var(--text-dark);
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid var(--primary-blue);
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 6px;
         }
 
-        .back-to-categories:hover {
+        .dropdown-content a:hover {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+        }
+
+        /* Smaller Product Cards */
+        .products-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card-premium {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .product-card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .product-image-container-premium {
+            height: 200px;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8e8 100%);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-premium {
+            max-height: 160px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card-premium:hover .product-image-premium {
+            transform: scale(1.05);
+        }
+
+        .product-title-premium {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-price-premium {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Better Button Colors */
+        .btn-view-details-premium {
             background: var(--primary-blue);
             color: white;
-            transform: translateX(-5px);
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex: 1;
+        }
+
+        .btn-view-details-premium:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         /* Simple Filter Sidebar */
         .filter-sidebar-premium {
             background: white;
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 16px;
             box-shadow: var(--shadow-soft);
             border: 1px solid var(--border-light);
             position: sticky;
-            top: 120px;
+            top: 100px;
         }
 
         .filter-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid var(--primary-light);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .filter-header h3 {
             color: var(--text-dark);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
         .clear-filters {
             background: transparent;
-            border: 2px solid var(--primary-blue);
+            border: 1px solid var(--primary-blue);
             color: var(--primary-blue);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
         .clear-filters:hover {
@@ -174,33 +169,33 @@
         }
 
         .filter-section {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .filter-section h4 {
             color: var(--text-dark);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .filter-options {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 0.5rem;
         }
 
         .filter-option {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 0.8rem;
+            gap: 0.5rem;
+            padding: 0.6rem 0.8rem;
             background: var(--primary-light);
             border: 1px solid var(--border-light);
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
@@ -218,30 +213,22 @@
         /* Layout */
         .products-container-wrapper {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2.5rem;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
             align-items: start;
         }
 
         /* Search Results */
         .search-results-info {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--text-light);
-            font-size: 1.1rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 1024px) {
             .products-container-wrapper {
                 grid-template-columns: 1fr;
-            }
-            
-            .filter-sidebar-premium {
-                position: static;
             }
         }
     </style>
@@ -259,7 +246,20 @@
                 <ul class="nav-premium">
                     <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html" class="active">Products</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showAllProducts()">All Products</a>
+                            <a href="#" onclick="filterByCategory('Laptops')">Laptops</a>
+                            <a href="#" onclick="filterByCategory('Smartphones')">Smartphones</a>
+                            <a href="#" onclick="filterByCategory('PC Components')">PC Components</a>
+                            <a href="#" onclick="filterByCategory('Graphics Cards')">Graphics Cards</a>
+                            <a href="#" onclick="filterByCategory('RAM')">RAM</a>
+                            <a href="#" onclick="filterByCategory('Storage Devices')">Storage Devices</a>
+                            <a href="#" onclick="filterByCategory('Motherboards')">Motherboards</a>
+                            <a href="#" onclick="filterByCategory('Peripherals')">Peripherals</a>
+                        </div>
+                    </li>
                     <li><a href="popular.html">Popular</a></li>
                     <li><a href="support.html">Support</a></li>
                 </ul>
@@ -278,42 +278,21 @@
         </div>
     </header>
 
-    <!-- Categories Section (Like ASUS/Apple) -->
-    <section class="categories-section" id="categories-section">
+    <!-- Products Section -->
+    <section class="featured-products-premium" style="padding: 120px 0 50px;">
         <div class="container-premium">
             <div class="section-header-premium">
-                <h2 class="section-title-premium">Shop by Category</h2>
-                <p class="section-subtitle-premium">Explore our wide range of premium technology products</p>
-            </div>
-
-            <div class="categories-grid" id="categories-container">
-                <!-- Categories will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section (Hidden by default) -->
-    <section class="products-section" id="products-section">
-        <div class="container-premium">
-            <a href="#" class="back-to-categories" onclick="showCategories()">
-                <i class="fas fa-arrow-left"></i>
-                Back to Categories
-            </a>
-
-            <div class="section-header-premium">
-                <h2 class="section-title-premium" id="current-category-title">Products</h2>
-                <p class="section-subtitle-premium" id="current-category-description">Discover our collection</p>
+                <h2 class="section-title-premium">All Products</h2>
+                <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
             </div>
 
             <!-- Search Results Info -->
             <div class="search-results-info" id="search-results-info" style="display: none;">
-                <i class="fas fa-search" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
-                <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Search Results</h3>
-                Showing <span style="color: var(--primary-blue); font-weight: 700;" id="results-count">0</span> results for "<span style="color: var(--primary-blue); font-weight: 600;" id="search-term"></span>"
+                Showing <span id="results-count">0</span> results for "<span id="search-term"></span>"
             </div>
             
             <div class="products-container-wrapper">
-                <!-- Filter Sidebar -->
+                <!-- Simple Filter Sidebar -->
                 <div class="filter-sidebar-premium">
                     <div class="filter-header">
                         <h3>Filters</h3>
@@ -323,8 +302,34 @@
                     <!-- Categories Filter -->
                     <div class="filter-section">
                         <h4>Categories</h4>
-                        <div class="filter-options" id="category-filters">
-                            <!-- Will be populated by JavaScript -->
+                        <div class="filter-options">
+                            <div class="filter-option active" onclick="showAllProducts()">
+                                All Products
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Laptops')">
+                                Laptops
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Smartphones')">
+                                Smartphones
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('PC Components')">
+                                PC Components
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Graphics Cards')">
+                                Graphics Cards
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('RAM')">
+                                RAM
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Storage Devices')">
+                                Storage Devices
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Motherboards')">
+                                Motherboards
+                            </div>
+                            <div class="filter-option" onclick="filterByCategory('Peripherals')">
+                                Peripherals
+                            </div>
                         </div>
                     </div>
                     
@@ -392,747 +397,43 @@
         </div>
     </footer>
 
+    <script src="all-products.js"></script>
     <script>
-        // ALL YOUR ACTUAL PRODUCTS FROM THE CATALOG
-        const laptops = [
-            {
-                id: 1,
-                name: "ASUS ROG Strix G16 Gaming Laptop",
-                price: "Rs. 429,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "94 Reviews",
-                keyFeatures: ["Intel Core i9-13980HX", "32GB DDR5", "1TB NVMe SSD", "NVIDIA RTX 4070"]
-            },
-            {
-                id: 2,
-                name: "Lenovo Legion 5 Pro",
-                price: "Rs. 359,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400",
-                reviews: "217 Reviews",
-                keyFeatures: ["AMD Ryzen 7 7745HX", "16GB DDR5", "1TB NVMe SSD", "NVIDIA RTX 4060"]
-            },
-            {
-                id: 3,
-                name: "Acer Nitro 5",
-                price: "Rs. 249,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400",
-                reviews: "185 Reviews",
-                keyFeatures: ["Intel Core i5-12500H", "16GB DDR4", "512GB NVMe SSD", "NVIDIA RTX 4050"]
-            },
-            {
-                id: 4,
-                name: "ASUS TUF Gaming F15",
-                price: "Rs. 289,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "175 Reviews",
-                keyFeatures: ["Intel Core i7-12700H", "16GB DDR5", "1TB SSD", "NVIDIA RTX 4060"]
-            },
-            {
-                id: 5,
-                name: "HP Omen 16",
-                price: "Rs. 319,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "192 Reviews",
-                keyFeatures: ["Intel Core i7-13700HX", "32GB DDR5", "1TB NVMe SSD", "NVIDIA RTX 4070"]
-            },
-            {
-                id: 6,
-                name: "MSI Katana 17",
-                price: "Rs. 274,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400",
-                reviews: "98 Reviews",
-                keyFeatures: ["Intel Core i7-13620H", "16GB DDR5", "1TB NVMe SSD", "NVIDIA RTX 4060"]
-            },
-            {
-                id: 7,
-                name: "Dell G15 5530",
-                price: "Rs. 229,999",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400",
-                reviews: "121 Reviews",
-                keyFeatures: ["Intel Core i5-13450HX", "16GB DDR5", "512GB NVMe SSD", "NVIDIA RTX 4050"]
-            },
-            {
-                id: 8,
-                name: "ASUS ROG Zephyrus G14",
-                price: "Rs. 720,000",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["NVIDIA RTX 4070", "Compact 14-inch", "High-resolution Display"]
-            },
-            {
-                id: 9,
-                name: "ASUS ROG Zephyrus G16",
-                price: "Rs. 890,000",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "45 Reviews",
-                keyFeatures: ["NVIDIA RTX 4080", "16-inch Display", "Intel Core i9"]
-            },
-            {
-                id: 10,
-                name: "Razer Blade 16",
-                price: "Rs. 1,350,000",
-                category: "Laptops",
-                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400",
-                reviews: "23 Reviews",
-                keyFeatures: ["NVIDIA RTX 4090", "Dual-Mode Mini-LED", "Premium Build"]
-            }
-        ];
-
-        const smartphones = [
-            {
-                id: 34,
-                name: "Samsung Galaxy S24 Ultra",
-                price: "Rs. 349,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
-                reviews: "88 Reviews",
-                keyFeatures: ["Snapdragon 8 Gen 3", "12GB RAM", "512GB Storage", "200MP Camera"]
-            },
-            {
-                id: 35,
-                name: "Apple iPhone 15 Pro Max",
-                price: "Rs. 389,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                reviews: "124 Reviews",
-                keyFeatures: ["Apple A17 Pro", "8GB RAM", "256GB Storage", "48MP Camera"]
-            },
-            {
-                id: 36,
-                name: "Google Pixel 8 Pro",
-                price: "Rs. 279,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["Google Tensor G3", "12GB RAM", "256GB Storage", "50MP Camera"]
-            },
-            {
-                id: 37,
-                name: "iPhone 17 Pro",
-                price: "Rs. 419,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                reviews: "94 Reviews",
-                keyFeatures: ["Apple A18 Pro", "8GB RAM", "512GB Storage", "48MP Camera"]
-            },
-            {
-                id: 38,
-                name: "Samsung Galaxy S25 Ultra",
-                price: "Rs. 369,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
-                reviews: "110 Reviews",
-                keyFeatures: ["Snapdragon 8 Gen 4", "16GB RAM", "512GB Storage", "200MP Camera"]
-            },
-            {
-                id: 39,
-                name: "OnePlus 13",
-                price: "Rs. 299,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
-                reviews: "76 Reviews",
-                keyFeatures: ["Snapdragon 8 Gen 4", "16GB RAM", "512GB Storage", "50MP Camera"]
-            },
-            {
-                id: 40,
-                name: "Xiaomi 14 Ultra",
-                price: "Rs. 339,999",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400",
-                reviews: "81 Reviews",
-                keyFeatures: ["Snapdragon 8 Gen 3", "16GB RAM", "512GB Storage", "50MP Camera"]
-            },
-            {
-                id: 41,
-                name: "Apple iPhone 16 Pro Max",
-                price: "Rs. 390,000",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                reviews: "56 Reviews",
-                keyFeatures: ["A18 Pro", "Larger Display", "Enhanced Camera"]
-            },
-            {
-                id: 42,
-                name: "Apple iPhone 16",
-                price: "Rs. 375,000",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                reviews: "78 Reviews",
-                keyFeatures: ["A17 Bionic", "Action Button", "USB-C"]
-            },
-            {
-                id: 43,
-                name: "Apple iPhone 15",
-                price: "Rs. 340,000",
-                category: "Smartphones",
-                image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["A16 Bionic", "48MP Main Camera", "Dynamic Island"]
-            }
-        ];
-
-        const pcComponents = [
-            {
-                id: 83,
-                name: "AMD Ryzen 9 7950X",
-                price: "Rs. 210,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "45 Reviews",
-                keyFeatures: ["16 Cores / 32 Threads", "Up to 5.7GHz", "AM5 Socket", "DDR5 Support"]
-            },
-            {
-                id: 84,
-                name: "AMD Ryzen 7 7800X3D",
-                price: "Rs. 155,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["8 Cores / 16 Threads", "3D V-Cache", "AM5 Socket", "Gaming Optimized"]
-            },
-            {
-                id: 85,
-                name: "AMD Ryzen 5 7600X",
-                price: "Rs. 85,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["6 Cores / 12 Threads", "Up to 5.3GHz", "AM5 Socket", "DDR5 Support"]
-            },
-            {
-                id: 86,
-                name: "Intel Core i9-14900K",
-                price: "Rs. 230,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "52 Reviews",
-                keyFeatures: ["24 Cores / 32 Threads", "Up to 6.0 GHz", "LGA 1700", "DDR5 Support"]
-            },
-            {
-                id: 87,
-                name: "Intel Core i7-14700K",
-                price: "Rs. 165,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "78 Reviews",
-                keyFeatures: ["20 Cores / 28 Threads", "Up to 5.6GHz", "LGA 1700", "DDR5 Support"]
-            },
-            {
-                id: 88,
-                name: "Intel Core i5-14600K",
-                price: "Rs. 115,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "91 Reviews",
-                keyFeatures: ["14 Cores / 20 Threads", "Up to 5.3 GHz", "LGA 1700", "DDR5 Support"]
-            },
-            {
-                id: 89,
-                name: "AMD Ryzen 9 5900X",
-                price: "Rs. 130,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "124 Reviews",
-                keyFeatures: ["12 Cores / 24 Threads", "Up to 4.8GHz", "AM4 Socket", "DDR4 Support"]
-            },
-            {
-                id: 90,
-                name: "Intel Core i5-12400F",
-                price: "Rs. 55,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "156 Reviews",
-                keyFeatures: ["6 Cores / 12 Threads", "Up to 4.4GHz", "LGA 1700", "PCIe 5.0"]
-            },
-            {
-                id: 91,
-                name: "AMD Ryzen 5 5600X",
-                price: "Rs. 62,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "189 Reviews",
-                keyFeatures: ["6 Cores / 12 Threads", "Up to 4.6GHz", "AM4 Socket", "PCIe 4.0"]
-            },
-            {
-                id: 92,
-                name: "Intel Core i3-12100F",
-                price: "Rs. 38,000",
-                category: "PC Components",
-                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["4 Cores / 8 Threads", "Up to 4.3GHz", "LGA 1700", "PCIe 5.0"]
-            }
-        ];
-
-        const gpus = [
-            {
-                id: 93,
-                name: "NVIDIA GeForce RTX 4090",
-                price: "Rs. 650,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["24GB GDDR6X", "Ada Lovelace", "DLSS 3", "4K Gaming"]
-            },
-            {
-                id: 94,
-                name: "NVIDIA GeForce RTX 4080 Super",
-                price: "Rs. 420,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "42 Reviews",
-                keyFeatures: ["16GB GDDR6X", "Ada Lovelace", "DLSS 3", "4K Ready"]
-            },
-            {
-                id: 95,
-                name: "NVIDIA GeForce RTX 4070 Ti Super",
-                price: "Rs. 310,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "78 Reviews",
-                keyFeatures: ["16GB GDDR6X", "Ada Lovelace", "DLSS 3", "1440p Gaming"]
-            },
-            {
-                id: 96,
-                name: "NVIDIA GeForce RTX 4070 Super",
-                price: "Rs. 250,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["12GB GDDR6X", "Ada Lovelace", "DLSS 3", "1440p Gaming"]
-            },
-            {
-                id: 97,
-                name: "NVIDIA GeForce RTX 4060 Ti",
-                price: "Rs. 350,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["8GB/16GB GDDR6", "Ada Lovelace", "DLSS 3", "1080p Gaming"]
-            },
-            {
-                id: 98,
-                name: "AMD Radeon RX 7900 XTX",
-                price: "Rs. 390,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "45 Reviews",
-                keyFeatures: ["24GB GDDR6", "RDNA 3", "DisplayPort 2.1", "4K Gaming"]
-            },
-            {
-                id: 99,
-                name: "AMD Radeon RX 7900 XT",
-                price: "Rs. 315,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "52 Reviews",
-                keyFeatures: ["20GB GDDR6", "RDNA 3", "DisplayPort 2.1", "4K Gaming"]
-            },
-            {
-                id: 100,
-                name: "AMD Radeon RX 7800 XT",
-                price: "Rs. 205,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "91 Reviews",
-                keyFeatures: ["16GB GDDR6", "RDNA 3", "DisplayPort 2.1", "1440p Gaming"]
-            },
-            {
-                id: 101,
-                name: "NVIDIA GeForce RTX 3060 12GB",
-                price: "Rs. 110,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "156 Reviews",
-                keyFeatures: ["12GB GDDR6", "Ampere", "DLSS 2", "1080p Gaming"]
-            },
-            {
-                id: 102,
-                name: "AMD Radeon RX 6600",
-                price: "Rs. 85,000",
-                category: "Graphics Cards",
-                image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["8GB GDDR6", "RDNA 2", "AMD FSR", "1080p Gaming"]
-            }
-        ];
-
-        const ram = [
-            {
-                id: 108,
-                name: "Corsair Vengeance RGB 32GB DDR5 6000MHz",
-                price: "Rs. 48,000",
-                category: "RAM",
-                image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
-                reviews: "156 Reviews",
-                keyFeatures: ["32GB (2x16GB)", "DDR5", "6000MHz", "RGB Lighting"]
-            },
-            {
-                id: 109,
-                name: "G.Skill Trident Z5 RGB 32GB DDR5 6400MHz",
-                price: "Rs. 53,000",
-                category: "RAM",
-                image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["32GB (2x16GB)", "DDR5", "6400MHz", "RGB Lighting"]
-            },
-            {
-                id: 110,
-                name: "Kingston FURY Beast 16GB DDR4 3200MHz",
-                price: "Rs. 25,000",
-                category: "RAM",
-                image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
-                reviews: "234 Reviews",
-                keyFeatures: ["16GB (2x8GB)", "DDR4", "3200MHz", "Low Profile"]
-            },
-            {
-                id: 111,
-                name: "Corsair Vengeance LPX 16GB DDR4 3600MHz",
-                price: "Rs. 28,000",
-                category: "RAM",
-                image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
-                reviews: "189 Reviews",
-                keyFeatures: ["16GB (2x8GB)", "DDR4", "3600MHz", "Low Profile"]
-            },
-            {
-                id: 112,
-                name: "G.Skill Ripjaws V 32GB DDR4 3200MHz",
-                price: "Rs. 42,000",
-                category: "RAM",
-                image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["32GB (2x16GB)", "DDR4", "3200MHz", "High Performance"]
-            }
-        ];
-
-        const storageDevices = [
-            {
-                id: 122,
-                name: "Samsung T7 Shield Portable SSD 1TB",
-                price: "Rs. 24,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "210 Reviews",
-                keyFeatures: ["1TB Capacity", "USB 3.2 Gen 2", "1050 MB/s", "IP65 Water Resistant"]
-            },
-            {
-                id: 123,
-                name: "WD Blue SN580 NVMe SSD 1TB",
-                price: "Rs. 18,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "155 Reviews",
-                keyFeatures: ["1TB Capacity", "PCIe Gen4", "4150 MB/s", "5-Year Warranty"]
-            },
-            {
-                id: 124,
-                name: "SanDisk Ultra Dual Drive Go 128GB",
-                price: "Rs. 3,499",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "1024 Reviews",
-                keyFeatures: ["128GB Capacity", "USB 3.0 / Type-C", "150 MB/s", "Dual Connector"]
-            },
-            {
-                id: 125,
-                name: "Kingston XS2000 Portable SSD 1TB",
-                price: "Rs. 21,499",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "175 Reviews",
-                keyFeatures: ["1TB Capacity", "USB 3.2 Gen 2x2", "2000 MB/s", "IP55 Water Resistant"]
-            },
-            {
-                id: 126,
-                name: "Seagate Expansion Portable HDD 2TB",
-                price: "Rs. 15,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "233 Reviews",
-                keyFeatures: ["2TB Capacity", "USB 3.0", "Portable", "Plug-and-play"]
-            },
-            {
-                id: 127,
-                name: "Crucial P5 Plus 1TB NVMe SSD",
-                price: "Rs. 22,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "142 Reviews",
-                keyFeatures: ["1TB Capacity", "PCIe Gen4", "6600 MB/s", "5-Year Warranty"]
-            },
-            {
-                id: 128,
-                name: "Sabrent Rocket 4 Plus 2TB NVMe SSD",
-                price: "Rs. 39,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["2TB Capacity", "PCIe Gen4", "7100 MB/s", "5-Year Warranty"]
-            },
-            {
-                id: 129,
-                name: "LaCie Rugged Mini 4TB",
-                price: "Rs. 28,999",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "104 Reviews",
-                keyFeatures: ["4TB Capacity", "USB 3.0 / USB-C", "Drop Resistant", "Rugged Design"]
-            },
-            {
-                id: 130,
-                name: "Samsung 990 Pro 2TB NVMe SSD",
-                price: "Rs. 72,000",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "67 Reviews",
-                keyFeatures: ["2TB Capacity", "PCIe 4.0", "7450 MB/s Read", "Advanced Thermal Control"]
-            },
-            {
-                id: 131,
-                name: "Samsung 980 Pro 1TB NVMe SSD",
-                price: "Rs. 41,000",
-                category: "Storage Devices",
-                image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400",
-                reviews: "156 Reviews",
-                keyFeatures: ["1TB Capacity", "PCIe 4.0", "7000 MB/s Read", "Nickel-coated Controller"]
-            }
-        ];
-
-        const motherboards = [
-            {
-                id: 103,
-                name: "ASUS ROG Strix X670E-F",
-                price: "Rs. 145,000",
-                category: "Motherboards",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-                reviews: "78 Reviews",
-                keyFeatures: ["AMD X670E", "AM5 Socket", "PCIe 5.0", "WiFi 6E"]
-            },
-            {
-                id: 104,
-                name: "MSI MAG B760 TOMAHAWK WIFI",
-                price: "Rs. 82,000",
-                category: "Motherboards",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["Intel B760", "LGA 1700", "DDR5", "WiFi 6E"]
-            },
-            {
-                id: 105,
-                name: "Gigabyte B650 AORUS ELITE AX",
-                price: "Rs. 78,000",
-                category: "Motherboards",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["AMD B650", "AM5 Socket", "PCIe 5.0 M.2", "WiFi 6E"]
-            },
-            {
-                id: 106,
-                name: "ASUS TUF Gaming B550-PLUS",
-                price: "Rs. 55,000",
-                category: "Motherboards",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-                reviews: "189 Reviews",
-                keyFeatures: ["AMD B550", "AM4 Socket", "PCIe 4.0", "Military-grade Components"]
-            },
-            {
-                id: 107,
-                name: "ASRock B760M PG Lightning WiFi",
-                price: "Rs. 49,000",
-                category: "Motherboards",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400",
-                reviews: "156 Reviews",
-                keyFeatures: ["Intel B760", "LGA 1700", "DDR5", "WiFi 6E"]
-            }
-        ];
-
-        const peripherals = [
-            {
-                id: 137,
-                name: "Logitech G Pro X Superlight Wireless Mouse",
-                price: "Rs. 45,000",
-                category: "Peripherals",
-                image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400",
-                reviews: "289 Reviews",
-                keyFeatures: ["<63g Weight", "HERO 25K Sensor", "Lightspeed Wireless", "70 Hours Battery"]
-            },
-            {
-                id: 138,
-                name: "Keychron K8 Pro Mechanical Keyboard",
-                price: "Rs. 35,000",
-                category: "Peripherals",
-                image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
-                reviews: "167 Reviews",
-                keyFeatures: ["TKL Layout", "Hot-swappable", "Bluetooth 5.1", "PBT Keycaps"]
-            },
-            {
-                id: 139,
-                name: "LG UltraGear 27GP850-B Monitor",
-                price: "Rs. 115,000",
-                category: "Peripherals",
-                image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
-                reviews: "134 Reviews",
-                keyFeatures: ["27-inch QHD", "Nano IPS", "165Hz (O/C 180Hz)", "1ms Response"]
-            },
-            {
-                id: 140,
-                name: "Logitech MX Master 3S Mouse",
-                price: "Rs. 36,000",
-                category: "Peripherals",
-                image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400",
-                reviews: "234 Reviews",
-                keyFeatures: ["Darkfield Sensor", "MagSpeed Scrolling", "Multi-device", "70 Days Battery"]
-            },
-            {
-                id: 141,
-                name: "Elgato Stream Deck MK.2",
-                price: "Rs. 55,000",
-                category: "Peripherals",
-                image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400",
-                reviews: "89 Reviews",
-                keyFeatures: ["15 LCD Keys", "Studio Controller", "Stream Workflow", "Plugin Support"]
-            }
-        ];
-
-        // Combine ALL products
-        const allProducts = [
-            ...laptops,
-            ...smartphones,
-            ...pcComponents,
-            ...gpus,
-            ...ram,
-            ...storageDevices,
-            ...motherboards,
-            ...peripherals
-        ];
-
-        // Categories data
-        const categories = {
-            'Laptops': {
-                name: 'Laptops',
-                description: 'Powerful gaming laptops, ultrabooks, and workstations',
-                icon: '💻',
-                count: laptops.length
-            },
-            'Smartphones': {
-                name: 'Smartphones',
-                description: 'Flagship phones, mid-range, and budget options',
-                icon: '📱',
-                count: smartphones.length
-            },
-            'PC Components': {
-                name: 'PC Components',
-                description: 'Processors, motherboards, and essential components',
-                icon: '⚙️',
-                count: pcComponents.length
-            },
-            'Graphics Cards': {
-                name: 'Graphics Cards',
-                description: 'NVIDIA and AMD graphics cards for gaming and work',
-                icon: '🎮',
-                count: gpus.length
-            },
-            'RAM': {
-                name: 'RAM',
-                description: 'DDR4 and DDR5 memory for all your needs',
-                icon: '🧠',
-                count: ram.length
-            },
-            'Storage Devices': {
-                name: 'Storage',
-                description: 'SSDs, HDDs, and external storage solutions',
-                icon: '💾',
-                count: storageDevices.length
-            },
-            'Motherboards': {
-                name: 'Motherboards',
-                description: 'Intel and AMD motherboards for all builds',
-                icon: '🔌',
-                count: motherboards.length
-            },
-            'Peripherals': {
-                name: 'Peripherals',
-                description: 'Keyboards, mice, monitors, and accessories',
-                icon: '⌨️',
-                count: peripherals.length
-            }
-        };
-
+        let allProducts = [];
         let currentSearchTerm = '';
         let activeCategory = 'all';
         let activePriceRange = '';
 
         document.addEventListener('DOMContentLoaded', function() {
-            loadCategories();
+            loadAllProducts();
             setupEventListeners();
+            
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
         });
 
-        function loadCategories() {
-            const container = document.getElementById('categories-container');
-            container.innerHTML = '';
+        function loadAllProducts() {
+            // Get ALL products from all categories
+            allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents,
+                ...gpus,
+                ...ram,
+                ...psuCasesCooling,
+                ...storageDevices,
+                ...motherboards,
+                ...peripherals
+            ];
 
-            Object.values(categories).forEach(category => {
-                const card = document.createElement('div');
-                card.className = 'category-card';
-                card.onclick = () => showProducts(category.name);
-                
-                card.innerHTML = `
-                    <div class="category-icon">${category.icon}</div>
-                    <h3>${category.name}</h3>
-                    <p>${category.description}</p>
-                    <div class="category-count">${category.count} Products</div>
-                `;
-                
-                container.appendChild(card);
-            });
-        }
-
-        function showCategories() {
-            document.getElementById('categories-section').style.display = 'block';
-            document.getElementById('products-section').classList.remove('active');
-            activeCategory = 'all';
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-        }
-
-        function showProducts(category) {
-            document.getElementById('categories-section').style.display = 'none';
-            document.getElementById('products-section').classList.add('active');
-            
-            activeCategory = category;
-            document.getElementById('current-category-title').textContent = category;
-            document.getElementById('current-category-description').textContent = categories[category].description;
-            
-            // Update category filters
-            updateCategoryFilters();
-            
-            applyFilters();
-        }
-
-        function updateCategoryFilters() {
-            const container = document.getElementById('category-filters');
-            container.innerHTML = '';
-
-            Object.keys(categories).forEach(cat => {
-                const option = document.createElement('div');
-                option.className = `filter-option ${cat === activeCategory ? 'active' : ''}`;
-                option.onclick = () => {
-                    activeCategory = cat;
-                    updateCategoryFilters();
-                    applyFilters();
-                };
-                option.textContent = cat;
-                container.appendChild(option);
-            });
+            displayProducts(allProducts);
+            initScrollAnimations();
         }
 
         function displayProducts(products) {
@@ -1143,10 +444,10 @@
             
             if (products.length === 0) {
                 container.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
-                        <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <i class="fas fa-search" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
+                        <p style="color: var(--text-light);">Try different search terms or filters</p>
                     </div>
                 `;
             } else {
@@ -1194,19 +495,50 @@
         }
 
         function setupEventListeners() {
-            // Search functionality
+            // Search functionality - FIXED
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', function(e) {
                 currentSearchTerm = e.target.value.trim().toLowerCase();
                 applyFilters();
             });
-            
+
+            // Enter key search
             searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     currentSearchTerm = e.target.value.trim().toLowerCase();
                     applyFilters();
                 }
             });
+        }
+
+        function showAllProducts() {
+            activeCategory = 'all';
+            activePriceRange = '';
+            updateActiveFilter();
+            applyFilters();
+        }
+
+        function filterByCategory(category) {
+            activeCategory = category;
+            updateActiveFilter();
+            applyFilters();
+        }
+
+        function filterByPrice(priceRange) {
+            activePriceRange = priceRange;
+            updateActiveFilter();
+            applyFilters();
+        }
+
+        function updateActiveFilter() {
+            // Update category buttons
+            document.querySelectorAll('.filter-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            if (activeCategory === 'all') {
+                document.querySelector('.filter-option').classList.add('active');
+            }
         }
 
         function applyFilters() {
@@ -1229,34 +561,28 @@
                 });
             }
 
-            // Apply search term
+            // Apply search term - FIXED
             if (currentSearchTerm) {
                 filteredProducts = filteredProducts.filter(product => 
                     product.name.toLowerCase().includes(currentSearchTerm) ||
-                    product.category.toLowerCase().includes(currentSearchTerm) ||
-                    (product.keyFeatures && product.keyFeatures.some(feature => 
-                        feature.toLowerCase().includes(currentSearchTerm)
-                    ))
+                    product.category.toLowerCase().includes(currentSearchTerm)
                 );
             }
 
             displayProducts(filteredProducts);
         }
 
-        function filterByPrice(priceRange) {
-            activePriceRange = priceRange;
-            applyFilters();
-        }
-
         function extractPrice(priceString) {
-            const numericString = priceString.replace(/[^\d]/g, '');
-            return parseInt(numericString) || 0;
+            const price = priceString.replace(/[^\d]/g, '');
+            return parseInt(price) || 0;
         }
 
         function clearAllFilters() {
+            activeCategory = 'all';
             activePriceRange = '';
             currentSearchTerm = '';
             document.getElementById('search-input').value = '';
+            updateActiveFilter();
             applyFilters();
         }
 
@@ -1303,6 +629,20 @@
                     notification.remove();
                 }, 300);
             }, 3000);
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
         }
     </script>
 </body>

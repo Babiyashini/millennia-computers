@@ -4,11 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - Millennia Computers</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Simple Dropdown Styles */
+        :root {
+            --primary-blue: #2563eb;
+            --accent-hover: #1d4ed8;
+            --primary-light: #dbeafe;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-light: #e5e7eb;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* Header Styles */
+        .header-premium {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-container-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-premium {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon-premium {
+            font-size: 1.8rem;
+        }
+
+        .nav-premium {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-premium a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-premium a:hover, .nav-premium a.active {
+            color: var(--primary-blue);
+        }
+
+        /* Dropdown Styles */
         .nav-premium > li {
             position: relative;
         }
@@ -48,7 +126,101 @@
             color: var(--primary-blue);
         }
 
-        /* Smaller Product Cards */
+        /* Header Actions */
+        .header-actions-premium {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-premium {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon-premium {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-light);
+        }
+
+        .search-premium input {
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            background: white;
+            font-size: 0.9rem;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .search-premium input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .cart-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cart-premium:hover {
+            background: var(--accent-hover);
+        }
+
+        .cart-count-premium {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Container */
+        .container-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Header */
+        .section-header-premium {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title-premium {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle-premium {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
         .products-grid-premium {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -91,6 +263,20 @@
             transform: scale(1.05);
         }
 
+        .product-info-premium {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-category-premium {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
         .product-title-premium {
             font-size: 1.1rem;
             font-weight: 600;
@@ -105,7 +291,28 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Better Button Colors */
+        .product-rating-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-premium {
+            color: #fbbf24;
+        }
+
+        .reviews {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .product-actions-premium {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
         .btn-view-details-premium {
             background: var(--primary-blue);
             color: white;
@@ -125,6 +332,25 @@
         .btn-view-details-premium:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
+        }
+
+        .btn-add-cart-premium {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-add-cart-premium:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
         }
 
         /* Search Results */
@@ -165,103 +391,128 @@
         .clear-category:hover {
             background: rgba(255,255,255,0.3);
         }
-        /* Add these missing CSS classes */
-.product-info-premium {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
 
-.product-category-premium {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
+        /* Footer */
+        .footer-premium {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            margin-top: 4rem;
+        }
 
-.product-rating-premium {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
+        .footer-content-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-.stars-premium {
-    color: #fbbf24;
-}
+        .footer-section-premium h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
 
-.reviews {
-    font-size: 0.8rem;
-    color: var(--text-light);
-}
+        .footer-section-premium p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
 
-.product-actions-premium {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
+        .footer-links-premium {
+            list-style: none;
+        }
 
-.btn-add-cart-premium {
-    background: transparent;
-    border: 1px solid var(--border-light);
-    color: var(--text-dark);
-    padding: 0.7rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .footer-links-premium li {
+            margin-bottom: 0.5rem;
+        }
 
-.btn-add-cart-premium:hover {
-    background: var(--primary-light);
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
-}
+        .footer-links-premium a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
+        .footer-links-premium a:hover {
+            color: white;
+        }
 
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .newsletter-premium {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
 
-/* Notification Styles */
-.premium-notification {
-    position: fixed;
-    top: 100px;
-    right: 2rem;
-    background: white;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-premium);
-    border-left: 4px solid #10b981;
-    transform: translateX(400px);
-    transition: transform 0.3s ease;
-    z-index: 10000;
-}
+        .newsletter-premium input {
+            flex: 1;
+            padding: 0.7rem;
+            border: 1px solid #4b5563;
+            border-radius: 6px;
+            background: #374151;
+            color: white;
+        }
 
-.premium-notification.show {
-    transform: translateX(0);
-}
+        .newsletter-premium button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
-.notification-content {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    color: var(--text-dark);
-}
+        .copyright-premium {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
 
-.notification-content i {
-    color: #10b981;
-    font-size: 1.2rem;
-}
+        /* Notification */
+        .premium-notification {
+            position: fixed;
+            top: 100px;
+            right: 2rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-premium);
+            border-left: 4px solid #10b981;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 10000;
+        }
+
+        .premium-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--text-dark);
+        }
+
+        .notification-content i {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -370,119 +621,144 @@
         </div>
     </footer>
 
+    <!-- Include your all-products.js file -->
     <script src="all-products.js"></script>
+    
     <script>
-    let allProducts = [];
-    let currentSearchTerm = '';
-    let activeCategory = 'all';
+        // Sample product data - This will be replaced by your all-products.js
+        const laptops = [
+            { id: 1, name: "ASUS ROG Strix G16 Gaming Laptop", price: "Rs. 429,999", category: "Laptops" },
+            { id: 2, name: "Lenovo Legion 5 Pro", price: "Rs. 359,999", category: "Laptops" },
+            { id: 3, name: "Acer Nitro 5", price: "Rs. 249,999", category: "Laptops" }
+        ];
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Wait a moment to ensure all-products.js is loaded
-        setTimeout(loadAllProducts, 100);
-        setupEventListeners();
-        
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header-premium');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+        const smartphones = [
+            { id: 34, name: "Samsung Galaxy S24 Ultra", price: "Rs. 349,999", category: "Smartphones" },
+            { id: 35, name: "Apple iPhone 15 Pro Max", price: "Rs. 389,999", category: "Smartphones" }
+        ];
+
+        const processors = [
+            { id: 66, name: "AMD Ryzen 9 7950X", price: "Rs. 210,000", category: "Processors" }
+        ];
+
+        const gpus = [
+            { id: 76, name: "NVIDIA GeForce RTX 4090", price: "Rs. 650,000", category: "Graphics Cards" }
+        ];
+
+        const ram = [
+            { id: 86, name: "Corsair Vengeance RGB 32GB DDR5", price: "Rs. 48,000", category: "RAM" }
+        ];
+
+        const storageDevices = [
+            { id: 100, name: "Samsung T7 Shield Portable SSD 1TB", price: "Rs. 24,999", category: "Storage Devices" }
+        ];
+
+        const motherboards = [
+            { id: 115, name: "ASUS ROG Strix X670E-F", price: "Rs. 145,000", category: "Motherboards" },
+            { id: 116, name: "MSI MAG B760 TOMAHAWK WIFI", price: "Rs. 82,000", category: "Motherboards" }
+        ];
+
+        const peripherals = [
+            { id: 120, name: "Logitech G Pro X Superlight Mouse", price: "Rs. 45,000", category: "Peripherals" }
+        ];
+
+        const psuCasesCooling = [
+            { id: 91, name: "Corsair RM850e 850W Gold PSU", price: "Rs. 48,000", category: "PSU & Cooling" }
+        ];
+
+        let allProducts = [];
+        let currentSearchTerm = '';
+        let activeCategory = 'all';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if external product data is available, otherwise use sample data
+            if (typeof window.laptops !== 'undefined' && window.laptops.length > 0) {
+                console.log('Using external product data from all-products.js');
+                loadAllProducts();
             } else {
-                header.classList.remove('scrolled');
+                console.log('Using built-in sample product data');
+                loadAllProducts();
             }
+            
+            setupEventListeners();
         });
-    });
 
-    function loadAllProducts() {
-        // Check if all-products.js loaded correctly
-        if (typeof laptops === 'undefined') {
-            console.error('all-products.js not loaded properly');
-            document.getElementById('products-container').innerHTML = `
-                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ef4444; margin-bottom: 1.5rem;"></i>
-                    <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">Product data not loaded</h3>
-                    <p style="color: var(--text-light); font-size: 1rem;">Please check if all-products.js file exists</p>
-                </div>
-            `;
-            return;
+        function loadAllProducts() {
+            // Use external data if available, otherwise use sample data
+            const laptopData = typeof window.laptops !== 'undefined' ? window.laptops : laptops;
+            const smartphoneData = typeof window.smartphones !== 'undefined' ? window.smartphones : smartphones;
+            const processorData = typeof window.processors !== 'undefined' ? window.processors : processors;
+            const gpuData = typeof window.gpus !== 'undefined' ? window.gpus : gpus;
+            const ramData = typeof window.ram !== 'undefined' ? window.ram : ram;
+            const storageData = typeof window.storageDevices !== 'undefined' ? window.storageDevices : storageDevices;
+            const motherboardData = typeof window.motherboards !== 'undefined' ? window.motherboards : motherboards;
+            const peripheralData = typeof window.peripherals !== 'undefined' ? window.peripherals : peripherals;
+            const psuData = typeof window.psuCasesCooling !== 'undefined' ? window.psuCasesCooling : psuCasesCooling;
+
+            // Add category property if not present
+            laptopData.forEach(p => p.category = 'Laptops');
+            smartphoneData.forEach(p => p.category = 'Smartphones');
+            processorData.forEach(p => p.category = 'Processors');
+            gpuData.forEach(p => p.category = 'Graphics Cards');
+            ramData.forEach(p => p.category = 'RAM');
+            storageData.forEach(p => p.category = 'Storage Devices');
+            motherboardData.forEach(p => p.category = 'Motherboards');
+            peripheralData.forEach(p => p.category = 'Peripherals');
+            psuData.forEach(p => p.category = 'PSU & Cooling');
+
+            // Combine all products
+            allProducts = [
+                ...laptopData,
+                ...smartphoneData,
+                ...processorData,
+                ...gpuData,
+                ...ramData,
+                ...storageData,
+                ...motherboardData,
+                ...peripheralData,
+                ...psuData
+            ];
+
+            console.log('Total products loaded:', allProducts.length);
+            displayProducts(allProducts);
+            initScrollAnimations();
         }
 
-        // ADD CATEGORY PROPERTY TO ALL PRODUCTS
-        laptops.forEach(product => product.category = 'Laptops');
-        smartphones.forEach(product => product.category = 'Smartphones');
-        processors.forEach(product => product.category = 'Processors');
-        gpus.forEach(product => product.category = 'Graphics Cards');
-        ram.forEach(product => product.category = 'RAM');
-        psuCasesCooling.forEach(product => product.category = 'PSU & Cooling');
-        storageDevices.forEach(product => product.category = 'Storage Devices');
-        motherboards.forEach(product => product.category = 'Motherboards');
-        peripherals.forEach(product => product.category = 'Peripherals');
-
-        // Create pcComponents array by combining all PC component arrays
-        const pcComponents = [
-            ...processors,
-            ...gpus, 
-            ...ram,
-            ...psuCasesCooling,
-            ...storageDevices,
-            ...motherboards,
-            ...peripherals
-        ];
-
-        // Get ALL products from all categories
-        allProducts = [
-            ...laptops, 
-            ...smartphones,
-            ...pcComponents
-        ];
-
-        console.log('Total products loaded:', allProducts.length);
-        console.log('Laptops:', laptops.length);
-        console.log('Smartphones:', smartphones.length);
-        console.log('Motherboards:', motherboards.length);
-        
-        displayProducts(allProducts);
-        initScrollAnimations();
-    }
-
-    function displayProducts(products) {
-        const container = document.getElementById('products-container');
-        const resultsInfo = document.getElementById('search-results-info');
-        const activeCategoryDiv = document.getElementById('active-category');
-        
-        container.innerHTML = '';
-        
-        console.log('Displaying products:', products.length);
-        
-        if (products.length === 0) {
-            container.innerHTML = `
-                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                    <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
-                    <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
-                    <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
-                </div>
-            `;
-        } else {
-            products.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card-premium fade-in-up';
-                card.style.animationDelay = `${index * 0.1}s`;
-                
-                // Generate placeholder image based on category
-                const placeholderImages = {
-                    'Laptops': 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400',
-                    'Smartphones': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
-                    'Processors': 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400',
-                    'Graphics Cards': 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400',
-                    'RAM': 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400',
-                    'PSU & Cooling': 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400',
-                    'Storage Devices': 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400',
-                    'Motherboards': 'https://images.unsplash.com/photo-1558618666-fcd25856cd25?w=400',
-                    'Peripherals': 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400'
-                };
-                
-                const productImage = placeholderImages[product.category] || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
-                
-                card.innerHTML = `
-                    <div class="product-3d-effect">
+        function displayProducts(products) {
+            const container = document.getElementById('products-container');
+            const resultsInfo = document.getElementById('search-results-info');
+            const activeCategoryDiv = document.getElementById('active-category');
+            
+            container.innerHTML = '';
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
+                        <p style="color: var(--text-light);">Try adjusting your search terms or filters</p>
+                    </div>
+                `;
+            } else {
+                products.forEach((product, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card-premium fade-in-up';
+                    
+                    const placeholderImages = {
+                        'Laptops': 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400',
+                        'Smartphones': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
+                        'Processors': 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400',
+                        'Graphics Cards': 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400',
+                        'RAM': 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400',
+                        'Storage Devices': 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400',
+                        'Motherboards': 'https://images.unsplash.com/photo-1558618666-fcd25856cd25?w=400',
+                        'Peripherals': 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400',
+                        'PSU & Cooling': 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400'
+                    };
+                    
+                    const productImage = placeholderImages[product.category] || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
+                    
+                    card.innerHTML = `
                         <div class="product-image-container-premium">
                             <img src="${productImage}" alt="${product.name}" class="product-image-premium">
                         </div>
@@ -504,150 +780,128 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Show/hide search results info
-        if (currentSearchTerm) {
-            resultsInfo.style.display = 'block';
-            document.getElementById('results-count').textContent = products.length;
-            document.getElementById('search-term').textContent = currentSearchTerm;
-        } else {
-            resultsInfo.style.display = 'none';
-        }
-
-        // Show/hide active category indicator
-        if (activeCategory && activeCategory !== 'all') {
-            activeCategoryDiv.style.display = 'block';
-            document.getElementById('current-category-name').textContent = activeCategory;
-        } else {
-            activeCategoryDiv.style.display = 'none';
-        }
-    }
-
-    function setupEventListeners() {
-        // Search functionality
-        const searchInput = document.getElementById('search-input');
-        
-        searchInput.addEventListener('input', function(e) {
-            currentSearchTerm = e.target.value.trim().toLowerCase();
-            applyFilters();
-        });
-    }
-
-    function showAllProducts() {
-        activeCategory = 'all';
-        currentSearchTerm = '';
-        document.getElementById('search-input').value = '';
-        applyFilters();
-    }
-
-    function filterByCategory(category) {
-        console.log('Filtering by category:', category);
-        activeCategory = category;
-        currentSearchTerm = '';
-        document.getElementById('search-input').value = '';
-        applyFilters();
-    }
-
-    function applyFilters() {
-        let filteredProducts = allProducts;
-
-        console.log('Applying filters - Active category:', activeCategory);
-
-        // Apply category filter
-        if (activeCategory && activeCategory !== 'all') {
-            if (activeCategory === 'PC Components') {
-                // Special handling for PC Components - show all PC components
-                filteredProducts = filteredProducts.filter(product => 
-                    product.category === 'Processors' ||
-                    product.category === 'Graphics Cards' ||
-                    product.category === 'RAM' ||
-                    product.category === 'PSU & Cooling' ||
-                    product.category === 'Storage Devices' ||
-                    product.category === 'Motherboards' ||
-                    product.category === 'Peripherals'
-                );
-            } else {
-                filteredProducts = filteredProducts.filter(product => {
-                    return product.category === activeCategory;
+                    `;
+                    container.appendChild(card);
                 });
+            }
+
+            // Show/hide search results info
+            if (currentSearchTerm) {
+                resultsInfo.style.display = 'block';
+                document.getElementById('results-count').textContent = products.length;
+                document.getElementById('search-term').textContent = currentSearchTerm;
+            } else {
+                resultsInfo.style.display = 'none';
+            }
+
+            // Show/hide active category indicator
+            if (activeCategory && activeCategory !== 'all') {
+                activeCategoryDiv.style.display = 'block';
+                document.getElementById('current-category-name').textContent = activeCategory;
+            } else {
+                activeCategoryDiv.style.display = 'none';
             }
         }
 
-        // Apply search term
-        if (currentSearchTerm) {
-            filteredProducts = filteredProducts.filter(product => 
-                product.name.toLowerCase().includes(currentSearchTerm) ||
-                product.category.toLowerCase().includes(currentSearchTerm)
-            );
+        function setupEventListeners() {
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', function(e) {
+                currentSearchTerm = e.target.value.trim().toLowerCase();
+                applyFilters();
+            });
         }
 
-        console.log('Filtered products count:', filteredProducts.length);
-        displayProducts(filteredProducts);
-    }
+        function showAllProducts() {
+            activeCategory = 'all';
+            currentSearchTerm = '';
+            document.getElementById('search-input').value = '';
+            applyFilters();
+        }
 
-    function viewProductDetails(productId) {
-        window.location.href = `product-details.html?id=${productId}`;
-    }
+        function filterByCategory(category) {
+            activeCategory = category;
+            currentSearchTerm = '';
+            document.getElementById('search-input').value = '';
+            applyFilters();
+        }
 
-    function addToCart(productId) {
-        const cartCount = document.querySelector('.cart-count-premium');
-        let count = parseInt(cartCount.textContent) || 0;
-        count++;
-        cartCount.textContent = count;
-        
-        showPremiumNotification('Product added to cart!');
-        animateCartIcon();
-    }
+        function applyFilters() {
+            let filteredProducts = allProducts;
 
-    function animateCartIcon() {
-        const cart = document.querySelector('.cart-premium');
-        cart.style.transform = 'scale(1.2)';
-        setTimeout(() => {
-            cart.style.transform = 'scale(1)';
-        }, 300);
-    }
-
-    function showPremiumNotification(message) {
-        const notification = document.createElement('div');
-        notification.className = 'premium-notification';
-        notification.innerHTML = `
-            <div class="notification-content">
-                <i class="fas fa-check-circle"></i>
-                <span>${message}</span>
-            </div>
-        `;
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.classList.add('show');
-        }, 100);
-        
-        setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 3000);
-    }
-
-    function initScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            // Apply category filter
+            if (activeCategory && activeCategory !== 'all') {
+                if (activeCategory === 'PC Components') {
+                    filteredProducts = filteredProducts.filter(product => 
+                        product.category === 'Processors' ||
+                        product.category === 'Graphics Cards' ||
+                        product.category === 'RAM' ||
+                        product.category === 'Storage Devices' ||
+                        product.category === 'Motherboards' ||
+                        product.category === 'Peripherals' ||
+                        product.category === 'PSU & Cooling'
+                    );
+                } else {
+                    filteredProducts = filteredProducts.filter(product => 
+                        product.category === activeCategory
+                    );
                 }
-            });
-        }, { threshold: 0.1 });
+            }
 
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-    }
-</script>
+            // Apply search term
+            if (currentSearchTerm) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(currentSearchTerm) ||
+                    product.category.toLowerCase().includes(currentSearchTerm)
+                );
+            }
+
+            displayProducts(filteredProducts);
+        }
+
+        function viewProductDetails(productId) {
+            alert('Viewing product details for ID: ' + productId);
+        }
+
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count-premium');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            
+            showPremiumNotification('Product added to cart!');
+        }
+
+        function showPremiumNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
 </body>
 </html>

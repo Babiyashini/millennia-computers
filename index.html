@@ -4,11 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - Millennia Computers</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Simple Dropdown Styles */
+        :root {
+            --primary-blue: #2563eb;
+            --accent-hover: #1d4ed8;
+            --primary-light: #dbeafe;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-light: #e5e7eb;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* Header Styles */
+        .header-premium {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-premium.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .header-container-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-premium {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon-premium {
+            font-size: 1.8rem;
+        }
+
+        .nav-premium {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-premium a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-premium a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-premium a.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-premium a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        /* Dropdown Styles */
         .nav-premium > li {
             position: relative;
         }
@@ -48,7 +147,106 @@
             color: var(--primary-blue);
         }
 
-        /* Smaller Product Cards */
+        /* Header Actions */
+        .header-actions-premium {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-premium {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon-premium {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-light);
+        }
+
+        .search-premium input {
+            padding: 0.7rem 1rem 0.7rem 2.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .search-premium input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .cart-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-premium:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .cart-count-premium {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Header */
+        .section-header-premium {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title-premium {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle-premium {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
         .products-grid-premium {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -62,6 +260,13 @@
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .product-card-premium.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .product-card-premium:hover {
@@ -91,6 +296,20 @@
             transform: scale(1.05);
         }
 
+        .product-info-premium {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-category-premium {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
         .product-title-premium {
             font-size: 1.1rem;
             font-weight: 600;
@@ -105,7 +324,28 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Better Button Colors */
+        .product-rating-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-premium {
+            color: #fbbf24;
+        }
+
+        .reviews {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .product-actions-premium {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
         .btn-view-details-premium {
             background: var(--primary-blue);
             color: white;
@@ -125,6 +365,25 @@
         .btn-view-details-premium:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
+        }
+
+        .btn-add-cart-premium {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-add-cart-premium:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
         }
 
         /* Search Results */
@@ -165,8 +424,97 @@
         .clear-category:hover {
             background: rgba(255,255,255,0.3);
         }
-        
-        /* Notification Styles */
+
+        /* Footer */
+        .footer-premium {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .footer-content-premium {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section-premium h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section-premium p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .footer-links-premium {
+            list-style: none;
+        }
+
+        .footer-links-premium li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links-premium a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links-premium a:hover {
+            color: white;
+        }
+
+        .newsletter-premium {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-premium input {
+            flex: 1;
+            padding: 0.7rem;
+            border: 1px solid #4b5563;
+            border-radius: 6px;
+            background: #374151;
+            color: white;
+        }
+
+        .newsletter-premium input::placeholder {
+            color: #9ca3af;
+        }
+
+        .newsletter-premium button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-premium button:hover {
+            background: var(--accent-hover);
+        }
+
+        .copyright-premium {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Notification */
         .premium-notification {
             position: fixed;
             top: 100px;
@@ -196,8 +544,8 @@
             color: #10b981;
             font-size: 1.2rem;
         }
-        
-        /* Animation classes */
+
+        /* Animations */
         .fade-in-up {
             opacity: 0;
             transform: translateY(20px);
@@ -207,61 +555,6 @@
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .product-info-premium {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .product-category-premium {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .product-rating-premium {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stars-premium {
-            color: #fbbf24;
-        }
-
-        .reviews {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        .product-actions-premium {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .btn-add-cart-premium {
-            background: transparent;
-            border: 1px solid var(--border-light);
-            color: var(--text-dark);
-            padding: 0.7rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-add-cart-premium:hover {
-            background: var(--primary-light);
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
         }
     </style>
 </head>
@@ -372,29 +665,66 @@
         </div>
     </footer>
 
-    <!-- Link to your external JavaScript file -->
-    <script src="all-products.js"></script>
-    
     <script>
+        // ALL PRODUCT DATA INCLUDED DIRECTLY
+        const laptops = [
+            { id: 1, name: "ASUS ROG Strix G16 Gaming Laptop", price: "Rs. 429,999", category: "Laptops" },
+            { id: 2, name: "Lenovo Legion 5 Pro", price: "Rs. 359,999", category: "Laptops" },
+            { id: 3, name: "Acer Nitro 5", price: "Rs. 249,999", category: "Laptops" },
+            { id: 4, name: "ASUS TUF Gaming F15", price: "Rs. 289,999", category: "Laptops" },
+            { id: 5, name: "HP Omen 16", price: "Rs. 319,999", category: "Laptops" }
+        ];
+
+        const smartphones = [
+            { id: 34, name: "Samsung Galaxy S24 Ultra", price: "Rs. 349,999", category: "Smartphones" },
+            { id: 35, name: "Apple iPhone 15 Pro Max", price: "Rs. 389,999", category: "Smartphones" },
+            { id: 36, name: "Google Pixel 8 Pro", price: "Rs. 279,999", category: "Smartphones" }
+        ];
+
+        const processors = [
+            { id: 66, name: "AMD Ryzen 9 7950X", price: "Rs. 210,000", category: "Processors" },
+            { id: 67, name: "AMD Ryzen 7 7800X3D", price: "Rs. 155,000", category: "Processors" }
+        ];
+
+        const gpus = [
+            { id: 76, name: "NVIDIA GeForce RTX 4090", price: "Rs. 650,000", category: "Graphics Cards" },
+            { id: 77, name: "NVIDIA GeForce RTX 4080 Super", price: "Rs. 420,000", category: "Graphics Cards" }
+        ];
+
+        const ram = [
+            { id: 86, name: "Corsair Vengeance RGB 32GB DDR5 6000MHz", price: "Rs. 48,000", category: "RAM" },
+            { id: 87, name: "G.Skill Trident Z5 RGB 32GB DDR5 6400MHz", price: "Rs. 53,000", category: "RAM" }
+        ];
+
+        const psuCasesCooling = [
+            { id: 91, name: "Corsair RM850e 850W Gold PSU", price: "Rs. 48,000", category: "PSU & Cooling" },
+            { id: 92, name: "Lian Li O11 Dynamic EVO Case", price: "Rs. 65,000", category: "PSU & Cooling" }
+        ];
+
+        const storageDevices = [
+            { id: 100, name: "Samsung T7 Shield Portable SSD 1TB", price: "Rs. 24,999", category: "Storage Devices" },
+            { id: 101, name: "WD Blue SN580 NVMe SSD 1TB", price: "Rs. 18,999", category: "Storage Devices" }
+        ];
+
+        const motherboards = [
+            { id: 115, name: "ASUS ROG Strix X670E-F", price: "Rs. 145,000", category: "Motherboards" },
+            { id: 116, name: "MSI MAG B760 TOMAHAWK WIFI", price: "Rs. 82,000", category: "Motherboards" },
+            { id: 117, name: "Gigabyte B650 AORUS ELITE AX", price: "Rs. 78,000", category: "Motherboards" },
+            { id: 118, name: "ASUS TUF Gaming B550-PLUS", price: "Rs. 55,000", category: "Motherboards" },
+            { id: 119, name: "ASRock B760M PG Lightning WiFi", price: "Rs. 49,000", category: "Motherboards" }
+        ];
+
+        const peripherals = [
+            { id: 120, name: "Logitech G Pro X Superlight Wireless Mouse", price: "Rs. 45,000", category: "Peripherals" },
+            { id: 121, name: "Keychron K8 Pro Mechanical Keyboard", price: "Rs. 35,000", category: "Peripherals" }
+        ];
+
         let allProducts = [];
         let currentSearchTerm = '';
         let activeCategory = 'all';
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if product arrays are available
-            if (typeof laptops !== 'undefined') {
-                loadAllProducts();
-            } else {
-                console.error('External product data not loaded.');
-                document.getElementById('products-container').innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ef4444; margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">Product data not loaded</h3>
-                        <p style="color: var(--text-light); font-size: 1rem;">Please check if all-products.js file is available</p>
-                    </div>
-                `;
-            }
-            
+            loadAllProducts();
             setupEventListeners();
             
             window.addEventListener('scroll', function() {
@@ -408,17 +738,6 @@
         });
 
         function loadAllProducts() {
-            // Add category property to all products
-            laptops.forEach(product => product.category = 'Laptops');
-            smartphones.forEach(product => product.category = 'Smartphones');
-            processors.forEach(product => product.category = 'Processors');
-            gpus.forEach(product => product.category = 'Graphics Cards');
-            ram.forEach(product => product.category = 'RAM');
-            psuCasesCooling.forEach(product => product.category = 'PSU & Cooling');
-            storageDevices.forEach(product => product.category = 'Storage Devices');
-            motherboards.forEach(product => product.category = 'Motherboards');
-            peripherals.forEach(product => product.category = 'Peripherals');
-
             // Get ALL products from all categories
             allProducts = [
                 ...laptops, 
@@ -433,8 +752,6 @@
             ];
 
             console.log('Total products loaded:', allProducts.length);
-            console.log('Laptops:', laptops.length);
-            console.log('Smartphones:', smartphones.length);
             console.log('Motherboards:', motherboards.length);
             
             displayProducts(allProducts);
@@ -462,7 +779,6 @@
                 products.forEach((product, index) => {
                     const card = document.createElement('div');
                     card.className = 'product-card-premium fade-in-up';
-                    card.style.animationDelay = `${index * 0.1}s`;
                     
                     // Generate placeholder image based on category
                     const placeholderImages = {
@@ -482,7 +798,7 @@
                     card.innerHTML = `
                         <div class="product-3d-effect">
                             <div class="product-image-container-premium">
-                                <img src="${productImage}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'">
+                                <img src="${productImage}" alt="${product.name}" class="product-image-premium">
                             </div>
                             <div class="product-info-premium">
                                 <div class="product-category-premium">${product.category}</div>
@@ -534,13 +850,6 @@
                 currentSearchTerm = e.target.value.trim().toLowerCase();
                 applyFilters();
             });
-            
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    currentSearchTerm = e.target.value.trim().toLowerCase();
-                    applyFilters();
-                }
-            });
         }
 
         function showAllProducts() {
@@ -561,14 +870,10 @@
         function applyFilters() {
             let filteredProducts = allProducts;
 
-            console.log('Applying filters - Active category:', activeCategory);
-
             // Apply category filter
             if (activeCategory && activeCategory !== 'all') {
                 filteredProducts = filteredProducts.filter(product => {
-                    const matches = product.category === activeCategory;
-                    console.log(`Product: ${product.name}, Category: ${product.category}, Matches: ${matches}`);
-                    return matches;
+                    return product.category === activeCategory;
                 });
             }
 
@@ -585,7 +890,7 @@
         }
 
         function viewProductDetails(productId) {
-            window.location.href = `product-details.html?id=${productId}`;
+            alert('Viewing product details for ID: ' + productId);
         }
 
         function addToCart(productId) {

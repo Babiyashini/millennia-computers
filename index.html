@@ -208,6 +208,61 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .product-info-premium {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-category-premium {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .product-rating-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-premium {
+            color: #fbbf24;
+        }
+
+        .reviews {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .product-actions-premium {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .btn-add-cart-premium {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-add-cart-premium:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
     </style>
 </head>
 <body>
@@ -229,12 +284,13 @@
                             <a href="#" onclick="showAllProducts()">All Products</a>
                             <a href="#" onclick="filterByCategory('Laptops')">Laptops</a>
                             <a href="#" onclick="filterByCategory('Smartphones')">Smartphones</a>
-                            <a href="#" onclick="filterByCategory('PC Components')">PC Components</a>
+                            <a href="#" onclick="filterByCategory('Processors')">Processors</a>
                             <a href="#" onclick="filterByCategory('Graphics Cards')">Graphics Cards</a>
                             <a href="#" onclick="filterByCategory('RAM')">RAM</a>
                             <a href="#" onclick="filterByCategory('Storage Devices')">Storage Devices</a>
                             <a href="#" onclick="filterByCategory('Motherboards')">Motherboards</a>
                             <a href="#" onclick="filterByCategory('Peripherals')">Peripherals</a>
+                            <a href="#" onclick="filterByCategory('PSU & Cooling')">PSU & Cooling</a>
                         </div>
                     </li>
                     <li><a href="popular.html">Popular</a></li>
@@ -326,14 +382,17 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             // Check if product arrays are available
-            if (typeof laptops !== 'undefined' && 
-                typeof smartphones !== 'undefined' && 
-                typeof pcComponents !== 'undefined') {
+            if (typeof laptops !== 'undefined') {
                 loadAllProducts();
             } else {
-                // If external JS didn't load, show error and use fallback data
-                console.error('External product data not loaded. Using fallback data.');
-                loadFallbackProducts();
+                console.error('External product data not loaded.');
+                document.getElementById('products-container').innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ef4444; margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">Product data not loaded</h3>
+                        <p style="color: var(--text-light); font-size: 1rem;">Please check if all-products.js file is available</p>
+                    </div>
+                `;
             }
             
             setupEventListeners();
@@ -349,11 +408,22 @@
         });
 
         function loadAllProducts() {
+            // Add category property to all products
+            laptops.forEach(product => product.category = 'Laptops');
+            smartphones.forEach(product => product.category = 'Smartphones');
+            processors.forEach(product => product.category = 'Processors');
+            gpus.forEach(product => product.category = 'Graphics Cards');
+            ram.forEach(product => product.category = 'RAM');
+            psuCasesCooling.forEach(product => product.category = 'PSU & Cooling');
+            storageDevices.forEach(product => product.category = 'Storage Devices');
+            motherboards.forEach(product => product.category = 'Motherboards');
+            peripherals.forEach(product => product.category = 'Peripherals');
+
             // Get ALL products from all categories
             allProducts = [
                 ...laptops, 
                 ...smartphones,
-                ...pcComponents,
+                ...processors,
                 ...gpus,
                 ...ram,
                 ...psuCasesCooling,
@@ -365,49 +435,7 @@
             console.log('Total products loaded:', allProducts.length);
             console.log('Laptops:', laptops.length);
             console.log('Smartphones:', smartphones.length);
-            
-            displayProducts(allProducts);
-            initScrollAnimations();
-        }
-
-        function loadFallbackProducts() {
-            // Fallback data in case external JS fails
-            const fallbackLaptops = [
-                {
-                    id: 1,
-                    name: "MacBook Pro 16\"",
-                    category: "Laptops",
-                    price: "$2,399",
-                    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400",
-                    reviews: "128 reviews",
-                    keyFeatures: ["M2 Pro chip", "16GB RAM", "1TB SSD", "16-inch Retina display"]
-                },
-                {
-                    id: 2,
-                    name: "Dell XPS 15",
-                    category: "Laptops",
-                    price: "$1,899",
-                    image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=400",
-                    reviews: "94 reviews",
-                    keyFeatures: ["Intel i9 processor", "32GB RAM", "1TB SSD", "4K OLED display"]
-                }
-            ];
-
-            const fallbackSmartphones = [
-                {
-                    id: 3,
-                    name: "iPhone 15 Pro",
-                    category: "Smartphones",
-                    price: "$1,199",
-                    image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400",
-                    reviews: "256 reviews",
-                    keyFeatures: ["A17 Pro chip", "128GB storage", "Triple camera", "Titanium design"]
-                }
-            ];
-
-            // Use fallback data
-            allProducts = [...fallbackLaptops, ...fallbackSmartphones];
-            console.log('Using fallback products:', allProducts.length);
+            console.log('Motherboards:', motherboards.length);
             
             displayProducts(allProducts);
             initScrollAnimations();
@@ -436,8 +464,20 @@
                     card.className = 'product-card-premium fade-in-up';
                     card.style.animationDelay = `${index * 0.1}s`;
                     
-                    // Check if product has image, if not use a placeholder
-                    const productImage = product.image || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
+                    // Generate placeholder image based on category
+                    const placeholderImages = {
+                        'Laptops': 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400',
+                        'Smartphones': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
+                        'Processors': 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400',
+                        'Graphics Cards': 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400',
+                        'RAM': 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400',
+                        'PSU & Cooling': 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400',
+                        'Storage Devices': 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400',
+                        'Motherboards': 'https://images.unsplash.com/photo-1558618666-fcd25856cd25?w=400',
+                        'Peripherals': 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400'
+                    };
+                    
+                    const productImage = placeholderImages[product.category] || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
                     
                     card.innerHTML = `
                         <div class="product-3d-effect">
@@ -450,7 +490,7 @@
                                 <div class="product-price-premium">${product.price}</div>
                                 <div class="product-rating-premium">
                                     <span class="stars-premium">${'★'.repeat(5)}</span>
-                                    <span class="reviews">${product.reviews}</span>
+                                    <span class="reviews">${Math.floor(Math.random() * 100) + 50} reviews</span>
                                 </div>
                                 <div class="product-actions-premium">
                                     <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
@@ -536,10 +576,7 @@
             if (currentSearchTerm) {
                 filteredProducts = filteredProducts.filter(product => 
                     product.name.toLowerCase().includes(currentSearchTerm) ||
-                    product.category.toLowerCase().includes(currentSearchTerm) ||
-                    (product.keyFeatures && product.keyFeatures.some(feature => 
-                        feature.toLowerCase().includes(currentSearchTerm)
-                    ))
+                    product.category.toLowerCase().includes(currentSearchTerm)
                 );
             }
 

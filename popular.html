@@ -1137,7 +1137,6 @@
             gap: 0.5rem;
         }
 
-        /* CHANGED: View buttons to blue */
         .view-option {
             background: white;
             border: 1px solid var(--border-light);
@@ -1206,6 +1205,52 @@
         .trend-metric i {
             color: var(--primary-blue);
             width: 12px;
+        }
+
+        /* CHANGED: View Details button to blue like the + button */
+        .btn-view-details-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .btn-view-details-premium:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-add-cart-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-add-cart-premium:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .product-actions-premium {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
         }
 
         /* List View */

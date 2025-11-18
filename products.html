@@ -187,7 +187,7 @@
                             <a href="#" onclick="filterByCategory('laptops')">Laptops</a>
                             <a href="#" onclick="filterByCategory('smartphones')">Smartphones</a>
                             <a href="#" onclick="filterByCategory('pcComponents')">PC Components</a>
-                            <a href="#" onclick="filterByCategory('gpus'')">Graphics Cards</a>
+                            <a href="#" onclick="filterByCategory('gpus')">Graphics Cards</a>
                             <a href="#" onclick="filterByCategory('ram')">RAM</a>
                             <a href="#" onclick="filterByCategory('storageDevices')">Storage Devices</a>
                             <a href="#" onclick="filterByCategory('motherboards')">Motherboards</a>
@@ -413,12 +413,32 @@
         }
 
         function filterByCategory(category) {
-            console.log('Filtering by category:', category);
-            activeCategory = category;
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-            applyFilters();
-        }
+    console.log('Filtering by category:', category);
+    
+    // Validate category exists
+    const categoryMap = {
+        'laptops': laptops,
+        'smartphones': smartphones,
+        'pcComponents': pcComponents,
+        'gpus': gpus,
+        'ram': ram,
+        'storageDevices': storageDevices,
+        'motherboards': motherboards,
+        'peripherals': peripherals,
+        'psuCasesCooling': psuCasesCooling
+    };
+    
+    if (!categoryMap[category]) {
+        console.error('Invalid category:', category);
+        showPremiumNotification('Category not found!');
+        return;
+    }
+    
+    activeCategory = category;
+    currentSearchTerm = '';
+    document.getElementById('search-input').value = '';
+    applyFilters();
+}
 
         function applyFilters() {
             let filteredProducts = allProducts;
@@ -493,6 +513,92 @@
                 }, 300);
             }, 3000);
         }
+        // Add this function to format category names
+function getCategoryDisplayName(category) {
+    const names = {
+        'laptops': 'Laptops',
+        'smartphones': 'Smartphones',
+        'pcComponents': 'PC Components',
+        'gpus': 'Graphics Cards',
+        'ram': 'RAM',
+        'storageDevices': 'Storage Devices',
+        'motherboards': 'Motherboards',
+        'peripherals': 'Peripherals',
+        'psuCasesCooling': 'PSU, Cases & Cooling'
+    };
+    return names[category] || category;
+}
+
+// Update the displayProducts function to use this
+function displayProducts(products) {
+    const container = document.getElementById('products-container');
+    const resultsInfo = document.getElementById('search-results-info');
+    const activeCategoryDiv = document.getElementById('active-category');
+    
+    container.innerHTML = '';
+    
+    if (products.length === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
+                <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
+                <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
+            </div>
+        `;
+    } else {
+        products.forEach((product, index) => {
+            const card = document.createElement('div');
+            card.className = 'product-card-premium fade-in-up';
+            card.style.animationDelay = `${index * 0.1}s`;
+            
+            const productImage = product.image || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
+            
+            card.innerHTML = `
+                <div class="product-3d-effect">
+                    <div class="product-image-container-premium">
+                        <img src="${productImage}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'">
+                    </div>
+                    <div class="product-info-premium">
+                        <div class="product-category-premium">${getCategoryDisplayName(product.category)}</div>
+                        <h3 class="product-title-premium">${product.name}</h3>
+                        <div class="product-price-premium">${product.price}</div>
+                        <div class="product-rating-premium">
+                            <span class="stars-premium">${product.rating}</span>
+                            <span class="reviews">${product.reviews}</span>
+                        </div>
+                        <div class="product-actions-premium">
+                            <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                            <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Update active category display
+    if (activeCategory && activeCategory !== 'all') {
+        activeCategoryDiv.style.display = 'block';
+        document.getElementById('current-category-name').textContent = getCategoryDisplayName(activeCategory);
+    } else {
+        activeCategoryDiv.style.display = 'none';
+    }
+
+    // Update search results info
+    if (currentSearchTerm) {
+        resultsInfo.style.display = 'block';
+        document.getElementById('results-count').textContent = products.length;
+        document.getElementById('search-term').textContent = currentSearchTerm;
+    } else {
+        resultsInfo.style.display = 'none';
+    }
+}
 
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {

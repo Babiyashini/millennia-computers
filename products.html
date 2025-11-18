@@ -277,6 +277,36 @@
 
     <script src="all-products.js"></script>
     <script>
+        <script src="all-products.js"></script>
+<script>
+// DEBUG: Check if file loaded
+console.log("=== DEBUG: Checking all-products.js ===");
+console.log("File loaded, checking arrays...");
+
+// Check if arrays exist
+if (typeof laptops === 'undefined') {
+    console.error("❌ laptops array is UNDEFINED");
+} else {
+    console.log("✅ laptops:", laptops.length);
+}
+
+if (typeof smartphones === 'undefined') {
+    console.error("❌ smartphones array is UNDEFINED");
+} else {
+    console.log("✅ smartphones:", smartphones.length);
+}
+
+if (typeof pcComponents === 'undefined') {
+    console.error("❌ pcComponents array is UNDEFINED");
+} else {
+    console.log("✅ pcComponents:", pcComponents.length);
+}
+
+// Continue with your existing code...
+let allProducts = [];
+let currentSearchTerm = '';
+let activeCategory = 'all';
+// ... rest of your code
         let allProducts = [];
         let currentSearchTerm = '';
         let activeCategory = 'all';

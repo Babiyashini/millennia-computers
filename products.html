@@ -222,6 +222,13 @@
                 <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
             </div>
 
+            <!-- Reset Filters Button -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="resetAllFilters()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+                    <i class="fas fa-refresh"></i> Reset All Filters
+                </button>
+            </div>
+
             <!-- Active Category Indicator -->
             <div class="active-category" id="active-category" style="display: none;">
                 Showing: <span id="current-category-name">Laptops</span>
@@ -277,36 +284,36 @@
 
     <script src="all-products.js"></script>
     <script>
-        <script src="all-products.js"></script>
-<script>
-// DEBUG: Check if file loaded
-console.log("=== DEBUG: Checking all-products.js ===");
-console.log("File loaded, checking arrays...");
+        // DEBUG: Check if file loaded
+        console.log("=== DEBUG: Checking all-products.js ===");
+        console.log("File loaded, checking arrays...");
 
-// Check if arrays exist
-if (typeof laptops === 'undefined') {
-    console.error("❌ laptops array is UNDEFINED");
-} else {
-    console.log("✅ laptops:", laptops.length);
-}
+        // Check if arrays exist
+        if (typeof laptops === 'undefined') {
+            console.error("❌ laptops array is UNDEFINED");
+        } else {
+            console.log("✅ laptops:", laptops.length);
+        }
 
-if (typeof smartphones === 'undefined') {
-    console.error("❌ smartphones array is UNDEFINED");
-} else {
-    console.log("✅ smartphones:", smartphones.length);
-}
+        if (typeof smartphones === 'undefined') {
+            console.error("❌ smartphones array is UNDEFINED");
+        } else {
+            console.log("✅ smartphones:", smartphones.length);
+        }
 
-if (typeof pcComponents === 'undefined') {
-    console.error("❌ pcComponents array is UNDEFINED");
-} else {
-    console.log("✅ pcComponents:", pcComponents.length);
-}
+        if (typeof pcComponents === 'undefined') {
+            console.error("❌ pcComponents array is UNDEFINED");
+        } else {
+            console.log("✅ pcComponents:", pcComponents.length);
+        }
 
-// Continue with your existing code...
-let allProducts = [];
-let currentSearchTerm = '';
-let activeCategory = 'all';
-// ... rest of your code
+        if (typeof gpus === 'undefined') {
+            console.error("❌ gpus array is UNDEFINED");
+        } else {
+            console.log("✅ gpus:", gpus.length);
+        }
+
+        // Continue with your existing code...
         let allProducts = [];
         let currentSearchTerm = '';
         let activeCategory = 'all';
@@ -325,7 +332,28 @@ let activeCategory = 'all';
             });
         });
 
+        function resetAllFilters() {
+            activeCategory = 'all';
+            currentSearchTerm = '';
+            document.getElementById('search-input').value = '';
+            displayProducts(allProducts);
+            console.log("Filters reset - Showing all products");
+        }
+
         function loadAllProducts() {
+            console.log("=== SAFE PRODUCT LOADING ===");
+            
+            // Initialize empty arrays if they don't exist
+            if (typeof laptops === 'undefined') window.laptops = [];
+            if (typeof smartphones === 'undefined') window.smartphones = [];
+            if (typeof pcComponents === 'undefined') window.pcComponents = [];
+            if (typeof gpus === 'undefined') window.gpus = [];
+            if (typeof ram === 'undefined') window.ram = [];
+            if (typeof psuCasesCooling === 'undefined') window.psuCasesCooling = [];
+            if (typeof storageDevices === 'undefined') window.storageDevices = [];
+            if (typeof motherboards === 'undefined') window.motherboards = [];
+            if (typeof peripherals === 'undefined') window.peripherals = [];
+
             // Get ALL products from all categories
             allProducts = [
                 ...laptops, 
@@ -340,8 +368,24 @@ let activeCategory = 'all';
             ];
 
             console.log('Total products loaded:', allProducts.length);
-            console.log('Laptops:', laptops.length);
-            console.log('Smartphones:', smartphones.length);
+            
+            // If no products, show a test product
+            if (allProducts.length === 0) {
+                console.log("No products found, creating test data...");
+                allProducts = [{
+                    id: 999,
+                    category: "laptops",
+                    name: "TEST PRODUCT - File Loading Issue",
+                    price: "Rs. 99,999",
+                    rating: "★★★★★",
+                    reviews: "Check Console",
+                    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=300&fit=crop"
+                }];
+            }
+            
+            // FORCE SHOW ALL PRODUCTS - Remove any active category filter
+            activeCategory = 'all';
+            currentSearchTerm = '';
             
             displayProducts(allProducts);
             initScrollAnimations();
@@ -355,13 +399,20 @@ let activeCategory = 'all';
             container.innerHTML = '';
             
             console.log('Displaying products:', products.length);
+            console.log('Active category:', activeCategory);
+            console.log('Current search:', currentSearchTerm);
             
             if (products.length === 0) {
                 container.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
                         <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
                         <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
-                        <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
+                        <p style="color: var(--text-light); font-size: 1rem;">Active Filter: ${activeCategory}</p>
+                        <p style="color: var(--text-light); font-size: 1rem;">Search Term: "${currentSearchTerm}"</p>
+                        <p style="color: var(--text-light); font-size: 1rem;">Total Products: ${allProducts.length}</p>
+                        <button onclick="showAllProducts()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; margin-top: 1rem; cursor: pointer;">
+                            Show All Products
+                        </button>
                     </div>
                 `;
             } else {
@@ -593,30 +644,6 @@ let activeCategory = 'all';
                 observer.observe(el);
             });
         }
-
-        function debugImagePaths() {
-            console.log("=== IMAGE PATH DEBUG ===");
-            allProducts.slice(0, 3).forEach((product, index) => {
-                console.log(`Product ${index + 1}:`, product.name);
-                console.log('Image path:', product.image);
-                
-                // Test if image loads
-                const img = new Image();
-                img.onload = function() {
-                    console.log('✅ Image loads successfully:', product.image);
-                };
-                img.onerror = function() {
-                    console.log('❌ Image failed to load:', product.image);
-                };
-                img.src = product.image;
-            });
-        }
-
-        // Call it after loading products
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllProducts();
-            setTimeout(debugImagePaths, 1000); // Test after a short delay
-        });
     </script>
 </body>
 </html>

@@ -332,8 +332,24 @@
         </div>
     </footer>
 
-    <script src="all-products.js"></script>
     <script>
+        // Sample product data for demonstration
+        const laptops = [
+            { id: 1, name: "ASUS ROG Strix G15", price: "$1,299", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "128 reviews", trendingScore: 95, rating: 4.8, sales: 45, dateAdded: "2024-01-15" },
+            { id: 2, name: "MSI Katana 15", price: "$1,199", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "89 reviews", trendingScore: 88, rating: 4.6, sales: 32, dateAdded: "2024-01-20" },
+            { id: 3, name: "Razer Blade 15", price: "$2,299", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "156 reviews", trendingScore: 92, rating: 4.9, sales: 28, dateAdded: "2024-01-10" }
+        ];
+
+        const smartphones = [
+            { id: 4, name: "iPhone 15 Pro", price: "$999", category: "Smartphone", image: "https://via.placeholder.com/300x200", reviews: "245 reviews", trendingScore: 98, rating: 4.7, sales: 67, dateAdded: "2024-01-18" },
+            { id: 5, name: "Samsung Galaxy S24", price: "$849", category: "Smartphone", image: "https://via.placeholder.com/300x200", reviews: "178 reviews", trendingScore: 91, rating: 4.5, sales: 54, dateAdded: "2024-01-22" }
+        ];
+
+        const pcComponents = [
+            { id: 6, name: "RTX 4090 GPU", price: "$1,599", category: "PC Component", image: "https://via.placeholder.com/300x200", reviews: "312 reviews", trendingScore: 96, rating: 4.8, sales: 38, dateAdded: "2024-01-12" },
+            { id: 7, name: "Ryzen 9 7950X", price: "$699", category: "PC Component", image: "https://via.placeholder.com/300x200", reviews: "201 reviews", trendingScore: 89, rating: 4.6, sales: 41, dateAdded: "2024-01-25" }
+        ];
+
         // Advanced Popular Products Functionality
         document.addEventListener('DOMContentLoaded', function() {
             initializePopularPage();
@@ -360,24 +376,25 @@
             startRealTimeUpdates();
         }
 
-        function loadTrendingProducts() {
+        function loadTrendingProducts(sortBy = 'popularity', timeframe = '24h') {
             const container = document.getElementById('trendingProducts');
             
-            // Get ALL products and sort by popularity/trending score
-            const allProducts = [
+            // Get ALL products and sort by selected criteria
+            let allProducts = [
                 ...laptops, 
                 ...smartphones,
                 ...pcComponents
             ];
 
-            // Sort by trending score (simulated)
-            const trendingProducts = allProducts
-                .sort((a, b) => (b.trendingScore || 0) - (a.trendingScore || 0))
-                .slice(0, 12); // Show ALL trending products
+            // Filter by timeframe (simulated)
+            allProducts = filterProductsByTimeframe(allProducts, timeframe);
+
+            // Sort by selected criteria
+            const sortedProducts = sortProducts(allProducts, sortBy);
 
             container.innerHTML = '';
             
-            trendingProducts.forEach((product, index) => {
+            sortedProducts.forEach((product, index) => {
                 const card = document.createElement('div');
                 card.className = 'product-card-premium fade-in-up';
                 card.style.animationDelay = `${index * 0.1}s`;
@@ -401,17 +418,17 @@
                             <h3 class="product-title-premium">${product.name}</h3>
                             <div class="product-price-premium">${product.price}</div>
                             <div class="product-rating-premium">
-                                <span class="stars-premium">${'★'.repeat(5)}</span>
+                                <span class="stars-premium">${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 >= 0.5 ? '½' : ''}</span>
                                 <span class="reviews">${product.reviews}</span>
                             </div>
                             <div class="trending-metrics">
                                 <div class="trend-metric">
                                     <i class="fas fa-chart-line"></i>
-                                    <span>${product.trendingScore || 85}% trend score</span>
+                                    <span>${product.trendingScore}% trend score</span>
                                 </div>
                                 <div class="trend-metric">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span>${Math.floor(Math.random() * 50) + 20} sold today</span>
+                                    <span>${product.sales} sold today</span>
                                 </div>
                             </div>
                             <div class="product-actions-premium">
@@ -430,13 +447,52 @@
             });
 
             // Update trending count
-            document.getElementById('trending-count').textContent = trendingProducts.length;
+            document.getElementById('trending-count').textContent = sortedProducts.length;
+        }
+
+        function filterProductsByTimeframe(products, timeframe) {
+            // Simulate timeframe filtering
+            const now = new Date();
+            return products.filter(product => {
+                const productDate = new Date(product.dateAdded);
+                const diffTime = Math.abs(now - productDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                switch(timeframe) {
+                    case '24h':
+                        return diffDays <= 1;
+                    case '7d':
+                        return diffDays <= 7;
+                    case '30d':
+                        return diffDays <= 30;
+                    default:
+                        return true;
+                }
+            });
+        }
+
+        function sortProducts(products, sortBy) {
+            switch(sortBy) {
+                case 'popularity':
+                    return [...products].sort((a, b) => b.trendingScore - a.trendingScore);
+                case 'sales':
+                    return [...products].sort((a, b) => b.sales - a.sales);
+                case 'rating':
+                    return [...products].sort((a, b) => b.rating - a.rating);
+                case 'trending':
+                    return [...products].sort((a, b) => b.trendingScore - a.trendingScore);
+                case 'newest':
+                    return [...products].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+                default:
+                    return products;
+            }
         }
 
         function setupTrendingInteractions() {
             // Sort functionality
             document.getElementById('trendingSort').addEventListener('change', function(e) {
-                sortTrendingProducts(e.target.value);
+                const activeTimeframe = document.querySelector('.timeframe-btn.active').getAttribute('data-timeframe');
+                loadTrendingProducts(e.target.value, activeTimeframe);
             });
 
             // Timeframe filters
@@ -444,7 +500,8 @@
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('.timeframe-btn').forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    filterByTimeframe(this.getAttribute('data-timeframe'));
+                    const sortBy = document.getElementById('trendingSort').value;
+                    loadTrendingProducts(sortBy, this.getAttribute('data-timeframe'));
                 });
             });
 
@@ -529,17 +586,6 @@
             });
             
             showPremiumNotification('Metrics updated!');
-        }
-
-        function sortTrendingProducts(sortBy) {
-            // Implementation for sorting trending products
-            console.log('Sorting by:', sortBy);
-            loadTrendingProducts(); // Reload with new sort
-        }
-
-        function filterByTimeframe(timeframe) {
-            // Implementation for timeframe filtering
-            console.log('Filtering by timeframe:', timeframe);
         }
 
         function changeView(viewType) {
@@ -1253,6 +1299,84 @@
             margin-top: 1rem;
         }
 
+        /* Products Grid */
+        .products-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card-premium {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .product-card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .product-image-container-premium {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image-premium {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card-premium:hover .product-image-premium {
+            transform: scale(1.05);
+        }
+
+        .product-info-premium {
+            padding: 1.5rem;
+        }
+
+        .product-category-premium {
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title-premium {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-price-premium {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .product-rating-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-premium {
+            color: #ffc107;
+        }
+
+        .reviews {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
         /* List View */
         .products-grid-premium.list-view {
             grid-template-columns: 1fr;
@@ -1313,6 +1437,17 @@
             50% { opacity: 0.5; }
         }
 
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .popular-hero-premium .hero-title-premium {
@@ -1330,6 +1465,15 @@
             
             .analytics-grid-premium {
                 grid-template-columns: 1fr;
+            }
+            
+            .products-grid-premium.list-view .product-card-premium {
+                flex-direction: column;
+            }
+            
+            .products-grid-premium.list-view .product-image-container-premium {
+                width: 100%;
+                height: 200px;
             }
         }
     </style>

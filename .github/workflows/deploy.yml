@@ -3,7 +3,7 @@ name: GitHub Pages Deployment
 on:
   push:
     branches:
-      - main   # Your default branch
+      - main  # or master if that's your default branch
 
 jobs:
   deploy:
@@ -14,15 +14,11 @@ jobs:
       id-token: write
 
     steps:
-      # Step 1: Checkout your repo
+      # Checkout repository
       - uses: actions/checkout@v3
 
-      # Step 2: Upload website files
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
+      # Deploy website files to GitHub Pages
+      - uses: peaceiris/actions-gh-pages@v6
         with:
-          path: ./   # Root folder of your repo
-
-      # Step 3: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./   # root of your repo

@@ -2,10 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -20,9 +20,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      # Optional: Add build steps here if needed
+      # Optional build step (remove if you don't need it)
       # - name: Build
-      #   run: echo "Add build commands here"
+      #   run: echo "No build needed for static files"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -30,8 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './'  # Change to './dist' if you build your site
+          path: './'  # Your website files are in root folder
       
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # Using v4, not v1!
+        uses: actions/deploy-pages@v4  # ✅ MUST BE v4 NOT v1

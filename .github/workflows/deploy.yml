@@ -10,20 +10,28 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
-      # If you need to build your site (optional)
+      # Optional: Add build steps here if needed
       # - name: Build
-      #   run: |
-      #     echo "Add your build commands here"
-      #     # For example: npm install && npm run build
+      #   run: echo "Add build commands here"
       
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Change to './dist' or './build' if you have a build folder
+          path: './'  # Change to './dist' if you build your site
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4  # Using v4, not v1!

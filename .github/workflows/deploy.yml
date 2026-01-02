@@ -1,0 +1,24 @@
+name: GitHub Pages Deployment
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: github/pages-deploy-action@v1
+        with:
+          branch: gh-pages      # Branch to deploy to
+          folder: ./            # Folder containing your website files (root of repo)

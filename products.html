@@ -70,7 +70,6 @@
         }
 
         .product-image-container-premium {
-            position: relative;
             height: 200px;
             padding: 1.5rem;
             background: linear-gradient(135deg, #f5f5f7 0%, #e8e8e8 100%);
@@ -79,7 +78,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
         .product-image-premium {
@@ -189,12 +187,11 @@
                             <a href="#" onclick="filterByCategory('laptops')">Laptops</a>
                             <a href="#" onclick="filterByCategory('smartphones')">Smartphones</a>
                             <a href="#" onclick="filterByCategory('pcComponents')">PC Components</a>
-                            <a href="#" onclick="filterByCategory('gpus')">Graphics Cards</a>
+                            <a href="#" onclick="filterByCategory('gpus'')">Graphics Cards</a>
                             <a href="#" onclick="filterByCategory('ram')">RAM</a>
                             <a href="#" onclick="filterByCategory('storageDevices')">Storage Devices</a>
                             <a href="#" onclick="filterByCategory('motherboards')">Motherboards</a>
                             <a href="#" onclick="filterByCategory('peripherals')">Peripherals</a>
-                            <a href="#" onclick="filterByCategory('psuCasesCooling')">PSU & Cooling</a>
                         </div>
                     </li>
                     <li><a href="popular.html">Popular</a></li>
@@ -221,13 +218,6 @@
             <div class="section-header-premium">
                 <h2 class="section-title-premium">All Products</h2>
                 <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
-            </div>
-
-            <!-- Reset Filters Button -->
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <button onclick="resetAllFilters()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
-                    <i class="fas fa-refresh"></i> Reset All Filters
-                </button>
             </div>
 
             <!-- Active Category Indicator -->
@@ -303,14 +293,6 @@
             });
         });
 
-        function resetAllFilters() {
-            activeCategory = 'all';
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-            displayProducts(allProducts);
-            console.log("Filters reset - Showing all products");
-        }
-
         function loadAllProducts() {
             // Get ALL products from all categories
             allProducts = [
@@ -328,16 +310,7 @@
             console.log('Total products loaded:', allProducts.length);
             console.log('Laptops:', laptops.length);
             console.log('Smartphones:', smartphones.length);
-            console.log('PC Components:', pcComponents.length);
-            console.log('GPUs:', gpus.length);
-            console.log('RAM:', ram.length);
-            console.log('PSU & Cooling:', psuCasesCooling.length);
-            console.log('Storage Devices:', storageDevices.length);
-            console.log('Motherboards:', motherboards.length);
-            console.log('Peripherals:', peripherals.length);
             
-            // Force show all products
-            activeCategory = 'all';
             displayProducts(allProducts);
             initScrollAnimations();
         }
@@ -350,19 +323,13 @@
             container.innerHTML = '';
             
             console.log('Displaying products:', products.length);
-            console.log('Active category:', activeCategory);
             
             if (products.length === 0) {
                 container.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
                         <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
                         <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
-                        <p style="color: var(--text-light); font-size: 1rem;">Active Filter: ${activeCategory}</p>
-                        <p style="color: var(--text-light); font-size: 1rem;">Search Term: "${currentSearchTerm}"</p>
-                        <p style="color: var(--text-light); font-size: 1rem;">Total Products: ${allProducts.length}</p>
-                        <button onclick="showAllProducts()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; margin-top: 1rem; cursor: pointer;">
-                            Show All Products
-                        </button>
+                        <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
                     </div>
                 `;
             } else {
@@ -371,7 +338,7 @@
                     card.className = 'product-card-premium fade-in-up';
                     card.style.animationDelay = `${index * 0.1}s`;
                     
-                    // Use actual product image or placeholder
+                    // Check if product has image, if not use a placeholder
                     const productImage = product.image || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
                     
                     card.innerHTML = `
@@ -380,11 +347,11 @@
                                 <img src="${productImage}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'">
                             </div>
                             <div class="product-info-premium">
-                                <div class="product-category-premium">${getCategoryDisplayName(product.category)}</div>
+                                <div class="product-category-premium">${product.category}</div>
                                 <h3 class="product-title-premium">${product.name}</h3>
                                 <div class="product-price-premium">${product.price}</div>
                                 <div class="product-rating-premium">
-                                    <span class="stars-premium">${product.rating}</span>
+                                    <span class="stars-premium">${'★'.repeat(5)}</span>
                                     <span class="reviews">${product.reviews}</span>
                                 </div>
                                 <div class="product-actions-premium">
@@ -403,21 +370,21 @@
                 });
             }
 
-            // Update active category display
-            if (activeCategory && activeCategory !== 'all') {
-                activeCategoryDiv.style.display = 'block';
-                document.getElementById('current-category-name').textContent = getCategoryDisplayName(activeCategory);
-            } else {
-                activeCategoryDiv.style.display = 'none';
-            }
-
-            // Update search results info
+            // Show/hide search results info
             if (currentSearchTerm) {
                 resultsInfo.style.display = 'block';
                 document.getElementById('results-count').textContent = products.length;
                 document.getElementById('search-term').textContent = currentSearchTerm;
             } else {
                 resultsInfo.style.display = 'none';
+            }
+
+            // Show/hide active category indicator
+            if (activeCategory && activeCategory !== 'all') {
+                activeCategoryDiv.style.display = 'block';
+                document.getElementById('current-category-name').textContent = activeCategory;
+            } else {
+                activeCategoryDiv.style.display = 'none';
             }
         }
 
@@ -447,26 +414,6 @@
 
         function filterByCategory(category) {
             console.log('Filtering by category:', category);
-            
-            // Validate category exists
-            const categoryMap = {
-                'laptops': laptops,
-                'smartphones': smartphones,
-                'pcComponents': pcComponents,
-                'gpus': gpus,
-                'ram': ram,
-                'storageDevices': storageDevices,
-                'motherboards': motherboards,
-                'peripherals': peripherals,
-                'psuCasesCooling': psuCasesCooling
-            };
-            
-            if (!categoryMap[category]) {
-                console.error('Invalid category:', category);
-                showPremiumNotification('Category not found!');
-                return;
-            }
-            
             activeCategory = category;
             currentSearchTerm = '';
             document.getElementById('search-input').value = '';
@@ -545,22 +492,6 @@
                     notification.remove();
                 }, 300);
             }, 3000);
-        }
-
-        // Add this function to format category names
-        function getCategoryDisplayName(category) {
-            const names = {
-                'laptops': 'Laptops',
-                'smartphones': 'Smartphones',
-                'pcComponents': 'PC Components',
-                'gpus': 'Graphics Cards',
-                'ram': 'RAM',
-                'storageDevices': 'Storage Devices',
-                'motherboards': 'Motherboards',
-                'peripherals': 'Peripherals',
-                'psuCasesCooling': 'PSU & Cooling'
-            };
-            return names[category] || category;
         }
 
         function initScrollAnimations() {

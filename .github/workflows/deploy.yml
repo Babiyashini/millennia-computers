@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # Use "master" if your default branch is master
+      - main   # your default branch
 
 jobs:
   deploy:
@@ -14,14 +14,14 @@ jobs:
       id-token: write
 
     steps:
-      # Step 1: Checkout repository
+      # Step 1: Checkout the repo
       - uses: actions/checkout@v3
 
-      # Step 2: Build/upload artifact
-      - name: Build and upload artifact
+      # Step 2: Upload Pages Artifact (root of repo)
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./   # Path to your website files
+          path: ./   # root of your repo
 
       # Step 3: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

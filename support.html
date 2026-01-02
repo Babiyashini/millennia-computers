@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Support - Millennia Computers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Premium Glassmorphism Header -->
+    <header class="header-premium">
+        <div class="header-container-premium">
+            <a href="home.html" class="logo-premium">
+                <span class="logo-icon-premium">💻</span>
+                Millennia Computers
+            </a>
+            
+            <nav>
+                <ul class="nav-premium">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="popular.html">Popular</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions-premium">
+                <div class="search-premium">
+                    <i class="fas fa-search search-icon-premium"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
+                </div>
+                <button class="cart-premium">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count-premium">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Premium Support Hero -->
+    <section class="support-hero-premium">
+        <div class="container-premium">
+            <div class="hero-content-premium">
+                <h1 class="hero-title-premium">Premium Support Center</h1>
+                <p class="hero-subtitle-premium">24/7 expert assistance for all your technology needs</p>
+                
+                <!-- Support Quick Actions -->
+                <div class="support-quick-actions">
+                    <div class="quick-action-card" onclick="openAIChat()">
+                        <div class="action-icon">🤖</div>
+                        <h3>AI Assistant</h3>
+                        <p>Get instant help from our AI</p>
+                        <span class="action-badge">Instant</span>
+                    </div>
+                    
+                    <div class="quick-action-card" onclick="scrollToContact()">
+                        <div class="action-icon">👨‍💻</div>
+                        <h3>Live Expert</h3>
+                        <p>Talk to human specialist</p>
+                        <span class="action-badge">24/7</span>
+                    </div>
+                    
+                    <div class="quick-action-card" onclick="openKnowledgeBase()">
+                        <div class="action-icon">📚</div>
+                        <h3>Knowledge Base</h3>
+                        <p>Browse help articles</p>
+                        <span class="action-badge">500+ Guides</span>
+                    </div>
+                    
+                    <div class="quick-action-card" onclick="openCommunity()">
+                        <div class="action-icon">👥</div>
+                        <h3>Community</h3>
+                        <p>Connect with other users</p>
+                        <span class="action-badge">10K+ Members</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Background -->
+        <div class="support-hero-background">
+            <div class="floating-support-icon">🔧</div>
+            <div class="floating-support-icon">🛠️</div>
+            <div class="floating-support-icon">⚙️</div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Section -->
+    <section class="ai-chatbot-section">
+        <div class="container-premium">
+            <div class="chatbot-container-premium">
+                <div class="chatbot-header-premium">
+                    <div class="chatbot-avatar">
+                        <div class="avatar-icon">🤖</div>
+                        <div class="avatar-status">
+                            <h3>Millennia AI Assistant</h3>
+                            <span class="status online">Online • Ready to help</span>
+                        </div>
+                    </div>
+                    <div class="chatbot-actions">
+                        <button class="chat-action" onclick="clearChat()">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="chat-action" onclick="minimizeChat()">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chatbot-messages" id="chat-messages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm your Millennia AI assistant. I'm here to help you with product support, troubleshooting, warranty claims, and any other questions you might have. How can I assist you today?</p>
+                            <span class="message-time">Just now</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Questions -->
+                    <div class="quick-questions">
+                        <p>Quick questions you can ask:</p>
+                        <div class="question-chips">
+                            <button class="question-chip" onclick="askQuestion('How do I track my order?')">Track my order</button>
+                            <button class="question-chip" onclick="askQuestion('What is your return policy?')">Return policy</button>
+                            <button class="question-chip" onclick="askQuestion('How to setup my new laptop?')">Product setup</button>
+                            <button class="question-chip" onclick="askQuestion('Warranty information')">Warranty info</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chatbot-input-premium">
+                    <div class="input-container">
+                        <input type="text" placeholder="Ask me anything about products, support, or technical issues..." id="chat-input">
+                        <button class="send-button" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-actions">
+                        <button class="input-action" onclick="attachFile()">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="input-action" onclick="startVoiceInput()">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="input-action" onclick="showSuggestions()">
+                            <i class="fas fa-lightbulb"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Support Resources -->
+    <section class="support-resources-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Support Resources</h2>
+                <p class="section-subtitle-premium">Comprehensive help for all your needs</p>
+            </div>
+            
+            <div class="resources-grid-premium">
+                <div class="resource-category-premium">
+                    <div class="category-header">
+                        <div class="category-icon">📦</div>
+                        <h3>Orders & Shipping</h3>
+                    </div>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link" onclick="showResource('track-order')">
+                            <i class="fas fa-shipping-fast"></i>
+                            Track Your Order
+                            <span class="link-badge">Live Tracking</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('return-policy')">
+                            <i class="fas fa-undo"></i>
+                            Return Policy
+                            <span class="link-badge">30 Days</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('shipping-info')">
+                            <i class="fas fa-truck"></i>
+                            Shipping Information
+                            <span class="link-badge">Worldwide</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-category-premium">
+                    <div class="category-header">
+                        <div class="category-icon">🛡️</div>
+                        <h3>Warranty & Repairs</h3>
+                    </div>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link" onclick="showResource('warranty-info')">
+                            <i class="fas fa-shield-alt"></i>
+                            Warranty Information
+                            <span class="link-badge">3 Years</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('repair-status')">
+                            <i class="fas fa-tools"></i>
+                            Check Repair Status
+                            <span class="link-badge">Real-time</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('service-centers')">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Service Centers
+                            <span class="link-badge">50+ Locations</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-category-premium">
+                    <div class="category-header">
+                        <div class="category-icon">🔧</div>
+                        <h3>Technical Support</h3>
+                    </div>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link" onclick="showResource('setup-guides')">
+                            <i class="fas fa-cog"></i>
+                            Setup Guides
+                            <span class="link-badge">Step-by-step</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('troubleshooting')">
+                            <i class="fas fa-bug"></i>
+                            Troubleshooting
+                            <span class="link-badge">Common Issues</span>
+                        </a>
+                        <a href="#" class="resource-link" onclick="showResource('driver-downloads')">
+                            <i class="fas fa-download"></i>
+                            Driver Downloads
+                            <span class="link-badge">Latest Versions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive FAQ Section -->
+    <section class="interactive-faq-premium">
+        <div class="container-premium">
+            <div class="faq-header-premium">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+                
+                <div class="faq-search-premium">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search FAQs..." id="faq-search">
+                    <button class="search-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="faq-categories-premium">
+                <button class="faq-category-btn active" data-category="all">All Questions</button>
+                <button class="faq-category-btn" data-category="orders">Orders</button>
+                <button class="faq-category-btn" data-category="shipping">Shipping</button>
+                <button class="faq-category-btn" data-category="technical">Technical</button>
+                <button class="faq-category-btn" data-category="warranty">Warranty</button>
+            </div>
+            
+            <div class="faq-grid-premium" id="faq-container">
+                <!-- FAQ items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Support Section -->
+    <section class="live-support-premium">
+        <div class="container-premium">
+            <div class="live-support-grid">
+                <div class="support-option-premium">
+                    <div class="option-icon">📞</div>
+                    <h3>Phone Support</h3>
+                    <p>Talk directly with our support specialists</p>
+                    <div class="support-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+94 11 234 5678</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Available</span>
+                        </div>
+                    </div>
+                    <button class="btn-call-support" onclick="callSupport()">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </button>
+                </div>
+                
+                <div class="support-option-premium">
+                    <div class="option-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Instant messaging with our experts</p>
+                    <div class="support-info">
+                        <div class="info-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Average wait: < 2min</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Expert Technicians</span>
+                        </div>
+                    </div>
+                    <button class="btn-live-chat" onclick="startLiveChat()">
+                        <i class="fas fa-comment-dots"></i>
+                        Start Chat
+                    </button>
+                </div>
+                
+                <div class="support-option-premium">
+                    <div class="option-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Detailed assistance via email</p>
+                    <div class="support-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@millennia.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-reply"></i>
+                            <span>Response within 4 hours</span>
+                        </div>
+                    </div>
+                    <button class="btn-email-support" onclick="emailSupport()">
+                        <i class="fas fa-envelope"></i>
+                        Send Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Community -->
+    <section class="support-community-premium">
+        <div class="container-premium">
+            <div class="community-header">
+                <h2>Join Our Support Community</h2>
+                <p>Connect with other Millennia users and experts</p>
+            </div>
+            
+            <div class="community-stats">
+                <div class="community-stat">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="community-stat">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Solutions Posted</div>
+                </div>
+                <div class="community-stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Issue Resolution Rate</div>
+                </div>
+            </div>
+            
+            <div class="community-actions">
+                <button class="btn-join-community" onclick="joinCommunity()">
+                    <i class="fas fa-users"></i>
+                    Join Community
+                </button>
+                <button class="btn-browse-forums" onclick="browseForums()">
+                    <i class="fas fa-search"></i>
+                    Browse Forums
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer-premium">
+        <div class="footer-content-premium">
+            <div class="footer-section-premium">
+                <h3>About Millennia</h3>
+                <p>Your trusted partner in premium computing solutions with exceptional support.</p>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Support Links</h3>
+                <ul class="footer-links-premium">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> Products</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Support Center</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Emergency Support</h3>
+                <p>24/7 critical issue resolution</p>
+                <div class="emergency-contact">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+94 77 123 4567</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright-premium">
+            Copyright © 2024 Millennia Computers. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Modal -->
+    <div id="ai-chat-modal" class="ai-chat-modal-premium">
+        <div class="chat-modal-content">
+            <div class="chat-modal-header">
+                <h3>Millennia AI Assistant</h3>
+                <button class="close-chat" onclick="closeAIChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-modal-body">
+                <!-- Chat content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Detail Modal -->
+    <div id="resource-modal" class="resource-modal-premium">
+        <div class="resource-modal-content">
+            <span class="resource-close" onclick="closeResource()">&times;</span>
+            <div id="resource-content"></div>
+        </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="all-products.js"></script>
+    <script>
+        // Advanced Support Center Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAIChatbot();
+            loadFAQData();
+            setupSupportInteractions();
+            initScrollAnimations();
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // AI Chatbot Functionality
+        function initializeAIChatbot() {
+            setupChatEvents();
+            loadQuickResponses();
+        }
+
+        function setupChatEvents() {
+            const chatInput = document.getElementById('chat-input');
+            
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Voice input setup
+            setupVoiceRecognition();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+            
+            // Add user message
+            addUserMessage(message);
+            input.value = '';
+            
+            // Simulate AI response
+            setTimeout(() => {
+                generateAIResponse(message);
+            }, 1000);
+        }
+
+        function addUserMessage(message) {
+            const messagesContainer = document.getElementById('chat-messages');
+            
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message user-message';
+            messageElement.innerHTML = `
+                <div class="message-content">
+                    <p>${message}</p>
+                    <span class="message-time">Just now</span>
+                </div>
+                <div class="message-avatar">👤</div>
+            `;
+            
+            messagesContainer.appendChild(messageElement);
+            scrollToBottom();
+        }
+
+        function generateAIResponse(userMessage) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const response = getAIResponse(userMessage);
+            
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message ai-message';
+            messageElement.innerHTML = `
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>${response}</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageElement);
+            scrollToBottom();
+        }
+
+        function getAIResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // Simple response logic - in real implementation, this would connect to an AI service
+            if (lowerMessage.includes('track') || lowerMessage.includes('order')) {
+                return "To track your order, please visit the 'Order Tracking' section in your account dashboard. You can also use your order number to check real-time delivery status. Would you like me to help you find your order number?";
+            } else if (lowerMessage.includes('return') || lowerMessage.includes('refund')) {
+                return "We offer a 30-day return policy for all products. Items must be in original condition with packaging. You can initiate a return from your account or contact our support team for assistance. Would you like me to guide you through the return process?";
+            } else if (lowerMessage.includes('warranty')) {
+                return "All Millennia products come with a comprehensive 3-year warranty covering manufacturing defects. You can register your product warranty online and check coverage details. Would you like me to help you with warranty registration?";
+            } else if (lowerMessage.includes('setup') || lowerMessage.includes('install')) {
+                return "I can help you with product setup! We have step-by-step guides and video tutorials for all our products. Which specific product do you need help setting up?";
+            } else if (lowerMessage.includes('technical') || lowerMessage.includes('problem')) {
+                return "I'm sorry you're experiencing technical issues. Let me help you troubleshoot. Could you please describe the problem in more detail, including any error messages you're seeing?";
+            } else {
+                return "Thank you for your question! I understand you're asking about: '" + message + "'. Let me connect you with the most relevant information. Our support team can also provide more detailed assistance. Would you like me to transfer you to a human specialist?";
+            }
+        }
+
+        function askQuestion(question) {
+            document.getElementById('chat-input').value = question;
+            sendMessage();
+        }
+
+        function clearChat() {
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = `
+                <div class="message ai-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm your Millennia AI assistant. I'm here to help you with product support, troubleshooting, warranty claims, and any other questions you might have. How can I assist you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function minimizeChat() {
+            // Toggle chat minimization
+            const chatbot = document.querySelector('.chatbot-container-premium');
+            chatbot.classList.toggle('minimized');
+        }
+
+        function scrollToBottom() {
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // FAQ System
+        const faqData = [
+            {
+                question: "How do I track my order?",
+                answer: "You can track your order through your account dashboard or using the tracking number provided in your confirmation email. We also offer real-time SMS updates for premium customers.",
+                category: "orders",
+                tags: ["tracking", "shipping", "orders"]
+            },
+            {
+                question: "What is your return policy?",
+                answer: "We offer a 30-day hassle-free return policy. Products must be in original condition with all accessories and packaging. Refunds are processed within 5-7 business days.",
+                category: "orders",
+                tags: ["returns", "refunds", "policy"]
+            },
+            {
+                question: "How long does shipping take?",
+                answer: "Standard shipping: 3-5 business days. Express shipping: 1-2 business days. International shipping times vary by location. You'll receive tracking information once your order ships.",
+                category: "shipping",
+                tags: ["shipping", "delivery", "timeline"]
+            },
+            {
+                question: "What is covered under warranty?",
+                answer: "Our 3-year warranty covers manufacturing defects and hardware failures. This includes parts and labor. Accidental damage and normal wear are not covered. Extended warranty options are available.",
+                category: "warranty",
+                tags: ["warranty", "coverage", "repairs"]
+            },
+            {
+                question: "How do I setup my new laptop?",
+                answer: "We provide comprehensive setup guides and video tutorials. For premium products, we offer free remote setup assistance. Contact our support team to schedule a setup session.",
+                category: "technical",
+                tags: ["setup", "installation", "guides"]
+            },
+            {
+                question: "Do you offer international shipping?",
+                answer: "Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location. Customs duties and taxes are the responsibility of the recipient.",
+                category: "shipping",
+                tags: ["international", "shipping", "global"]
+            }
+        ];
+
+        function loadFAQData() {
+            const container = document.getElementById('faq-container');
+            container.innerHTML = '';
+            
+            faqData.forEach((faq, index) => {
+                const faqElement = document.createElement('div');
+                faqElement.className = 'faq-item-premium';
+                faqElement.innerHTML = `
+                    <div class="faq-question-premium" onclick="toggleFAQ(${index})">
+                        <span>${faq.question}</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer-premium">
+                        <p>${faq.answer}</p>
+                        <div class="faq-tags">
+                            ${faq.tags.map(tag => `<span class="faq-tag">${tag}</span>`).join('')}
+                        </div>
+                        <div class="faq-actions">
+                            <button class="faq-action-btn" onclick="wasHelpful(${index})">
+                                <i class="fas fa-thumbs-up"></i>
+                                Helpful
+                            </button>
+                            <button class="faq-action-btn" onclick="shareFAQ(${index})">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(faqElement);
+            });
+        }
+
+        function toggleFAQ(index) {
+            const faqItem = document.querySelectorAll('.faq-item-premium')[index];
+            const answer = faqItem.querySelector('.faq-answer-premium');
+            const icon = faqItem.querySelector('.fa-chevron-down');
+            
+            faqItem.classList.toggle('active');
+            icon.style.transform = faqItem.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        function setupSupportInteractions() {
+            // FAQ category filtering
+            document.querySelectorAll('.faq-category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.faq-category-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    filterFAQ(category);
+                });
+            });
+
+            // FAQ search
+            document.getElementById('faq-search').addEventListener('input', function(e) {
+                searchFAQ(e.target.value);
+            });
+        }
+
+        function filterFAQ(category) {
+            const faqItems = document.querySelectorAll('.faq-item-premium');
+            
+            faqItems.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    // This would filter based on category
+                    item.style.display = 'block'; // Simplified for demo
+                }
+            });
+        }
+
+        function searchFAQ(query) {
+            const faqItems = document.querySelectorAll('.faq-item-premium');
+            const lowerQuery = query.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question-premium span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-premium p').textContent.toLowerCase();
+                
+                if (question.includes(lowerQuery) || answer.includes(lowerQuery)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Functions
+        function openAIChat() {
+            document.getElementById('ai-chat-modal').style.display = 'block';
+        }
+
+        function closeAIChat() {
+            document.getElementById('ai-chat-modal').style.display = 'none';
+        }
+
+        function showResource(resourceId) {
+            const modal = document.getElementById('resource-modal');
+            const content = document.getElementById('resource-content');
+            
+            // Load resource content based on ID
+            content.innerHTML = getResourceContent(resourceId);
+            modal.style.display = 'block';
+        }
+
+        function closeResource() {
+            document.getElementById('resource-modal').style.display = 'none';
+        }
+
+        function getResourceContent(resourceId) {
+            // This would return detailed resource content
+            return `<h3>Resource Details</h3><p>Detailed information about ${resourceId}...</p>`;
+        }
+
+        // Support action functions
+        function scrollToContact() {
+            document.querySelector('.live-support-premium').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openKnowledgeBase() {
+            showResource('knowledge-base');
+        }
+
+        function openCommunity() {
+            showResource('community');
+        }
+
+        function callSupport() {
+            showPremiumNotification('Connecting you to our support team...');
+        }
+
+        function startLiveChat() {
+            showPremiumNotification('Starting live chat with support specialist...');
+        }
+
+        function emailSupport() {
+            showPremiumNotification('Opening email composer...');
+        }
+
+        function joinCommunity() {
+            showPremiumNotification('Redirecting to community registration...');
+        }
+
+        function browseForums() {
+            showPremiumNotification('Opening community forums...');
+        }
+
+        // Utility functions
+        function setupVoiceRecognition() {
+            // Voice recognition setup would go here
+        }
+
+        function attachFile() {
+            showPremiumNotification('File attachment feature activated');
+        }
+
+        function startVoiceInput() {
+            showPremiumNotification('Voice input activated - start speaking');
+        }
+
+        function showSuggestions() {
+            showPremiumNotification('Showing conversation suggestions');
+        }
+
+        function wasHelpful(index) {
+            showPremiumNotification('Thank you for your feedback!');
+        }
+
+        function shareFAQ(index) {
+            showPremiumNotification('FAQ shared successfully!');
+        }
+
+        function showPremiumNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Cart functionality
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count-premium');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            showPremiumNotification('Product added to cart!');
+        }
+    </script>
+
+    <style>
+        /* Advanced Support Center Styles */
+        .support-hero-premium {
+            background: var(--gradient-premium);
+            color: white;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .support-hero-premium .hero-title-premium {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .support-hero-premium .hero-subtitle-premium {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .support-quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .quick-action-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .quick-action-card:hover::before {
+            left: 100%;
+        }
+
+        .quick-action-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .action-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .quick-action-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .quick-action-card p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .action-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .support-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-support-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: floatSupport 8s ease-in-out infinite;
+        }
+
+        .floating-support-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-support-icon:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-support-icon:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* AI Chatbot Styles */
+        .ai-chatbot-section {
+            padding: 100px 0;
+            background: var(--primary-light);
+        }
+
+        .chatbot-container-premium {
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow-premium);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .chatbot-header-premium {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: var(--gradient-blue);
+            color: white;
+        }
+
+        .chatbot-avatar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar-icon {
+            font-size: 2rem;
+        }
+
+        .avatar-status h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .status {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .status.online {
+            color: #00c853;
+        }
+
+        .chatbot-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-action {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-action:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .chatbot-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .message {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            animation: messageSlide 0.3s ease;
+        }
+
+        .user-message {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .ai-message .message-avatar {
+            background: var(--gradient-blue);
+        }
+
+        .user-message .message-avatar {
+            background: var(--primary-dark);
+        }
+
+        .message-content {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow-soft);
+            max-width: 70%;
+            position: relative;
+        }
+
+        .user-message .message-content {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .message-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .quick-questions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .quick-questions p {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .question-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .question-chip {
+            background: var(--primary-light);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .question-chip:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .chatbot-input-premium {
+            padding: 1.5rem 2rem;
+            background: white;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .input-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-container input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .send-button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-button:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        .input-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .input-action {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .input-action:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: scale(1.1);
+        }
+
+        /* Support Resources */
+        .support-resources-premium {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .resources-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .resource-category-premium {
+            background: var(--primary-light);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .resource-category-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+        }
+
+        .category-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .resource-link:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .resource-link i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .link-badge {
+            margin-left: auto;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Interactive FAQ */
+        .interactive-faq-premium {
+            padding: 100px 0;
+            background: var(--primary-light);
+        }
+
+        .faq-header-premium {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header-premium h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-header-premium p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .faq-search-premium {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 0.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .faq-search-premium i {
+            color: var(--text-light);
+            margin: 0 1rem;
+        }
+
+        .faq-search-premium input {
+            flex: 1;
+            border: none;
+            padding: 1rem 0;
+            font-size: 1rem;
+        }
+
+        .faq-search-premium input:focus {
+            outline: none;
+        }
+
+        .search-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        .faq-categories-premium {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .faq-category-btn {
+            background: white;
+            border: 2px solid var(--border-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .faq-category-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .faq-category-btn:hover:not(.active) {
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .faq-grid-premium {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item-premium {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .faq-question-premium {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question-premium:hover {
+            background: var(--primary-light);
+        }
+
+        .faq-question-premium i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer-premium {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-premium.active .faq-answer-premium {
+            padding: 0 2rem 2rem;
+            max-height: 500px;
+        }
+
+        .faq-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .faq-tag {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .faq-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .faq-action-btn {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-action-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* Live Support */
+        .live-support-premium {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .live-support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .support-option-premium {
+            background: var(--primary-light);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .support-option-premium:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .option-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .support-option-premium h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .support-option-premium p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .support-info {
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        .info-item i {
+            color: var(--primary-blue);
+        }
+
+        .btn-call-support,
+        .btn-live-chat,
+        .btn-email-support {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-call-support {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-live-chat {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .btn-email-support {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .btn-call-support:hover,
+        .btn-live-chat:hover,
+        .btn-email-support:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Support Community */
+        .support-community-premium {
+            padding: 100px 0;
+            background: var(--gradient-premium);
+            color: white;
+            text-align: center;
+        }
+
+        .community-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .community-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .community-stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+        }
+
+        .community-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-join-community,
+        .btn-browse-forums {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-join-community:hover,
+        .btn-browse-forums:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .ai-chat-modal-premium,
+        .resource-modal-premium {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .chat-modal-content,
+        .resource-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .chat-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: var(--gradient-blue);
+            color: white;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .resource-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Premium Notification */
+        .premium-notification {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-premium);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .premium-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .notification-content i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes floatSupport {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .support-hero-premium .hero-title-premium {
+                font-size: 2.5rem;
+            }
+            
+            .support-quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .live-support-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .community-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennia Computers - Premium Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Premium Glassmorphism Header -->
+    <header class="header-premium">
+        <div class="header-container-premium">
+            <a href="home.html" class="logo-premium">
+                <span class="logo-icon-premium"></span>
+                Millennia Computers
+            </a>
+            
+            <nav>
+                <ul class="nav-premium">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="popular.html">Popular</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions-premium">
+                <div class="search-premium">
+                    <i class="fas fa-search search-icon-premium"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
+                </div>
+                <button class="cart-premium">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count-premium">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ultra Premium Hero Section -->
+    <section class="hero-premium">
+        <div class="hero-content-premium">
+            <h1 class="hero-title-premium">Next Generation Computing</h1>
+            <p class="hero-subtitle-premium">Experience unparalleled performance with our premium selection of laptops, smartphones, and cutting-edge technology designed for gamers, creators, and professionals.</p>
+            <div class="hero-actions-premium">
+                <a href="index.html" class="btn-premium-primary">
+                    <i class="fas fa-rocket"></i>
+                    Explore Products
+                </a>
+                <a href="about.html" class="btn-premium-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    Watch Demo
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+            <div class="floating-element element-4"></div>
+        </div>
+    </section>
+
+    <!-- Animated Stats Section -->
+    <section class="stats-section-premium">
+        <div class="container-premium">
+            <div class="stats-grid-premium">
+                <div class="stat-card-premium fade-in-up">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="124">0</div>
+                        <div class="stat-label">Premium Products</div>
+                    </div>
+                </div>
+                <div class="stat-card-premium fade-in-up">
+                    <div class="stat-icon">😊</div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="14500">0</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="stat-card-premium fade-in-up">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="4.9">0</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+                <div class="stat-card-premium fade-in-up">
+                    <div class="stat-icon">🚚</div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="24">0</div>
+                        <div class="stat-label">Hour Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories with 3D Effects -->
+    <section class="categories-section-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Featured Categories</h2>
+                <p class="section-subtitle-premium">Explore our premium technology collections</p>
+            </div>
+            
+            <div class="categories-grid-premium">
+                <div class="category-card-premium" onclick="location.href='index.html#laptops'">
+                    <div class="category-icon-premium"></div>
+                    <div class="category-content">
+                        <h3>Gaming Laptops</h3>
+                        <p>High-performance laptops for ultimate gaming experience</p>
+                        <span class="category-link">Explore Collection →</span>
+                    </div>
+                    <div class="category-overlay"></div>
+                </div>
+                
+                <div class="category-card-premium" onclick="location.href='index.html#smartphones'">
+                    <div class="category-icon-premium"></div>
+                    <div class="category-content">
+                        <h3>Smartphones</h3>
+                        <p>Latest flagship phones with cutting-edge technology</p>
+                        <span class="category-link">Explore Collection →</span>
+                    </div>
+                    <div class="category-overlay"></div>
+                </div>
+                
+                <div class="category-card-premium" onclick="location.href='index.html'">
+                    <div class="category-icon-premium"></div>
+                    <div class="category-content">
+                        <h3>PC Components</h3>
+                        <p>Premium components for custom PC builds</p>
+                        <span class="category-link">Explore Collection →</span>
+                    </div>
+                    <div class="category-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products with Advanced Animations -->
+    <section class="featured-products-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Featured Products</h2>
+                <p class="section-subtitle-premium">Discover our most popular technology products</p>
+            </div>
+            
+            <div class="products-grid-premium" id="featured-products">
+                <!-- Featured products will be loaded by JavaScript -->
+            </div>
+            
+            <div class="section-cta-premium">
+                <a href="index.html" class="btn-premium-primary">
+                    <i class="fas fa-th-large"></i>
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Features Section -->
+    <section class="features-section-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Why Choose Millennia</h2>
+                <p class="section-subtitle-premium">Experience the difference with our premium services</p>
+            </div>
+            
+            <div class="features-grid-premium">
+                <div class="feature-card-premium fade-in-left">
+                    <div class="feature-icon-premium">🚀</div>
+                    <h3>Premium Performance</h3>
+                    <p>Top-tier components for maximum performance and reliability with advanced cooling solutions</p>
+                </div>
+                
+                <div class="feature-card-premium fade-in-up">
+                    <div class="feature-icon-premium">🛡️</div>
+                    <h3>Extended Warranty</h3>
+                    <p>Comprehensive 3-year warranty coverage with premium support on all our products</p>
+                </div>
+                
+                <div class="feature-card-premium fade-in-right">
+                    <div class="feature-icon-premium">🚚</div>
+                    <h3>Express Shipping</h3>
+                    <p>Free express delivery on all orders with real-time tracking and premium packaging</p>
+                </div>
+                
+                <div class="feature-card-premium fade-in-left">
+                    <div class="feature-icon-premium">💬</div>
+                    <h3>24/7 Premium Support</h3>
+                    <p>Round-the-clock expert customer support and technical assistance</p>
+                </div>
+                
+                <div class="feature-card-premium fade-in-up">
+                    <div class="feature-icon-premium">🎯</div>
+                    <h3>Expert Consultation</h3>
+                    <p>Personalized technology consultation to find the perfect solution for your needs</p>
+                </div>
+                
+                <div class="feature-card-premium fade-in-right">
+                    <div class="feature-icon-premium">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Rigorous quality testing and premium materials for long-lasting performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer-premium">
+        <div class="footer-content-premium">
+            <div class="footer-section-premium">
+                <h3>About Millennia</h3>
+                <p>We bring you the latest technology with exceptional quality, performance, and premium service. Your trusted partner in computing solutions.</p>
+                <div class="social-links-premium">
+                    <a href="#" class="social-link-premium"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link-premium"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link-premium"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link-premium"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Quick Links</h3>
+                <ul class="footer-links-premium">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> All Products</a></li>
+                    <li><a href="popular.html"><i class="fas fa-fire"></i> Popular Products</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Support Center</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Newsletter</h3>
+                <p>Subscribe for exclusive updates on new products and special offers.</p>
+                <div class="newsletter-premium">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright-premium">
+            Copyright © 2024 Millennia Computers. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Load scripts -->
+    <script src="all-products.js"></script>
+    <script>
+        // Advanced animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Animated counter for stats
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+
+            // Load featured products
+            loadFeaturedProducts();
+
+            // Advanced scroll animations
+            initScrollAnimations();
+            
+            // Setup search functionality
+            setupHomeSearch();
+        });
+
+        function setupHomeSearch() {
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.trim().toLowerCase();
+                filterHomeProducts(searchTerm);
+            });
+        }
+
+        function filterHomeProducts(searchTerm) {
+            const featuredContainer = document.getElementById('featured-products');
+            const allProducts = [...laptops, ...smartphones];
+            
+            if (!searchTerm) {
+                loadFeaturedProducts();
+                return;
+            }
+
+            const filteredProducts = allProducts.filter(product => {
+                return (
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.category.toLowerCase().includes(searchTerm) ||
+                    (product.keyFeatures && product.keyFeatures.some(feature => 
+                        feature.toLowerCase().includes(searchTerm)
+                    ))
+                );
+            }).slice(0, 6);
+
+            displayFilteredHomeProducts(filteredProducts);
+        }
+
+        function displayFilteredHomeProducts(products) {
+            const featuredContainer = document.getElementById('featured-products');
+            
+            featuredContainer.innerHTML = '';
+            
+            if (products.length === 0) {
+                featuredContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
+                        <i class="fas fa-search" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 1rem;">No products found</h3>
+                        <p style="color: var(--text-light);">Try different search terms</p>
+                    </div>
+                `;
+            } else {
+                products.forEach((product, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card-premium fade-in-up';
+                    card.style.animationDelay = `${index * 0.2}s`;
+                    card.innerHTML = `
+                        <div class="product-3d-effect">
+                            <div class="product-image-container-premium">
+                                <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                            </div>
+                            <div class="product-info-premium">
+                                <div class="product-category-premium">${product.category}</div>
+                                <h3 class="product-title-premium">${product.name}</h3>
+                                <div class="product-price-premium">${product.price}</div>
+                                <div class="product-rating-premium">
+                                    <span class="stars-premium">${'★'.repeat(5)}</span>
+                                    <span class="reviews">${product.reviews}</span>
+                                </div>
+                                <div class="product-actions-premium">
+                                    <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})" 
+                                            style="background: var(--primary-blue); color: white;">
+                                        <i class="fas fa-eye"></i>
+                                        View Details
+                                    </button>
+                                    <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    featuredContainer.appendChild(card);
+                });
+            }
+        }
+
+        function loadFeaturedProducts() {
+            const featuredContainer = document.getElementById('featured-products');
+            const allProducts = [...laptops, ...smartphones];
+            const featuredProducts = allProducts.slice(0, 6);
+            
+            featuredContainer.innerHTML = '';
+            featuredProducts.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card-premium fade-in-up';
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.innerHTML = `
+                    <div class="product-3d-effect">
+                        <div class="product-image-container-premium">
+                            <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                        </div>
+                        <div class="product-info-premium">
+                            <div class="product-category-premium">${product.category}</div>
+                            <h3 class="product-title-premium">${product.name}</h3>
+                            <div class="product-price-premium">${product.price}</div>
+                            <div class="product-rating-premium">
+                                <span class="stars-premium">${'★'.repeat(5)}</span>
+                                <span class="reviews">${product.reviews}</span>
+                            </div>
+                            <div class="product-actions-premium">
+                                <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})" 
+                                        style="background: var(--primary-blue); color: white;">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                                <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                featuredContainer.appendChild(card);
+            });
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function viewProductDetails(productId) {
+            window.location.href = `product-details.html?id=${productId}`;
+        }
+
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count-premium');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            
+            // Advanced notification with animation
+            showPremiumNotification('Product added to cart!');
+            
+            // Cart animation
+            animateCartIcon();
+        }
+
+        function showPremiumNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function animateCartIcon() {
+            const cart = document.querySelector('.cart-premium');
+            cart.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cart.style.transform = 'scale(1)';
+            }, 300);
+        }
+    </script>
+
+    <style>
+        /* Additional premium styles for home page */
+        .stats-section-premium {
+            background: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .stats-section-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+        }
+
+        .stats-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card-premium {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-premium);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card-premium:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .stat-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .categories-section-premium {
+            padding: 150px 0;
+            background: var(--primary-light);
+            position: relative;
+        }
+
+        .section-header-premium {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title-premium {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle-premium {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .categories-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .category-card-premium {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+        }
+
+        .category-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-premium);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card-premium:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-card-premium:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .category-icon-premium {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card-premium:hover .category-icon-premium {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .category-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .category-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .category-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .category-card-premium:hover .category-link {
+            gap: 1rem;
+        }
+
+        .featured-products-premium {
+            padding: 150px 0;
+            background: white;
+        }
+
+        .features-section-premium {
+            padding: 150px 0;
+            background: var(--primary-light);
+        }
+
+        .features-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card-premium {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+        }
+
+        .feature-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .feature-icon-premium {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card-premium:hover .feature-icon-premium {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .feature-card-premium h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card-premium p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .section-cta-premium {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links-premium {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link-premium {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link-premium:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 2rem;
+            animation: floatElement 6s ease-in-out infinite;
+        }
+
+        .element-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .element-2 { top: 60%; left: 85%; animation-delay: 1s; }
+        .element-3 { top: 80%; left: 15%; animation-delay: 2s; }
+        .element-4 { top: 30%; left: 90%; animation-delay: 3s; }
+
+        .premium-notification {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-premium);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .premium-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .notification-content i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        @keyframes floatElement {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</body>
+</html>

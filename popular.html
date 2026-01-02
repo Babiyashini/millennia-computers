@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Products - Millennia Computers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Premium Glassmorphism Header -->
+    <header class="header-premium">
+        <div class="header-container-premium">
+            <a href="home.html" class="logo-premium">
+                <span class="logo-icon-premium">💻</span>
+                Millennia Computers
+            </a>
+            
+            <nav>
+                <ul class="nav-premium">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="popular.html" class="active">Popular</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions-premium">
+                <div class="search-premium">
+                    <i class="fas fa-search search-icon-premium"></i>
+                    <input type="text" placeholder="Search products..." id="search-input">
+                </div>
+                <button class="cart-premium">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count-premium">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Premium Popular Hero -->
+    <section class="popular-hero-premium">
+        <div class="container-premium">
+            <div class="hero-content-premium">
+                <h1 class="hero-title-premium">Trending Now</h1>
+                <p class="hero-subtitle-premium">Discover what's hot in the world of technology with our most popular and trending products</p>
+                
+                <!-- Real-time Stats -->
+                <div class="live-stats-premium">
+                    <div class="live-stat">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="trending-count">24</div>
+                            <div class="stat-label">Products Trending</div>
+                        </div>
+                    </div>
+                    <div class="live-stat">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="sold-today">147</div>
+                            <div class="stat-label">Sold Today</div>
+                        </div>
+                    </div>
+                    <div class="live-stat">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <div class="stat-value">4.9</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Background -->
+        <div class="popular-hero-background">
+            <div class="floating-trend-icon">🚀</div>
+            <div class="floating-trend-icon">💫</div>
+            <div class="floating-trend-icon">🌟</div>
+        </div>
+    </section>
+
+    <!-- Advanced Analytics Dashboard -->
+    <section class="analytics-dashboard-premium">
+        <div class="container-premium">
+            <div class="dashboard-header">
+                <h2>Market Insights</h2>
+                <p>Real-time analytics and trending patterns</p>
+                
+                <div class="time-filters">
+                    <button class="time-filter active" data-period="today">Today</button>
+                    <button class="time-filter" data-period="week">This Week</button>
+                    <button class="time-filter" data-period="month">This Month</button>
+                    <button class="time-filter" data-period="all">All Time</button>
+                </div>
+            </div>
+            
+            <div class="analytics-grid-premium">
+                <!-- Sales Chart -->
+                <div class="analytics-card sales-chart">
+                    <div class="card-header">
+                        <h3>Sales Performance</h3>
+                        <div class="card-actions">
+                            <button class="chart-action" onclick="exportChart('sales')">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Real-time Sales Analytics</p>
+                            <div class="chart-data">
+                                <div class="data-point">
+                                    <span class="data-label">Peak:</span>
+                                    <span class="data-value">89 units</span>
+                                </div>
+                                <div class="data-point">
+                                    <span class="data-label">Growth:</span>
+                                    <span class="data-value positive">+24%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category Distribution -->
+                <div class="analytics-card category-distribution">
+                    <div class="card-header">
+                        <h3>Category Trends</h3>
+                        <div class="card-actions">
+                            <button class="chart-action" onclick="exportChart('category')">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="distribution-visual">
+                        <div class="distribution-chart">
+                            <div class="chart-segment laptops" style="width: 42%"></div>
+                            <div class="chart-segment smartphones" style="width: 28%"></div>
+                            <div class="chart-segment components" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    <div class="distribution-labels">
+                        <div class="distribution-item">
+                            <span class="color-dot laptops"></span>
+                            <span>Gaming Laptops</span>
+                            <span class="percentage">42%</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="color-dot smartphones"></span>
+                            <span>Smartphones</span>
+                            <span class="percentage">28%</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="color-dot components"></span>
+                            <span>PC Components</span>
+                            <span class="percentage">30%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Real-time Activity -->
+                <div class="analytics-card realtime-activity">
+                    <div class="card-header">
+                        <h3>Live Activity</h3>
+                        <div class="live-indicator">
+                            <span class="pulse-dot"></span>
+                            Live
+                        </div>
+                    </div>
+                    <div class="activity-feed" id="activityFeed">
+                        <div class="activity-item">
+                            <div class="activity-avatar">👤</div>
+                            <div class="activity-content">
+                                <p><strong>User_245</strong> purchased <strong>ASUS ROG Strix G15</strong></p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-avatar">👤</div>
+                            <div class="activity-content">
+                                <p><strong>TechEnthusiast</strong> added <strong>MSI Katana 15</strong> to wishlist</p>
+                                <span class="activity-time">5 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-avatar">👤</div>
+                            <div class="activity-content">
+                                <p><strong>GamerPro</strong> reviewed <strong>Razer Blade 15</strong> ★★★★★</p>
+                                <span class="activity-time">8 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-stats">
+                        <div class="activity-stat">
+                            <i class="fas fa-eye"></i>
+                            <span>1.2K views this hour</span>
+                        </div>
+                        <div class="activity-stat">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>47 carts active</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trending Metrics -->
+                <div class="analytics-card trending-metrics">
+                    <div class="card-header">
+                        <h3>Trending Metrics</h3>
+                        <div class="refresh-control">
+                            <button onclick="refreshMetrics()">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-icon">📈</div>
+                            <div class="metric-content">
+                                <div class="metric-value">+18%</div>
+                                <div class="metric-label">Demand Increase</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">🕒</div>
+                            <div class="metric-content">
+                                <div class="metric-value">2.3 min</div>
+                                <div class="metric-label">Avg. View Time</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">💬</div>
+                            <div class="metric-content">
+                                <div class="metric-value">89</div>
+                                <div class="metric-label">New Reviews</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">🔄</div>
+                            <div class="metric-content">
+                                <div class="metric-value">4.2x</div>
+                                <div class="metric-label">Social Shares</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending-products-premium">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">🔥 Hot Right Now</h2>
+                <p class="section-subtitle-premium">Products with the highest engagement and sales velocity</p>
+            </div>
+            
+            <!-- Trending Filters -->
+            <div class="trending-filters-premium">
+                <div class="filter-group">
+                    <span class="filter-label">Sort by:</span>
+                    <select class="trending-sort" id="trendingSort">
+                        <option value="popularity">Popularity</option>
+                        <option value="sales">Sales Velocity</option>
+                        <option value="rating">Customer Rating</option>
+                        <option value="trending">Trending Score</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Timeframe:</span>
+                    <div class="timeframe-buttons">
+                        <button class="timeframe-btn active" data-timeframe="24h">24H</button>
+                        <button class="timeframe-btn" data-timeframe="7d">7D</button>
+                        <button class="timeframe-btn" data-timeframe="30d">30D</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">View:</span>
+                    <div class="view-options">
+                        <button class="view-option active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-option" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ALL Trending Products Grid - No Load More -->
+            <div class="products-grid-premium" id="trendingProducts">
+                <!-- ALL trending products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer-premium">
+        <div class="footer-content-premium">
+            <div class="footer-section-premium">
+                <h3>Trending Updates</h3>
+                <p>Stay ahead of the curve with our real-time trending insights and market analysis.</p>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Popular Categories</h3>
+                <ul class="footer-links-premium">
+                    <li><a href="index.html#laptops"><i class="fas fa-laptop"></i> Gaming Laptops</a></li>
+                    <li><a href="index.html#smartphones"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+                    <li><a href="index.html"><i class="fas fa-microchip"></i> PC Components</a></li>
+                    <li><a href="popular.html"><i class="fas fa-fire"></i> Trending Now</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section-premium">
+                <h3>Get Trend Alerts</h3>
+                <p>Never miss a trending product or deal</p>
+                <div class="newsletter-premium">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright-premium">
+            Copyright © 2024 Millennia Computers. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data for demonstration
+        const laptops = [
+            { id: 1, name: "ASUS ROG Strix G15", price: "$1,299", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "128 reviews", trendingScore: 95, rating: 4.8, sales: 45, dateAdded: "2024-01-15" },
+            { id: 2, name: "MSI Katana 15", price: "$1,199", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "89 reviews", trendingScore: 88, rating: 4.6, sales: 32, dateAdded: "2024-01-20" },
+            { id: 3, name: "Razer Blade 15", price: "$2,299", category: "Gaming Laptop", image: "https://via.placeholder.com/300x200", reviews: "156 reviews", trendingScore: 92, rating: 4.9, sales: 28, dateAdded: "2024-01-10" }
+        ];
+
+        const smartphones = [
+            { id: 4, name: "iPhone 15 Pro", price: "$999", category: "Smartphone", image: "https://via.placeholder.com/300x200", reviews: "245 reviews", trendingScore: 98, rating: 4.7, sales: 67, dateAdded: "2024-01-18" },
+            { id: 5, name: "Samsung Galaxy S24", price: "$849", category: "Smartphone", image: "https://via.placeholder.com/300x200", reviews: "178 reviews", trendingScore: 91, rating: 4.5, sales: 54, dateAdded: "2024-01-22" }
+        ];
+
+        const pcComponents = [
+            { id: 6, name: "RTX 4090 GPU", price: "$1,599", category: "PC Component", image: "https://via.placeholder.com/300x200", reviews: "312 reviews", trendingScore: 96, rating: 4.8, sales: 38, dateAdded: "2024-01-12" },
+            { id: 7, name: "Ryzen 9 7950X", price: "$699", category: "PC Component", image: "https://via.placeholder.com/300x200", reviews: "201 reviews", trendingScore: 89, rating: 4.6, sales: 41, dateAdded: "2024-01-25" }
+        ];
+
+        // Advanced Popular Products Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePopularPage();
+            setupTrendingInteractions();
+            initScrollAnimations();
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header-premium');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        function initializePopularPage() {
+            loadTrendingProducts();
+            setupLiveActivity();
+            updateLiveStats();
+            
+            // Start real-time updates
+            startRealTimeUpdates();
+        }
+
+        function loadTrendingProducts(sortBy = 'popularity', timeframe = '24h') {
+            const container = document.getElementById('trendingProducts');
+            
+            // Get ALL products and sort by selected criteria
+            let allProducts = [
+                ...laptops, 
+                ...smartphones,
+                ...pcComponents
+            ];
+
+            // Filter by timeframe (simulated)
+            allProducts = filterProductsByTimeframe(allProducts, timeframe);
+
+            // Sort by selected criteria
+            const sortedProducts = sortProducts(allProducts, sortBy);
+
+            container.innerHTML = '';
+            
+            sortedProducts.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card-premium fade-in-up';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="product-3d-effect">
+                        <div class="product-image-container-premium">
+                            <img src="${product.image}" alt="${product.name}" class="product-image-premium">
+                            <div class="trending-badge">
+                                <i class="fas fa-fire"></i>
+                                Trending
+                            </div>
+                            ${product.trendingScore > 90 ? `
+                                <div class="hot-badge">
+                                    <i class="fas fa-bolt"></i>
+                                    Hot
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="product-info-premium">
+                            <div class="product-category-premium">${product.category}</div>
+                            <h3 class="product-title-premium">${product.name}</h3>
+                            <div class="product-price-premium">${product.price}</div>
+                            <div class="product-rating-premium">
+                                <span class="stars-premium">${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 >= 0.5 ? '½' : ''}</span>
+                                <span class="reviews">${product.reviews}</span>
+                            </div>
+                            <div class="trending-metrics">
+                                <div class="trend-metric">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>${product.trendingScore}% trend score</span>
+                                </div>
+                                <div class="trend-metric">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>${product.sales} sold today</span>
+                                </div>
+                            </div>
+                            <div class="product-actions-premium">
+                                <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                                <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update trending count
+            document.getElementById('trending-count').textContent = sortedProducts.length;
+        }
+
+        function filterProductsByTimeframe(products, timeframe) {
+            // Simulate timeframe filtering
+            const now = new Date();
+            return products.filter(product => {
+                const productDate = new Date(product.dateAdded);
+                const diffTime = Math.abs(now - productDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                switch(timeframe) {
+                    case '24h':
+                        return diffDays <= 1;
+                    case '7d':
+                        return diffDays <= 7;
+                    case '30d':
+                        return diffDays <= 30;
+                    default:
+                        return true;
+                }
+            });
+        }
+
+        function sortProducts(products, sortBy) {
+            switch(sortBy) {
+                case 'popularity':
+                    return [...products].sort((a, b) => b.trendingScore - a.trendingScore);
+                case 'sales':
+                    return [...products].sort((a, b) => b.sales - a.sales);
+                case 'rating':
+                    return [...products].sort((a, b) => b.rating - a.rating);
+                case 'trending':
+                    return [...products].sort((a, b) => b.trendingScore - a.trendingScore);
+                case 'newest':
+                    return [...products].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+                default:
+                    return products;
+            }
+        }
+
+        function setupTrendingInteractions() {
+            // Sort functionality
+            document.getElementById('trendingSort').addEventListener('change', function(e) {
+                const activeTimeframe = document.querySelector('.timeframe-btn.active').getAttribute('data-timeframe');
+                loadTrendingProducts(e.target.value, activeTimeframe);
+            });
+
+            // Timeframe filters
+            document.querySelectorAll('.timeframe-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.timeframe-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const sortBy = document.getElementById('trendingSort').value;
+                    loadTrendingProducts(sortBy, this.getAttribute('data-timeframe'));
+                });
+            });
+
+            // View options
+            document.querySelectorAll('.view-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.view-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    changeView(this.getAttribute('data-view'));
+                });
+            });
+
+            // Time filters for analytics
+            document.querySelectorAll('.time-filter').forEach(filter => {
+                filter.addEventListener('click', function() {
+                    document.querySelectorAll('.time-filter').forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    updateAnalytics(this.getAttribute('data-period'));
+                });
+            });
+        }
+
+        function setupLiveActivity() {
+            // Simulate live activity updates
+            setInterval(() => {
+                addLiveActivity();
+            }, 10000); // Every 10 seconds
+        }
+
+        function addLiveActivity() {
+            const activities = [
+                { user: 'TechLover', action: 'purchased', product: 'ASUS ROG Zephyrus' },
+                { user: 'GamerPro', action: 'reviewed', product: 'MSI Katana 15 ★★★★★' },
+                { user: 'Student_Tech', action: 'added to cart', product: 'Acer Nitro 5' },
+                { user: 'Developer_01', action: 'viewed', product: 'MacBook Pro M3' }
+            ];
+            
+            const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+            const feed = document.getElementById('activityFeed');
+            
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item';
+            activityItem.innerHTML = `
+                <div class="activity-avatar">👤</div>
+                <div class="activity-content">
+                    <p><strong>${randomActivity.user}</strong> ${randomActivity.action} <strong>${randomActivity.product}</strong></p>
+                    <span class="activity-time">Just now</span>
+                </div>
+            `;
+            
+            feed.insertBefore(activityItem, feed.firstChild);
+            
+            // Limit to 5 activities
+            if (feed.children.length > 5) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+
+        function updateLiveStats() {
+            // Update sold today count with random increment
+            const soldElement = document.getElementById('sold-today');
+            let currentCount = parseInt(soldElement.textContent);
+            setInterval(() => {
+                currentCount += Math.floor(Math.random() * 3) + 1;
+                soldElement.textContent = currentCount;
+            }, 30000); // Update every 30 seconds
+        }
+
+        function startRealTimeUpdates() {
+            // Refresh metrics every minute
+            setInterval(refreshMetrics, 60000);
+        }
+
+        function refreshMetrics() {
+            // Simulate metric updates
+            const metrics = document.querySelectorAll('.metric-value');
+            metrics.forEach(metric => {
+                const current = parseFloat(metric.textContent);
+                const change = (Math.random() - 0.5) * 10;
+                const newValue = Math.max(0, current + change);
+                metric.textContent = newValue.toFixed(1);
+            });
+            
+            showPremiumNotification('Metrics updated!');
+        }
+
+        function changeView(viewType) {
+            const container = document.getElementById('trendingProducts');
+            if (viewType === 'list') {
+                container.classList.add('list-view');
+            } else {
+                container.classList.remove('list-view');
+            }
+        }
+
+        function updateAnalytics(period) {
+            // Implementation for updating analytics based on period
+            console.log('Updating analytics for:', period);
+        }
+
+        function exportChart(chartType) {
+            showPremiumNotification(`Exporting ${chartType} data...`);
+        }
+
+        function viewProductDetails(productId) {
+            window.location.href = `product-details.html?id=${productId}`;
+        }
+
+        function addToCart(productId) {
+            const cartCount = document.querySelector('.cart-count-premium');
+            let count = parseInt(cartCount.textContent) || 0;
+            count++;
+            cartCount.textContent = count;
+            
+            showPremiumNotification('Product added to cart!');
+            animateCartIcon();
+        }
+
+        function animateCartIcon() {
+            const cart = document.querySelector('.cart-premium');
+            cart.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cart.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        function showPremiumNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'premium-notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-light: #e2e8f0;
+            --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Advanced Popular Page Styles */
+        .popular-hero-premium {
+            background: var(--gradient-premium);
+            color: white;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .popular-hero-premium .hero-title-premium {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .popular-hero-premium .hero-subtitle-premium {
+            font-size: 1.4rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            opacity: 0.9;
+        }
+
+        .live-stats-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .live-stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .live-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff, #e0f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .popular-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-trend-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: floatTrend 8s ease-in-out infinite;
+        }
+
+        .floating-trend-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-trend-icon:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-trend-icon:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Analytics Dashboard */
+        .analytics-dashboard-premium {
+            padding: 100px 0;
+            background: var(--primary-light);
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dashboard-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .time-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .time-filter {
+            background: white;
+            border: 2px solid var(--border-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .time-filter.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .time-filter:hover:not(.active) {
+            border-color: var(--primary-blue);
+        }
+
+        .analytics-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .analytics-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chart-action {
+            background: var(--primary-light);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-action:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .chart-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-placeholder {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .chart-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--primary-blue);
+        }
+
+        .chart-data {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .data-point {
+            text-align: center;
+        }
+
+        .data-label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .data-value {
+            display: block;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .data-value.positive {
+            color: #00c853;
+        }
+
+        /* Category Distribution */
+        .distribution-visual {
+            margin-bottom: 1.5rem;
+        }
+
+        .distribution-chart {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--primary-light);
+        }
+
+        .chart-segment {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .chart-segment.laptops {
+            background: var(--primary-blue);
+        }
+
+        .chart-segment.smartphones {
+            background: #00c853;
+        }
+
+        .chart-segment.components {
+            background: #ff6b00;
+        }
+
+        .distribution-labels {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .distribution-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .color-dot.laptops {
+            background: var(--primary-blue);
+        }
+
+        .color-dot.smartphones {
+            background: #00c853;
+        }
+
+        .color-dot.components {
+            background: #ff6b00;
+        }
+
+        .percentage {
+            margin-left: auto;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Real-time Activity */
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: #00c853;
+            font-weight: 600;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #00c853;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .activity-feed {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-avatar {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .activity-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .activity-time {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .activity-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .activity-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .activity-stat i {
+            color: var(--primary-blue);
+        }
+
+        /* Trending Metrics */
+        .refresh-control button {
+            background: var(--primary-light);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-control button:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .metric-icon {
+            font-size: 1.5rem;
+        }
+
+        .metric-value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Trending Products */
+        .trending-products-premium {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .trending-filters-premium {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trending-sort {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            background: white;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .timeframe-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .timeframe-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .timeframe-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-option {
+            background: white;
+            border: 1px solid var(--border-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-option.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        /* Trending Product Cards */
+        .trending-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #ff6b00;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .hot-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .trending-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .trend-metric {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .trend-metric i {
+            color: var(--primary-blue);
+            width: 12px;
+        }
+
+        /* CHANGED: View Details button to blue like the + button */
+        .btn-view-details-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .btn-view-details-premium:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-add-cart-premium {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-add-cart-premium:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .product-actions-premium {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        /* Products Grid */
+        .products-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card-premium {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .product-card-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .product-image-container-premium {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image-premium {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card-premium:hover .product-image-premium {
+            transform: scale(1.05);
+        }
+
+        .product-info-premium {
+            padding: 1.5rem;
+        }
+
+        .product-category-premium {
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title-premium {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-price-premium {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .product-rating-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-premium {
+            color: #ffc107;
+        }
+
+        .reviews {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* List View */
+        .products-grid-premium.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .products-grid-premium.list-view .product-card-premium {
+            display: flex;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .products-grid-premium.list-view .product-image-container-premium {
+            width: 200px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+
+        /* Premium Notification */
+        .premium-notification {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-premium);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .premium-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .notification-content i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes floatTrend {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .popular-hero-premium .hero-title-premium {
+                font-size: 3rem;
+            }
+            
+            .live-stats-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .trending-filters-premium {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .analytics-grid-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid-premium.list-view .product-card-premium {
+                flex-direction: column;
+            }
+            
+            .products-grid-premium.list-view .product-image-container-premium {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</body>
+</html>

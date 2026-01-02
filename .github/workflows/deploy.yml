@@ -3,7 +3,7 @@ name: GitHub Pages Deployment
 on:
   push:
     branches:
-      - main  # Change if your default branch is master
+      - main   # Your default branch
 
 jobs:
   deploy:
@@ -14,11 +14,15 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Step 1: Checkout your repo
+      - uses: actions/checkout@v3
 
-      - name: Deploy to GitHub Pages
-        uses: github/pages-deploy-action@v1
+      # Step 2: Upload website files
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          branch: gh-pages      # Branch to deploy to
-          folder: ./            # Folder containing your website files (root of repo)
+          path: ./   # Root folder of your repo
+
+      # Step 3: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1

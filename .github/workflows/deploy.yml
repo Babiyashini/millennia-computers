@@ -14,11 +14,9 @@ jobs:
       id-token: write
 
     steps:
-      # Checkout repository
       - uses: actions/checkout@v3
 
-      # Deploy website files to GitHub Pages
       - uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # root of your repo
+          publish_dir: ./

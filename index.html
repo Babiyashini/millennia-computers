@@ -102,6 +102,85 @@
         </div>
     </section>
 
+    <!-- === NEW: Project Impact Matrix Section === -->
+    <section class="impact-matrix-section">
+        <div class="container-premium">
+            <div class="section-header-premium">
+                <h2 class="section-title-premium">Project Impact & Value Matrix</h2>
+                <p class="section-subtitle-premium">Quantifiable benefits and target user groups for the Millennia Computers platform</p>
+            </div>
+            
+            <div class="matrix-grid">
+                <!-- Performance Metrics -->
+                <div class="matrix-card fade-in-up">
+                    <div class="matrix-icon">⚡</div>
+                    <div class="matrix-content">
+                        <div class="matrix-number" data-count="40">0</div>
+                        <div class="matrix-label">Performance Gain</div>
+                        <p class="matrix-desc">Average reduction in system processing time for complex computations.</p>
+                    </div>
+                </div>
+                
+                <!-- Accuracy & Reliability -->
+                <div class="matrix-card fade-in-up">
+                    <div class="matrix-icon">🎯</div>
+                    <div class="matrix-content">
+                        <div class="matrix-number" data-count="99">0</div>
+                        <div class="matrix-symbol">%</div>
+                        <div class="matrix-label">System Uptime</div>
+                        <p class="matrix-desc">Guaranteed reliability with enterprise-grade infrastructure monitoring.</p>
+                    </div>
+                </div>
+                
+                <!-- Target User Breakdown -->
+                <div class="matrix-card fade-in-up">
+                    <div class="matrix-icon">👥</div>
+                    <div class="matrix-content">
+                        <div class="matrix-number" data-count="85">0</div>
+                        <div class="matrix-symbol">%</div>
+                        <div class="matrix-label">Satisfaction Rate</div>
+                        <p class="matrix-desc">Reported by enterprise clients adopting our computing solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- Economic Impact -->
+                <div class="matrix-card fade-in-up">
+                    <div class="matrix-icon">💰</div>
+                    <div class="matrix-content">
+                        <div class="matrix-currency">$</div>
+                        <div class="matrix-number" data-count="150">0</div>
+                        <div class="matrix-symbol">K+</div>
+                        <div class="matrix-label">Cost Savings</div>
+                        <p class="matrix-desc">Annual operational savings for businesses using optimized systems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Target Audience Breakdown -->
+            <div class="audience-breakdown fade-in-up">
+                <h3 class="breakdown-title">Primary Beneficiaries</h3>
+                <div class="breakdown-grid">
+                    <div class="audience-segment">
+                        <div class="segment-percentage">65%</div>
+                        <h4>Enterprise IT Teams</h4>
+                        <p>Seeking reliable, high-performance computing infrastructure and support.</p>
+                    </div>
+                    <div class="audience-segment">
+                        <div class="segment-percentage">25%</div>
+                        <h4>AI & Data Researchers</h4>
+                        <p>Requiring powerful computational resources for model training and analysis.</p>
+                    </div>
+                    <div class="audience-segment">
+                        <div class="segment-percentage">10%</div>
+                        <h4>Academic Institutions</h4>
+                        <p>Implementing technology solutions for education and campus management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- === END NEW SECTION === -->
+
     <!-- Featured Categories with 3D Effects -->
     <section class="categories-section-premium">
         <div class="container-premium">
@@ -268,26 +347,40 @@
                 }
             });
 
-            // Animated counter for stats
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
+            // === UPDATED: Animated counter for BOTH stats and matrix numbers ===
+            function initAllCounters() {
+                const allCounters = document.querySelectorAll('.stat-number, .matrix-number');
+                const speed = 200;
 
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-count');
-                    const count = +counter.innerText;
-                    const increment = target / speed;
+                allCounters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-count');
+                        const count = +counter.innerText.replace(/[^0-9.]/g, '');
+                        const increment = target / speed;
 
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
 
-                updateCount();
-            });
+                    // Trigger when element is visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                updateCount();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    observer.observe(counter);
+                });
+            }
+            // Call the updated counter function
+            initAllCounters();
 
             // Load featured products
             loadFeaturedProducts();
@@ -562,6 +655,187 @@
             font-weight: 600;
             color: var(--text-dark);
         }
+
+        /* === NEW: Project Impact Matrix Styles === */
+        .impact-matrix-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .impact-matrix-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .matrix-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-premium);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .matrix-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .matrix-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .matrix-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .matrix-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .matrix-number, .matrix-currency, .matrix-symbol {
+            display: inline-block;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        .matrix-currency {
+            vertical-align: top;
+            margin-right: 5px;
+            font-size: 2.5rem;
+        }
+
+        .matrix-symbol {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-left: 5px;
+            color: var(--text-light);
+        }
+
+        .matrix-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 1rem 0 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .matrix-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Target Audience Breakdown */
+        .audience-breakdown {
+            margin-top: 6rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+        }
+
+        .breakdown-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .audience-segment {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--primary-light);
+            transition: all 0.3s ease;
+        }
+
+        .audience-segment:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .segment-percentage {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .audience-segment h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .audience-segment p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments for the matrix */
+        @media (max-width: 768px) {
+            .matrix-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .audience-breakdown {
+                padding: 2rem 1.5rem;
+            }
+            
+            .breakdown-title {
+                font-size: 1.8rem;
+            }
+        }
+        /* === END NEW STYLES === */
 
         .categories-section-premium {
             padding: 150px 0;

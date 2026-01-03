@@ -1430,7 +1430,7 @@ const smartphones = [
 const pcComponents = [
     {
         id: 66,
-        category: "parts",
+        category: "pcComponents",
         name: "AMD Ryzen 9 7950X",
         price: "Rs. 210,000",
         rating: "★★★★★",
@@ -1452,7 +1452,7 @@ const pcComponents = [
     },
     {
         id: 67,
-        category: "parts",
+        category: "pcComponents",
         name: "AMD Ryzen 7 7800X3D",
         price: "Rs. 155,000",
         rating: "★★★★★",
@@ -1474,7 +1474,7 @@ const pcComponents = [
     },
     {
         id: 68,
-        category: "parts",
+        category: "pcComponents",
         name: "AMD Ryzen 5 7600X",
         price: "Rs. 85,000",
         rating: "★★★★☆",
@@ -1496,7 +1496,7 @@ const pcComponents = [
     },
     {
         id: 69,
-        category: "parts",
+        category: "pcComponents",
         name: "Intel Core i9-14900K",
         price: "Rs. 230,000",
         rating: "★★★★★",
@@ -1518,7 +1518,7 @@ const pcComponents = [
     },
     {
         id: 70,
-        category: "parts",
+        category: "pcComponents",
         name: "Intel Core i7-14700K",
         price: "Rs. 165,000",
         rating: "★★★★★",
@@ -1540,7 +1540,7 @@ const pcComponents = [
     },
     {
         id: 71,
-        category: "parts",
+        category: "pcComponents",
         name: "Intel Core i5-14600K",
         price: "Rs. 115,000",
         rating: "★★★★☆",
@@ -1562,7 +1562,7 @@ const pcComponents = [
     },
     {
         id: 72,
-        category: "parts",
+        category: "pcComponents",
         name: "AMD Ryzen 9 5900X",
         price: "Rs. 130,000",
         rating: "★★★★☆",
@@ -1584,7 +1584,7 @@ const pcComponents = [
     },
     {
         id: 73,
-        category: "parts",
+        category: "pcComponents",
         name: "Intel Core i5-12400F",
         price: "Rs. 55,000",
         rating: "★★★★☆",
@@ -1606,7 +1606,7 @@ const pcComponents = [
     },
     {
         id: 74,
-        category: "parts",
+        category: "pcComponents",
         name: "AMD Ryzen 5 5600X",
         price: "Rs. 62,000",
         rating: "★★★★☆",
@@ -1628,7 +1628,7 @@ const pcComponents = [
     },
     {
         id: 75,
-        category: "parts",
+        category: "pcComponents",
         name: "Intel Core i3-12100F",
         price: "Rs. 38,000",
         rating: "★★★☆☆",
@@ -1652,7 +1652,7 @@ const pcComponents = [
 const gpus = [
     {
         id: 76,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 4090",
         price: "Rs. 650,000",
         rating: "★★★★★",
@@ -1673,7 +1673,7 @@ const gpus = [
     },
     {
         id: 77,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 4080 Super",
         price: "Rs. 420,000",
         rating: "★★★★★",
@@ -1694,7 +1694,7 @@ const gpus = [
     },
     {
         id: 78,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 4070 Ti Super",
         price: "Rs. 310,000",
         rating: "★★★★★",
@@ -1715,7 +1715,7 @@ const gpus = [
     },
     {
         id: 79,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 4070 Super",
         price: "Rs. 250,000",
         rating: "★★★★☆",
@@ -1736,7 +1736,7 @@ const gpus = [
     },
     {
         id: 80,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 4060 Ti",
         price: "Rs. 350,000",
         rating: "★★★★☆",
@@ -1757,7 +1757,7 @@ const gpus = [
     },
     {
         id: 81,
-        category: "parts",
+        category: "gpus",
         name: "AMD Radeon RX 7900 XTX",
         price: "Rs. 390,000",
         rating: "★★★★★",
@@ -1778,7 +1778,7 @@ const gpus = [
     },
     {
         id: 82,
-        category: "parts",
+        category: "gpus",
         name: "AMD Radeon RX 7900 XT",
         price: "Rs. 315,000",
         rating: "★★★★☆",
@@ -1799,7 +1799,7 @@ const gpus = [
     },
     {
         id: 83,
-        category: "parts",
+        category: "gpus",
         name: "AMD Radeon RX 7800 XT",
         price: "Rs. 205,000",
         rating: "★★★★☆",
@@ -1820,7 +1820,7 @@ const gpus = [
     },
     {
         id: 84,
-        category: "parts",
+        category: "gpus",
         name: "NVIDIA GeForce RTX 3060 12GB",
         price: "Rs. 110,000",
         rating: "★★★★☆",
@@ -1841,7 +1841,7 @@ const gpus = [
     },
     {
         id: 85,
-        category: "parts",
+        category: "gpus",
         name: "AMD Radeon RX 6600",
         price: "Rs. 85,000",
         rating: "★★★☆☆",
@@ -1864,7 +1864,7 @@ const gpus = [
 const ram = [
     {
         id: 86,
-        category: "parts",
+        category: "ram",
         name: "Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
         price: "Rs. 48,000",
         rating: "★★★★★",
@@ -1886,7 +1886,7 @@ const ram = [
     },
     {
         id: 87,
-        category: "parts",
+        category: "ram",
         name: "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6400MHz",
         price: "Rs. 53,000",
         rating: "★★★★★",
@@ -1908,7 +1908,7 @@ const ram = [
     },
     {
         id: 88,
-        category: "parts",
+        category: "ram",
         name: "Kingston FURY Beast 16GB (2x8GB) DDR4 3200MHz",
         price: "Rs. 25,000",
         rating: "★★★★☆",
@@ -1930,7 +1930,7 @@ const ram = [
     },
     {
         id: 89,
-        category: "parts",
+        category: "ram",
         name: "Corsair Vengeance LPX 16GB (2x8GB) DDR4 3600MHz",
         price: "Rs. 28,000",
         rating: "★★★★☆",
@@ -1952,7 +1952,7 @@ const ram = [
     },
     {
         id: 90,
-        category: "parts",
+        category: "ram",
         name: "G.Skill Ripjaws V 32GB (2x16GB) DDR4 3200MHz",
         price: "Rs. 42,000",
         rating: "★★★★☆",
@@ -1976,7 +1976,7 @@ const ram = [
 const psuCasesCooling = [
     {
         id: 91,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Corsair RM850e 850W Gold PSU",
         price: "Rs. 48,000",
         rating: "★★★★★",
@@ -1998,7 +1998,7 @@ const psuCasesCooling = [
     },
     {
         id: 92,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Lian Li O11 Dynamic EVO Case",
         price: "Rs. 65,000",
         rating: "★★★★★",
@@ -2020,7 +2020,7 @@ const psuCasesCooling = [
     },
     {
         id: 93,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "NZXT H5 Flow RGB Case",
         price: "Rs. 42,000",
         rating: "★★★★☆",
@@ -2042,7 +2042,7 @@ const psuCasesCooling = [
     },
     {
         id: 94,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Noctua NH-D15 CPU Cooler",
         price: "Rs. 41,000",
         rating: "★★★★★",
@@ -2064,7 +2064,7 @@ const psuCasesCooling = [
     },
     {
         id: 95,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Deepcool LS720 360mm AIO",
         price: "Rs. 52,000",
         rating: "★★★★☆",
@@ -2086,7 +2086,7 @@ const psuCasesCooling = [
     },
     {
         id: 96,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Cooler Master Hyper 212 Black Edition",
         price: "Rs. 15,500",
         rating: "★★★★☆",
@@ -2108,7 +2108,7 @@ const psuCasesCooling = [
     },
     {
         id: 97,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Corsair 4000D Airflow Case (Black)",
         price: "Rs. 38,000",
         rating: "★★★★☆",
@@ -2130,7 +2130,7 @@ const psuCasesCooling = [
     },
     {
         id: 98,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Seasonic FOCUS GX-750 750W Gold PSU",
         price: "Rs. 42,000",
         rating: "★★★★★",
@@ -2152,7 +2152,7 @@ const psuCasesCooling = [
     },
     {
         id: 99,
-        category: "parts",
+        category: "psuCasesCooling",
         name: "Arctic P12 PWM PST (5 Pack)",
         price: "Rs. 12,500",
         rating: "★★★★☆",
@@ -2176,7 +2176,7 @@ const psuCasesCooling = [
 const storageDevices = [
     {
         id: 100,
-        category: "parts",
+        category: "storageDevices",
         name: "Samsung T7 Shield Portable SSD 1TB",
         price: "Rs. 24,999",
         rating: "★★★★★",
@@ -2198,7 +2198,7 @@ const storageDevices = [
     },
     {
         id: 101,
-        category: "parts",
+        category: "storageDevices",
         name: "WD Blue SN580 NVMe SSD 1TB",
         price: "Rs. 18,999",
         rating: "★★★★☆",
@@ -2220,7 +2220,7 @@ const storageDevices = [
     },
     {
         id: 102,
-        category: "parts",
+        category: "storageDevices",
         name: "SanDisk Ultra Dual Drive Go 128GB",
         price: "Rs. 3,499",
         rating: "★★★★☆",
@@ -2242,7 +2242,7 @@ const storageDevices = [
     },
     {
         id: 103,
-        category: "parts",
+        category: "storageDevices",
         name: "Kingston XS2000 Portable SSD 1TB",
         price: "Rs. 21,499",
         rating: "★★★★☆",
@@ -2264,7 +2264,7 @@ const storageDevices = [
     },
     {
         id: 104,
-        category: "parts",
+        category: "storageDevices",
         name: "Seagate Expansion Portable HDD 2TB",
         price: "Rs. 15,999",
         rating: "★★★★☆",
@@ -2286,7 +2286,7 @@ const storageDevices = [
     },
     {
         id: 105,
-        category: "parts",
+        category: "storageDevices",
         name: "Crucial P5 Plus 1TB NVMe SSD",
         price: "Rs. 22,999",
         rating: "★★★★★",
@@ -2308,7 +2308,7 @@ const storageDevices = [
     },
     {
         id: 106,
-        category: "parts",
+        category: "storageDevices",
         name: "Sabrent Rocket 4 Plus 2TB NVMe SSD",
         price: "Rs. 39,999",
         rating: "★★★★★",
@@ -2330,7 +2330,7 @@ const storageDevices = [
     },
     {
         id: 107,
-        category: "parts",
+        category: "storageDevices",
         name: "LaCie Rugged Mini 4TB",
         price: "Rs. 28,999",
         rating: "★★★★☆",
@@ -2352,7 +2352,7 @@ const storageDevices = [
     },
     {
         id: 108,
-        category: "parts",
+        category: "storageDevices",
         name: "Samsung 990 Pro 2TB NVMe SSD",
         price: "Rs. 72,000",
         rating: "★★★★★",
@@ -2374,7 +2374,7 @@ const storageDevices = [
     },
     {
         id: 109,
-        category: "parts",
+        category: "storageDevices",
         name: "Samsung 980 Pro 1TB NVMe SSD",
         price: "Rs. 41,000",
         rating: "★★★★★",
@@ -2396,7 +2396,7 @@ const storageDevices = [
     },
     {
         id: 110,
-        category: "parts",
+        category: "storageDevices",
         name: "WD Black SN850X 2TB NVMe SSD",
         price: "Rs. 68,000",
         rating: "★★★★★",
@@ -2418,7 +2418,7 @@ const storageDevices = [
     },
     {
         id: 111,
-        category: "parts",
+        category: "storageDevices",
         name: "Kingston NV2 1TB NVMe SSD",
         price: "Rs. 28,000",
         rating: "★★★★☆",
@@ -2440,7 +2440,7 @@ const storageDevices = [
     },
     {
         id: 112,
-        category: "parts",
+        category: "storageDevices",
         name: "Seagate BarraCuda 4TB HDD",
         price: "Rs. 35,000",
         rating: "★★★★☆",
@@ -2462,7 +2462,7 @@ const storageDevices = [
     },
     {
         id: 113,
-        category: "parts",
+        category: "storageDevices",
         name: "Crucial MX500 1TB SATA SSD",
         price: "Rs. 19,000",
         rating: "★★★★☆",
@@ -2484,7 +2484,7 @@ const storageDevices = [
     },
     {
         id: 114,
-        category: "parts",
+        category: "storageDevices",
         name: "Synology DS224+ 2-Bay NAS",
         price: "Rs. 110,000",
         rating: "★★★★☆",
@@ -2508,7 +2508,7 @@ const storageDevices = [
 const motherboards = [
     {
         id: 115,
-        category: "parts",
+        category: "motherboards",
         name: "ASUS ROG Strix X670E-F",
         price: "Rs. 145,000",
         rating: "★★★★★",
@@ -2530,7 +2530,7 @@ const motherboards = [
     },
     {
         id: 116,
-        category: "parts",
+        category: "motherboards",
         name: "MSI MAG B760 TOMAHAWK WIFI",
         price: "Rs. 82,000",
         rating: "★★★★☆",
@@ -2552,7 +2552,7 @@ const motherboards = [
     },
     {
         id: 117,
-        category: "parts",
+        category: "motherboards",
         name: "Gigabyte B650 AORUS ELITE AX",
         price: "Rs. 78,000",
         rating: "★★★★☆",
@@ -2574,7 +2574,7 @@ const motherboards = [
     },
     {
         id: 118,
-        category: "parts",
+        category: "motherboards",
         name: "ASUS TUF Gaming B550-PLUS",
         price: "Rs. 55,000",
         rating: "★★★★☆",
@@ -2596,7 +2596,7 @@ const motherboards = [
     },
     {
         id: 119,
-        category: "parts",
+        category: "motherboards",
         name: "ASRock B760M PG Lightning WiFi",
         price: "Rs. 49,000",
         rating: "★★★★☆",
@@ -2620,7 +2620,7 @@ const motherboards = [
 const peripherals = [
     {
         id: 120,
-        category: "parts",
+        category: "peripherals",
         name: "Logitech G Pro X Superlight Wireless Mouse",
         price: "Rs. 45,000",
         rating: "★★★★★",
@@ -2642,7 +2642,7 @@ const peripherals = [
     },
     {
         id: 121,
-        category: "parts",
+        category: "peripherals",
         name: "Keychron K8 Pro Mechanical Keyboard",
         price: "Rs. 35,000",
         rating: "★★★★☆",
@@ -2664,7 +2664,7 @@ const peripherals = [
     },
     {
         id: 122,
-        category: "parts",
+        category: "peripherals",
         name: "LG UltraGear 27GP850-B Monitor",
         price: "Rs. 115,000",
         rating: "★★★★★",
@@ -2686,7 +2686,7 @@ const peripherals = [
     },
     {
         id: 123,
-        category: "parts",
+        category: "peripherals",
         name: "Logitech MX Master 3S Mouse",
         price: "Rs. 36,000",
         rating: "★★★★☆",
@@ -2708,7 +2708,7 @@ const peripherals = [
     },
     {
         id: 124,
-        category: "parts",
+        category: "peripherals",
         name: "Elgato Stream Deck MK.2",
         price: "Rs. 55,000",
         rating: "★★★★★",

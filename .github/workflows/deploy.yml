@@ -2,41 +2,38 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
 
+# Grant the correct permissions
 permissions:
   contents: read
-  pages: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+  pages: write      # Allows writing to Pages
+  id-token: write   # Required for OIDC authentication
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      # (Add your build steps here, e.g., 'npm run build')
+      - name: Build site
+        run: echo "Your build command goes here"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: './dist' # Path to your built site files
 
   deploy:
+    # This environment name MUST match the one in your repo settings
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-    needs: build
-
+    needs: build  # Wait for the build job to finish
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # Use the latest stable version

@@ -70,6 +70,7 @@
         }
 
         .product-image-container-premium {
+            position: relative;
             height: 200px;
             padding: 1.5rem;
             background: linear-gradient(135deg, #f5f5f7 0%, #e8e8e8 100%);
@@ -78,6 +79,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .product-image-premium {
@@ -181,19 +183,20 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="products.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#" onclick="showAllProducts()">All Products</a>
-                            <a href="#" onclick="filterByCategory('laptops')">Laptops</a>
-                            <a href="#" onclick="filterByCategory('smartphones')">Smartphones</a>
-                            <a href="#" onclick="filterByCategory('pcComponents')">PC Components</a>
-                            <a href="#" onclick="filterByCategory('gpus'')">Graphics Cards</a>
-                            <a href="#" onclick="filterByCategory('ram')">RAM</a>
-                            <a href="#" onclick="filterByCategory('storageDevices')">Storage Devices</a>
-                            <a href="#" onclick="filterByCategory('motherboards')">Motherboards</a>
-                            <a href="#" onclick="filterByCategory('peripherals')">Peripherals</a>
-                        </div>
-                    </li>
+    <a href="products.html" class="active">Products <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a>
+    <div class="dropdown-content">
+        <a onclick="showAllProducts()">All Products</a>
+        <a onclick="filterByCategory('laptops')">Laptops</a>
+        <a onclick="filterByCategory('smartphones')">Smartphones</a>
+        <a onclick="filterByCategory('pcComponents')">PC Components</a>
+        <a onclick="filterByCategory('gpus')">Graphics Cards</a>
+        <a onclick="filterByCategory('ram')">RAM</a>
+        <a onclick="filterByCategory('storageDevices')">Storage Devices</a>
+        <a onclick="filterByCategory('motherboards')">Motherboards</a>
+        <a onclick="filterByCategory('peripherals')">Peripherals</a>
+        <a onclick="filterByCategory('psuCasesCooling')">PSU & Cooling</a>
+    </div>
+</li>
                     <li><a href="popular.html">Popular</a></li>
                     <li><a href="support.html">Support</a></li>
                 </ul>
@@ -218,6 +221,13 @@
             <div class="section-header-premium">
                 <h2 class="section-title-premium">All Products</h2>
                 <p class="section-subtitle-premium">Discover our complete collection of premium technology products</p>
+            </div>
+
+            <!-- Reset Filters Button -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="resetAllFilters()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+                    <i class="fas fa-refresh"></i> Reset All Filters
+                </button>
             </div>
 
             <!-- Active Category Indicator -->
@@ -273,240 +283,159 @@
         </div>
     </footer>
 
-    <script src="all-products.js"></script>
-    <script>
-        let allProducts = [];
-        let currentSearchTerm = '';
-        let activeCategory = 'all';
+<script src="all-products.js"></script>
+<script>
+    let allProducts = [];
+    let currentSearchTerm = '';
+    let activeCategory = 'all';
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadAllProducts();
-            setupEventListeners();
-            
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('.header-premium');
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
-
-        function loadAllProducts() {
-            // Get ALL products from all categories
-            allProducts = [
-                ...laptops, 
-                ...smartphones,
-                ...pcComponents,
-                ...gpus,
-                ...ram,
-                ...psuCasesCooling,
-                ...storageDevices,
-                ...motherboards,
-                ...peripherals
-            ];
-
-            console.log('Total products loaded:', allProducts.length);
-            console.log('Laptops:', laptops.length);
-            console.log('Smartphones:', smartphones.length);
-            
-            displayProducts(allProducts);
-            initScrollAnimations();
-        }
-
-        function displayProducts(products) {
-            const container = document.getElementById('products-container');
-            const resultsInfo = document.getElementById('search-results-info');
-            const activeCategoryDiv = document.getElementById('active-category');
-            
-            container.innerHTML = '';
-            
-            console.log('Displaying products:', products.length);
-            
-            if (products.length === 0) {
-                container.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem;">
-                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1.5rem;"></i>
-                        <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.3rem;">No products found</h3>
-                        <p style="color: var(--text-light); font-size: 1rem;">Try adjusting your search terms or filters</p>
-                    </div>
-                `;
-            } else {
-                products.forEach((product, index) => {
-                    const card = document.createElement('div');
-                    card.className = 'product-card-premium fade-in-up';
-                    card.style.animationDelay = `${index * 0.1}s`;
-                    
-                    // Check if product has image, if not use a placeholder
-                    const productImage = product.image || 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400';
-                    
-                    card.innerHTML = `
-                        <div class="product-3d-effect">
-                            <div class="product-image-container-premium">
-                                <img src="${productImage}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'">
-                            </div>
-                            <div class="product-info-premium">
-                                <div class="product-category-premium">${product.category}</div>
-                                <h3 class="product-title-premium">${product.name}</h3>
-                                <div class="product-price-premium">${product.price}</div>
-                                <div class="product-rating-premium">
-                                    <span class="stars-premium">${'★'.repeat(5)}</span>
-                                    <span class="reviews">${product.reviews}</span>
-                                </div>
-                                <div class="product-actions-premium">
-                                    <button class="btn-view-details-premium" onclick="viewProductDetails(${product.id})">
-                                        <i class="fas fa-eye"></i>
-                                        View Details
-                                    </button>
-                                    <button class="btn-add-cart-premium" onclick="addToCart(${product.id})">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                });
-            }
-
-            // Show/hide search results info
-            if (currentSearchTerm) {
-                resultsInfo.style.display = 'block';
-                document.getElementById('results-count').textContent = products.length;
-                document.getElementById('search-term').textContent = currentSearchTerm;
-            } else {
-                resultsInfo.style.display = 'none';
-            }
-
-            // Show/hide active category indicator
-            if (activeCategory && activeCategory !== 'all') {
-                activeCategoryDiv.style.display = 'block';
-                document.getElementById('current-category-name').textContent = activeCategory;
-            } else {
-                activeCategoryDiv.style.display = 'none';
-            }
-        }
-
-        function setupEventListeners() {
-            // Search functionality
-            const searchInput = document.getElementById('search-input');
-            
+    document.addEventListener('DOMContentLoaded', function() {
+        loadAllProducts();
+        
+        // Search Bar Listener
+        const searchInput = document.getElementById('search-input');
+        if(searchInput){
             searchInput.addEventListener('input', function(e) {
                 currentSearchTerm = e.target.value.trim().toLowerCase();
                 applyFilters();
             });
+        }
+
+        // Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header-premium');
+            if (window.scrollY > 100) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    });
+
+    function loadAllProducts() {
+        // Helper to FORCE the correct category name onto the data
+        // This fixes the issue where your data says "parts" but the filter wants "gpus"
+        const setCat = (arr, name) => arr.map(item => ({...item, category: name}));
+
+        // Combine all arrays from your external file
+        allProducts = [
+            ...setCat(laptops, 'laptops'), 
+            ...setCat(smartphones, 'smartphones'),
+            ...setCat(pcComponents, 'pcComponents'),
+            ...setCat(gpus, 'gpus'),
+            ...setCat(ram, 'ram'),
+            ...setCat(psuCasesCooling, 'psuCasesCooling'),
+            ...setCat(storageDevices, 'storageDevices'),
+            ...setCat(motherboards, 'motherboards'),
+            ...setCat(peripherals, 'peripherals')
+        ];
+
+        // Show everything by default
+        displayProducts(allProducts);
+    }
+
+    function filterByCategory(category) {
+        console.log('Filtering by:', category);
+        activeCategory = category;
+        currentSearchTerm = ''; // Clear search when picking a category
+        
+        // Update UI (Optional Banner)
+        const banner = document.getElementById('active-filter-banner');
+        const filterName = document.getElementById('filter-name');
+        if(banner && filterName) {
+            banner.style.display = 'block';
+            filterName.innerText = getCategoryDisplayName(category);
+        }
+        
+        applyFilters();
+    }
+
+    function showAllProducts() {
+        activeCategory = 'all';
+        currentSearchTerm = '';
+        
+        const banner = document.getElementById('active-filter-banner');
+        if(banner) banner.style.display = 'none';
+        
+        applyFilters();
+    }
+    
+    function resetAllFilters() {
+        showAllProducts();
+    }
+
+    function applyFilters() {
+        let filtered = allProducts;
+
+        // 1. Filter by Category
+        if (activeCategory !== 'all') {
+            filtered = filtered.filter(p => p.category === activeCategory);
+        }
+
+        // 2. Filter by Search
+        if (currentSearchTerm) {
+            filtered = filtered.filter(p => 
+                p.name.toLowerCase().includes(currentSearchTerm) || 
+                p.category.toLowerCase().includes(currentSearchTerm)
+            );
+        }
+        
+        displayProducts(filtered);
+    }
+
+    function displayProducts(products) {
+        const container = document.getElementById('products-container');
+        container.innerHTML = '';
+
+        if (products.length === 0) {
+            container.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+                    <h3 style="color: #666;">No products found.</h3>
+                    <button onclick="showAllProducts()" style="background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 8px; margin-top: 1rem; cursor: pointer;">Show All</button>
+                </div>`;
+            return;
+        }
+
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card-premium'; 
             
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    currentSearchTerm = e.target.value.trim().toLowerCase();
-                    applyFilters();
-                }
-            });
-        }
+            // Fallback image logic
+            const img = product.image || 'https://via.placeholder.com/300';
 
-        function showAllProducts() {
-            activeCategory = 'all';
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-            applyFilters();
-        }
-
-        function filterByCategory(category) {
-            console.log('Filtering by category:', category);
-            activeCategory = category;
-            currentSearchTerm = '';
-            document.getElementById('search-input').value = '';
-            applyFilters();
-        }
-
-        function applyFilters() {
-            let filteredProducts = allProducts;
-
-            console.log('Applying filters - Active category:', activeCategory);
-
-            // Apply category filter
-            if (activeCategory && activeCategory !== 'all') {
-                filteredProducts = filteredProducts.filter(product => {
-                    const matches = product.category === activeCategory;
-                    console.log(`Product: ${product.name}, Category: ${product.category}, Matches: ${matches}`);
-                    return matches;
-                });
-            }
-
-            // Apply search term
-            if (currentSearchTerm) {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.name.toLowerCase().includes(currentSearchTerm) ||
-                    product.category.toLowerCase().includes(currentSearchTerm) ||
-                    (product.keyFeatures && product.keyFeatures.some(feature => 
-                        feature.toLowerCase().includes(currentSearchTerm)
-                    ))
-                );
-            }
-
-            console.log('Filtered products count:', filteredProducts.length);
-            displayProducts(filteredProducts);
-        }
-
-        function viewProductDetails(productId) {
-            window.location.href = `product-details.html?id=${productId}`;
-        }
-
-        function addToCart(productId) {
-            const cartCount = document.querySelector('.cart-count-premium');
-            let count = parseInt(cartCount.textContent) || 0;
-            count++;
-            cartCount.textContent = count;
-            
-            showPremiumNotification('Product added to cart!');
-            animateCartIcon();
-        }
-
-        function animateCartIcon() {
-            const cart = document.querySelector('.cart-premium');
-            cart.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                cart.style.transform = 'scale(1)';
-            }, 300);
-        }
-
-        function showPremiumNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'premium-notification';
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <i class="fas fa-check-circle"></i>
-                    <span>${message}</span>
+            card.innerHTML = `
+                <div class="product-image-container-premium">
+                    <img src="${img}" alt="${product.name}" class="product-image-premium" onerror="this.src='https://via.placeholder.com/300'">
+                </div>
+                <div class="product-info-premium">
+                    <div class="product-category-premium" style="font-size: 0.8rem; color: #888; text-transform: uppercase; margin-bottom: 5px;">
+                        ${getCategoryDisplayName(product.category)}
+                    </div>
+                    <h3 class="product-title-premium">${product.name}</h3>
+                    <div class="product-price-premium">${product.price}</div>
+                    <div class="product-rating-premium">
+                        <span class="stars-premium">${product.rating}</span>
+                        <span class="reviews">${product.reviews}</span>
+                    </div>
+                    <div class="product-actions-premium">
+                        <button class="btn-view-details-premium" onclick="window.location.href='product-details.html?id=${product.id}'">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <button class="btn-add-cart-premium">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
                 </div>
             `;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    notification.remove();
-                }, 300);
-            }, 3000);
-        }
+            container.appendChild(card);
+        });
+    }
 
-        function initScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-up').forEach(el => {
-                observer.observe(el);
-            });
-        }
-    </script>
+    function getCategoryDisplayName(cat) {
+        const names = {
+            'laptops': 'Laptops', 'smartphones': 'Smartphones', 'pcComponents': 'PC Components',
+            'gpus': 'Graphics Cards', 'ram': 'RAM', 'storageDevices': 'Storage',
+            'motherboards': 'Motherboards', 'peripherals': 'Peripherals', 'psuCasesCooling': 'PSU & Cooling'
+        };
+        return names[cat] || cat;
+    }
+</script>
 </body>
 </html>

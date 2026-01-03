@@ -650,6 +650,191 @@ body {
     border-top: 1px solid #444;
 }
 
+/* =========================================== */
+/* NEW: PROJECT IMPACT MATRIX SECTION (ADDED) */
+/* =========================================== */
+.impact-matrix-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    position: relative;
+}
+
+.impact-matrix-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.matrix-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.matrix-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-premium);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.matrix-card:hover::before {
+    transform: scaleX(1);
+}
+
+.matrix-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-premium);
+}
+
+.matrix-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.matrix-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.matrix-number, .matrix-currency, .matrix-symbol {
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.matrix-currency {
+    vertical-align: top;
+    margin-right: 5px;
+    font-size: 2.5rem;
+}
+
+.matrix-symbol {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 5px;
+    color: var(--text-light);
+}
+
+.matrix-label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-dark);
+}
+
+.matrix-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Target Audience Breakdown */
+.audience-breakdown {
+    margin-top: 6rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-light);
+}
+
+.breakdown-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.audience-segment {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--primary-light);
+    transition: all 0.3s ease;
+}
+
+.audience-segment:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-soft);
+}
+
+.segment-percentage {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.audience-segment h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.audience-segment p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for the matrix */
+@media (max-width: 768px) {
+    .matrix-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .audience-breakdown {
+        padding: 2rem 1.5rem;
+    }
+    
+    .breakdown-title {
+        font-size: 1.8rem;
+    }
+}
+/* =========================================== */
+/* END OF NEW SECTION STYLES */
+/* =========================================== */
+
 /* Advanced Animations */
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }

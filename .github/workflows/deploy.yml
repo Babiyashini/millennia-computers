@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # Runs whenever you push to the main branch
 
 permissions:
   contents: read
@@ -12,26 +13,23 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
-      - name: Checkout
+      # Step 1: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      # Optional build step (remove if you don't need it)
-      # - name: Build
-      #   run: echo "No build needed for static files"
-      
+
+      # Step 2: Configure GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
+
+      # Step 3: Upload website files
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './'  # Your website files are in root folder
-      
+          path: './'   # Make sure your index.html is in the root folder
+
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # ✅ MUST BE v4 NOT v1
+        uses: actions/deploy-pages@v4
